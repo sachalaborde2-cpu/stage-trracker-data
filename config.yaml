@@ -1,0 +1,148 @@
+# ============================================================
+# Configuration du scraper de stages Front Office
+# Sacha Laborde — Sales / Trading / Structuring — Paris & London
+# ============================================================
+
+# --- Filtres : une offre n'est retenue que si elle matche AU MOINS UN
+# --- role_keyword ET AU MOINS UN location_keyword ET AU MOINS UN
+# --- contract_keyword, ET AUCUN exclude_keyword.
+
+role_keywords:
+  - "sales & trading"
+  - "sales and trading"
+  - "trading"
+  - "trader"
+  - "structuring"
+  - "structured products"
+  - "global markets"
+  - "capital markets"
+  - "fixed income"
+  - "equity derivatives"
+  - "equities"
+  - "rates desk"
+  - "credit trading"
+  - "flow trading"
+  - "proprietary trading"
+  - "prop trading"
+  - "quantitative trader"
+  - "quant trader"
+  - "fx trading"
+  - "index structuring"
+
+exclude_keywords:
+  - "back office"
+  - "middle office"
+  - "compliance intern"
+  - "audit intern"
+  - "kyc"
+  - "internal audit"
+  - "senior"
+  - "vice president"
+  - "director"
+  - "full-time analyst"   # on garde les stages, pas les postes CDI
+
+contract_keywords:
+  - "intern"
+  - "internship"
+  - "stage"
+  - "stagiaire"
+  - "summer analyst"
+  - "off-cycle"
+
+location_keywords:
+  - "paris"
+  - "london"
+  - "londres"
+
+# --- Sources ---
+# type "aggregator_html": pages de résultats de recherche généralistes qui
+#   listent des offres de plusieurs employeurs en une seule page (le plus
+#   rentable à maintenir : 1 source = des dizaines de banques couvertes).
+# type "company_html": site carrière d'un seul employeur.
+#
+# IMPORTANT : les sélecteurs CSS ci-dessous sont des POINTS DE DÉPART.
+# Ils doivent être calibrés/vérifiés contre le HTML réel du site au moment
+# de l'exécution (voir README.md, section "Calibrer un sélecteur") — je ne
+# peux pas les tester depuis mon environnement (accès réseau restreint aux
+# sites cibles). enabled: false = source pas encore calibrée, ignorée par
+# le scraper tant qu'elle n'est pas activée.
+
+sources:
+  - name: "eFinancialCareers"
+    type: "efc_regex"
+    enabled: true
+    search_url: "https://www.efinancialcareers.com/jobs/trading-internship/in-france"
+    search_url_alt: "https://www.efinancialcareers.com/jobs/trading-internship/in-united-kingdom"
+    respect_robots_txt: true
+    rate_limit_seconds: 3
+
+  - name: "WelcomeToTheJungle"
+    type: "aggregator_html"
+    enabled: false  # désactivée : sélecteurs non vérifiés (voir README pour calibrer)
+    search_url: "https://www.welcometothejungle.com/fr/jobs?query=trading%20structuring%20stage&refinementList%5Boffices.country_code%5D%5B%5D=FR"
+    listing_selector: "li[data-testid='search-results-list-item'], article"
+    title_selector: "h4, h3, a"
+    link_selector: "a"
+    company_selector: "[data-testid='job-company-name'], .sc-company-name"
+    location_selector: "[data-testid='job-location'], .sc-location"
+    respect_robots_txt: true
+    rate_limit_seconds: 3
+
+  # ---- Sources par banque : désactivées par défaut, à calibrer une par une ----
+  - name: "GoldmanSachs"
+    type: "company_html"
+    enabled: false
+    search_url: "https://higher.gs.com/results?LOCATION=Paris%2CLondon&PROGRAM=Internship"
+    listing_selector: "TODO_calibrer"
+    title_selector: "TODO_calibrer"
+    link_selector: "TODO_calibrer"
+    respect_robots_txt: true
+    rate_limit_seconds: 4
+
+  - name: "JPMorgan"
+    type: "company_html"
+    enabled: false
+    search_url: "https://careers.jpmorgan.com/global/en/students/programs"
+    listing_selector: "TODO_calibrer"
+    title_selector: "TODO_calibrer"
+    link_selector: "TODO_calibrer"
+    respect_robots_txt: true
+    rate_limit_seconds: 4
+
+  - name: "BNPParibas"
+    type: "company_html"
+    enabled: false
+    search_url: "https://group.bnpparibas/en/careers/offer"
+    listing_selector: "TODO_calibrer"
+    title_selector: "TODO_calibrer"
+    link_selector: "TODO_calibrer"
+    respect_robots_txt: true
+    rate_limit_seconds: 4
+
+  - name: "SocieteGenerale"
+    type: "company_html"
+    enabled: false
+    search_url: "https://careers.societegenerale.com/en/offers"
+    listing_selector: "TODO_calibrer"
+    title_selector: "TODO_calibrer"
+    link_selector: "TODO_calibrer"
+    respect_robots_txt: true
+    rate_limit_seconds: 4
+
+  - name: "Barclays"
+    type: "company_html"
+    enabled: false
+    search_url: "https://search.jobs.barclays/search-jobs"
+    listing_selector: "TODO_calibrer"
+    title_selector: "TODO_calibrer"
+    link_selector: "TODO_calibrer"
+    respect_robots_txt: true
+    rate_limit_seconds: 4
+
+# NOTE explicite : LinkedIn n'est volontairement PAS dans cette liste
+# (violation de ses conditions d'utilisation, risque de bannissement de
+# compte). Utiliser à la place les alertes email natives de LinkedIn.
+
+output_file: "offers.json"
+max_age_days: 90
+user_agent: "SachaLaborde-InternshipWatch/1.0 (personal non-commercial job search bot; contact: sacha.laborde@etu.univ-paris1.fr)"
