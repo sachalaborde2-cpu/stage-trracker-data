@@ -792,8 +792,16 @@ const DEFAULT_SENDERS = [
   "alert@indeed.com",
 ];
 
+// Mots-clés de SUJET typiques d'un email d'alerte emploi — utilisés pour
+// trouver des offres sans connaitre l'adresse exacte de l'expediteur.
+const SUBJECT_HINT_KEYWORDS = [
+  "alerte", "alert", "job alert", "new jobs", "nouvelles offres", "emploi",
+  "recrute", "stage", "internship", "career", "carrière", "offre d'emploi",
+  "hiring", "vacancy", "poste",
+];
+
 function getGmailConfig() {
-  return LocalStore.get("settings:gmail") || { clientId: "", senders: DEFAULT_SENDERS };
+  return LocalStore.get("settings:gmail") || { clientId: "", senders: DEFAULT_SENDERS, broadSearch: true };
 }
 function setGmailConfig(cfg) { LocalStore.set("settings:gmail", cfg); }
 
@@ -944,6 +952,7 @@ function GmailInbox({ onApply }) {
   const [sendersDraft, setSendersDraft] = useState(cfg.senders.join("\n"));
   const [editingFilters, setEditingFilters] = useState(false);
   const [scanStats, setScanStats] = useState(null);
+  const [progress, setProgress] = useState("");
   const [filtersDraft, setFiltersDraft] = useState(() => {
     const f = getEmailFilters();
     return {
@@ -977,17 +986,29 @@ function GmailInbox({ onApply }) {
 
   const fetchEmails = async () => {
     if (!accessToken) { setError("Connecte-toi d'abord à Gmail."); return; }
-    setLoading(true); setError(""); setScanStats(null);
+    setLoading(true); setError(""); setScanStats(null); setProgress("");
     try {
       const senderQuery = cfg.senders.filter(Boolean).map(s => `from:${s}`).join(" OR ");
-      const q = `(${senderQuery}) newer_than:21d`;
-      const listRes = await fetch(
-        `https://gmail.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(q)}&maxResults=25`,
-        { headers: { Authorization: `Bearer ${accessToken}` } }
-      );
-      if (!listRes.ok) throw new Error("Gmail API (liste) : HTTP " + listRes.status);
-      const listData = await listRes.json();
-      const ids = (listData.messages || []).map(m => m.id);
+      const subjectQuery = SUBJECT_HINT_KEYWORDS.map(k => `subject:${k.includes(" ") ? `"${k}"` : k}`).join(" OR ");
+      const clauses = [];
+      if (senderQuery) clauses.push(`(${senderQuery})`);
+      if (cfg.broadSearch !== false) clauses.push(`(${subjectQuery})`);
+      // in:anywhere = inclut aussi Spam et Corbeille (exclus par defaut sinon)
+      const q = `(${clauses.join(" OR ")}) newer_than:30d in:anywhere`;
+
+      // Pagination complete : pas de plafond, on suit nextPageToken tant
+      // qu'il y en a un.
+      let ids = [];
+      let pageToken = null;
+      do {
+        const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(q)}&maxResults=500` + (pageToken ? `&pageToken=${pageToken}` : "");
+        const listRes = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+        if (!listRes.ok) throw new Error("Gmail API (liste) : HTTP " + listRes.status);
+        const listData = await listRes.json();
+        ids = ids.concat((listData.messages || []).map(m => m.id));
+        pageToken = listData.nextPageToken || null;
+        setProgress(`${ids.length} email(s) trouvé(s)...`);
+      } while (pageToken);
 
       const filters = getEmailFilters();
       let allOffers = [];
@@ -1001,6 +1022,7 @@ function GmailInbox({ onApply }) {
         if (!msgRes.ok) continue;
         const msg = await msgRes.json();
         emailsScanned++;
+        setProgress(`Lecture ${emailsScanned}/${ids.length}...`);
         const headers = msg.payload && msg.payload.headers;
         const subject = headerValue(headers, "Subject");
         const from = headerValue(headers, "From");
@@ -1023,6 +1045,7 @@ function GmailInbox({ onApply }) {
       setEmails(allOffers);
       LocalStore.set("gmail:cache", allOffers);
       setScanStats({ emails: emailsScanned, offers: allOffers.length });
+      setProgress("");
     } catch (e) {
       setError(e.message);
     } finally {
@@ -1036,9 +1059,11 @@ function GmailInbox({ onApply }) {
     LocalStore.set("gmail:dismissed", next);
   };
 
+  const [broadSearch, setBroadSearch] = useState(cfg.broadSearch !== false);
+
   const saveSenders = () => {
     const senders = sendersDraft.split("\n").map(s => s.trim()).filter(Boolean);
-    const next = { ...cfg, senders };
+    const next = { ...cfg, senders, broadSearch };
     setCfg(next); setGmailConfig(next); setEditingSenders(false);
   };
 
@@ -1066,7 +1091,7 @@ function GmailInbox({ onApply }) {
             <button className="btn primary" onClick={handleConnect}>Se connecter à Gmail</button>
           ) : (
             <button className="btn" onClick={fetchEmails} disabled={loading}>
-              {loading ? <span><span className="spinner"></span>Lecture...</span> : "Rafraîchir"}
+              {loading ? <span><span className="spinner"></span>{progress || "Lecture..."}</span> : "Rafraîchir"}
             </button>
           )}
         </div>
@@ -1075,10 +1100,16 @@ function GmailInbox({ onApply }) {
       {editingSenders && (
         <div style={{padding: 18, borderBottom: "1px solid var(--line)"}}>
           <div className="form-field">
-            <label>Adresses expéditrices à surveiller (une par ligne)</label>
+            <label style={{display:"flex", alignItems:"center", gap:8, cursor:"pointer"}}>
+              <input type="checkbox" checked={broadSearch} onChange={e => setBroadSearch(e.target.checked)} style={{width:"auto"}} />
+              Recherche élargie (au-delà des expéditeurs connus, par mots-clés de sujet)
+            </label>
+          </div>
+          <div className="form-field" style={{marginTop:10}}>
+            <label>Adresses expéditrices à surveiller (une par ligne — optionnel si la recherche élargie est activée)</label>
             <textarea rows={6} value={sendersDraft} onChange={e => setSendersDraft(e.target.value)} style={{fontFamily:"var(--font-mono)", fontSize:12}} />
           </div>
-          <div className="hint" style={{marginTop:8}}>Regarde l'adresse exacte de l'expéditeur d'une de tes alertes reçues (pas juste "LinkedIn") pour être précis.</div>
+          <div className="hint" style={{marginTop:8}}>Avec la recherche élargie activée, tu n'as plus besoin de connaître ces adresses — l'app cherche tous les emails récents dont le sujet ressemble à une alerte emploi, puis filtre par critères.</div>
           <div className="dl-buttons"><button className="btn primary" onClick={saveSenders}>Enregistrer</button></div>
         </div>
       )}
