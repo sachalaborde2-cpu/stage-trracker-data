@@ -616,7 +616,8 @@ RÈGLES STRICTES :
    - specificDesk: nom du desk (2-5 mots)
    - targetProfession: métier visé (2-4 mots)
    - team: complète "...within ___." — grammaticalement autonome, adapté au type d'employeur (jamais "Global Markets department" par défaut si ce n'est pas une banque).
-5. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
+5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, targetProfession, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit.
+6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
 {"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","task1":"...","task2":"...","task3":"...","specificDesk":"...","targetProfession":"...","team":"..."}}`;
 
   const user = `Entreprise : ${company}\nPoste : ${jobTitle}\nVille : ${location}\n\nBullets du CV disponibles pour reformulation (choisis "old" EXACTEMENT parmi ces textes) :\n${bulletsList}\n\nTexte de l'offre :\n${offerText}`;
@@ -665,14 +666,15 @@ async function proposeCvAddition(currentCv, description, mode, targetBullet, gem
 Tu dois choisir un point d'ancrage : une portion de texte qui existe déjà, MOT POUR MOT, dans le CV fourni, juste avant l'endroit où le nouveau contenu doit être inséré (par exemple la dernière ligne \\end{itemize} d'une section, ou le dernier \\item d'un bloc). Réponds avec :
 {"mode":"add","section":"...","insertAfter":"<extrait EXACT et VERBATIM du CV actuel, copié caractère pour caractère>","snippet":"<nouveau contenu LaTeX à insérer juste après insertAfter>","note":"..."}`;
 
-  const system = `Tu aides Sacha Laborde à faire évoluer son CV LaTeX (finance, front office).
+  const system = `Tu aides Sacha Laborde à faire évoluer son CV LaTeX (finance, front office). Le CV est entièrement en anglais.
 
 RÈGLES STRICTES :
 1. Reproduis EXACTEMENT le style LaTeX déjà utilisé (mêmes commandes, \\textbf, \\textit, \\hfill, \\item...). Ne réinvente pas de mise en forme.
 2. Ne modifie et n'invente RIEN d'autre que ce qui est décrit — reste factuel, pas d'exagération.
 3. Si c'est une nouvelle expérience/projet complet, propose un bloc complet au format d'un bloc existant du CV (\\noindent \\textbf{Nom} \\hfill \\textbf{Lieu} \\\\ \\textit{Titre} \\hfill \\textit{Dates} suivi de \\begin{itemize}...\\end{itemize}).
-4. ${modeInstructions}
-5. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
+4. Même si la description de Sacha ci-dessous est en français, le texte que tu ajoutes au CV doit être en ANGLAIS CORRECT ET NATUREL — jamais une traduction mot à mot ni l'ordre des mots français plaqué sur de l'anglais (ex: pas "Assistant Sales" mais "Sales Assistant"). Les noms propres (entreprises, lieux) restent tels quels.
+5. ${modeInstructions}
+6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
 
   let user = `CV LaTeX actuel :\n${currentCv}\n\nCe que Sacha veut faire :\n${description}`;
   if (previousProposal && feedback) {
