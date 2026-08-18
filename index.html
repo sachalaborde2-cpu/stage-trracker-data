@@ -149,6 +149,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.js"></script>
 
 <script type="text/babel" data-presets="react">
@@ -775,6 +776,249 @@ function TapeTicker({ applications }) {
   );
 }
 
+/* ============================================================
+   ONGLET EMAILS — lit tes propres alertes emploi via l'API Gmail
+   officielle (lecture seule). N'accède qu'aux emails, jamais à
+   l'envoi ni à la modification. Le token OAuth n'est JAMAIS
+   persisté — redemandé à chaque session pour rester prudent.
+   ============================================================ */
+const DEFAULT_SENDERS = [
+  "jobalerts-noreply@linkedin.com",
+  "jobs-noreply@linkedin.com",
+  "noreply@efinancialcareers.com",
+  "alert@welcometothejungle.com",
+  "no-reply@welcometothejungle.com",
+  "noreply@indeed.com",
+  "alert@indeed.com",
+];
+
+function getGmailConfig() {
+  return LocalStore.get("settings:gmail") || { clientId: "", senders: DEFAULT_SENDERS };
+}
+function setGmailConfig(cfg) { LocalStore.set("settings:gmail", cfg); }
+
+function decodeBase64Url(data) {
+  try {
+    const norm = data.replace(/-/g, "+").replace(/_/g, "/");
+    const bin = atob(norm);
+    const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
+    return new TextDecoder("utf-8").decode(bytes);
+  } catch (e) { return ""; }
+}
+
+// Parcourt récursivement les parties MIME pour trouver du texte exploitable
+function extractBodyText(payload) {
+  if (!payload) return "";
+  if (payload.body && payload.body.data) {
+    return decodeBase64Url(payload.body.data);
+  }
+  if (payload.parts) {
+    const htmlPart = payload.parts.find(p => p.mimeType === "text/html");
+    if (htmlPart) return extractBodyText(htmlPart);
+    const textPart = payload.parts.find(p => p.mimeType === "text/plain");
+    if (textPart) return extractBodyText(textPart);
+    for (const p of payload.parts) {
+      const r = extractBodyText(p);
+      if (r) return r;
+    }
+  }
+  return "";
+}
+
+function stripHtml(html) {
+  return html.replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"')
+    .replace(/\s+/g, " ").trim();
+}
+
+function extractLinks(html) {
+  const matches = [...html.matchAll(/href=["']([^"']+)["']/gi)];
+  const seen = new Set();
+  const links = [];
+  for (const m of matches) {
+    const url = m[1];
+    if (!url.startsWith("http")) continue;
+    if (/unsubscribe|preferences|privacy|settings|mailto:|linkedin\.com\/comm|list-manage/i.test(url)) continue;
+    if (seen.has(url)) continue;
+    seen.add(url);
+    links.push(url);
+    if (links.length >= 6) break;
+  }
+  return links;
+}
+
+function headerValue(headers, name) {
+  const h = (headers || []).find(h => h.name.toLowerCase() === name.toLowerCase());
+  return h ? h.value : "";
+}
+
+function GmailInbox({ onApply }) {
+  const [cfg, setCfg] = useState(getGmailConfig());
+  const [connected, setConnected] = useState(false);
+  const [tokenClient, setTokenClient] = useState(null);
+  const [accessToken, setAccessToken] = useState(null);
+  const [emails, setEmails] = useState(() => LocalStore.get("gmail:cache") || []);
+  const [dismissed, setDismissed] = useState(() => LocalStore.get("gmail:dismissed") || []);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [editingSenders, setEditingSenders] = useState(false);
+  const [sendersDraft, setSendersDraft] = useState(cfg.senders.join("\n"));
+
+  useEffect(() => {
+    if (!window.google || !cfg.clientId) return;
+    const client = window.google.accounts.oauth2.initTokenClient({
+      client_id: cfg.clientId,
+      scope: "https://www.googleapis.com/auth/gmail.readonly",
+      callback: (resp) => {
+        if (resp.error) { setError("Connexion refusée : " + resp.error); return; }
+        setAccessToken(resp.access_token);
+        setConnected(true);
+        setError("");
+      },
+    });
+    setTokenClient(client);
+  }, [cfg.clientId]);
+
+  const handleConnect = () => {
+    if (!cfg.clientId) { setError("Configure d'abord le Client ID Google dans Réglages."); return; }
+    if (!tokenClient) { setError("Client Google pas encore chargé, réessaie dans un instant."); return; }
+    tokenClient.requestAccessToken();
+  };
+
+  const fetchEmails = async () => {
+    if (!accessToken) { setError("Connecte-toi d'abord à Gmail."); return; }
+    setLoading(true); setError("");
+    try {
+      const senderQuery = cfg.senders.filter(Boolean).map(s => `from:${s}`).join(" OR ");
+      const q = `(${senderQuery}) newer_than:21d`;
+      const listRes = await fetch(
+        `https://gmail.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(q)}&maxResults=25`,
+        { headers: { Authorization: `Bearer ${accessToken}` } }
+      );
+      if (!listRes.ok) throw new Error("Gmail API (liste) : HTTP " + listRes.status);
+      const listData = await listRes.json();
+      const ids = (listData.messages || []).map(m => m.id);
+
+      const results = [];
+      for (const id of ids) {
+        const msgRes = await fetch(
+          `https://gmail.googleapis.com/gmail/v1/users/me/messages/${id}?format=full`,
+          { headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+        if (!msgRes.ok) continue;
+        const msg = await msgRes.json();
+        const headers = msg.payload && msg.payload.headers;
+        const subject = headerValue(headers, "Subject");
+        const from = headerValue(headers, "From");
+        const date = headerValue(headers, "Date");
+        const rawBody = extractBodyText(msg.payload);
+        const isHtml = rawBody.includes("<");
+        const links = isHtml ? extractLinks(rawBody) : [];
+        const snippet = (msg.snippet || (isHtml ? stripHtml(rawBody) : rawBody)).slice(0, 400);
+
+        results.push({
+          id: msg.id,
+          subject,
+          from,
+          date,
+          snippet,
+          links,
+          title: subject,
+          company: from.replace(/<.*>/, "").trim(),
+          url: links[0] || "",
+          location: "",
+        });
+      }
+      setEmails(results);
+      LocalStore.set("gmail:cache", results);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const dismiss = (id) => {
+    const next = [...dismissed, id];
+    setDismissed(next);
+    LocalStore.set("gmail:dismissed", next);
+  };
+
+  const saveSenders = () => {
+    const senders = sendersDraft.split("\n").map(s => s.trim()).filter(Boolean);
+    const next = { ...cfg, senders };
+    setCfg(next); setGmailConfig(next); setEditingSenders(false);
+  };
+
+  const visible = emails.filter(e => !dismissed.includes(e.id));
+
+  return (
+    <div className="panel">
+      <div className="panel-head">
+        Emails détectés
+        <div style={{display:"flex", gap:8}}>
+          <button className="btn" onClick={() => setEditingSenders(v => !v)}>Expéditeurs surveillés</button>
+          {!connected ? (
+            <button className="btn primary" onClick={handleConnect}>Se connecter à Gmail</button>
+          ) : (
+            <button className="btn" onClick={fetchEmails} disabled={loading}>
+              {loading ? <span><span className="spinner"></span>Lecture...</span> : "Rafraîchir"}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {editingSenders && (
+        <div style={{padding: 18, borderBottom: "1px solid var(--line)"}}>
+          <div className="form-field">
+            <label>Adresses expéditrices à surveiller (une par ligne)</label>
+            <textarea rows={6} value={sendersDraft} onChange={e => setSendersDraft(e.target.value)} style={{fontFamily:"var(--font-mono)", fontSize:12}} />
+          </div>
+          <div className="hint" style={{marginTop:8}}>Regarde l'adresse exacte de l'expéditeur d'une de tes alertes reçues (pas juste "LinkedIn") pour être précis.</div>
+          <div className="dl-buttons"><button className="btn primary" onClick={saveSenders}>Enregistrer</button></div>
+        </div>
+      )}
+
+      {!cfg.clientId && !editingSenders && (
+        <div className="disabled-note">Configure d'abord ton Client ID Google dans l'onglet Réglages.</div>
+      )}
+
+      {error && <div className="error-box">{error}</div>}
+
+      {connected && !loading && visible.length === 0 && !error && (
+        <div className="empty-state">Aucun email chargé pour l'instant — clique "Rafraîchir".</div>
+      )}
+
+      {visible.length > 0 && (
+        <table>
+          <thead><tr><th>Expéditeur</th><th>Sujet</th><th>Date</th><th>Liens</th><th></th></tr></thead>
+          <tbody>
+            {visible.map(e => (
+              <tr key={e.id}>
+                <td className="role-cell">{e.company}</td>
+                <td className="company-cell">{e.subject}</td>
+                <td className="role-cell mono-num">{e.date ? new Date(e.date).toLocaleDateString("fr-FR") : "—"}</td>
+                <td className="role-cell">
+                  {e.links.slice(0, 3).map((l, i) => (
+                    <button key={i} className="btn" style={{marginRight:4, marginBottom:4}} onClick={() => window.open(l, "_blank")}>Lien {i + 1}</button>
+                  ))}
+                  {e.links.length === 0 && "—"}
+                </td>
+                <td className="row-actions">
+                  <button onClick={() => onApply(e)}>Postuler</button>
+                  <button className="danger" onClick={() => dismiss(e.id)}>Ignorer</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [view, setView] = useState("tracker");
   const [applications, setApplications] = useState([]);
@@ -855,6 +1099,7 @@ function App() {
           </span>
           <div className="tabs">
             <button className={"tab-btn" + (view === "tracker" ? " active" : "")} onClick={() => setView("tracker")}>Tracker</button>
+            <button className={"tab-btn" + (view === "emails" ? " active" : "")} onClick={() => setView("emails")}>Emails</button>
             <button className={"tab-btn" + (view === "new" ? " active" : "")} onClick={() => { setPrefill(null); setView("new"); }}>+ Candidature</button>
             <button className={"tab-btn" + (view === "cv" ? " active" : "")} onClick={() => setView("cv")}>Mon CV</button>
             <button className={"tab-btn" + (view === "settings" ? " active" : "")} onClick={() => setView("settings")}>Réglages</button>
@@ -866,6 +1111,18 @@ function App() {
 
       {view === "tracker" && (
         <Tracker applications={applications} loading={loadingApps} counts={counts} expandedId={expandedId} setExpandedId={setExpandedId} updateStatus={updateStatus} deleteApp={deleteApp} />
+      )}
+      {view === "emails" && (
+        <GmailInbox onApply={(offer) => {
+          setPrefill({
+            company: offer.company || "",
+            jobTitle: offer.title || "",
+            location: offer.location || "Paris",
+            jobUrl: offer.url || "",
+            offerText: offer.snippet || "",
+          });
+          setView("new");
+        }} />
       )}
       {view === "new" && (
         <NewApplication prefill={prefill} onSave={(entry) => { addApplication(entry); setPrefill(null); setView("tracker"); }} />
@@ -1390,11 +1647,13 @@ function CvEditor() {
 function Settings() {
   const [gemini, setGemini] = useState(() => LocalStore.get("settings:gemini") || { apiKey: "", model: "gemini-2.5-flash" });
   const [github, setGithub] = useState(() => GitHubSync.getConfig());
+  const [gmail, setGmail] = useState(() => getGmailConfig());
   const [testMsg, setTestMsg] = useState("");
   const [testing, setTesting] = useState(false);
 
   const saveGemini = () => { LocalStore.set("settings:gemini", gemini); setTestMsg("Clé Gemini enregistrée localement."); setTimeout(() => setTestMsg(""), 3000); };
   const saveGithub = () => { GitHubSync.setConfig(github); setTestMsg("Config GitHub enregistrée — recharge la page pour synchroniser."); setTimeout(() => setTestMsg(""), 4000); };
+  const saveGmail = () => { setGmailConfig(gmail); setTestMsg("Config Gmail enregistrée — va dans l'onglet Emails pour te connecter."); setTimeout(() => setTestMsg(""), 4000); };
 
   const testGemini = async () => {
     setTesting(true); setTestMsg("");
@@ -1442,7 +1701,7 @@ function Settings() {
         </div>
       </div>
 
-      <div className="settings-section" style={{borderBottom:"none"}}>
+      <div className="settings-section">
         <h3>Synchronisation GitHub (optionnelle)</h3>
         <div className="desc">
           Pour retrouver les mêmes candidatures sur tous tes appareils. Crée un repo GitHub (privé de préférence) et un token d'accès personnel (fine-grained, permission "Contents: Read and write" limitée à ce repo).
@@ -1457,6 +1716,23 @@ function Settings() {
           <button className="btn primary" onClick={saveGithub}>Enregistrer</button>
           <button className="btn" onClick={testGithub} disabled={testing || !github.token || !github.owner || !github.repo}>{testing ? "Test..." : "Tester la connexion"}</button>
         </div>
+      </div>
+
+      <div className="settings-section" style={{borderBottom:"none"}}>
+        <h3>Alertes Gmail (optionnel)</h3>
+        <div className="desc">
+          Lit tes propres emails d'alerte emploi (lecture seule, jamais d'envoi). Nécessite un Client ID Google — voir les instructions données dans le chat pour le créer via Google Cloud Console.
+        </div>
+        <div className="form-grid" style={{padding:0}}>
+          <div className="form-field full">
+            <label>Client ID Google</label>
+            <input type="text" value={gmail.clientId} onChange={e => setGmail({...gmail, clientId: e.target.value})} placeholder="xxxxxxxx.apps.googleusercontent.com" />
+          </div>
+        </div>
+        <div className="dl-buttons">
+          <button className="btn primary" onClick={saveGmail}>Enregistrer</button>
+        </div>
+        <div className="hint" style={{marginTop:10}}>Les adresses expéditrices à surveiller se gèrent directement depuis l'onglet "Emails" (bouton "Expéditeurs surveillés").</div>
       </div>
 
       {testMsg && <div className={testMsg.startsWith("✗") ? "error-box" : "success-box"} style={{margin:"0 20px 20px"}}>{testMsg}</div>}
