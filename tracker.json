@@ -1,0 +1,41 @@
+[
+  {
+    "company": "Crédit Agricole CIB",
+    "jobTitle": "Analyste Risque de Marché H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Market Risk Analysis",
+      "keywordChanges": [
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls), integrating the Black-Scholes analytical model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Developed a robust pricing framework for various financial derivatives, applying Black-Scholes and Monte Carlo valuation methodologies."
+        },
+        {
+          "old": "Engineered an interactive Python-based web application (Streamlit) for the dynamic management and analysis of a personal investment portfolio.",
+          "new": "Developed a Python-based application for dynamic portfolio analysis, enhancing data management and performance insights."
+        },
+        {
+          "old": "Design analytical projects focusing on market trends and provide Tier 1 financial and technical support to key institutional clients.",
+          "new": "Executed analytical projects on market dynamics, providing insights for financial and technical applications."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Analyste Risque de Marché",
+        "task1": "market parameter validation",
+        "task2": "pricing source analysis",
+        "task3": "process optimization initiatives",
+        "specificDesk": "Independent Pricing Verification",
+        "targetProfession": "Capital Markets Front Office",
+        "team": "the Market Counterparty Risk department"
+      }
+    },
+    "id": "1787044921565",
+    "dateAdded": "2026-08-18"
+  }
+]
