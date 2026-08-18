@@ -1,5 +1,48 @@
 [
   {
+    "company": "UBS",
+    "jobTitle": "2027 Summer Internship - Global Markets - London",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Markets Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Acquired in-depth knowledge of valuation and hedging strategies for futures, forwards, and options (Calls/Puts).",
+          "new": "Developed comprehensive knowledge of valuation and hedging for diverse derivatives instruments."
+        },
+        {
+          "old": "Design analytical projects focusing on market trends and provide Tier 1 financial and technical support to key institutional clients.",
+          "new": "Designed market trend analysis projects and provided advanced financial support to institutional clients."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls), integrating the Black-Scholes analytical model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Developed a derivatives pricing engine (Black-Scholes, Monte Carlo) for various option types."
+        },
+        {
+          "old": "Extracted and processed live market data (S&P 500) to model the implied volatility surface (Smile / Skew) utilizing a Newton-Raphson optimization algorithm.",
+          "new": "Analyzed live market data to model implied volatility surfaces using advanced optimization algorithms."
+        }
+      ],
+      "letterFields": {
+        "company": "UBS",
+        "jobTitle": "Summer Intern, Global Markets",
+        "task1": "client trading activities",
+        "task2": "market trend reports",
+        "task3": "equity market performance",
+        "specificDesk": "Global Markets Equities",
+        "targetProfession": "Sales & Trading Analyst",
+        "team": "the Global Markets business"
+      }
+    },
+    "id": "1787055246289",
+    "dateAdded": "2026-08-18"
+  },
+  {
     "company": "Crédit Agricole CIB",
     "jobTitle": "Analyste Risque de Marché H/F",
     "location": "Paris",
