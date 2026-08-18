@@ -833,20 +833,97 @@ function stripHtml(html) {
     .replace(/\s+/g, " ").trim();
 }
 
-function extractLinks(html) {
-  const matches = [...html.matchAll(/href=["']([^"']+)["']/gi)];
-  const seen = new Set();
-  const links = [];
-  for (const m of matches) {
+// Mêmes critères que ceux du scraper (config.yaml) — pour rester cohérent
+// entre les deux sources d'offres (web + emails).
+const DEFAULT_EMAIL_FILTERS = {
+  roleKeywords: [
+    "sales & trading", "sales and trading", "trading", "trader", "structuring",
+    "structured products", "global markets", "capital markets", "fixed income",
+    "equity derivatives", "equities", "rates desk", "credit trading", "flow trading",
+    "proprietary trading", "prop trading", "quantitative trader", "quant trader",
+    "fx trading", "index structuring", "markets",
+  ],
+  excludeKeywords: [
+    "back office", "middle office", "compliance intern", "audit intern", "kyc",
+    "internal audit", "senior", "vice president", "director", "full-time analyst",
+  ],
+  contractKeywords: ["intern", "internship", "stage", "stagiaire", "summer analyst", "off-cycle"],
+  locationKeywords: ["paris", "london", "londres", "new york", "chicago", "boca raton", "amsterdam"],
+};
+function getEmailFilters() {
+  return LocalStore.get("settings:emailFilters") || DEFAULT_EMAIL_FILTERS;
+}
+function setEmailFilters(f) { LocalStore.set("settings:emailFilters", f); }
+
+function textMatchesAny(haystack, needles) {
+  const h = haystack.toLowerCase();
+  return needles.some(n => h.includes(n.toLowerCase()));
+}
+function offerPassesFilters(title, contextCombined, filters) {
+  // Les exclusions se testent sur le TITRE seul : une offre voisine dans le
+  // meme email ne doit jamais faire exclure a tort une bonne offre.
+  if (textMatchesAny(title, filters.excludeKeywords)) return false;
+  if (!textMatchesAny(contextCombined, filters.roleKeywords)) return false;
+  if (!textMatchesAny(contextCombined, filters.contractKeywords)) return false;
+  if (!textMatchesAny(contextCombined, filters.locationKeywords)) return false;
+  return true;
+}
+
+const LINK_BOILERPLATE = /^(unsubscribe|view all|see more|see all|manage preferences|privacy|help center|download|follow us|view job|apply now|voir tout|se désabonner|préférences|en savoir plus|voir l'offre|postuler)$/i;
+
+// Decoupe un email (potentiellement plusieurs offres) en offres candidates,
+// et ne garde que celles qui matchent les criteres. Approche : chaque lien
+// avec un texte d'ancre substantiel est un candidat "titre de poste" ; on
+// prend une fenetre de texte autour de ce lien dans le HTML brut comme
+// contexte (entreprise/lieu), et on filtre sur titre+contexte combines.
+function extractCandidateOffers(html, meta, filters) {
+  const cleanHtml = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
+  const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const results = [];
+  const seenUrls = new Set();
+  let m;
+  while ((m = anchorRe.exec(cleanHtml)) !== null) {
     const url = m[1];
     if (!url.startsWith("http")) continue;
-    if (/unsubscribe|preferences|privacy|settings|mailto:|linkedin\.com\/comm|list-manage/i.test(url)) continue;
-    if (seen.has(url)) continue;
-    seen.add(url);
-    links.push(url);
-    if (links.length >= 6) break;
+    if (/unsubscribe|preferences|privacy|settings|mailto:|list-manage|\/comm\//i.test(url)) continue;
+
+    const text = stripHtml(m[2]).trim();
+    if (!text || text.length < 6 || text.length > 140) continue;
+    if (LINK_BOILERPLATE.test(text)) continue;
+    if (seenUrls.has(url)) continue;
+
+    // Fenetre de contexte ADAPTATIVE : bornee par le lien precedent / suivant
+    // plutot qu'un nombre de caracteres fixe, pour isoler le bloc de CETTE
+    // offre et eviter toute contamination par une offre voisine dans le
+    // meme email (probleme reel detecte en test : un mot-cle d'une offre
+    // adjacente faisait passer ou echouer la mauvaise offre).
+    const idx = m.index;
+    const afterStart = idx + m[0].length;
+    const nextAnchorIdx = cleanHtml.indexOf("<a ", afterStart);
+    const windowEnd = nextAnchorIdx === -1 ? Math.min(cleanHtml.length, afterStart + 220) : Math.min(nextAnchorIdx, afterStart + 220);
+    const prevAnchorEnd = cleanHtml.lastIndexOf("</a>", idx);
+    const windowStart = prevAnchorEnd === -1 ? Math.max(0, idx - 60) : Math.max(prevAnchorEnd, idx - 60);
+    const windowHtml = cleanHtml.slice(windowStart, windowEnd);
+    const context = stripHtml(windowHtml).slice(0, 260);
+    const combined = `${text} ${context} ${meta.subject}`;
+
+    if (!offerPassesFilters(text, combined, filters)) continue;
+
+    seenUrls.add(url);
+    results.push({
+      id: meta.id + "_" + seenUrls.size,
+      title: text,
+      url,
+      snippet: context,
+      company: meta.company,
+      source: meta.company,
+      location: (filters.locationKeywords.find(l => combined.toLowerCase().includes(l.toLowerCase())) || ""),
+      date: meta.date,
+      emailSubject: meta.subject,
+      gmailLink: meta.threadId ? `https://mail.google.com/mail/u/0/#all/${meta.threadId}` : "",
+    });
   }
-  return links;
+  return results;
 }
 
 function headerValue(headers, name) {
@@ -865,6 +942,17 @@ function GmailInbox({ onApply }) {
   const [error, setError] = useState("");
   const [editingSenders, setEditingSenders] = useState(false);
   const [sendersDraft, setSendersDraft] = useState(cfg.senders.join("\n"));
+  const [editingFilters, setEditingFilters] = useState(false);
+  const [scanStats, setScanStats] = useState(null);
+  const [filtersDraft, setFiltersDraft] = useState(() => {
+    const f = getEmailFilters();
+    return {
+      roleKeywords: f.roleKeywords.join("\n"),
+      locationKeywords: f.locationKeywords.join("\n"),
+      contractKeywords: f.contractKeywords.join("\n"),
+      excludeKeywords: f.excludeKeywords.join("\n"),
+    };
+  });
 
   useEffect(() => {
     if (!window.google || !cfg.clientId) return;
@@ -889,7 +977,7 @@ function GmailInbox({ onApply }) {
 
   const fetchEmails = async () => {
     if (!accessToken) { setError("Connecte-toi d'abord à Gmail."); return; }
-    setLoading(true); setError("");
+    setLoading(true); setError(""); setScanStats(null);
     try {
       const senderQuery = cfg.senders.filter(Boolean).map(s => `from:${s}`).join(" OR ");
       const q = `(${senderQuery}) newer_than:21d`;
@@ -901,7 +989,10 @@ function GmailInbox({ onApply }) {
       const listData = await listRes.json();
       const ids = (listData.messages || []).map(m => m.id);
 
-      const results = [];
+      const filters = getEmailFilters();
+      let allOffers = [];
+      let emailsScanned = 0;
+
       for (const id of ids) {
         const msgRes = await fetch(
           `https://gmail.googleapis.com/gmail/v1/users/me/messages/${id}?format=full`,
@@ -909,30 +1000,29 @@ function GmailInbox({ onApply }) {
         );
         if (!msgRes.ok) continue;
         const msg = await msgRes.json();
+        emailsScanned++;
         const headers = msg.payload && msg.payload.headers;
         const subject = headerValue(headers, "Subject");
         const from = headerValue(headers, "From");
         const date = headerValue(headers, "Date");
         const rawBody = extractBodyText(msg.payload);
         const isHtml = rawBody.includes("<");
-        const links = isHtml ? extractLinks(rawBody) : [];
-        const snippet = (msg.snippet || (isHtml ? stripHtml(rawBody) : rawBody)).slice(0, 400);
+        const meta = { id: msg.id, threadId: msg.threadId, subject, date, company: from.replace(/<.*>/, "").trim() };
 
-        results.push({
-          id: msg.id,
-          subject,
-          from,
-          date,
-          snippet,
-          links,
-          title: subject,
-          company: from.replace(/<.*>/, "").trim(),
-          url: links[0] || "",
-          location: "",
-        });
+        if (isHtml) {
+          const offers = extractCandidateOffers(rawBody, meta, filters);
+          allOffers = allOffers.concat(offers);
+        } else {
+          // email texte brut : pas de decoupage possible, on filtre l'email entier
+          const combined = `${subject} ${rawBody}`;
+          if (offerPassesFilters(subject, combined, filters)) {
+            allOffers.push({ id: msg.id, title: subject, url: "", snippet: rawBody.slice(0,300), company: meta.company, source: meta.company, location: "", date, emailSubject: subject, gmailLink: meta.threadId ? `https://mail.google.com/mail/u/0/#all/${meta.threadId}` : "" });
+          }
+        }
       }
-      setEmails(results);
-      LocalStore.set("gmail:cache", results);
+      setEmails(allOffers);
+      LocalStore.set("gmail:cache", allOffers);
+      setScanStats({ emails: emailsScanned, offers: allOffers.length });
     } catch (e) {
       setError(e.message);
     } finally {
@@ -952,14 +1042,26 @@ function GmailInbox({ onApply }) {
     setCfg(next); setGmailConfig(next); setEditingSenders(false);
   };
 
+  const saveFilters = () => {
+    const parsed = {
+      roleKeywords: filtersDraft.roleKeywords.split("\n").map(s => s.trim()).filter(Boolean),
+      locationKeywords: filtersDraft.locationKeywords.split("\n").map(s => s.trim()).filter(Boolean),
+      contractKeywords: filtersDraft.contractKeywords.split("\n").map(s => s.trim()).filter(Boolean),
+      excludeKeywords: filtersDraft.excludeKeywords.split("\n").map(s => s.trim()).filter(Boolean),
+    };
+    setEmailFilters(parsed);
+    setEditingFilters(false);
+  };
+
   const visible = emails.filter(e => !dismissed.includes(e.id));
 
   return (
     <div className="panel">
       <div className="panel-head">
-        Emails détectés
-        <div style={{display:"flex", gap:8}}>
-          <button className="btn" onClick={() => setEditingSenders(v => !v)}>Expéditeurs surveillés</button>
+        Offres détectées dans tes emails
+        <div style={{display:"flex", gap:8, flexWrap:"wrap"}}>
+          <button className="btn" onClick={() => { setEditingSenders(v => !v); setEditingFilters(false); }}>Expéditeurs surveillés</button>
+          <button className="btn" onClick={() => { setEditingFilters(v => !v); setEditingSenders(false); }}>Critères de filtrage</button>
           {!connected ? (
             <button className="btn primary" onClick={handleConnect}>Se connecter à Gmail</button>
           ) : (
@@ -981,32 +1083,46 @@ function GmailInbox({ onApply }) {
         </div>
       )}
 
-      {!cfg.clientId && !editingSenders && (
+      {editingFilters && (
+        <div style={{padding: 18, borderBottom: "1px solid var(--line)"}}>
+          <div className="desc">Une offre n'est retenue que si elle contient au moins un mot-clé de rôle ET un lieu ET un type de contrat, ET aucun mot-clé d'exclusion — exactement la même logique que le scraper.</div>
+          <div className="field-grid">
+            <div className="form-field"><label>Mots-clés de rôle (1 par ligne)</label><textarea rows={8} value={filtersDraft.roleKeywords} onChange={e => setFiltersDraft({...filtersDraft, roleKeywords: e.target.value})} style={{fontFamily:"var(--font-mono)", fontSize:11.5}} /></div>
+            <div className="form-field"><label>Lieux (1 par ligne)</label><textarea rows={8} value={filtersDraft.locationKeywords} onChange={e => setFiltersDraft({...filtersDraft, locationKeywords: e.target.value})} style={{fontFamily:"var(--font-mono)", fontSize:11.5}} /></div>
+            <div className="form-field"><label>Type de contrat (1 par ligne)</label><textarea rows={5} value={filtersDraft.contractKeywords} onChange={e => setFiltersDraft({...filtersDraft, contractKeywords: e.target.value})} style={{fontFamily:"var(--font-mono)", fontSize:11.5}} /></div>
+            <div className="form-field"><label>Exclusions (1 par ligne)</label><textarea rows={5} value={filtersDraft.excludeKeywords} onChange={e => setFiltersDraft({...filtersDraft, excludeKeywords: e.target.value})} style={{fontFamily:"var(--font-mono)", fontSize:11.5}} /></div>
+          </div>
+          <div className="dl-buttons"><button className="btn primary" onClick={saveFilters}>Enregistrer les critères</button></div>
+        </div>
+      )}
+
+      {!cfg.clientId && !editingSenders && !editingFilters && (
         <div className="disabled-note">Configure d'abord ton Client ID Google dans l'onglet Réglages.</div>
       )}
 
       {error && <div className="error-box">{error}</div>}
+      {scanStats && !loading && (
+        <div className="hint" style={{padding:"10px 20px 0"}}>{scanStats.emails} email(s) scanné(s) → {scanStats.offers} offre(s) retenue(s) après filtrage.</div>
+      )}
 
       {connected && !loading && visible.length === 0 && !error && (
-        <div className="empty-state">Aucun email chargé pour l'instant — clique "Rafraîchir".</div>
+        <div className="empty-state">Aucune offre correspondant à tes critères pour l'instant — clique "Rafraîchir", ou élargis tes critères de filtrage.</div>
       )}
 
       {visible.length > 0 && (
         <table>
-          <thead><tr><th>Expéditeur</th><th>Sujet</th><th>Date</th><th>Liens</th><th></th></tr></thead>
+          <thead><tr><th>Poste</th><th>Contexte</th><th>Lieu</th><th>Source</th><th>Date</th><th></th></tr></thead>
           <tbody>
             {visible.map(e => (
               <tr key={e.id}>
+                <td className="company-cell">{e.title}</td>
+                <td className="role-cell">{e.snippet ? e.snippet.slice(0, 90) + "..." : "—"}</td>
+                <td className="role-cell">{e.location || "—"}</td>
                 <td className="role-cell">{e.company}</td>
-                <td className="company-cell">{e.subject}</td>
                 <td className="role-cell mono-num">{e.date ? new Date(e.date).toLocaleDateString("fr-FR") : "—"}</td>
-                <td className="role-cell">
-                  {e.links.slice(0, 3).map((l, i) => (
-                    <button key={i} className="btn" style={{marginRight:4, marginBottom:4}} onClick={() => window.open(l, "_blank")}>Lien {i + 1}</button>
-                  ))}
-                  {e.links.length === 0 && "—"}
-                </td>
                 <td className="row-actions">
+                  {e.url && <button onClick={() => window.open(e.url, "_blank")}>Voir l'offre ↗</button>}
+                  {e.gmailLink && <button onClick={() => window.open(e.gmailLink, "_blank")}>Voir l'email ↗</button>}
                   <button onClick={() => onApply(e)}>Postuler</button>
                   <button className="danger" onClick={() => dismiss(e.id)}>Ignorer</button>
                 </td>
