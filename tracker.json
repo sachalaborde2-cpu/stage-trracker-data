@@ -1,5 +1,48 @@
 [
   {
+    "company": "BNP Paribas CIB",
+    "jobTitle": "Assistant Sales Equity Derivatives",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Derivatives Sales",
+      "keywordChanges": [
+        {
+          "old": "Acquired in-depth knowledge of valuation and hedging strategies for futures, forwards, and options (Calls/Puts).",
+          "new": "Developed expertise in valuing and hedging complex equity derivatives and structured products."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls), integrating the Black-Scholes analytical model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Engineered a robust pricing engine for equity derivatives, utilizing Black-Scholes and Monte Carlo methodologies."
+        },
+        {
+          "old": "Design analytical projects focusing on market trends and provide Tier 1 financial and technical support to key institutional clients.",
+          "new": "Conducted market analysis projects and delivered advanced financial and technical support to institutional clients."
+        },
+        {
+          "old": "Extracted and processed live market data (S&P 500) to model the implied volatility surface (Smile / Skew) utilizing a Newton-Raphson optimization algorithm.",
+          "new": "Processed live market data to model implied volatility surfaces and analyze market dynamics."
+        }
+      ],
+      "letterFields": {
+        "company": "BNP Paribas CIB",
+        "jobTitle": "Assistant Sales Equity Derivatives",
+        "task1": "client request management",
+        "task2": "product pricing and valuation",
+        "task3": "market analysis and presentations",
+        "specificDesk": "Equity Derivatives Sales",
+        "targetProfession": "Front Office Sales",
+        "team": "Global Markets Sales"
+      }
+    },
+    "id": "1787064703023",
+    "dateAdded": "2026-08-18"
+  },
+  {
     "company": "UBS",
     "jobTitle": "2027 Summer Internship - Global Markets - London",
     "location": "Londres",
