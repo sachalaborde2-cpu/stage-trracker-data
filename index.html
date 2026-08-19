@@ -881,13 +881,33 @@ function offerPassesFilters(title, contextCombined, filters) {
   return true;
 }
 
-const LINK_BOILERPLATE = /^(unsubscribe|view all|see more|see all|manage preferences|privacy|help center|download|follow us|view job|apply now|voir tout|se désabonner|préférences|en savoir plus|voir l'offre|postuler)$/i;
+// Texte qui n'est JAMAIS un titre de poste : boilerplate de navigation,
+// pied de page, ou libelles de date relative. Test par INCLUSION (pas
+// egalite stricte) pour capter les variantes, en francais et anglais.
+const LINK_BOILERPLATE = /unsubscribe|view all|see more|see all|manage (this )?(alert|preferences)|privacy|help center|download|follow us|view job|apply now|voir tout|se désabonner|préférences|en savoir plus|voir l'offre|postuler|afficher tous|voir les emplois|gérer cette alerte|conditions d'utilisation|toutes les offres|voir plus|créer une alerte|modifier.{0,15}alerte|désinscri/i;
+const RELATIVE_DATE_RE = /^(depuis|il y a|sur les? \d|aujourd'hui|hier|dans les? \d)/i;
+
+// Avance jusqu'a la prochaine balise fermee ('>') pour ne jamais commencer
+// une fenetre de contexte au milieu d'un attribut HTML (bug reel observe :
+// des fragments de style="..." se retrouvaient affiches comme texte).
+function safeSliceStart(html, pos) {
+  if (pos <= 0) return 0;
+  const gt = html.indexOf(">", pos);
+  return gt === -1 ? pos : gt + 1;
+}
+function safeSliceEnd(html, pos) {
+  const lt = html.lastIndexOf("<", pos);
+  return lt === -1 || lt < pos - 400 ? pos : lt;
+}
 
 // Decoupe un email (potentiellement plusieurs offres) en offres candidates,
 // et ne garde que celles qui matchent les criteres. Approche : chaque lien
 // avec un texte d'ancre substantiel est un candidat "titre de poste" ; on
 // prend une fenetre de texte autour de ce lien dans le HTML brut comme
-// contexte (entreprise/lieu), et on filtre sur titre+contexte combines.
+// contexte (entreprise/lieu), et on filtre sur titre+contexte combines —
+// JAMAIS sur le sujet de l'email entier (bug reel : un sujet generique
+// contenant par hasard un mot-cle faisait passer TOUS les liens de l'email,
+// y compris les liens de pied de page).
 function extractCandidateOffers(html, meta, filters) {
   const cleanHtml = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
   const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
@@ -902,22 +922,23 @@ function extractCandidateOffers(html, meta, filters) {
     const text = stripHtml(m[2]).trim();
     if (!text || text.length < 6 || text.length > 140) continue;
     if (LINK_BOILERPLATE.test(text)) continue;
+    if (RELATIVE_DATE_RE.test(text)) continue;
     if (seenUrls.has(url)) continue;
 
-    // Fenetre de contexte ADAPTATIVE : bornee par le lien precedent / suivant
-    // plutot qu'un nombre de caracteres fixe, pour isoler le bloc de CETTE
-    // offre et eviter toute contamination par une offre voisine dans le
-    // meme email (probleme reel detecte en test : un mot-cle d'une offre
-    // adjacente faisait passer ou echouer la mauvaise offre).
+    // Fenetre de contexte ADAPTATIVE, bornee par le lien precedent/suivant
+    // ET par les frontieres de balises (pour ne jamais couper au milieu
+    // d'un attribut HTML).
     const idx = m.index;
     const afterStart = idx + m[0].length;
     const nextAnchorIdx = cleanHtml.indexOf("<a ", afterStart);
-    const windowEnd = nextAnchorIdx === -1 ? Math.min(cleanHtml.length, afterStart + 220) : Math.min(nextAnchorIdx, afterStart + 220);
+    const rawEnd = nextAnchorIdx === -1 ? Math.min(cleanHtml.length, afterStart + 220) : Math.min(nextAnchorIdx, afterStart + 220);
     const prevAnchorEnd = cleanHtml.lastIndexOf("</a>", idx);
-    const windowStart = prevAnchorEnd === -1 ? Math.max(0, idx - 60) : Math.max(prevAnchorEnd, idx - 60);
-    const windowHtml = cleanHtml.slice(windowStart, windowEnd);
+    const rawStart = prevAnchorEnd === -1 ? Math.max(0, idx - 60) : Math.max(prevAnchorEnd, idx - 60);
+    const windowStart = safeSliceStart(cleanHtml, rawStart);
+    const windowEnd = safeSliceEnd(cleanHtml, rawEnd);
+    const windowHtml = cleanHtml.slice(windowStart, Math.max(windowEnd, windowStart));
     const context = stripHtml(windowHtml).slice(0, 260);
-    const combined = `${text} ${context} ${meta.subject}`;
+    const combined = `${text} ${context}`;
 
     if (!offerPassesFilters(text, combined, filters)) continue;
 
@@ -997,6 +1018,7 @@ function GmailInbox({ onApply }) {
       const clauses = [];
       if (senderQuery) clauses.push(`(${senderQuery})`);
       if (cfg.broadSearch !== false) clauses.push(`(${subjectQuery})`);
+      if (cfg.label) clauses.push(`label:"${cfg.label}"`);
       // in:anywhere = inclut aussi Spam et Corbeille (exclus par defaut sinon)
       const q = `(${clauses.join(" OR ")}) newer_than:30d in:anywhere`;
 
@@ -1064,10 +1086,11 @@ function GmailInbox({ onApply }) {
   };
 
   const [broadSearch, setBroadSearch] = useState(cfg.broadSearch !== false);
+  const [labelDraft, setLabelDraft] = useState(cfg.label || "");
 
   const saveSenders = () => {
     const senders = sendersDraft.split("\n").map(s => s.trim()).filter(Boolean);
-    const next = { ...cfg, senders, broadSearch };
+    const next = { ...cfg, senders, broadSearch, label: labelDraft.trim() };
     setCfg(next); setGmailConfig(next); setEditingSenders(false);
   };
 
@@ -1109,6 +1132,11 @@ function GmailInbox({ onApply }) {
               Recherche élargie (au-delà des expéditeurs connus, par mots-clés de sujet)
             </label>
           </div>
+          <div className="form-field" style={{marginTop:10}}>
+            <label>Libellé Gmail à inclure en plus (optionnel)</label>
+            <input type="text" value={labelDraft} onChange={e => setLabelDraft(e.target.value)} placeholder="Offres Stage" />
+          </div>
+          <div className="hint" style={{marginTop:4}}>Tout email portant ce libellé sera inclus, EN PLUS de la recherche élargie — ce n'est pas une restriction, juste un filet de sécurité supplémentaire pour les emails que tu labellises toi-même à la main.</div>
           <div className="form-field" style={{marginTop:10}}>
             <label>Adresses expéditrices à surveiller (une par ligne — optionnel si la recherche élargie est activée)</label>
             <textarea rows={6} value={sendersDraft} onChange={e => setSendersDraft(e.target.value)} style={{fontFamily:"var(--font-mono)", fontSize:12}} />
