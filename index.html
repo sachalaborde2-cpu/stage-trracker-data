@@ -867,96 +867,85 @@ function getEmailFilters() {
 }
 function setEmailFilters(f) { LocalStore.set("settings:emailFilters", f); }
 
-function textMatchesAny(haystack, needles) {
-  const h = haystack.toLowerCase();
-  return needles.some(n => h.includes(n.toLowerCase()));
-}
-function offerPassesFilters(title, contextCombined, filters) {
-  // Les exclusions se testent sur le TITRE seul : une offre voisine dans le
-  // meme email ne doit jamais faire exclure a tort une bonne offre.
-  if (textMatchesAny(title, filters.excludeKeywords)) return false;
-  if (!textMatchesAny(contextCombined, filters.roleKeywords)) return false;
-  if (!textMatchesAny(contextCombined, filters.contractKeywords)) return false;
-  if (!textMatchesAny(contextCombined, filters.locationKeywords)) return false;
-  return true;
+// Convertit le HTML en texte lisible, en gardant les liens sous forme
+// "Texte [URL]" pour que l'IA puisse a la fois lire et referencer les liens.
+function htmlToReadableText(html) {
+  let out = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
+  out = out.replace(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, (full, url, inner) => {
+    const text = stripHtml(inner).trim();
+    if (!text || !url.startsWith("http")) return " ";
+    return ` ${text} [${url}] `;
+  });
+  return stripHtml(out).slice(0, 6000);
 }
 
-// Texte qui n'est JAMAIS un titre de poste : boilerplate de navigation,
-// pied de page, ou libelles de date relative. Test par INCLUSION (pas
-// egalite stricte) pour capter les variantes, en francais et anglais.
-const LINK_BOILERPLATE = /unsubscribe|view all|see more|see all|manage (this )?(alert|preferences)|privacy|help center|download|follow us|view job|apply now|voir tout|se désabonner|préférences|en savoir plus|voir l'offre|postuler|afficher tous|voir les emplois|gérer cette alerte|conditions d'utilisation|toutes les offres|voir plus|créer une alerte|modifier.{0,15}alerte|désinscri/i;
-const RELATIVE_DATE_RE = /^(depuis|il y a|sur les? \d|aujourd'hui|hier|dans les? \d)/i;
+// Extraction par IA : on delegue a Gemini la comprehension du contenu de
+// l'email (bien plus robuste qu'un parsing par regex face a des formats
+// tres variables d'une plateforme a l'autre — LinkedIn, Indeed, WTTJ...).
+async function extractOffersWithAI(rawBody, meta, filters, geminiSettings) {
+  const readable = htmlToReadableText(rawBody);
+  if (readable.length < 40) return [];
 
-// Avance jusqu'a la prochaine balise fermee ('>') pour ne jamais commencer
-// une fenetre de contexte au milieu d'un attribut HTML (bug reel observe :
-// des fragments de style="..." se retrouvaient affiches comme texte).
-function safeSliceStart(html, pos) {
-  if (pos <= 0) return 0;
-  const gt = html.indexOf(">", pos);
-  return gt === -1 ? pos : gt + 1;
-}
-function safeSliceEnd(html, pos) {
-  const lt = html.lastIndexOf("<", pos);
-  return lt === -1 || lt < pos - 400 ? pos : lt;
-}
+  const model = (geminiSettings && geminiSettings.model) || "gemini-2.5-flash";
+  const apiKey = geminiSettings && geminiSettings.apiKey;
+  if (!apiKey) throw new Error("Aucune clé API Gemini configurée.");
 
-// Decoupe un email (potentiellement plusieurs offres) en offres candidates,
-// et ne garde que celles qui matchent les criteres. Approche : chaque lien
-// avec un texte d'ancre substantiel est un candidat "titre de poste" ; on
-// prend une fenetre de texte autour de ce lien dans le HTML brut comme
-// contexte (entreprise/lieu), et on filtre sur titre+contexte combines —
-// JAMAIS sur le sujet de l'email entier (bug reel : un sujet generique
-// contenant par hasard un mot-cle faisait passer TOUS les liens de l'email,
-// y compris les liens de pied de page).
-function extractCandidateOffers(html, meta, filters) {
-  const cleanHtml = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
-  const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-  const results = [];
-  const seenUrls = new Set();
-  let m;
-  while ((m = anchorRe.exec(cleanHtml)) !== null) {
-    const url = m[1];
-    if (!url.startsWith("http")) continue;
-    if (/unsubscribe|preferences|privacy|settings|mailto:|list-manage|\/comm\//i.test(url)) continue;
+  const system = `Tu analyses le contenu d'un email (alerte emploi ou newsletter) pour Sacha Laborde, qui cherche un poste front office en finance de marché.
 
-    const text = stripHtml(m[2]).trim();
-    if (!text || text.length < 6 || text.length > 140) continue;
-    if (LINK_BOILERPLATE.test(text)) continue;
-    if (RELATIVE_DATE_RE.test(text)) continue;
-    if (seenUrls.has(url)) continue;
+Rôles recherchés : ${filters.roleKeywords.join(", ")}.
+Lieux acceptés : ${filters.locationKeywords.join(", ")}.
+Type de contrat accepté : ${filters.contractKeywords.join(", ")}.
+À exclure absolument : ${filters.excludeKeywords.join(", ")}, ainsi que tout métier sans rapport avec la finance de marché front office (RH, compliance, IT support, commerce de détail, restauration, etc.).
 
-    // Fenetre de contexte ADAPTATIVE, bornee par le lien precedent/suivant
-    // ET par les frontieres de balises (pour ne jamais couper au milieu
-    // d'un attribut HTML).
-    const idx = m.index;
-    const afterStart = idx + m[0].length;
-    const nextAnchorIdx = cleanHtml.indexOf("<a ", afterStart);
-    const rawEnd = nextAnchorIdx === -1 ? Math.min(cleanHtml.length, afterStart + 220) : Math.min(nextAnchorIdx, afterStart + 220);
-    const prevAnchorEnd = cleanHtml.lastIndexOf("</a>", idx);
-    const rawStart = prevAnchorEnd === -1 ? Math.max(0, idx - 60) : Math.max(prevAnchorEnd, idx - 60);
-    const windowStart = safeSliceStart(cleanHtml, rawStart);
-    const windowEnd = safeSliceEnd(cleanHtml, rawEnd);
-    const windowHtml = cleanHtml.slice(windowStart, Math.max(windowEnd, windowStart));
-    const context = stripHtml(windowHtml).slice(0, 260);
-    const combined = `${text} ${context}`;
+Le texte ci-dessous est le contenu de l'email, avec chaque lien indiqué entre crochets juste après son texte, ex: "Sales Trading Intern [https://...]".
 
-    if (!offerPassesFilters(text, combined, filters)) continue;
+Identifie UNIQUEMENT les offres d'emploi RÉELLES qui correspondent VRAIMENT aux critères ci-dessus (rôle ET lieu ET type de contrat). Ignore tout le reste : liens de navigation, désabonnement, préférences, "voir toutes les offres", pied de page, offres hors périmètre. En cas de doute sur la pertinence d'une offre, ne la retiens pas.
 
-    seenUrls.add(url);
-    results.push({
-      id: meta.id + "_" + seenUrls.size,
-      title: text,
-      url,
-      snippet: context,
-      company: meta.company,
-      source: meta.company,
-      location: (filters.locationKeywords.find(l => combined.toLowerCase().includes(l.toLowerCase())) || ""),
-      date: meta.date,
-      emailSubject: meta.subject,
-      gmailLink: meta.threadId ? `https://mail.google.com/mail/u/0/#all/${meta.threadId}` : "",
-    });
+Réponds UNIQUEMENT avec un tableau JSON valide (vide si rien ne correspond vraiment), sans texte avant/après, sans balise markdown :
+[{"title":"...","company":"...","location":"...","url":"..."}]`;
+
+  const user = `Contenu de l'email :\n${readable}`;
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: system }] },
+        contents: [{ role: "user", parts: [{ text: user }] }],
+        generationConfig: { responseMimeType: "application/json" },
+      }),
+    }
+  );
+  if (!response.ok) {
+    const errText = await response.text().catch(() => "");
+    throw new Error(`Gemini (${response.status}): ${errText.slice(0, 200)}`);
   }
-  return results;
+  const data = await response.json();
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) return [];
+  let arr;
+  try {
+    arr = JSON.parse(text);
+  } catch (e) {
+    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
+    try { arr = JSON.parse(clean); } catch (e2) { return []; }
+  }
+  if (!Array.isArray(arr)) return [];
+
+  return arr.filter(o => o && o.title && o.url).map((o, i) => ({
+    id: meta.id + "_ai_" + i,
+    title: o.title,
+    url: o.url,
+    company: o.company || meta.company,
+    source: meta.company,
+    location: o.location || "",
+    snippet: "",
+    date: meta.date,
+    emailSubject: meta.subject,
+    gmailLink: meta.threadId ? `https://mail.google.com/mail/u/0/#all/${meta.threadId}` : "",
+  }));
 }
 
 function headerValue(headers, name) {
@@ -1037,8 +1026,10 @@ function GmailInbox({ onApply }) {
       } while (pageToken);
 
       const filters = getEmailFilters();
+      const geminiSettings = LocalStore.get("settings:gemini") || {};
       let allOffers = [];
       let emailsScanned = 0;
+      let aiErrors = 0;
 
       for (const id of ids) {
         const msgRes = await fetch(
@@ -1048,29 +1039,26 @@ function GmailInbox({ onApply }) {
         if (!msgRes.ok) continue;
         const msg = await msgRes.json();
         emailsScanned++;
-        setProgress(`Lecture ${emailsScanned}/${ids.length}...`);
+        setProgress(`Analyse IA ${emailsScanned}/${ids.length}...`);
         const headers = msg.payload && msg.payload.headers;
         const subject = headerValue(headers, "Subject");
         const from = headerValue(headers, "From");
         const date = headerValue(headers, "Date");
         const rawBody = extractBodyText(msg.payload);
-        const isHtml = rawBody.includes("<");
         const meta = { id: msg.id, threadId: msg.threadId, subject, date, company: from.replace(/<.*>/, "").trim() };
 
-        if (isHtml) {
-          const offers = extractCandidateOffers(rawBody, meta, filters);
+        try {
+          const offers = await extractOffersWithAI(rawBody, meta, filters, geminiSettings);
           allOffers = allOffers.concat(offers);
-        } else {
-          // email texte brut : pas de decoupage possible, on filtre l'email entier
-          const combined = `${subject} ${rawBody}`;
-          if (offerPassesFilters(subject, combined, filters)) {
-            allOffers.push({ id: msg.id, title: subject, url: "", snippet: rawBody.slice(0,300), company: meta.company, source: meta.company, location: "", date, emailSubject: subject, gmailLink: meta.threadId ? `https://mail.google.com/mail/u/0/#all/${meta.threadId}` : "" });
-          }
+        } catch (e) {
+          aiErrors++;
+          console.warn("Extraction IA échouée pour un email:", e.message);
+          // on continue avec les emails suivants plutot que de tout arreter
         }
       }
       setEmails(allOffers);
       LocalStore.set("gmail:cache", allOffers);
-      setScanStats({ emails: emailsScanned, offers: allOffers.length });
+      setScanStats({ emails: emailsScanned, offers: allOffers.length, aiErrors });
       setProgress("");
     } catch (e) {
       setError(e.message);
@@ -1165,7 +1153,10 @@ function GmailInbox({ onApply }) {
 
       {error && <div className="error-box">{error}</div>}
       {scanStats && !loading && (
-        <div className="hint" style={{padding:"10px 20px 0"}}>{scanStats.emails} email(s) scanné(s) → {scanStats.offers} offre(s) retenue(s) après filtrage.</div>
+        <div className="hint" style={{padding:"10px 20px 0"}}>
+          {scanStats.emails} email(s) scanné(s) → {scanStats.offers} offre(s) retenue(s) par l'IA.
+          {scanStats.aiErrors > 0 && ` (${scanStats.aiErrors} email(s) n'ont pas pu être analysés — erreur API, ignorés.)`}
+        </div>
       )}
 
       {connected && !loading && visible.length === 0 && !error && (
