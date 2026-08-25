@@ -1,5 +1,52 @@
 [
   {
+    "company": "Macquarie",
+    "jobTitle": "2027 Commodities and Global Markets Summer Internship Program",
+    "location": "Houston",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Commodities & Global Markets",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), derivative pricing models, and hedging solutions for futures, forwards, and options."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing market risk-adjusted performance by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client solution requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Built a derivative pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion)."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and commodity sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Macquarie",
+        "jobTitle": "Commodities and Global Markets Summer Intern",
+        "task1": "commodity risk management",
+        "task2": "tailored client solutions",
+        "task3": "market access strategies",
+        "specificDesk": "Commodities Sales & Trading",
+        "targetProfession": "Global Markets Analyst",
+        "team": "your Commodities and Global Markets team"
+      }
+    },
+    "id": "1787660305337",
+    "dateAdded": "2026-08-25"
+  },
+  {
     "company": "BNP Paribas CIB",
     "jobTitle": "Assistant Sales Equity Derivatives",
     "location": "Paris",
