@@ -227,103 +227,102 @@ const GitHubSync = {
 const CV_TEMPLATE_STAGE = String.raw`\documentclass[10pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[top=0.25in, bottom=0.25in, left=0.4in, right=0.4in]{geometry}
+\usepackage[top=0.5in, bottom=0.5in, left=0.6in, right=0.6in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{mathptmx}
 \pagestyle{empty}
 \hypersetup{colorlinks=true, linkcolor=black, filecolor=black, urlcolor=blue,}
-\setlist[itemize]{leftmargin=0.5cm, itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt}
+\setlist[itemize]{leftmargin=0.5cm, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, partopsep=0pt}
 \begin{document}
 \begin{center}
     {\Large \textbf{SACHA LABORDE}} \\ \vspace{1pt}
     Paris, France | +33 7 54 82 95 95 | \href{mailto:sacha.laborde@etu.univ-paris1.fr}{sacha.laborde@etu.univ-paris1.fr} | \href{https://www.linkedin.com/in/sacha-laborde-034477360}{LinkedIn} \\ \vspace{2pt}
     \textit{__HEADLINE_SENTENCE__}
 \end{center}
-\vspace{0.1cm}
+\vspace{0.22cm}
 \noindent{\large \textbf{EDUCATION}}
-\vspace{0.05cm}\hrule\vspace{0.1cm}
-\noindent \textbf{University of Paris 1 Pantheon-Sorbonne} \hfill \textbf{Paris, France} \\
-\textit{First-Year Master's Degree in Money, Banking, Finance, and Insurance (MBFA)} \hfill \textit{September 2025 -- May 2026}
+\vspace{0.06cm}\hrule\vspace{0.14cm}
+\noindent \textbf{University of Paris 1 Panthéon-Sorbonne} \hfill \textbf{Paris, France} \\
+\textbf{\textit{Master 2, Finance Technology Data (FTD), Apprenticeship}} \hfill \textit{Admitted, September 2027 -- 2028}
 \begin{itemize}
-    \item \textbf{Financial Modeling:} Mastered portfolio optimization using the mean-variance framework and option pricing via the Black-Scholes model.
-    \item \textbf{Quantitative Analysis:} Produced a professional econometrics report utilizing R-Studio and Overleaf for statistical modeling.
-    \item \textbf{Derivatives:} Acquired in-depth knowledge of valuation and hedging strategies for futures, forwards, and options (Calls/Puts).
+    \item Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.
 \end{itemize}
-\vspace{0.05cm}
+\vspace{0.08cm}
+\noindent \textbf{University of Paris 1 Panthéon-Sorbonne} \hfill \textbf{Paris, France} \\
+\textbf{\textit{Master 1, Money, Banking, Finance, and Insurance (MBFA) (common core)}} \hfill \textit{September 2025 -- May 2026} \\
+Ranked \textbf{top 5 out of 120} students (15/20 average).
+\begin{itemize}
+    \item \textbf{Financial Modeling \& Derivatives:} Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.
+\end{itemize}
+\vspace{0.08cm}
 \noindent \textbf{University of Angers} \hfill \textbf{Angers, France} \\
-\textit{Bachelor of Science (BSc) in Finance \& Accounting} \hfill \textit{September 2024 -- May 2025} \\
-Graduated with First Class Honours, ranked 3rd out of 94 students (Top 3\% of the cohort).
-
-\vspace{0.05cm}
+\textbf{\textit{Bachelor of Science (BSc) in Finance \& Accounting, First Class Honours (3rd/94, Top 3\%)}} \hfill \textit{September 2024 -- May 2025}
+\vspace{0.08cm}
 \noindent \textbf{Lycée Joachim Du Bellay} \hfill \textbf{Angers, France} \\
-\textit{Preparatory Classes (ECG)} \hfill \textit{September 2022 -- June 2024} \\
+\textbf{\textit{Preparatory Classes (ECG)}} \hfill \textit{September 2022 -- June 2024} \\
 Two-year intensive program in advanced mathematics and economics preparing for highly selective French Business Schools.
 
-\vspace{0.15cm}
+\vspace{0.2cm}
 \noindent{\large \textbf{PROFESSIONAL EXPERIENCE}}
-\vspace{0.05cm}\hrule\vspace{0.1cm}
+\vspace{0.06cm}\hrule\vspace{0.14cm}
 \noindent \textbf{FactSet} \hfill \textbf{Paris \& London} \\
-\textit{Client Solutions Intern (Pre-sales \& Portfolio Analytics)} \hfill \textit{June 2026 -- December 2026}
+\textbf{\textit{Client Solutions Intern (Pre-sales \& Portfolio Analytics)}} \hfill \textit{June 2026 -- December 2026}
 \begin{itemize}
     \item __BULLET_1__
     \item __BULLET_2__
-\end{itemize}
-\vspace{0.05cm}
-\noindent \textbf{Eddmon (Freelance)} \hfill \textbf{Paris, France} \\
-\textit{Freelance Mathematics Tutor} \hfill \textit{October 2025 -- June 2026}
-\begin{itemize}
-    \item Delivered analytical and methodological coaching to high school and higher education students in solving complex mathematical problems.
-    \item Broke down technical concepts (calculus, linear algebra, probability) and rigorously tracked skill acquisition through regular performance reports.
-\end{itemize}
-\vspace{0.05cm}
-\noindent \textbf{E-commerce Founder (Vinted)} \hfill \textbf{Angers, France} \\
-\textit{Founder} \hfill \textit{August 2022 -- August 2025}
-\begin{itemize}
-    \item Managed an arbitrage and resale business (1,200+ transactions): oversaw logistics, inventory management, and pricing strategy optimization.
-    \item Handled the full accounting cycle and analyzed sales data to ensure optimal inventory turnover and positive cash flow generation.
-\end{itemize}
-\vspace{0.15cm}
-\noindent{\large \textbf{TECHNICAL \& ACADEMIC PROJECTS}}
-\vspace{0.05cm}\hrule\vspace{0.1cm}
-\noindent \textbf{Financial Dashboard: Portfolio Management Application}  \hfill \textbf{Paris, France} \\
-\textit{Personal Project} \hfill \textit{2026}
-\begin{itemize}
     \item __BULLET_3__
-    \item Computed and integrated advanced financial metrics (IRR, Alpha, volatility) alongside detailed modeling of sector and geographic exposures.
 \end{itemize}
-\vspace{0.05cm}
+\vspace{0.08cm}
+\noindent \textbf{Eddmon (Freelance)} \hfill \textbf{Paris, France} \\
+\textbf{\textit{Freelance Mathematics Tutor}} \hfill \textit{October 2025 -- June 2026}
+\begin{itemize}
+    \item Delivered analytical coaching in calculus, linear algebra, and probability to high school and higher education students, tracking skill acquisition through regular performance reports.
+\end{itemize}
+\vspace{0.08cm}
+\noindent \textbf{E-commerce Founder (Vinted)} \hfill \textbf{Angers, France} \\
+\textbf{\textit{Founder}} \hfill \textit{August 2022 -- August 2025}
+\begin{itemize}
+    \item Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover.
+\end{itemize}
+\vspace{0.2cm}
+\noindent{\large \textbf{TECHNICAL \& ACADEMIC PROJECTS}}
+\vspace{0.06cm}\hrule\vspace{0.14cm}
 \noindent \textbf{Quantitative Finance: Option Pricing \& Modeling} | \href{https://github.com/sachalaborde2-cpu/Quantitative-Finance-Pricing-Engine}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
-\textit{Personal Project} \hfill \textit{January 2026 -- March 2026}
+\textit{Personal Project} \hfill \textit{March 2026 -- April 2026}
 \begin{itemize}
     \item __BULLET_4__
-    \item Extracted and processed live market data (S\&P 500) to model the implied volatility surface (Smile / Skew) utilizing a Newton-Raphson optimization algorithm.
-    \item Analyzed sensitivities (Greeks) and evaluated the market risk premium through dynamic comparison between annualized historical volatility and At-The-Money (ATM) implied volatility.
+    \item Modeled the S\&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm.
+    \item Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.
 \end{itemize}
-\vspace{0.05cm}
-\noindent \textbf{Applied Econometrics: Determinants of Market Capitalization} | \href{https://github.com/sachalaborde2-cpu/Econometric-Analysis-Market-Cap}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
-\textit{Academic Project} \hfill \textit{October 2025 -- December 2025}
+\vspace{0.08cm}
+\noindent \textbf{Financial Dashboard: Portfolio Management Application}  \hfill \textbf{Paris, France} \\
+\textit{Personal Project} \hfill \textit{January 2026}
 \begin{itemize}
-    \item Collaborated in a team of 3 during the first semester of M1 MBFA, performing econometric analysis on a mock panel dataset (8,000 observations, 4,000 companies, 2006-2007).
-    \item Implemented fixed-effects models (individual and temporal) with robust standard errors in R, and conducted specification tests (Breusch-Pagan, Hausman).
+    \item __BULLET_5__
 \end{itemize}
-\vspace{0.15cm}
+\vspace{0.08cm}
+\noindent \textbf{Applied Econometrics: Determinants of Market Capitalization} | \href{https://github.com/sachalaborde2-cpu/Econometric-Analysis-Market-Cap}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
+\textit{Academic Project (Team of 3)} \hfill \textit{October 2025 -- December 2025}
+\begin{itemize}
+    \item Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).
+\end{itemize}
+\vspace{0.2cm}
 \noindent{\large \textbf{SKILLS \& INTERESTS}}
-\vspace{0.05cm}\hrule\vspace{0.1cm}
-\begin{itemize}[leftmargin=0.5cm, label={}]
-    \item \textbf{Languages:} French (Native), English (TOEIC 935/990), Spanish (Intermediate)
-    \item \textbf{IT Skills:} Excel (VBA), Python, R-Studio, FactSet
-    \item \textbf{Certifications:} Financial Markets (Yale University), Score IAE-Message (251/400)
-    \item \textbf{Interests:} Personal Investment (Active management of a €20,000 diversified portfolio), Calisthenics
-\end{itemize}
+\vspace{0.06cm}\hrule\vspace{0.14cm}
+\noindent \textbf{Languages:} French (Native), English (TOEIC 935/990), Spanish (Intermediate) \\
+\noindent \textbf{IT Skills:} Excel (VBA), Python, R-Studio, FactSet \\
+\noindent \textbf{Certifications:} Financial Markets (Yale University) \\
+\noindent \textbf{Interests:} Personal Investment (Active management of a €20,000 diversified portfolio), Calisthenics
 \end{document}
 `;
 
 const EDITABLE_BULLETS_STAGE = {
-  BULLET_1: "Train and assist investment professionals (buy-side/sell-side) in optimizing their financial workflows via the FactSet platform.",
-  BULLET_2: "Design analytical projects focusing on market trends and provide Tier 1 financial and technical support to key institutional clients.",
-  BULLET_3: "Engineered an interactive Python-based web application (Streamlit) for the dynamic management and analysis of a personal investment portfolio.",
-  BULLET_4: "Built a pricing engine for vanilla and exotic options (Asian Calls), integrating the Black-Scholes analytical model and Monte Carlo simulations (Geometric Brownian Motion).",
+  BULLET_1: "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6\\% return under strict trading constraints.",
+  BULLET_2: "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+  BULLET_3: "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+  BULLET_4: "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+  BULLET_5: "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
 };
 
 const LM_TEMPLATE_STAGE = String.raw`\documentclass[12pt, a4paper]{article}
@@ -435,9 +434,9 @@ function downloadBinaryFile(filename, arrayBuffer, mime) {
    que celle validée précédemment, transposée en JS.
    ============================================================ */
 const CV_PDF_FALLBACKS = [
-  { top: "0.25in", bottom: "0.25in", left: "0.4in", right: "0.4in", stretch: "1.0" },
-  { top: "0.2in", bottom: "0.2in", left: "0.35in", right: "0.35in", stretch: "0.97" },
-  { top: "0.15in", bottom: "0.15in", left: "0.3in", right: "0.3in", stretch: "0.94" },
+  { top: "0.5in", bottom: "0.5in", left: "0.6in", right: "0.6in", stretch: "1.0" },
+  { top: "0.3in", bottom: "0.3in", left: "0.45in", right: "0.45in", stretch: "0.97" },
+  { top: "0.2in", bottom: "0.2in", left: "0.35in", right: "0.35in", stretch: "0.94" },
   { top: "0.12in", bottom: "0.12in", left: "0.25in", right: "0.25in", stretch: "0.90" },
 ];
 const LM_PDF_FALLBACKS = [
@@ -543,10 +542,10 @@ function buildCvTex(contractType, headlineFill, keywordChanges, programType, pro
   let sentence;
   if (contractType === "stage") {
     sentence = programType === "summer"
-      ? `Currently a Client Solutions Intern at FactSet, seeking a Summer ${fill} internship in ${year}.`
-      : `Currently a Client Solutions Intern at FactSet, seeking a 6-month ${fill} internship starting January ${year}.`;
+      ? `Client Solutions Intern at FactSet, seeking a Summer Front Office internship (${fill}) in ${year}.`
+      : `Client Solutions Intern at FactSet, seeking a 6-month Front Office internship (${fill}) starting January ${year}.`;
   } else {
-    sentence = `Currently a Client Solutions Intern at FactSet, seeking a ${fill} position.`;
+    sentence = `Client Solutions Intern at FactSet, seeking a ${fill} position.`;
   }
   let tex = getMasterCv(contractType).replace("__HEADLINE_SENTENCE__", sentence);
   (keywordChanges || []).forEach(({ old: oldTxt, new: newTxt }) => {
@@ -609,7 +608,7 @@ ${programLine}
 RÈGLES STRICTES :
 1. Ne JAMAIS inventer de faits, dates, chiffres ou expériences.
 2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe (ex: "Sales & Trading"), sans durée ni date.
-3. "keywordChanges": 2 à 4 remplacements. "old" = copie EXACTE d'une bullet fournie ci-dessous. "new" = reformulation de longueur très similaire (+15% max), mots-clés pertinents pour l'offre, sans changer les faits.
+3. "keywordChanges": 3 à 5 remplacements (privilégie 5 si l'offre le permet, pour maximiser la correspondance). "old" = copie EXACTE d'une bullet fournie ci-dessous. "new" = reformulation de longueur très similaire (+15% max), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Priorise les bullets où l'intégration de ces termes reste crédible et factuelle.
 4. "letterFields", valeurs COURTES (groupes nominaux, pas de phrases), attention à la grammaire :
    - company, jobTitle: courts
    - task1, task2, task3: 2-5 mots chacun, groupe nominal en minuscules qui s'insère dans "assist with ___task1___, preparing ___task2___, and monitoring ___task3___" (teste mentalement la phrase). BON: "structured product pricing". MAUVAIS: "Monitor markets" (verbe + majuscule).
@@ -1462,10 +1461,10 @@ function ApplicationDetail({ app }) {
         </div>
       </div>
       <div className="dl-buttons">
-        {cvTex && <PdfDownloadButton tex={cvTex} filename={`CV_${app.company.replace(/\s+/g,"_")}.pdf`} docType="cv" />}
-        {lmTex && <PdfDownloadButton tex={lmTex} filename={`LM_${app.company.replace(/\s+/g,"_")}.pdf`} docType="lm" />}
-        {cvTex && <button className="btn" onClick={() => downloadTextFile(`CV_${app.company.replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>}
-        {lmTex && <button className="btn" onClick={() => downloadTextFile(`LM_${app.company.replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>}
+        {cvTex && <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}.pdf`} docType="cv" />}
+        {lmTex && <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}.pdf`} docType="lm" />}
+        {cvTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>}
+        {lmTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>}
       </div>
     </div>
   );
@@ -1629,10 +1628,10 @@ function NewApplication({ onSave, prefill }) {
             </div>
           </div>
           <div className="dl-buttons">
-            <PdfDownloadButton tex={cvTex} filename={`CV_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="cv" />
-            <PdfDownloadButton tex={lmTex} filename={`LM_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="lm" />
-            <button className="btn" onClick={() => downloadTextFile(`CV_${(company||"draft").replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>
-            <button className="btn" onClick={() => downloadTextFile(`LM_${(company||"draft").replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>
+            <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="cv" />
+            <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="lm" />
+            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>
+            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>
             <button className="btn primary" onClick={handleSave}>Enregistrer dans le tracker</button>
           </div>
         </div>
