@@ -1,5 +1,52 @@
 [
   {
+    "company": "Barclays",
+    "jobTitle": "Capital Markets Summer Internship Programme 2027 London",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Capital Markets Sales & Structuring",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, structured product pricing via Black-Scholes, and risk management strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "new": "Achieved 1st rank out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices, delivering a +6% return, and informing investment decisions under strict trading constraints."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross trading strategy over a 10-year horizon across three geographies using FactSet's internal tools, analyzing risk management performance by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised a broad range of corporate clients on FactSet's cross-asset portfolio analytics, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Built a structured product pricing engine for vanilla and exotic options using the Black-Scholes model and Monte Carlo simulations, supporting new product development."
+        }
+      ],
+      "letterFields": {
+        "company": "Barclays",
+        "jobTitle": "Capital Markets Summer Analyst",
+        "task1": "small research projects",
+        "task2": "new business presentations",
+        "task3": "financial models and strategies",
+        "specificDesk": "Risk Solutions Group",
+        "targetProfession": "Capital Markets Analyst",
+        "team": "your Capital Markets division"
+      }
+    },
+    "id": "1787661809491",
+    "dateAdded": "2026-08-25"
+  },
+  {
     "company": "Macquarie",
     "jobTitle": "2027 Commodities and Global Markets Summer Internship Program",
     "location": "Houston",
