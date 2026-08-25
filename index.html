@@ -189,8 +189,9 @@ const GitHubSync = {
   isConfigured(cfg) {
     return !!(cfg && cfg.token && cfg.owner && cfg.repo);
   },
-  async pull(cfg, raw) {
-    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}`;
+  async pull(cfg, raw, pathOverride) {
+    const path = pathOverride || cfg.path;
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
     const res = await fetch(url, { headers: { Authorization: `Bearer ${cfg.token}`, Accept: "application/vnd.github+json" } });
     if (res.status === 404) return { data: null, sha: null };
     if (!res.ok) throw new Error("GitHub pull: HTTP " + res.status);
@@ -198,11 +199,12 @@ const GitHubSync = {
     const decoded = decodeURIComponent(escape(atob(json.content.replace(/\n/g, ""))));
     return { data: raw ? decoded : JSON.parse(decoded), sha: json.sha };
   },
-  async push(cfg, data, sha, raw) {
-    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}`;
+  async push(cfg, data, sha, raw, pathOverride) {
+    const path = pathOverride || cfg.path;
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
     const payload = raw ? data : JSON.stringify(data, null, 2);
     const content = btoa(unescape(encodeURIComponent(payload)));
-    const body = { message: `Update ${cfg.path} (` + new Date().toISOString() + ")", content };
+    const body = { message: `Update ${path} (` + new Date().toISOString() + ")", content };
     if (sha) body.sha = sha;
     const res = await fetch(url, {
       method: "PUT",
@@ -751,6 +753,94 @@ function statusClass(status) {
   return "";
 }
 
+const CONTACT_STATUS_OPTIONS = [
+  { value: "a_envoyer", label: "À envoyer" }, { value: "envoye", label: "Envoyé" },
+  { value: "repondu", label: "Répondu" }, { value: "call_obtenu", label: "Call obtenu" }, { value: "sans_reponse", label: "Sans réponse" },
+];
+function contactStatusClass(status) {
+  if (status === "call_obtenu") return "st-bid";
+  if (status === "repondu") return "st-flash";
+  if (status === "sans_reponse") return "st-ask";
+  if (status === "envoye") return "st-wire";
+  return "";
+}
+
+const CHANNEL_OPTIONS = [
+  { value: "connection_note", label: "Note de connexion LinkedIn (≤300 car.)", maxChars: 300 },
+  { value: "linkedin_message", label: "Message LinkedIn (déjà connecté)", maxChars: 1200 },
+  { value: "email", label: "Email", maxChars: null },
+];
+
+function getContacts() { return LocalStore.get("contacts:list") || []; }
+function saveContactsLocal(list) { LocalStore.set("contacts:list", list); }
+
+/* ============================================================
+   GÉNÉRATION DE MESSAGE DE PROSPECTION — court, personnalisé,
+   objectif : obtenir un call. Contraintes strictes de longueur
+   selon le canal (300 caractères max pour une note de connexion
+   LinkedIn, c'est une vraie limite technique de LinkedIn).
+   ============================================================ */
+async function generateOutreachMessage(params, geminiSettings, previousDraft, feedback) {
+  const { channel, name, company, role, profileInfo, offerText } = params;
+  const channelDef = CHANNEL_OPTIONS.find(c => c.value === channel) || CHANNEL_OPTIONS[1];
+
+  const channelInstructions = {
+    connection_note: `Note de demande de connexion LinkedIn. LIMITE STRICTE ET ABSOLUE : 300 caractères MAXIMUM, espaces compris (c'est une vraie limite technique de LinkedIn, pas une suggestion). Pas d'objet. Format très condensé : une accroche personnalisée + une phrase sur pourquoi + l'appel à l'action. Réponds avec {"subject":null,"body":"..."}`,
+    linkedin_message: `Message LinkedIn à quelqu'un déjà dans le réseau de Sacha. Vise 400 à 700 caractères — court, direct, pas de blabla. Pas d'objet. Réponds avec {"subject":null,"body":"..."}`,
+    email: `Email professionnel. Objet court et accrocheur (moins de 8 mots), corps du message concis (100-150 mots maximum). Réponds avec {"subject":"...","body":"..."}`,
+  };
+
+  const system = `Tu rédiges un message de prospection pour Sacha Laborde, étudiant M1 Finance (Paris 1 Panthéon-Sorbonne), actuellement stagiaire chez FactSet, qui cherche à échanger avec des professionnels de la finance de marché (sales, trading, structuring) pour obtenir un appel — PAS pour postuler directement, l'objectif est la conversation, pas la candidature.
+
+RÈGLES STRICTES :
+1. Public cible : professionnels de la finance de marché, très peu de temps disponible. Le message doit être COURT, CLAIR, et susciter la curiosité — jamais de blabla, jamais de phrase generique du type "je serais ravi d'échanger avec vous".
+2. Personnalisation RÉELLE et OBLIGATOIRE : le message doit faire référence à un élément concret et spécifique du profil fourni ci-dessous (poste actuel, parcours, desk, réalisation mentionnée...) — jamais un message qui pourrait être envoyé à n'importe qui.
+3. Objectif final explicite mais soft : obtenir un call, pas un CV, pas une candidature formelle.
+4. Le message DOIT contenir, à l'endroit approprié, le texte exact suivant tel quel (Sacha le remplira lui-même) : [PROPOSE ICI 2-3 CRÉNEAUX]
+5. Ne jamais inventer de faits sur Sacha au-delà de : étudiant M1 Finance Sorbonne, stagiaire FactSet (Client Solutions, Pre-sales & Portfolio Analytics), cherche à échanger avec des professionnels front office.
+6. ${channelInstructions[channel]}
+7. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
+
+  let user = `Destinataire : ${name || "(nom non précisé)"}${role ? ", " + role : ""}${company ? " chez " + company : ""}
+Infos du profil (collées par Sacha depuis LinkedIn) :
+${profileInfo || "(aucune info fournie)"}`;
+  if (offerText) user += `\n\nOffre/contexte lié (optionnel) :\n${offerText}`;
+  if (previousDraft && feedback) {
+    user += `\n\nUne première version avait été proposée :\n${JSON.stringify(previousDraft)}\n\nSacha n'en est pas satisfait et précise :\n${feedback}\n\nPropose une nouvelle version qui tient compte de cette remarque, en respectant toujours la limite de longueur.`;
+  }
+
+  const model = (geminiSettings && geminiSettings.model) || "gemini-2.5-flash";
+  const apiKey = geminiSettings && geminiSettings.apiKey;
+  if (!apiKey) throw new Error("Aucune clé API Gemini configurée — va dans l'onglet Réglages.");
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: system }] },
+        contents: [{ role: "user", parts: [{ text: user }] }],
+        generationConfig: { responseMimeType: "application/json" },
+      }),
+    }
+  );
+  if (!response.ok) {
+    const errText = await response.text().catch(() => "");
+    throw new Error(`Erreur API Gemini (${response.status}): ${errText.slice(0, 200)}`);
+  }
+  const data = await response.json();
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
+  let result;
+  try { result = JSON.parse(text); }
+  catch (e) {
+    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
+    result = JSON.parse(clean);
+  }
+  return result;
+}
+
 /* ============================================================
    APP
    ============================================================ */
@@ -1241,6 +1331,243 @@ function GmailInbox({ onApply }) {
   );
 }
 
+/* ============================================================
+   ONGLET PROSPECTION — génère des messages courts et personnalisés
+   (LinkedIn / email) pour décrocher un call, + suivi des contacts.
+   ============================================================ */
+function Prospection() {
+  const [contacts, setContacts] = useState(() => getContacts());
+  const [syncStatus, setSyncStatus] = useState("idle");
+  const [expandedId, setExpandedId] = useState(null);
+  const [view, setView] = useState("list"); // "list" | "new"
+  const shaRef = useRef(null);
+  const contactsPath = "contacts.json";
+
+  useEffect(() => {
+    (async () => {
+      const cfg = GitHubSync.getConfig();
+      if (!GitHubSync.isConfigured(cfg)) { setSyncStatus("off"); return; }
+      setSyncStatus("busy");
+      try {
+        const { data, sha } = await GitHubSync.pull(cfg, false, contactsPath);
+        shaRef.current = sha;
+        if (data) { setContacts(data); saveContactsLocal(data); }
+        setSyncStatus("ok");
+      } catch (e) { setSyncStatus("err"); }
+    })();
+  }, []);
+
+  const persist = async (next) => {
+    setContacts(next);
+    saveContactsLocal(next);
+    const cfg = GitHubSync.getConfig();
+    if (GitHubSync.isConfigured(cfg)) {
+      setSyncStatus("busy");
+      try {
+        const newSha = await GitHubSync.push(cfg, next, shaRef.current, false, contactsPath);
+        shaRef.current = newSha;
+        setSyncStatus("ok");
+      } catch (e) { setSyncStatus("err"); }
+    }
+  };
+
+  const addContact = (entry) => persist([{ ...entry, id: Date.now().toString(), dateAdded: new Date().toISOString().slice(0, 10) }, ...contacts]);
+  const updateStatus = (id, status) => persist(contacts.map(c => c.id === id ? { ...c, status } : c));
+  const deleteContact = (id) => persist(contacts.filter(c => c.id !== id));
+
+  const counts = CONTACT_STATUS_OPTIONS.reduce((acc, s) => { acc[s.value] = 0; return acc; }, {});
+  contacts.forEach(c => { counts[c.status] = (counts[c.status] || 0) + 1; });
+
+  if (view === "new") {
+    return <NewContact onSave={(entry) => { addContact(entry); setView("list"); }} onCancel={() => setView("list")} />;
+  }
+
+  return (
+    <React.Fragment>
+      <div className="stat-grid">
+        <div className="stat-cell"><div className="stat-label">Contacts</div><div className="stat-value">{contacts.length}</div></div>
+        <div className="stat-cell"><div className="stat-label">Envoyés</div><div className="stat-value">{counts.envoye || 0}</div></div>
+        <div className="stat-cell"><div className="stat-label">Répondus</div><div className="stat-value">{counts.repondu || 0}</div></div>
+        <div className="stat-cell"><div className="stat-label">Calls obtenus</div><div className="stat-value bid">{counts.call_obtenu || 0}</div></div>
+        <div className="stat-cell"><div className="stat-label">Sans réponse</div><div className="stat-value">{counts.sans_reponse || 0}</div></div>
+      </div>
+      <div className="panel">
+        <div className="panel-head">
+          Prospection
+          <div style={{display:"flex", alignItems:"center", gap:12}}>
+            <span className={"sync-badge " + (syncStatus === "ok" ? "ok" : syncStatus === "err" ? "err" : syncStatus === "busy" ? "busy" : "")}>
+              {syncStatus === "off" && "Sync désactivée"}
+              {syncStatus === "busy" && "Sync..."}
+              {syncStatus === "ok" && "Synchronisé"}
+              {syncStatus === "err" && "Erreur sync"}
+            </span>
+            <button className="btn primary" onClick={() => setView("new")}>+ Nouveau contact</button>
+          </div>
+        </div>
+        {contacts.length === 0 ? (
+          <div className="empty-state">Aucun contact pour l'instant. Clique "+ Nouveau contact" pour générer ton premier message.</div>
+        ) : (
+          <table>
+            <thead><tr><th>Nom</th><th>Entreprise</th><th>Canal</th><th>Ajouté le</th><th>Statut</th><th></th></tr></thead>
+            <tbody>
+              {contacts.map(c => (
+                <React.Fragment key={c.id}>
+                  <tr onClick={() => setExpandedId(expandedId === c.id ? null : c.id)} style={{cursor:"pointer"}}>
+                    <td className="company-cell">{c.name || "—"}</td>
+                    <td className="role-cell">{c.company || "—"}</td>
+                    <td className="role-cell">{(CHANNEL_OPTIONS.find(ch => ch.value === c.channel) || {}).label || c.channel}</td>
+                    <td className="role-cell mono-num">{c.dateAdded}</td>
+                    <td onClick={e => e.stopPropagation()}>
+                      <select className={"status-select " + contactStatusClass(c.status)} value={c.status} onChange={e => updateStatus(c.id, e.target.value)}>
+                        {CONTACT_STATUS_OPTIONS.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+                      </select>
+                    </td>
+                    <td className="row-actions" onClick={e => e.stopPropagation()}>
+                      {c.linkedinUrl && <button onClick={() => window.open(c.linkedinUrl, "_blank")}>LinkedIn ↗</button>}
+                      <button className="danger" onClick={() => { if (confirm("Supprimer ce contact ?")) deleteContact(c.id); }}>Suppr.</button>
+                    </td>
+                  </tr>
+                  {expandedId === c.id && (
+                    <tr className="detail-row"><td colSpan={6}>
+                      <div className="detail-block">
+                        {c.subject && <h4>Objet</h4>}
+                        {c.subject && <p>{c.subject}</p>}
+                        <h4 style={{marginTop: c.subject ? 14 : 0}}>Message</h4>
+                        <p style={{whiteSpace:"pre-wrap"}}>{c.body}</p>
+                        <div className="dl-buttons">
+                          <button className="btn" onClick={() => { navigator.clipboard.writeText(c.body); }}>Copier le message</button>
+                        </div>
+                      </div>
+                    </td></tr>
+                  )}
+                </React.Fragment>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </React.Fragment>
+  );
+}
+
+function NewContact({ onSave, onCancel }) {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [role, setRole] = useState("");
+  const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [channel, setChannel] = useState("linkedin_message");
+  const [profileInfo, setProfileInfo] = useState("");
+  const [offerText, setOfferText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [draft, setDraft] = useState(null); // { subject, body }
+  const [feedback, setFeedback] = useState("");
+
+  const channelDef = CHANNEL_OPTIONS.find(c => c.value === channel);
+  const canGenerate = profileInfo.trim().length >= 20;
+
+  const runGenerate = async (prevDraft, feedbackText) => {
+    setError(""); setLoading(true);
+    try {
+      const geminiSettings = LocalStore.get("settings:gemini") || {};
+      const result = await generateOutreachMessage({ channel, name, company, role, profileInfo, offerText }, geminiSettings, prevDraft, feedbackText);
+      setDraft(result);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGenerate = () => runGenerate(null, null);
+  const handleRegenerate = () => { if (feedback.trim()) runGenerate(draft, feedback); };
+
+  const handleSave = () => {
+    onSave({ name, company, role, linkedinUrl, channel, profileInfo, offerText, subject: draft.subject, body: draft.body, status: "a_envoyer" });
+  };
+
+  const charCount = draft ? (draft.body || "").length : 0;
+  const overLimit = channelDef.maxChars && charCount > channelDef.maxChars;
+
+  return (
+    <div className="panel">
+      <div className="panel-head">
+        Nouveau message de prospection
+        <button className="btn" onClick={onCancel}>← Retour</button>
+      </div>
+      <div className="form-grid">
+        <div className="form-field">
+          <label>Nom du contact</label>
+          <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="ex. Jean Dupont" />
+        </div>
+        <div className="form-field">
+          <label>Entreprise</label>
+          <input type="text" value={company} onChange={e => setCompany(e.target.value)} placeholder="ex. BNP Paribas CIB" />
+        </div>
+        <div className="form-field">
+          <label>Poste actuel</label>
+          <input type="text" value={role} onChange={e => setRole(e.target.value)} placeholder="ex. VP Equity Derivatives Sales" />
+        </div>
+        <div className="form-field">
+          <label>Lien LinkedIn (référence uniquement)</label>
+          <input type="url" value={linkedinUrl} onChange={e => setLinkedinUrl(e.target.value)} placeholder="https://linkedin.com/in/..." />
+        </div>
+        <div className="form-field full">
+          <label>Canal</label>
+          <select value={channel} onChange={e => setChannel(e.target.value)}>
+            {CHANNEL_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
+          </select>
+        </div>
+        <div className="form-field full">
+          <label>Infos du profil (colle ce que tu vois sur LinkedIn — poste, parcours, ce qui t'accroche)</label>
+          <textarea rows={5} value={profileInfo} onChange={e => setProfileInfo(e.target.value)} placeholder="ex. VP sur le desk Equity Derivatives depuis 3 ans, ancien Jane Street, a posté récemment sur..." />
+        </div>
+        <div className="form-field full">
+          <label>Offre ou contexte lié (optionnel)</label>
+          <textarea rows={3} value={offerText} onChange={e => setOfferText(e.target.value)} placeholder="Colle ici le texte de l'offre si cette prise de contact y est liée..." />
+        </div>
+      </div>
+      {error && <div className="error-box">{error}</div>}
+      <div className="form-footer">
+        <div className="hint">Le message doit rester court et personnalisé, avec un espace réservé pour que tu proposes toi-même des créneaux.</div>
+        <button className="btn primary" disabled={!canGenerate || loading} onClick={handleGenerate}>
+          {loading ? <span><span className="spinner"></span>Rédaction...</span> : "Générer le message"}
+        </button>
+      </div>
+
+      {draft && (
+        <div className="preview-wrap">
+          {channelDef.value === "email" && (
+            <div className="preview-section">
+              <h3>Objet</h3>
+              <input type="text" value={draft.subject || ""} onChange={e => setDraft({...draft, subject: e.target.value})} />
+            </div>
+          )}
+          <div className="preview-section">
+            <h3>Message {channelDef.maxChars && <span style={{color: overLimit ? "var(--ask)" : "var(--amber-faint)", fontWeight: 400, textTransform: "none", letterSpacing: 0}}> — {charCount}/{channelDef.maxChars} caractères{overLimit ? " (dépassement !)" : ""}</span>}</h3>
+            <textarea rows={8} value={draft.body || ""} onChange={e => setDraft({...draft, body: e.target.value})} style={{fontFamily:"var(--font-mono)", fontSize:12.5}} />
+          </div>
+
+          <div style={{marginTop:10, borderTop:"1px solid var(--line-soft)", paddingTop:12}}>
+            <label>Pas satisfait ? Explique pourquoi et régénère</label>
+            <textarea rows={2} value={feedback} onChange={e => setFeedback(e.target.value)} placeholder="ex. Trop formel, accroche plus sur son parcours chez..." style={{marginTop:6}} />
+            <div className="dl-buttons">
+              <button className="btn" disabled={loading || !feedback.trim()} onClick={handleRegenerate}>
+                {loading ? <span><span className="spinner"></span>Régénération...</span> : "Régénérer avec ce commentaire"}
+              </button>
+            </div>
+          </div>
+
+          <div className="dl-buttons">
+            <button className="btn" onClick={() => navigator.clipboard.writeText(draft.body)}>Copier le message</button>
+            <button className="btn primary" onClick={handleSave}>Enregistrer dans le suivi</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [view, setView] = useState("tracker");
   const [applications, setApplications] = useState([]);
@@ -1323,6 +1650,7 @@ function App() {
             <button className={"tab-btn" + (view === "tracker" ? " active" : "")} onClick={() => setView("tracker")}>Tracker</button>
             <button className={"tab-btn" + (view === "emails" ? " active" : "")} onClick={() => setView("emails")}>Emails</button>
             <button className={"tab-btn" + (view === "new" ? " active" : "")} onClick={() => { setPrefill(null); setView("new"); }}>+ Candidature</button>
+            <button className={"tab-btn" + (view === "prospection" ? " active" : "")} onClick={() => setView("prospection")}>Prospection</button>
             <button className={"tab-btn" + (view === "cv" ? " active" : "")} onClick={() => setView("cv")}>Mon CV</button>
             <button className={"tab-btn" + (view === "settings" ? " active" : "")} onClick={() => setView("settings")}>Réglages</button>
           </div>
@@ -1349,6 +1677,7 @@ function App() {
       {view === "new" && (
         <NewApplication prefill={prefill} onSave={(entry) => { addApplication(entry); setPrefill(null); setView("tracker"); }} />
       )}
+      {view === "prospection" && <Prospection />}
       {view === "cv" && <CvEditor />}
       {view === "settings" && <Settings />}
     </div>
