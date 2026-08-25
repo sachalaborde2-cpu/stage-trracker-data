@@ -1,5 +1,52 @@
 [
   {
+    "company": "City Investment Solutions",
+    "jobTitle": "Junior Forex Trader",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Junior Forex Trader Program",
+      "keywordChanges": [
+        {
+          "old": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "new": "Achieved +6% return in a 10-week simulated portfolio management challenge (€1M budget), demonstrating consistent profitability and adherence to strict risk management guidelines."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon, analyzing risk-adjusted performance by region to inform robust forex trading strategies."
+        },
+        {
+          "old": "Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.",
+          "new": "Analyzed Greeks and implied volatility to assess market risk, applying principles relevant to forex risk management guidelines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python for personal investment portfolio management, computing metrics crucial for effective forex trading and risk assessment."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered option pricing and hedging strategies for various instruments, applying principles fundamental to forex risk management."
+        }
+      ],
+      "letterFields": {
+        "company": "City Investment Solutions",
+        "jobTitle": "Junior Forex Trader",
+        "task1": "forex market analysis",
+        "task2": "trading strategies",
+        "task3": "risk management guidelines",
+        "specificDesk": "Forex Trading",
+        "targetProfession": "Forex Trader",
+        "team": "our expert trading team"
+      }
+    },
+    "id": "1787653162567",
+    "dateAdded": "2026-08-25"
+  },
+  {
     "company": "BNP Paribas CIB",
     "jobTitle": "Assistant Sales Equity Derivatives",
     "location": "Paris",
