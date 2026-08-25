@@ -548,8 +548,17 @@ function buildCvTex(contractType, headlineFill, keywordChanges, programType, pro
     sentence = `Client Solutions Intern at FactSet, seeking a ${fill} position.`;
   }
   let tex = getMasterCv(contractType).replace("__HEADLINE_SENTENCE__", sentence);
+  // Seuls les bullets explicitement designes comme modifiables (ct.editableBullets)
+  // peuvent etre substitues — sans cette liste blanche, un "old" propose par
+  // l'IA qui correspond par hasard a un AUTRE passage du CV (ex: un bullet
+  // Education non destine a etre touche) serait quand meme remplace, ce qui
+  // s'est reellement produit (bug confirme le 19/08).
+  const allowedOldTexts = new Set(Object.values(ct.editableBullets || {}));
   (keywordChanges || []).forEach(({ old: oldTxt, new: newTxt }) => {
-    if (oldTxt && newTxt && tex.includes(oldTxt)) tex = tex.replace(oldTxt, escapeLatex(newTxt));
+    if (!oldTxt || !newTxt) return;
+    if (!allowedOldTexts.has(oldTxt)) return; // hors des emplacements autorises : ignore
+    if (!tex.includes(oldTxt)) return;
+    tex = tex.replace(oldTxt, escapeLatex(newTxt));
   });
   return tex;
 }
@@ -608,13 +617,13 @@ ${programLine}
 RÈGLES STRICTES :
 1. Ne JAMAIS inventer de faits, dates, chiffres ou expériences.
 2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe (ex: "Sales & Trading"), sans durée ni date.
-3. "keywordChanges": 3 à 5 remplacements (privilégie 5 si l'offre le permet, pour maximiser la correspondance). "old" = copie EXACTE d'une bullet fournie ci-dessous. "new" = reformulation de longueur très similaire (+15% max), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Priorise les bullets où l'intégration de ces termes reste crédible et factuelle.
+3. "keywordChanges": 3 à 5 remplacements (privilégie 5 si l'offre le permet, pour maximiser la correspondance). "old" = copie EXACTE et COMPLÈTE d'une des bullets fournies ci-dessous (le bullet entier, pas un extrait). "new" = reformulation de longueur TRÈS similaire à l'original (entre -5% et +15% de mots, jamais significativement plus courte — un bullet raccourci laisse du vide en bas de page), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Priorise les bullets où l'intégration de ces termes reste crédible et factuelle.
 4. "letterFields", valeurs COURTES (groupes nominaux, pas de phrases), attention à la grammaire :
    - company, jobTitle: courts
    - task1, task2, task3: 2-5 mots chacun, groupe nominal en minuscules qui s'insère dans "assist with ___task1___, preparing ___task2___, and monitoring ___task3___" (teste mentalement la phrase). BON: "structured product pricing". MAUVAIS: "Monitor markets" (verbe + majuscule).
    - specificDesk: nom du desk (2-5 mots)
    - targetProfession: métier visé (2-4 mots)
-   - team: complète "...within ___." — grammaticalement autonome, adapté au type d'employeur (jamais "Global Markets department" par défaut si ce n'est pas une banque).
+   - team: complète "...within ___." — grammaticalement autonome, adapté au type d'employeur (jamais "Global Markets department" par défaut si ce n'est pas une banque). DOIT commencer par "your" (jamais "our" — Sacha postule depuis l'extérieur, ce n'est pas encore son équipe), ex "your expert trading team", "your Global Markets department".
 5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, targetProfession, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit.
 6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
 {"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","task1":"...","task2":"...","task3":"...","specificDesk":"...","targetProfession":"...","team":"..."}}`;
@@ -1037,6 +1046,14 @@ function GmailInbox({ onApply }) {
         setProgress(`${ids.length} email(s) trouvé(s)...`);
       } while (pageToken);
 
+      // Memoire des emails deja analyses (par ID Gmail, stable dans le
+      // temps) : on ne les renvoie JAMAIS a l'IA une deuxieme fois, on
+      // reutilise directement le resultat deja calcule. Reduit enormement
+      // le volume d'appels Gemini d'un rafraichissement a l'autre.
+      const processedCache = LocalStore.get("gmail:processedCache") || {}; // { [emailId]: offers[] }
+      const newIds = ids.filter(id => !(id in processedCache));
+      const skippedCount = ids.length - newIds.length;
+
       const filters = getEmailFilters();
       const geminiSettings = LocalStore.get("settings:gemini") || {};
       let allOffers = [];
@@ -1044,7 +1061,12 @@ function GmailInbox({ onApply }) {
       let aiErrors = 0;
       let firstErrorMsg = "";
 
-      for (const id of ids) {
+      // Recupere d'abord les offres deja connues pour les emails non-nouveaux
+      ids.forEach(id => {
+        if (id in processedCache) allOffers = allOffers.concat(processedCache[id]);
+      });
+
+      for (const id of newIds) {
         const msgRes = await fetch(
           `https://gmail.googleapis.com/gmail/v1/users/me/messages/${id}?format=full`,
           { headers: { Authorization: `Bearer ${accessToken}` } }
@@ -1052,7 +1074,7 @@ function GmailInbox({ onApply }) {
         if (!msgRes.ok) continue;
         const msg = await msgRes.json();
         emailsScanned++;
-        setProgress(`Analyse IA ${emailsScanned}/${ids.length}${aiErrors ? ` (${aiErrors} échec(s))` : ""}...`);
+        setProgress(`Analyse IA ${emailsScanned}/${newIds.length} (${skippedCount} déjà en cache, ignoré(s))${aiErrors ? ` — ${aiErrors} échec(s)` : ""}...`);
         const headers = msg.payload && msg.payload.headers;
         const subject = headerValue(headers, "Subject");
         const from = headerValue(headers, "From");
@@ -1063,11 +1085,12 @@ function GmailInbox({ onApply }) {
         try {
           const offers = await extractOffersWithAI(rawBody, meta, filters, geminiSettings);
           allOffers = allOffers.concat(offers);
+          processedCache[id] = offers; // memorise, meme si vide (= "analyse, rien trouve")
         } catch (e) {
           aiErrors++;
           if (!firstErrorMsg) firstErrorMsg = e.message;
           console.warn("Extraction IA échouée pour un email:", e.message);
-          // on continue avec les emails suivants plutot que de tout arreter
+          // pas mis en cache : on retentera cet email au prochain rafraichissement
         }
 
         // Pause proactive entre chaque appel Gemini pour rester sous la
@@ -1075,9 +1098,18 @@ function GmailInbox({ onApply }) {
         // heurter systematiquement et devoir tout re-essayer.
         await sleep(1500);
       }
+
+      // Purge du cache : on ne garde que les entrees encore pertinentes
+      // (emails presents dans le dernier resultat de recherche), pour ne
+      // pas laisser grossir indefiniment le stockage local.
+      const idsSet = new Set(ids);
+      const prunedCache = {};
+      Object.keys(processedCache).forEach(id => { if (idsSet.has(id)) prunedCache[id] = processedCache[id]; });
+      LocalStore.set("gmail:processedCache", prunedCache);
+
       setEmails(allOffers);
       LocalStore.set("gmail:cache", allOffers);
-      setScanStats({ emails: emailsScanned, offers: allOffers.length, aiErrors, firstErrorMsg });
+      setScanStats({ emails: emailsScanned, skipped: skippedCount, offers: allOffers.length, aiErrors, firstErrorMsg });
       setProgress("");
     } catch (e) {
       setError(e.message);
@@ -1173,7 +1205,7 @@ function GmailInbox({ onApply }) {
       {error && <div className="error-box">{error}</div>}
       {scanStats && !loading && (
         <div className="hint" style={{padding:"10px 20px 0"}}>
-          {scanStats.emails} email(s) scanné(s) → {scanStats.offers} offre(s) retenue(s) par l'IA.
+          {scanStats.emails} nouvel(aux) email(s) analysé(s) par l'IA{scanStats.skipped > 0 && ` (+ ${scanStats.skipped} déjà en cache, non ré-analysés)`} → {scanStats.offers} offre(s) au total.
           {scanStats.aiErrors > 0 && ` (${scanStats.aiErrors} email(s) n'ont pas pu être analysés.)`}
           {scanStats.firstErrorMsg && <div style={{color:"var(--ask)", marginTop:4}}>Premier message d'erreur rencontré : {scanStats.firstErrorMsg}</div>}
         </div>
