@@ -1,5 +1,52 @@
 [
   {
+    "company": "Kepler Cheuvreux Solutions",
+    "jobTitle": "Structured Product Financial Engineer Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Financial Engineering",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), structured product pricing via Black-Scholes, and hedging strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Back-tested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using internal strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across desks under tight deadlines."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Built a structured product pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations."
+        },
+        {
+          "old": "Modeled the S&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm.",
+          "new": "Modeled the S&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm to detect market opportunities."
+        }
+      ],
+      "letterFields": {
+        "company": "Kepler Cheuvreux Solutions",
+        "jobTitle": "Structured Product Financial Engineer Assistant",
+        "task1": "product valuation and pricing",
+        "task2": "term sheet preparation",
+        "task3": "market opportunity analysis",
+        "specificDesk": "Financial Engineering",
+        "targetProfession": "Structured Products Engineer",
+        "team": "your Financial Engineering team"
+      }
+    },
+    "id": "1787736408879",
+    "dateAdded": "2026-08-26"
+  },
+  {
     "company": "Rothschild & Co Redburn",
     "jobTitle": "2027 UK Rothschild & Co Redburn Execution Services Summer Intern programme - London",
     "location": "Londres",
