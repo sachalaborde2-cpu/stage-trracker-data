@@ -158,6 +158,11 @@ const { useState, useEffect, useCallback, useRef } = React;
 /* ============================================================
    STOCKAGE LOCAL (remplace window.storage — marche hors Claude)
    ============================================================ */
+// Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
+// si la version chargee est bien la derniere (utile en cas de doute sur un
+// cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
+const BUILD_VERSION = "2026-08-26 09:34 UTC";
+
 const LocalStore = {
   get(key) {
     try {
@@ -1596,6 +1601,26 @@ function App() {
             setApplications(data);
             LocalStore.set("tracker:applications", data);
           }
+          // Recupere aussi le/les CV maitre(s) sauvegardes sur GitHub — sans
+          // ca, un appareil qui n'a jamais visite "Mon CV" localement reste
+          // bloque sur le template par defaut integre au code (potentiellement
+          // perime si un autre appareil a enregistre une version plus recente).
+          // Bug reel identifie le 19/08 : deux CV generes le meme jour sur deux
+          // appareils differents, avec deux mises en forme differentes.
+          for (const [type, ct] of Object.entries(CONTRACT_TYPES)) {
+            if (!ct.ready) continue;
+            try {
+              const fileCfg = { ...githubCfg, path: `cv_master_${type}.tex` };
+              const pulled = await GitHubSync.pull(fileCfg, true);
+              if (pulled.data) {
+                LocalStore.set("cvMaster:" + type, pulled.data);
+                LocalStore.set("cvMasterSha:" + type, pulled.sha);
+              }
+            } catch (e) {
+              console.warn(`Sync CV maître (${type}) échouée :`, e.message);
+              // non bloquant : on continue avec la version locale/par defaut
+            }
+          }
           setSyncStatus("ok");
         } catch (e) {
           setSyncStatus("err"); setSyncError(e.message);
@@ -1636,7 +1661,7 @@ function App() {
         <div>
           <div className="brand-eyebrow">Front Office / Standalone</div>
           <div className="brand-title">Pilot — Candidatures</div>
-          <div className="brand-sub">Sacha Laborde · fonctionne hors Claude · données en local {githubReady ? "+ GitHub" : ""}</div>
+          <div className="brand-sub">Sacha Laborde · fonctionne hors Claude · données en local {githubReady ? "+ GitHub" : ""} · build {BUILD_VERSION}</div>
         </div>
         <div style={{display:"flex", alignItems:"center", gap:12}}>
           <span className={"sync-badge " + (syncStatus === "ok" ? "ok" : syncStatus === "err" ? "err" : syncStatus === "busy" ? "busy" : "")}>
