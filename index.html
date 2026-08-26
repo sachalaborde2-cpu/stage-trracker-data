@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-26 09:41 UTC";
+const BUILD_VERSION = "2026-08-26 10:10 UTC";
 
 const LocalStore = {
   get(key) {
@@ -242,20 +242,26 @@ const CV_TEMPLATE_STAGE = String.raw`\documentclass[10pt, a4paper]{article}
 \hypersetup{colorlinks=true, linkcolor=black, filecolor=black, urlcolor=blue,}
 \setlist[itemize]{leftmargin=0.5cm, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, partopsep=0pt}
 \begin{document}
+
+% ================= HEADER =================
 \begin{center}
     {\Large \textbf{SACHA LABORDE}} \\ \vspace{1pt}
     Paris, France | +33 7 54 82 95 95 | \href{mailto:sacha.laborde@etu.univ-paris1.fr}{sacha.laborde@etu.univ-paris1.fr} | \href{https://www.linkedin.com/in/sacha-laborde-034477360}{LinkedIn} \\ \vspace{2pt}
     \textit{__HEADLINE_SENTENCE__}
 \end{center}
+
+% ================= EDUCATION =================
 \vspace{0.22cm}
 \noindent{\large \textbf{EDUCATION}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
+
 \noindent \textbf{University of Paris 1 Panthéon-Sorbonne} \hfill \textbf{Paris, France} \\
 \textbf{\textit{Master 2, Finance Technology Data (FTD), Apprenticeship}} \hfill \textit{Admitted, September 2027 -- 2028}
 \begin{itemize}
     \item Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{University of Paris 1 Panthéon-Sorbonne} \hfill \textbf{Paris, France} \\
 \textbf{\textit{Master 1, Money, Banking, Finance, and Insurance (MBFA) (common core)}} \hfill \textit{September 2025 -- May 2026} \\
 Ranked \textbf{top 5 out of 120} students (15/20 average).
@@ -263,16 +269,20 @@ Ranked \textbf{top 5 out of 120} students (15/20 average).
     \item \textbf{Financial Modeling \& Derivatives:} Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{University of Angers} \hfill \textbf{Angers, France} \\
-\textbf{\textit{Bachelor of Science (BSc) in Finance \& Accounting, First Class Honours (3rd/94, Top 3\%)}} \hfill \textit{September 2024 -- May 2025} \\
+\textbf{\textit{Bachelor of Science (BSc) in Finance \& Accounting, First Class Honours (3rd/94, Top 3\%)}} \hfill \textit{September 2024 -- May 2025}
 \vspace{0.08cm}
+
 \noindent \textbf{Lycée Joachim Du Bellay} \hfill \textbf{Angers, France} \\
 \textbf{\textit{Preparatory Classes (ECG)}} \hfill \textit{September 2022 -- June 2024} \\
 Two-year intensive program in advanced mathematics and economics preparing for highly selective French Business Schools.
 
+% ================= PROFESSIONAL EXPERIENCE =================
 \vspace{0.2cm}
 \noindent{\large \textbf{PROFESSIONAL EXPERIENCE}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
+
 \noindent \textbf{FactSet} \hfill \textbf{Paris \& London} \\
 \textbf{\textit{Client Solutions Intern (Pre-sales \& Portfolio Analytics)}} \hfill \textit{June 2026 -- December 2026}
 \begin{itemize}
@@ -281,20 +291,25 @@ Two-year intensive program in advanced mathematics and economics preparing for h
     \item __BULLET_3__
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{Eddmon (Freelance)} \hfill \textbf{Paris, France} \\
 \textbf{\textit{Freelance Mathematics Tutor}} \hfill \textit{October 2025 -- June 2026}
 \begin{itemize}
     \item Delivered analytical coaching in calculus, linear algebra, and probability to high school and higher education students, tracking skill acquisition through regular performance reports.
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{E-commerce Founder (Vinted)} \hfill \textbf{Angers, France} \\
 \textbf{\textit{Founder}} \hfill \textit{August 2022 -- August 2025}
 \begin{itemize}
     \item Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover.
 \end{itemize}
+
+% ================= TECHNICAL & ACADEMIC PROJECTS =================
 \vspace{0.2cm}
 \noindent{\large \textbf{TECHNICAL \& ACADEMIC PROJECTS}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
+
 \noindent \textbf{Quantitative Finance: Option Pricing \& Modeling} | \href{https://github.com/sachalaborde2-cpu/Quantitative-Finance-Pricing-Engine}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
 \textit{Personal Project} \hfill \textit{March 2026 -- April 2026}
 \begin{itemize}
@@ -303,29 +318,35 @@ Two-year intensive program in advanced mathematics and economics preparing for h
     \item Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{Financial Dashboard: Portfolio Management Application}  \hfill \textbf{Paris, France} \\
 \textit{Personal Project} \hfill \textit{January 2026}
 \begin{itemize}
     \item __BULLET_5__
 \end{itemize}
 \vspace{0.08cm}
+
 \noindent \textbf{Applied Econometrics: Determinants of Market Capitalization} | \href{https://github.com/sachalaborde2-cpu/Econometric-Analysis-Market-Cap}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
 \textit{Academic Project (Team of 3)} \hfill \textit{October 2025 -- December 2025}
 \begin{itemize}
     \item Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).
 \end{itemize}
+
+% ================= SKILLS & INTERESTS =================
 \vspace{0.2cm}
 \noindent{\large \textbf{SKILLS \& INTERESTS}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
+
 \noindent \textbf{Languages:} French (Native), English (TOEIC 935/990), Spanish (Intermediate) \\
 \noindent \textbf{IT Skills:} Excel (VBA), Python, R-Studio, FactSet \\
 \noindent \textbf{Certifications:} Financial Markets (Yale University) \\
 \noindent \textbf{Interests:} Personal Investment (Active management of a €20,000 diversified portfolio), Calisthenics
+
 \end{document}
 `;
 
 const EDITABLE_BULLETS_STAGE = {
-  BULLET_1: "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6\\% return under strict trading constraints.",
+  BULLET_1: "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
   BULLET_2: "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
   BULLET_3: "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
   BULLET_4: "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
