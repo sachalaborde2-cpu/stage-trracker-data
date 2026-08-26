@@ -1,5 +1,52 @@
 [
   {
+    "company": "Kepler Cheuvreux",
+    "jobTitle": "Structured Product Financial Engineer Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Engineering",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), structured product valuation and pricing via Black-Scholes, and hedging strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested various trading strategies and structured products over a 10-year horizon using internal strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Interacted daily with sales teams and institutional counterparties on cross-asset analytics and workflow tools, managing high-volume client requests across desks under tight deadlines."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Developed a pricing engine for various structured products, including vanilla and exotic options, using Black-Scholes and Monte Carlo simulations."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage personal investment solutions, computing advanced financial metrics (IRR, Alpha, volatility) and exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Kepler Cheuvreux",
+        "jobTitle": "Structured Product Financial Engineer Assistant",
+        "task1": "structured product valuation",
+        "task2": "deal booking and Termsheet preparation",
+        "task3": "market opportunity analysis",
+        "specificDesk": "Cross-Asset Structured Products",
+        "targetProfession": "Front Office Structuring",
+        "team": "your Financial Engineering team"
+      }
+    },
+    "id": "1787758230801",
+    "dateAdded": "2026-08-26"
+  },
+  {
     "company": "Rothschild & Co Redburn",
     "jobTitle": "2027 UK Rothschild & Co Redburn Execution Services Summer Intern programme - London",
     "location": "Londres",
