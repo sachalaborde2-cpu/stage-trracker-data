@@ -1,52 +1,5 @@
 [
   {
-    "company": "Kepler Cheuvreux",
-    "jobTitle": "Structured Product Financial Engineer Assistant",
-    "location": "Paris",
-    "jobUrl": "",
-    "contractType": "stage",
-    "programType": "p2",
-    "programYear": "2027",
-    "status": "a_preparer",
-    "adaptation": {
-      "headlineFill": "Structured Products Financial Engineering",
-      "keywordChanges": [
-        {
-          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
-          "new": "Back-tested strategies over a 10-year horizon across three geographies using internal strategy-testing tools, analyzing risk-adjusted performance by region."
-        },
-        {
-          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
-          "new": "Developed a robust pricing engine for structured products including vanilla and exotic options using Black-Scholes and Monte Carlo simulations."
-        },
-        {
-          "old": "Modeled the S&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm.",
-          "new": "Modeled implied volatility surfaces (Smile/Skew) from live market data using optimization algorithms to detect market opportunities."
-        },
-        {
-          "old": "Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.",
-          "new": "Analyzed Greeks and compared historical versus At-The-Money (ATM) implied volatility to assess market opportunities and risk."
-        },
-        {
-          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
-          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing daily client requests across global desks under tight deadlines."
-        }
-      ],
-      "letterFields": {
-        "company": "Kepler Cheuvreux",
-        "jobTitle": "Structured Product Financial Engineer Assistant",
-        "task1": "product valuation and pricing",
-        "task2": "market opportunity analysis",
-        "task3": "structured product back-testing",
-        "specificDesk": "Cross-Asset Financial Engineering",
-        "targetProfession": "structured product engineering",
-        "team": "your Cross-Asset Financial Engineering team"
-      }
-    },
-    "id": "1787756957441",
-    "dateAdded": "2026-08-26"
-  },
-  {
     "company": "Rothschild & Co Redburn",
     "jobTitle": "2027 UK Rothschild & Co Redburn Execution Services Summer Intern programme - London",
     "location": "Londres",
