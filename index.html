@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-26 10:10 UTC";
+const BUILD_VERSION = "2026-08-26 13:56 UTC";
 
 const LocalStore = {
   get(key) {
@@ -462,10 +462,18 @@ function downloadBinaryFile(filename, arrayBuffer, mime) {
    que celle validée précédemment, transposée en JS.
    ============================================================ */
 const CV_PDF_FALLBACKS = [
-  { top: "0.5in", bottom: "0.5in", left: "0.6in", right: "0.6in", stretch: "1.0" },
-  { top: "0.3in", bottom: "0.3in", left: "0.45in", right: "0.45in", stretch: "0.97" },
-  { top: "0.2in", bottom: "0.2in", left: "0.35in", right: "0.35in", stretch: "0.94" },
-  { top: "0.12in", bottom: "0.12in", left: "0.25in", right: "0.25in", stretch: "0.90" },
+  // Niveaux 0-2 : marges de Sacha (0.5in/0.6in) JAMAIS touchees — seul
+  // l'espacement interne (interligne + espace entre puces) se resserre.
+  // C'est la cause reelle du souci observe le 26/08 : un contenu legerement
+  // plus long (mots-cles adaptes) faisait sauter direct sur des marges
+  // reduites, cassant la coherence visuelle entre candidatures.
+  { top: "0.5in", bottom: "0.5in", left: "0.6in", right: "0.6in", stretch: "1.0",  itemsep: "1.5pt", topsep: "1.5pt" },
+  { top: "0.5in", bottom: "0.5in", left: "0.6in", right: "0.6in", stretch: "0.96", itemsep: "0.8pt", topsep: "0.8pt" },
+  { top: "0.5in", bottom: "0.5in", left: "0.6in", right: "0.6in", stretch: "0.92", itemsep: "0pt",   topsep: "0pt"   },
+  // Niveaux 3-4 : dernier recours seulement, si resserrer l'espacement ne
+  // suffit vraiment pas — la, les marges bougent.
+  { top: "0.35in", bottom: "0.35in", left: "0.5in", right: "0.5in", stretch: "0.94", itemsep: "0pt", topsep: "0pt" },
+  { top: "0.2in", bottom: "0.2in", left: "0.35in", right: "0.35in", stretch: "0.90", itemsep: "0pt", topsep: "0pt" },
 ];
 const LM_PDF_FALLBACKS = [
   { top: "1in", bottom: "1in", left: "1in", right: "1in", stretch: "1.1" },
@@ -483,6 +491,15 @@ function applyPdfGeometry(tex, docType, level) {
       out = out.replace(/\\renewcommand\{\\baselinestretch\}\{[^}]*\}/, `\\renewcommand{\\baselinestretch}{${fb.stretch}}`);
     } else {
       out = out.replace("\\pagestyle{empty}", `\\renewcommand{\\baselinestretch}{${fb.stretch}}\n\\pagestyle{empty}`);
+    }
+    // Resserre l'espacement des puces AVANT de toucher aux marges (voir
+    // les niveaux 0-2 de CV_PDF_FALLBACKS) — c'est ce qui permet d'absorber
+    // un leger depassement sans jamais changer les marges de Sacha.
+    if (fb.itemsep !== undefined) {
+      out = out.replace(
+        /\\setlist\[itemize\]\{[^}]*\}/,
+        `\\setlist[itemize]{leftmargin=0.5cm, itemsep=${fb.itemsep}, parsep=0pt, topsep=${fb.topsep}, partopsep=0pt}`
+      );
     }
   } else {
     out = out.replace(/\\setstretch\{[^}]*\}/, `\\setstretch{${fb.stretch}}`);
