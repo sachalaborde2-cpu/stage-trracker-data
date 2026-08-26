@@ -1,5 +1,52 @@
 [
   {
+    "company": "Rothschild & Co Redburn",
+    "jobTitle": "2027 UK Rothschild & Co Redburn Execution Services Summer Intern programme - London",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Sales & Execution",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional investors on FactSet's cross-asset portfolio analytics, efficiently managing a high volume of daily client requests across desks under tight deadlines to deliver premium client service."
+        },
+        {
+          "old": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "new": "Achieved 1st rank out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's European offices (€1M budget), delivering a +6% return under strict market trading constraints with strong analytical acumen."
+        },
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program interfacing financial markets and data science (Python, R, financial econometrics), with FRM Level 1 eligibility and Bloomberg Terminal access, fostering strong technical skills."
+        },
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Developed a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations, demonstrating strong analytical and technical skills."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a quantitative strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using internal strategy-testing tools, analyzing risk-adjusted performance for equity markets."
+        }
+      ],
+      "letterFields": {
+        "company": "Rothschild & Co Redburn",
+        "jobTitle": "Execution Services Summer Intern",
+        "task1": "market insight provision",
+        "task2": "equity product promotion",
+        "task3": "client transaction execution",
+        "specificDesk": "Equity Execution Services",
+        "targetProfession": "Equity Sales & Trading professional",
+        "team": "your Equity Sales & Execution team"
+      }
+    },
+    "id": "1787733810996",
+    "dateAdded": "2026-08-26"
+  },
+  {
     "company": "Barclays",
     "jobTitle": "Capital Markets Summer Internship Programme 2027 London",
     "location": "Londres",
