@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-26 13:56 UTC";
+const BUILD_VERSION = "2026-08-26 15:14 UTC";
 
 const LocalStore = {
   get(key) {
@@ -239,6 +239,7 @@ const CV_TEMPLATE_STAGE = String.raw`\documentclass[10pt, a4paper]{article}
 \usepackage{hyperref}
 \usepackage{mathptmx}
 \pagestyle{empty}
+\flushbottom
 \hypersetup{colorlinks=true, linkcolor=black, filecolor=black, urlcolor=blue,}
 \setlist[itemize]{leftmargin=0.5cm, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, partopsep=0pt}
 \begin{document}
@@ -251,7 +252,7 @@ const CV_TEMPLATE_STAGE = String.raw`\documentclass[10pt, a4paper]{article}
 \end{center}
 
 % ================= EDUCATION =================
-\vspace{0.22cm}
+\vspace{0.22cm plus 1fil}
 \noindent{\large \textbf{EDUCATION}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
@@ -279,7 +280,7 @@ Ranked \textbf{top 5 out of 120} students (15/20 average).
 Two-year intensive program in advanced mathematics and economics preparing for highly selective French Business Schools.
 
 % ================= PROFESSIONAL EXPERIENCE =================
-\vspace{0.2cm}
+\vspace{0.2cm plus 1fil}
 \noindent{\large \textbf{PROFESSIONAL EXPERIENCE}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
@@ -306,7 +307,7 @@ Two-year intensive program in advanced mathematics and economics preparing for h
 \end{itemize}
 
 % ================= TECHNICAL & ACADEMIC PROJECTS =================
-\vspace{0.2cm}
+\vspace{0.2cm plus 1fil}
 \noindent{\large \textbf{TECHNICAL \& ACADEMIC PROJECTS}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
@@ -333,7 +334,7 @@ Two-year intensive program in advanced mathematics and economics preparing for h
 \end{itemize}
 
 % ================= SKILLS & INTERESTS =================
-\vspace{0.2cm}
+\vspace{0.2cm plus 1fil}
 \noindent{\large \textbf{SKILLS \& INTERESTS}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
