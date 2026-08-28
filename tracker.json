@@ -1,5 +1,52 @@
 [
   {
+    "company": "Société Générale",
+    "jobTitle": "Ingénieur Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Structured Products Engineering",
+      "keywordChanges": [
+        {
+          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+          "new": "Built a structured product pricing engine for vanilla and exotic options (Asian Calls) using Black-Scholes and Monte Carlo simulations (Geometric Brownian Motion)."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered cross-asset portfolio optimization (mean-variance framework), derivative pricing via Black-Scholes, and effective hedging strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Performed backtesting of investment strategies, including a Golden Cross over a 10-year horizon across three geographies, using strategy-testing tools to analyze risk-adjusted performance for structured products."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed Python scripts via an interactive Streamlit web application to dynamically manage investment portfolios, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis for innovative structures."
+        },
+        {
+          "old": "Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.",
+          "new": "Analyzed derivative Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium and structured product risk profiles."
+        }
+      ],
+      "letterFields": {
+        "company": "Société Générale",
+        "jobTitle": "Structured Products Engineer",
+        "task1": "innovative structure design",
+        "task2": "cross-asset product quotations",
+        "task3": "product risk profile analysis",
+        "specificDesk": "Global Markets Engineering Desk",
+        "targetProfession": "Structured Products Structurer",
+        "team": "your expert Global Markets Engineering team"
+      }
+    },
+    "id": "1787927499344",
+    "dateAdded": "2026-08-28"
+  },
+  {
     "company": "AYDO",
     "jobTitle": "Assistant(e) Sales Produits Structurés",
     "location": "Paris",
