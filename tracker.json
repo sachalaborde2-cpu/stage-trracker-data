@@ -1,52 +1,5 @@
 [
   {
-    "company": "EY",
-    "jobTitle": "Intern - Risk Consulting - Quant & Analytics",
-    "location": "Genève",
-    "jobUrl": "",
-    "contractType": "stage",
-    "programType": "p2",
-    "programYear": "2027",
-    "status": "a_preparer",
-    "adaptation": {
-      "headlineFill": "Quantitative Risk Consulting",
-      "keywordChanges": [
-        {
-          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
-          "new": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, building strong quantitative knowledge and GARP FRM Level 1 eligibility."
-        },
-        {
-          "old": "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
-          "new": "Developed quantitative models for the valuation of complex derivatives, including vanilla and exotic options, utilizing Black-Scholes and Monte Carlo simulations."
-        },
-        {
-          "old": "Modeled the S&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm.",
-          "new": "Developed quantitative models for the S&P 500 implied volatility surface (Smile/Skew) from live market data using advanced quantitative techniques."
-        },
-        {
-          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
-          "new": "Engineered a Python web application for dynamic personal investment portfolio management, computing advanced financial metrics and conducting data analysis for risk management problems."
-        },
-        {
-          "old": "Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).",
-          "new": "Performed fixed-effects econometric analysis in R on panel datasets, applying robust standard errors and specification tests for quantitative data analysis in risk management."
-        }
-      ],
-      "letterFields": {
-        "company": "EY",
-        "jobTitle": "Quantitative Advisory Services Intern",
-        "task1": "quantitative model development",
-        "task2": "complex derivative valuations",
-        "task3": "financial risk assessments",
-        "specificDesk": "Quantitative Advisory Services",
-        "targetProfession": "Quantitative Risk Analyst",
-        "team": "your Quantitative Advisory Services team"
-      }
-    },
-    "id": "1787909167876",
-    "dateAdded": "2026-08-28"
-  },
-  {
     "company": "AYDO",
     "jobTitle": "Assistant(e) Sales Produits Structurés",
     "location": "Paris",
