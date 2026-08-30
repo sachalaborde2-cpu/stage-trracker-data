@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-26 15:14 UTC";
+const BUILD_VERSION = "2026-08-28 14:27 UTC";
 
 const LocalStore = {
   get(key) {
@@ -311,12 +311,12 @@ Two-year intensive program in advanced mathematics and economics preparing for h
 \noindent{\large \textbf{TECHNICAL \& ACADEMIC PROJECTS}}
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
-\noindent \textbf{Quantitative Finance: Option Pricing \& Modeling} | \href{https://github.com/sachalaborde2-cpu/Quantitative-Finance-Pricing-Engine}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
+\noindent \textbf{Quantitative Finance: Equity Options Pricer \& Market-Making Simulator} | \href{https://github.com/sachalaborde2-cpu/Quantitative_Trading_Desk_Simulator}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
 \textit{Personal Project} \hfill \textit{March 2026 -- April 2026}
 \begin{itemize}
     \item __BULLET_4__
-    \item Modeled the S\&P 500 implied volatility surface (Smile/Skew) from live market data via a Newton-Raphson optimization algorithm.
-    \item Analyzed Greeks and compared historical vs. At-The-Money (ATM) implied volatility to assess the market risk premium.
+    \item Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.
+    \item Built a market data pipeline (pandas): Yahoo Finance ingestion, liquidity filtering, and pytest-based validation.
 \end{itemize}
 \vspace{0.08cm}
 
@@ -350,7 +350,7 @@ const EDITABLE_BULLETS_STAGE = {
   BULLET_1: "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
   BULLET_2: "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
   BULLET_3: "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
-  BULLET_4: "Built a pricing engine for vanilla and exotic options (Asian Calls) using the Black-Scholes model and Monte Carlo simulations (Geometric Brownian Motion).",
+  BULLET_4: "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
   BULLET_5: "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
 };
 
