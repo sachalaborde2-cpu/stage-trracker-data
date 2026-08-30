@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-28 14:27 UTC";
+const BUILD_VERSION = "2026-08-30 12:07 UTC";
 
 const LocalStore = {
   get(key) {
@@ -314,7 +314,7 @@ Two-year intensive program in advanced mathematics and economics preparing for h
 \noindent \textbf{Quantitative Finance: Equity Options Pricer \& Market-Making Simulator} | \href{https://github.com/sachalaborde2-cpu/Quantitative_Trading_Desk_Simulator}{\textit{GitHub}} \hfill \textbf{Paris, France} \\
 \textit{Personal Project} \hfill \textit{March 2026 -- April 2026}
 \begin{itemize}
-    \item __BULLET_4__
+    \item Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.
     \item Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.
     \item Built a market data pipeline (pandas): Yahoo Finance ingestion, liquidity filtering, and pytest-based validation.
 \end{itemize}
@@ -350,7 +350,6 @@ const EDITABLE_BULLETS_STAGE = {
   BULLET_1: "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
   BULLET_2: "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
   BULLET_3: "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
-  BULLET_4: "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
   BULLET_5: "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
 };
 
@@ -386,13 +385,13 @@ Dear Sir or Madam,
 __PARA1__
 
 \noindent
-Following my entrepreneurial background and my current role in Client Solutions (Pre-sales \& Portfolio Analytics) at FactSet, I would now like to continue my career in a trading room environment. I am strongly motivated by the opportunity to assist with __TASK1__, preparing __TASK2__, and monitoring __TASK3__. I also value the importance of rigorous quantitative analysis and dynamic client support, which I know are essential to help the team improve its commercial activity and execution speed.
+Following my entrepreneurial background and my current role in Client Solutions (Pre-sales \& Portfolio Analytics) at FactSet, I would now like to continue my career in __CAREERENVIRONMENT__. I am strongly motivated by the opportunity to assist with __TASK1__, preparing __TASK2__, and monitoring __TASK3__. I also value the importance of rigorous quantitative analysis and dynamic client support, which I know are essential to help the team improve its commercial activity and execution speed.
 
 \noindent
-While this knowledge of front-office processes is only one of the prerequisites for joining __COMPANY__, I have also developed strong technical skills during my academic and personal projects. My solid command of Python and VBA, alongside my hands-on experience with the FactSet platform, would allow me to support the update of internal pricing tools and reporting templates used by your desk. Furthermore, my projects building an option pricing engine (Black-Scholes, Monte Carlo) and my studies in econometrics have helped me deeply understand the dynamics of financial markets, and I have significantly improved my English through an international professional environment.
+While this knowledge of __PROCESSTYPE__ processes is only one of the prerequisites for joining __COMPANY__, I have also developed strong technical skills during my academic and personal projects. My solid command of Python and VBA, alongside my hands-on experience with the FactSet platform, would allow me to support the update of internal pricing tools and reporting templates used by your desk. Furthermore, my projects building an option pricing engine (Black-Scholes, Monte Carlo) and my studies in econometrics have helped me deeply understand the dynamics of financial markets, and I have significantly improved my English through an international professional environment.
 
 \noindent
-Although I have not yet worked directly with the specific __SPECIFICDESK__ perimeter, I am confident in my ability to learn quickly and contribute with energy and reliability throughout this assignment. I would like to make __TARGETPROFESSION__ my profession, and this position perfectly aligns with the continuity of my training. Thank you for your attention, and I look forward to meeting you for an interview.
+Although I have not yet worked directly with the specific __SPECIFICDESK__ perimeter, I am confident in my ability to learn quickly and contribute with energy and reliability throughout this assignment. __CLOSINGAMBITION__ Thank you for your attention, and I look forward to meeting you for an interview.
 \vspace{1.5em}
 
 \noindent
@@ -437,6 +436,20 @@ function escapeLatex(str) {
 function articleFor(word) {
   if (!word) return "a";
   return /^[aeiouAEIOU]/.test(word.trim()) ? "an" : "a";
+}
+// Abrege un intitule de poste en initiales (ex: "Derivatives Back Office
+// Analyst Intern" -> "DBOAI"), pour distinguer deux candidatures a la meme
+// entreprise dans le nom de fichier. Ignore les mots de liaison courants.
+function jobTitleAbbrev(jobTitle) {
+  if (!jobTitle) return "";
+  const stopWords = new Set(["a", "an", "the", "of", "and", "for", "in", "at", "to", "&"]);
+  const initials = jobTitle
+    .split(/[\s\/\-]+/)
+    .filter(Boolean)
+    .filter(w => !stopWords.has(w.toLowerCase()))
+    .map(w => w[0].toUpperCase())
+    .join("");
+  return initials.slice(0, 6);
 }
 function downloadTextFile(filename, content) {
   const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
@@ -588,8 +601,8 @@ function buildCvTex(contractType, headlineFill, keywordChanges, programType, pro
   let sentence;
   if (contractType === "stage") {
     sentence = programType === "summer"
-      ? `Client Solutions Intern at FactSet, seeking a Summer Front Office internship (${fill}) in ${year}.`
-      : `Client Solutions Intern at FactSet, seeking a 6-month Front Office internship (${fill}) starting January ${year}.`;
+      ? `Client Solutions Intern at FactSet, seeking a Summer ${fill} internship in ${year}.`
+      : `Client Solutions Intern at FactSet, seeking a 6-month ${fill} internship starting January ${year}.`;
   } else {
     sentence = `Client Solutions Intern at FactSet, seeking a ${fill} position.`;
   }
@@ -634,7 +647,9 @@ function buildLmTex(contractType, fields, programType, programYear) {
     .split("__TASK2__").join(escapeLatex(f.task2) || "[Task 2]")
     .split("__TASK3__").join(escapeLatex(f.task3) || "[Task 3]")
     .split("__SPECIFICDESK__").join(escapeLatex(f.specificDesk) || "[Specific Desk]")
-    .split("__TARGETPROFESSION__").join(escapeLatex(f.targetProfession) || "[Target Profession]")
+    .split("__CAREERENVIRONMENT__").join(escapeLatex(f.careerEnvironment) || "a trading room environment")
+    .split("__PROCESSTYPE__").join(escapeLatex(f.processType) || "front-office")
+    .split("__CLOSINGAMBITION__").join(escapeLatex(f.closingAmbition) || "[Closing Ambition]")
     .split("__TEAM__").join(team);
 }
 
@@ -656,23 +671,28 @@ async function generateAdaptation(offerText, company, jobTitle, location, contra
         : `Sacha postule à son DEUXIÈME stage de césure (P2), 6 mois, à partir de janvier ${year}.`)
     : `Sacha postule à un poste de type ${ct.label}.`;
 
-  const system = `Tu adaptes une candidature de Sacha Laborde (étudiant M1 Finance, Paris 1 Panthéon-Sorbonne, cherche un poste front office Sales/Trading/Structuring à Paris, Londres, ou aux USA).
+  const system = `Tu adaptes une candidature de Sacha Laborde (étudiant M1 Finance, Paris 1 Panthéon-Sorbonne). Son objectif de carrière final est un poste front office (Sales/Trading/Structuring) à Paris, Londres, ou aux USA — mais il postule aussi à des postes middle/back office (Operations, Risk, Compliance...) comme tremplin vers cet objectif, donc CHAQUE candidature doit être adaptée au type de poste réellement visé par CETTE offre, jamais supposer que c'est du front office par défaut.
 
 ${programLine}
 
 RÈGLES STRICTES :
 1. Ne JAMAIS inventer de faits, dates, chiffres ou expériences.
-2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe (ex: "Sales & Trading"), sans durée ni date.
-3. "keywordChanges": 3 à 5 remplacements (privilégie 5 si l'offre le permet, pour maximiser la correspondance). "old" = copie EXACTE et COMPLÈTE d'une des bullets fournies ci-dessous (le bullet entier, pas un extrait). "new" = reformulation de longueur TRÈS similaire à l'original (entre -5% et +15% de mots, jamais significativement plus courte — un bullet raccourci laisse du vide en bas de page), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Priorise les bullets où l'intégration de ces termes reste crédible et factuelle.
+2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe, sans durée ni date. Doit se lire naturellement dans la phrase "seeking a 6-month ___ internship" — donc le nom du désk/métier/fonction visé tel qu'un anglophone l'écrirait, adapté à CE type de poste précis (front office comme "Sales \& Trading" ou "Equity Derivatives Structuring", MAIS AUSSI middle/back office comme "Derivatives Back Office", "Operations", "Risk Management", "Compliance" — ne jamais supposer que c'est du front office par défaut, adapte-toi strictement à l'offre fournie).
+3. "keywordChanges" — OBJECTIF : maximiser la correspondance de mots-clés ATS avec l'offre, sur TOUS les bullets modifiables fournis ci-dessous (il y en a 4). Pour CHACUN, cherche activement si un terme exact de l'offre peut remplacer un terme générique équivalent du bullet — si oui, fais-le systématiquement, même si le lien est un peu indirect (tant que ça reste factuellement vrai). Ne saute un bullet que si vraiment aucun terme de l'offre ne s'y prête. "old" = copie EXACTE et COMPLÈTE d'une des bullets fournies ci-dessous (le bullet entier, pas un extrait). "new" = reformulation de longueur TRÈS similaire à l'original (entre -5% et +15% de mots, jamais significativement plus courte — un bullet raccourci laisse du vide en bas de page), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Le naturel et la cohérence factuelle restent prioritaires sur la densité : n'insère jamais un mot-clé qui rend la phrase absurde ou fausse.
 4. "letterFields", valeurs COURTES (groupes nominaux, pas de phrases), attention à la grammaire :
    - company, jobTitle: courts
-   - task1, task2, task3: 2-5 mots chacun, groupe nominal en minuscules qui s'insère dans "assist with ___task1___, preparing ___task2___, and monitoring ___task3___" (teste mentalement la phrase). BON: "structured product pricing". MAUVAIS: "Monitor markets" (verbe + majuscule).
+   - task1, task2, task3: 2-5 mots chacun, groupe nominal en minuscules qui s'insère dans "assist with ___task1___, preparing ___task2___, and monitoring ___task3___" (teste mentalement la phrase). ÉVITE d'empiler plus de 2 noms à la suite sans article/préposition — un anglophone ne dit jamais "production quality controls implementation" (4 noms empilés, illisible), il dirait "quality control processes" ou "production quality standards". BON: "structured product pricing", "quality control processes". MAUVAIS: "Monitor markets" (verbe + majuscule), "production quality controls implementation" (empilement de noms).
    - specificDesk: nom du desk (2-5 mots)
-   - targetProfession: métier visé (2-4 mots)
+   - careerEnvironment: complète "I would now like to continue my career in ___." — groupe nominal avec article, adapté au type de poste. SI front office : "a trading room environment". SI back/middle office : décris l'environnement réel visé, ex "a derivatives operations environment", "a middle-office risk management environment", "a compliance-focused environment".
+   - processType: complète "this knowledge of ___ processes" — adjectif court (1-3 mots), cohérent avec careerEnvironment ci-dessus. SI front office : "front-office". SI back/middle office : ex "back-office operational", "middle-office risk", "derivatives operations".
+   - closingAmbition: 1 à 2 phrases COMPLÈTES qui concluent la lettre en reliant cette offre à l'objectif de carrière final de Sacha (Sales, Trading, ou Structuration — c'est son ambition réelle, quel que soit le poste visé par CETTE candidature précise). Deux cas :
+     * SI cette offre est ELLE-MÊME un poste front office (Sales, Trading, Structuring...) : phrase directe, ex "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training."
+     * SI cette offre est un poste back/middle office (Operations, Risk, Compliance, Back Office, IT...) : ne dis JAMAIS que Sacha veut faire de CE métier sa profession (ce serait faux) — présente au contraire ce stage comme un TREMPLIN vers son objectif front office, ex "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Derivatives Back Office internship would give me the operational rigor and market understanding essential to reach that goal."
+     Garde le même registre et la même longueur que l'exemple front office (2 phrases maximum, jamais plus long). IMPORTANT : careerEnvironment, processType et closingAmbition doivent tous les trois raconter la MÊME histoire cohérente (soit front office partout, soit back/middle office + tremplin partout) — jamais un mélange incohérent entre eux.
    - team: complète "...within ___." — grammaticalement autonome, adapté au type d'employeur (jamais "Global Markets department" par défaut si ce n'est pas une banque). DOIT commencer par "your" (jamais "our" — Sacha postule depuis l'extérieur, ce n'est pas encore son équipe), ex "your expert trading team", "your Global Markets department".
-5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, targetProfession, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit.
+5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, careerEnvironment, processType, closingAmbition, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit.
 6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
-{"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","task1":"...","task2":"...","task3":"...","specificDesk":"...","targetProfession":"...","team":"..."}}`;
+{"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","task1":"...","task2":"...","task3":"...","specificDesk":"...","careerEnvironment":"...","processType":"...","closingAmbition":"...","team":"..."}}`;
 
   const user = `Entreprise : ${company}\nPoste : ${jobTitle}\nVille : ${location}\n\nBullets du CV disponibles pour reformulation (choisis "old" EXACTEMENT parmi ces textes) :\n${bulletsList}\n\nTexte de l'offre :\n${offerText}`;
 
@@ -1886,10 +1906,10 @@ function ApplicationDetail({ app }) {
         </div>
       </div>
       <div className="dl-buttons">
-        {cvTex && <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}.pdf`} docType="cv" />}
-        {lmTex && <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}.pdf`} docType="lm" />}
-        {cvTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>}
-        {lmTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>}
+        {cvTex && <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="cv" />}
+        {lmTex && <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="lm" />}
+        {cvTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.tex`, cvTex)}>Télécharger CV.tex</button>}
+        {lmTex && <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.tex`, lmTex)}>Télécharger LM.tex</button>}
       </div>
     </div>
   );
@@ -2044,19 +2064,23 @@ function NewApplication({ onSave, prefill }) {
           <div className="preview-section">
             <h3>Champs de la lettre</h3>
             <div className="field-grid">
-              {["company","jobTitle","task1","task2","task3","specificDesk","targetProfession","team"].map(key => (
+              {["company","jobTitle","task1","task2","task3","specificDesk","careerEnvironment","processType","team"].map(key => (
                 <div className="form-field" key={key}>
                   <label>{key}</label>
                   <input type="text" value={(adaptation.letterFields || {})[key] || ""} onChange={e => updateField(["letterFields", key], e.target.value)} />
                 </div>
               ))}
             </div>
+            <div className="form-field full" style={{marginTop:12}}>
+              <label>closingAmbition</label>
+              <textarea rows={2} value={(adaptation.letterFields || {}).closingAmbition || ""} onChange={e => updateField(["letterFields", "closingAmbition"], e.target.value)} />
+            </div>
           </div>
           <div className="dl-buttons">
-            <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="cv" />
-            <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}.pdf`} docType="lm" />
-            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}.tex`, cvTex)}>Télécharger CV.tex</button>
-            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}.tex`, lmTex)}>Télécharger LM.tex</button>
+            <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}_${jobTitleAbbrev(jobTitle)}.pdf`} docType="cv" />
+            <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}_${jobTitleAbbrev(jobTitle)}.pdf`} docType="lm" />
+            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_CV_${(company||"draft").replace(/\s+/g,"_")}_${jobTitleAbbrev(jobTitle)}.tex`, cvTex)}>Télécharger CV.tex</button>
+            <button className="btn" onClick={() => downloadTextFile(`Sacha_Laborde_LM_${(company||"draft").replace(/\s+/g,"_")}_${jobTitleAbbrev(jobTitle)}.tex`, lmTex)}>Télécharger LM.tex</button>
             <button className="btn primary" onClick={handleSave}>Enregistrer dans le tracker</button>
           </div>
         </div>
