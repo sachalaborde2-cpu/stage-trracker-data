@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-30 12:07 UTC";
+const BUILD_VERSION = "2026-08-31 11:02 UTC";
 
 const LocalStore = {
   get(key) {
@@ -844,33 +844,120 @@ function saveContactsLocal(list) { LocalStore.set("contacts:list", list); }
    selon le canal (300 caractères max pour une note de connexion
    LinkedIn, c'est une vraie limite technique de LinkedIn).
    ============================================================ */
+const TONE_OPTIONS = [
+  { value: "casual", label: "Décontracté (pair, ancien camarade, contact informel)" },
+  { value: "professional", label: "Professionnel standard (junior/analyste, réseau LinkedIn classique)" },
+  { value: "formal", label: "Formel / senior (director, MD, personne qu'on ne connaît pas du tout)" },
+];
+const OBJECTIVE_OPTIONS = [
+  { value: "call", label: "Décrocher un call" },
+  { value: "intro", label: "Se présenter / réseauter, sans demande précise" },
+  { value: "thanks", label: "Remercier après un échange" },
+  { value: "followup", label: "Relancer (pas de réponse à un précédent message)" },
+  { value: "custom", label: "Autre (précise ci-dessous)" },
+];
+
+function toneInstruction(tone) {
+  if (tone === "casual") return "Registre DÉCONTRACTÉ : tutoiement si le contexte le suggère (ancien camarade, réseau étudiant commun), phrases courtes, naturel, pas de formules figées de politesse type \"Dear Sir\" — pense message à un pair, pas une lettre de motivation.";
+  if (tone === "formal") return "Registre FORMEL/SENIOR : vouvoiement, formules de politesse soignées, pas de familiarité, ton respectueux d'un étudiant s'adressant à quelqu'un de très expérimenté qu'il ne connaît pas — mais reste concis, cette personne a peu de temps.";
+  return "Registre PROFESSIONNEL STANDARD : poli mais direct, ton LinkedIn classique entre un étudiant et un jeune professionnel — ni trop familier, ni trop cérémonieux.";
+}
+
+function objectiveInstruction(objective, customObjective) {
+  if (objective === "call") return "OBJECTIF : décrocher un call. Le message DOIT contenir, à l'endroit approprié, le texte exact suivant tel quel (Sacha le remplira lui-même) : [PROPOSE ICI 2-3 CRÉNEAUX]";
+  if (objective === "intro") return "OBJECTIF : simplement se présenter et amorcer un contact, SANS demande précise ni proposition de créneaux — pas de [PROPOSE ICI...], juste ouvrir la porte à un futur échange.";
+  if (objective === "thanks") return "OBJECTIF : remercier cette personne suite à un échange déjà eu (appel, rencontre, réponse à un message) — ton reconnaissant, bref, mentionne un point concret de l'échange si l'info est fournie dans le profil/contexte.";
+  if (objective === "followup") return "OBJECTIF : relancer poliment après un premier message resté sans réponse — court, sans reproche, rappelle brièvement le message précédent, réitère la demande sans insister lourdement.";
+  return `OBJECTIF PERSONNALISÉ : ${customObjective || "(non précisé par Sacha, déduis-le du contexte fourni)"}`;
+}
+
 async function generateOutreachMessage(params, geminiSettings, previousDraft, feedback) {
-  const { channel, name, company, role, profileInfo, offerText } = params;
+  const { channel, name, company, role, profileInfo, offerText, tone, objective, customObjective } = params;
   const channelDef = CHANNEL_OPTIONS.find(c => c.value === channel) || CHANNEL_OPTIONS[1];
 
   const channelInstructions = {
-    connection_note: `Note de demande de connexion LinkedIn. LIMITE STRICTE ET ABSOLUE : 300 caractères MAXIMUM, espaces compris (c'est une vraie limite technique de LinkedIn, pas une suggestion). Pas d'objet. Format très condensé : une accroche personnalisée + une phrase sur pourquoi + l'appel à l'action. Réponds avec {"subject":null,"body":"..."}`,
+    connection_note: `Note de demande de connexion LinkedIn. LIMITE STRICTE ET ABSOLUE : 300 caractères MAXIMUM, espaces compris (c'est une vraie limite technique de LinkedIn, pas une suggestion). Pas d'objet. Réponds avec {"subject":null,"body":"..."}`,
     linkedin_message: `Message LinkedIn à quelqu'un déjà dans le réseau de Sacha. Vise 400 à 700 caractères — court, direct, pas de blabla. Pas d'objet. Réponds avec {"subject":null,"body":"..."}`,
     email: `Email professionnel. Objet court et accrocheur (moins de 8 mots), corps du message concis (100-150 mots maximum). Réponds avec {"subject":"...","body":"..."}`,
   };
 
-  const system = `Tu rédiges un message de prospection pour Sacha Laborde, étudiant M1 Finance (Paris 1 Panthéon-Sorbonne), actuellement stagiaire chez FactSet, qui cherche à échanger avec des professionnels de la finance de marché (sales, trading, structuring) pour obtenir un appel — PAS pour postuler directement, l'objectif est la conversation, pas la candidature.
+  const system = `Tu rédiges un message de prospection pour Sacha Laborde, étudiant M1 Finance (Paris 1 Panthéon-Sorbonne), actuellement stagiaire chez FactSet.
+
+${toneInstruction(tone)}
+
+${objectiveInstruction(objective, customObjective)}
 
 RÈGLES STRICTES :
-1. Public cible : professionnels de la finance de marché, très peu de temps disponible. Le message doit être COURT, CLAIR, et susciter la curiosité — jamais de blabla, jamais de phrase generique du type "je serais ravi d'échanger avec vous".
-2. Personnalisation RÉELLE et OBLIGATOIRE : le message doit faire référence à un élément concret et spécifique du profil fourni ci-dessous (poste actuel, parcours, desk, réalisation mentionnée...) — jamais un message qui pourrait être envoyé à n'importe qui.
-3. Objectif final explicite mais soft : obtenir un call, pas un CV, pas une candidature formelle.
-4. Le message DOIT contenir, à l'endroit approprié, le texte exact suivant tel quel (Sacha le remplira lui-même) : [PROPOSE ICI 2-3 CRÉNEAUX]
-5. Ne jamais inventer de faits sur Sacha au-delà de : étudiant M1 Finance Sorbonne, stagiaire FactSet (Client Solutions, Pre-sales & Portfolio Analytics), cherche à échanger avec des professionnels front office.
-6. ${channelInstructions[channel]}
-7. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
+1. Adapte STRICTEMENT le niveau de familiarité/formalité au registre demandé ci-dessus — un message "décontracté" et un message "formel" ne doivent PAS se ressembler dans leur formulation, pas seulement dans leur politesse de surface.
+2. Personnalisation RÉELLE quand des infos de profil sont fournies : le message doit faire référence à un élément concret et spécifique (poste actuel, parcours, desk, réalisation mentionnée...) plutôt que rester générique — mais si peu d'infos sont fournies, ne force pas une fausse personnalisation.
+3. Ne jamais inventer de faits sur Sacha au-delà de : étudiant M1 Finance Sorbonne, stagiaire FactSet (Client Solutions, Pre-sales & Portfolio Analytics).
+4. ${channelInstructions[channel]}
+5. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
 
   let user = `Destinataire : ${name || "(nom non précisé)"}${role ? ", " + role : ""}${company ? " chez " + company : ""}
 Infos du profil (collées par Sacha depuis LinkedIn) :
 ${profileInfo || "(aucune info fournie)"}`;
   if (offerText) user += `\n\nOffre/contexte lié (optionnel) :\n${offerText}`;
   if (previousDraft && feedback) {
-    user += `\n\nUne première version avait été proposée :\n${JSON.stringify(previousDraft)}\n\nSacha n'en est pas satisfait et précise :\n${feedback}\n\nPropose une nouvelle version qui tient compte de cette remarque, en respectant toujours la limite de longueur.`;
+    user += `\n\nUne première version avait été proposée :\n${JSON.stringify(previousDraft)}\n\nSacha n'en est pas satisfait et précise :\n${feedback}\n\nPropose une nouvelle version qui tient compte de cette remarque, en respectant toujours la limite de longueur et le registre demandé.`;
+  }
+
+  const model = (geminiSettings && geminiSettings.model) || "gemini-2.5-flash";
+  const apiKey = geminiSettings && geminiSettings.apiKey;
+  if (!apiKey) throw new Error("Aucune clé API Gemini configurée — va dans l'onglet Réglages.");
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: system }] },
+        contents: [{ role: "user", parts: [{ text: user }] }],
+        generationConfig: { responseMimeType: "application/json" },
+      }),
+    }
+  );
+  if (!response.ok) {
+    const errText = await response.text().catch(() => "");
+    throw new Error(`Erreur API Gemini (${response.status}): ${errText.slice(0, 200)}`);
+  }
+  const data = await response.json();
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
+  let result;
+  try { result = JSON.parse(text); }
+  catch (e) {
+    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
+    result = JSON.parse(clean);
+  }
+  return result;
+}
+
+// Mode "correction de brouillon" : Sacha a deja ecrit son message, l'IA le
+// relit et le corrige (grammaire, clarte, coherence de registre) SANS le
+// reecrire integralement ni changer son intention/sa voix.
+async function correctDraftMessage(draftText, params, geminiSettings, previousDraft, feedback) {
+  const { channel, name, company, role, tone } = params;
+  const channelDef = CHANNEL_OPTIONS.find(c => c.value === channel) || CHANNEL_OPTIONS[1];
+
+  const system = `Tu corriges un brouillon de message déjà écrit par Sacha Laborde, étudiant M1 Finance, à destination d'un contact professionnel (finance de marché).
+
+${toneInstruction(tone)}
+
+RÈGLES STRICTES :
+1. Corrige uniquement : orthographe, grammaire, anglicismes maladroits (si le message est en anglais), clarté, et cohérence avec le registre demandé ci-dessus.
+2. NE réécris PAS le message en profondeur — garde autant que possible les mots, la structure et l'intention originale de Sacha. Ce n'est pas une génération depuis zéro, c'est une relecture/correction.
+3. ${channelDef.maxChars ? `Limite stricte : ${channelDef.maxChars} caractères maximum (contrainte technique de ce canal).` : "Pas de limite stricte de caractères, mais reste dans un format raisonnable pour ce canal."}
+4. Si le brouillon est déjà bon, ne change quasiment rien — ne "sur-corrige" pas un texte déjà correct juste pour justifier une intervention.
+5. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown : ${channelDef.value === "email" ? '{"subject":"...","body":"..."}' : '{"subject":null,"body":"..."}'}`;
+
+  let user = `Destinataire : ${name || "(non précisé)"}${role ? ", " + role : ""}${company ? " chez " + company : ""}
+
+Brouillon de Sacha à corriger :
+${draftText}`;
+  if (previousDraft && feedback) {
+    user += `\n\nUne première correction avait été proposée :\n${JSON.stringify(previousDraft)}\n\nSacha n'en est pas satisfait et précise :\n${feedback}\n\nPropose une nouvelle correction qui tient compte de cette remarque.`;
   }
 
   const model = (geminiSettings && geminiSettings.model) || "gemini-2.5-flash";
@@ -1399,7 +1486,7 @@ function GmailInbox({ onApply }) {
    ONGLET PROSPECTION — génère des messages courts et personnalisés
    (LinkedIn / email) pour décrocher un call, + suivi des contacts.
    ============================================================ */
-function Prospection() {
+function Prospection({ applications }) {
   const [contacts, setContacts] = useState(() => getContacts());
   const [syncStatus, setSyncStatus] = useState("idle");
   const [expandedId, setExpandedId] = useState(null);
@@ -1442,8 +1529,13 @@ function Prospection() {
   const counts = CONTACT_STATUS_OPTIONS.reduce((acc, s) => { acc[s.value] = 0; return acc; }, {});
   contacts.forEach(c => { counts[c.status] = (counts[c.status] || 0) + 1; });
 
+  const appLabel = (id) => {
+    const a = (applications || []).find(a => a.id === id);
+    return a ? `${a.company} — ${a.jobTitle}` : null;
+  };
+
   if (view === "new") {
-    return <NewContact onSave={(entry) => { addContact(entry); setView("list"); }} onCancel={() => setView("list")} />;
+    return <NewContact applications={applications} onSave={(entry) => { addContact(entry); setView("list"); }} onCancel={() => setView("list")} />;
   }
 
   return (
@@ -1472,7 +1564,7 @@ function Prospection() {
           <div className="empty-state">Aucun contact pour l'instant. Clique "+ Nouveau contact" pour générer ton premier message.</div>
         ) : (
           <table>
-            <thead><tr><th>Nom</th><th>Entreprise</th><th>Canal</th><th>Ajouté le</th><th>Statut</th><th></th></tr></thead>
+            <thead><tr><th>Nom</th><th>Entreprise</th><th>Canal</th><th>Offre liée</th><th>Ajouté le</th><th>Statut</th><th></th></tr></thead>
             <tbody>
               {contacts.map(c => (
                 <React.Fragment key={c.id}>
@@ -1480,6 +1572,7 @@ function Prospection() {
                     <td className="company-cell">{c.name || "—"}</td>
                     <td className="role-cell">{c.company || "—"}</td>
                     <td className="role-cell">{(CHANNEL_OPTIONS.find(ch => ch.value === c.channel) || {}).label || c.channel}</td>
+                    <td className="role-cell">{c.linkedApplicationId ? (appLabel(c.linkedApplicationId) || "Offre supprimée") : "—"}</td>
                     <td className="role-cell mono-num">{c.dateAdded}</td>
                     <td onClick={e => e.stopPropagation()}>
                       <select className={"status-select " + contactStatusClass(c.status)} value={c.status} onChange={e => updateStatus(c.id, e.target.value)}>
@@ -1492,7 +1585,7 @@ function Prospection() {
                     </td>
                   </tr>
                   {expandedId === c.id && (
-                    <tr className="detail-row"><td colSpan={6}>
+                    <tr className="detail-row"><td colSpan={7}>
                       <div className="detail-block">
                         {c.subject && <h4>Objet</h4>}
                         {c.subject && <p>{c.subject}</p>}
@@ -1514,27 +1607,45 @@ function Prospection() {
   );
 }
 
-function NewContact({ onSave, onCancel }) {
+function NewContact({ onSave, onCancel, applications }) {
+  const [mode, setMode] = useState("generate"); // "generate" | "correct"
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [channel, setChannel] = useState("linkedin_message");
+  const [tone, setTone] = useState("professional");
+  const [objective, setObjective] = useState("call");
+  const [customObjective, setCustomObjective] = useState("");
   const [profileInfo, setProfileInfo] = useState("");
   const [offerText, setOfferText] = useState("");
+  const [draftText, setDraftText] = useState("");
+  const [linkedApplicationId, setLinkedApplicationId] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [draft, setDraft] = useState(null); // { subject, body }
   const [feedback, setFeedback] = useState("");
 
   const channelDef = CHANNEL_OPTIONS.find(c => c.value === channel);
-  const canGenerate = profileInfo.trim().length >= 20;
+  const canGenerate = mode === "correct" ? draftText.trim().length >= 10 : profileInfo.trim().length >= 20;
+
+  // Si une offre du tracker est selectionnee, pre-remplit entreprise + contexte
+  const handleLinkApplication = (appId) => {
+    setLinkedApplicationId(appId);
+    const app = (applications || []).find(a => a.id === appId);
+    if (app) {
+      if (!company) setCompany(app.company);
+      if (!offerText) setOfferText(`Poste : ${app.jobTitle}${app.offerText ? "\n" + app.offerText : ""}`);
+    }
+  };
 
   const runGenerate = async (prevDraft, feedbackText) => {
     setError(""); setLoading(true);
     try {
       const geminiSettings = LocalStore.get("settings:gemini") || {};
-      const result = await generateOutreachMessage({ channel, name, company, role, profileInfo, offerText }, geminiSettings, prevDraft, feedbackText);
+      const result = mode === "correct"
+        ? await correctDraftMessage(draftText, { channel, name, company, role, tone }, geminiSettings, prevDraft, feedbackText)
+        : await generateOutreachMessage({ channel, name, company, role, profileInfo, offerText, tone, objective, customObjective }, geminiSettings, prevDraft, feedbackText);
       setDraft(result);
     } catch (e) {
       setError(e.message);
@@ -1547,7 +1658,7 @@ function NewContact({ onSave, onCancel }) {
   const handleRegenerate = () => { if (feedback.trim()) runGenerate(draft, feedback); };
 
   const handleSave = () => {
-    onSave({ name, company, role, linkedinUrl, channel, profileInfo, offerText, subject: draft.subject, body: draft.body, status: "a_envoyer" });
+    onSave({ name, company, role, linkedinUrl, channel, tone, objective, profileInfo, offerText, draftText, linkedApplicationId: linkedApplicationId || null, subject: draft.subject, body: draft.body, status: "a_envoyer" });
   };
 
   const charCount = draft ? (draft.body || "").length : 0;
@@ -1559,6 +1670,15 @@ function NewContact({ onSave, onCancel }) {
         Nouveau message de prospection
         <button className="btn" onClick={onCancel}>← Retour</button>
       </div>
+
+      <div style={{padding:"18px 18px 0"}}>
+        <label>Que veux-tu faire ?</label>
+        <div className="dl-buttons" style={{marginTop:8}}>
+          <button className={"btn" + (mode === "generate" ? " primary" : "")} onClick={() => { setMode("generate"); setDraft(null); }}>Générer depuis des informations</button>
+          <button className={"btn" + (mode === "correct" ? " primary" : "")} onClick={() => { setMode("correct"); setDraft(null); }}>Corriger un brouillon que j'ai déjà écrit</button>
+        </div>
+      </div>
+
       <div className="form-grid">
         <div className="form-field">
           <label>Nom du contact</label>
@@ -1569,33 +1689,72 @@ function NewContact({ onSave, onCancel }) {
           <input type="text" value={company} onChange={e => setCompany(e.target.value)} placeholder="ex. BNP Paribas CIB" />
         </div>
         <div className="form-field">
-          <label>Poste actuel</label>
+          <label>Poste actuel du contact</label>
           <input type="text" value={role} onChange={e => setRole(e.target.value)} placeholder="ex. VP Equity Derivatives Sales" />
         </div>
         <div className="form-field">
           <label>Lien LinkedIn (référence uniquement)</label>
           <input type="url" value={linkedinUrl} onChange={e => setLinkedinUrl(e.target.value)} placeholder="https://linkedin.com/in/..." />
         </div>
-        <div className="form-field full">
+        <div className="form-field">
           <label>Canal</label>
           <select value={channel} onChange={e => setChannel(e.target.value)}>
             {CHANNEL_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
-        <div className="form-field full">
-          <label>Infos du profil (colle ce que tu vois sur LinkedIn — poste, parcours, ce qui t'accroche)</label>
-          <textarea rows={5} value={profileInfo} onChange={e => setProfileInfo(e.target.value)} placeholder="ex. VP sur le desk Equity Derivatives depuis 3 ans, ancien Jane Street, a posté récemment sur..." />
+        <div className="form-field">
+          <label>Registre / ton</label>
+          <select value={tone} onChange={e => setTone(e.target.value)}>
+            {TONE_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
+          </select>
         </div>
-        <div className="form-field full">
-          <label>Offre ou contexte lié (optionnel)</label>
-          <textarea rows={3} value={offerText} onChange={e => setOfferText(e.target.value)} placeholder="Colle ici le texte de l'offre si cette prise de contact y est liée..." />
-        </div>
+        {mode === "generate" && (
+          <div className="form-field full">
+            <label>Objectif du message</label>
+            <select value={objective} onChange={e => setObjective(e.target.value)}>
+              {OBJECTIVE_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
+          </div>
+        )}
+        {mode === "generate" && objective === "custom" && (
+          <div className="form-field full">
+            <label>Précise l'objectif</label>
+            <input type="text" value={customObjective} onChange={e => setCustomObjective(e.target.value)} placeholder="ex. Demander un retour sur mon dossier, proposer un café..." />
+          </div>
+        )}
+        {(applications && applications.length > 0) && (
+          <div className="form-field full">
+            <label>Lier à une candidature du tracker (optionnel)</label>
+            <select value={linkedApplicationId} onChange={e => handleLinkApplication(e.target.value)}>
+              <option value="">— Aucune —</option>
+              {applications.map(a => <option key={a.id} value={a.id}>{a.company} — {a.jobTitle}</option>)}
+            </select>
+          </div>
+        )}
+
+        {mode === "correct" ? (
+          <div className="form-field full">
+            <label>Ton brouillon (colle-le tel quel, l'IA corrige sans tout réécrire)</label>
+            <textarea rows={7} value={draftText} onChange={e => setDraftText(e.target.value)} placeholder="Colle ici ton message tel que tu l'as écrit..." />
+          </div>
+        ) : (
+          <React.Fragment>
+            <div className="form-field full">
+              <label>Infos du profil (colle ce que tu vois sur LinkedIn — poste, parcours, ce qui t'accroche)</label>
+              <textarea rows={5} value={profileInfo} onChange={e => setProfileInfo(e.target.value)} placeholder="ex. VP sur le desk Equity Derivatives depuis 3 ans, ancien Jane Street, a posté récemment sur..." />
+            </div>
+            <div className="form-field full">
+              <label>Offre ou contexte lié (optionnel)</label>
+              <textarea rows={3} value={offerText} onChange={e => setOfferText(e.target.value)} placeholder="Colle ici le texte de l'offre si cette prise de contact y est liée..." />
+            </div>
+          </React.Fragment>
+        )}
       </div>
       {error && <div className="error-box">{error}</div>}
       <div className="form-footer">
-        <div className="hint">Le message doit rester court et personnalisé, avec un espace réservé pour que tu proposes toi-même des créneaux.</div>
+        <div className="hint">{mode === "correct" ? "L'IA corrige ton texte sans le réécrire en profondeur — garde ta voix, ton intention, juste plus propre." : "Le ton et l'objectif choisis ci-dessus déterminent entièrement le registre du message généré."}</div>
         <button className="btn primary" disabled={!canGenerate || loading} onClick={handleGenerate}>
-          {loading ? <span><span className="spinner"></span>Rédaction...</span> : "Générer le message"}
+          {loading ? <span><span className="spinner"></span>{mode === "correct" ? "Correction..." : "Rédaction..."}</span> : (mode === "correct" ? "Corriger" : "Générer le message")}
         </button>
       </div>
 
@@ -1761,7 +1920,7 @@ function App() {
       {view === "new" && (
         <NewApplication prefill={prefill} onSave={(entry) => { addApplication(entry); setPrefill(null); setView("tracker"); }} />
       )}
-      {view === "prospection" && <Prospection />}
+      {view === "prospection" && <Prospection applications={applications} />}
       {view === "cv" && <CvEditor />}
       {view === "settings" && <Settings />}
     </div>
@@ -1887,6 +2046,10 @@ function ApplicationDetail({ app }) {
   const programYear = app.programYear || "2027";
   const cvTex = buildCvTex(contractType, adapt.headlineFill, adapt.keywordChanges, programType, programYear);
   const lmTex = buildLmTex(contractType, adapt.letterFields, programType, programYear);
+  // Lecture simple des contacts de prospection lies a cette candidature —
+  // pas besoin d'etat partage complexe, l'onglet Prospection est la source
+  // de verite et sauvegarde deja dans LocalStore a chaque modification.
+  const linkedContacts = (getContacts() || []).filter(c => c.linkedApplicationId === app.id);
 
   return (
     <div>
@@ -1905,6 +2068,16 @@ function ApplicationDetail({ app }) {
           {adapt.letterFields ? <ul style={{paddingLeft:16, margin:0}}>{Object.entries(adapt.letterFields).map(([k,v]) => <li key={k}><b>{k}</b>: {v}</li>)}</ul> : <p>—</p>}
         </div>
       </div>
+      {linkedContacts.length > 0 && (
+        <div className="detail-block" style={{padding:"0 20px 16px"}}>
+          <h4>Prospection liée</h4>
+          <ul style={{paddingLeft:16, margin:0}}>
+            {linkedContacts.map(c => (
+              <li key={c.id}>{c.name || "(sans nom)"} — {(CHANNEL_OPTIONS.find(ch => ch.value === c.channel) || {}).label || c.channel} — <b>{(CONTACT_STATUS_OPTIONS.find(s => s.value === c.status) || {}).label || c.status}</b></li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="dl-buttons">
         {cvTex && <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="cv" />}
         {lmTex && <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="lm" />}
