@@ -1,5 +1,50 @@
 [
   {
+    "company": "Caisse de dépôt et placement du Québec",
+    "jobTitle": "Finance Quantitative",
+    "location": "Québec",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Finance",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of quantitative finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization techniques (mean-variance framework), quantitative option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6% return} under strict trading constraints.",
+          "new": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's European offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6% return} under strict trading constraints."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP quantitative options pricing engine (NumPy), incorporating Black-Scholes, Monte Carlo simulations, the Greeks, and implied volatility via numerical inversion."
+        }
+      ],
+      "letterFields": {
+        "company": "Caisse de dépôt et placement du Québec",
+        "jobTitle": "Quantitative Finance Intern",
+        "task1": "quantitative and financial analyses",
+        "task2": "quantitative model development",
+        "task3": "portfolio performance and risk monitoring",
+        "specificDesk": "Quantitative Finance team",
+        "careerEnvironment": "a quantitative finance environment",
+        "processType": "quantitative finance",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Quantitative Finance internship would give me the analytical rigor and deep market understanding essential to reach that goal.",
+        "team": "your Quantitative Finance team"
+      }
+    },
+    "id": "1788159578974",
+    "dateAdded": "2026-08-31"
+  },
+  {
     "company": "Société Générale CIB",
     "jobTitle": "Assistant Trader",
     "location": "Paris",
