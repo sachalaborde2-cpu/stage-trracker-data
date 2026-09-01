@@ -1,6 +1,51 @@
 [
   {
     "company": "Nomura",
+    "jobTitle": "2027 - Global Markets - Structured Solution Sales - Off Cycle Internship – Paris",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Solution Sales",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), Black-Scholes option pricing, and hedging strategies for diverse financial derivatives and structured products, showcasing a strong interest."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing high volumes of daily client requests across Paris and London desks, directly supporting sales teams in client transactions with clear commercial awareness."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine (NumPy) for Black-Scholes, Monte Carlo, the Greeks, and implied volatility, directly supporting product pricing for financial derivatives and structured products."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints within a Global Markets context."
+        }
+      ],
+      "letterFields": {
+        "company": "Nomura",
+        "jobTitle": "Structured Solution Sales Intern",
+        "task1": "KYC and KYD oversight",
+        "task2": "structured product pricing",
+        "task3": "sales database management",
+        "specificDesk": "Structures Solutions Sales team",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to build a career in Sales, Trading, or Structuring, and this position in Structured Solution Sales aligns perfectly with the continuity of my training towards that goal.",
+        "team": "your Structures Solutions Sales team"
+      }
+    },
+    "id": "1788255478767",
+    "dateAdded": "2026-09-01"
+  },
+  {
+    "company": "Nomura",
     "jobTitle": "2027 - Global Markets (Sales, Trading, Structuring & Research) - Summer Internship - London (for 2028 Graduates)",
     "location": "Londres",
     "jobUrl": "",
