@@ -1,5 +1,50 @@
 [
   {
+    "company": "Natixis",
+    "jobTitle": "Assistant ANALYSTE FIXED INCOME – Covered Bonds",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Fixed Income Research Analyst",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program combining quantitative finance, financial econometrics, and data science (Python, R), with strong exposure to the Fixed Income market environment, FRM Level 1 eligibility, and Bloomberg Terminal access."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Achieved 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices, delivering a +6% return under strict trading constraints, and applying insights to develop Fixed Income buying/selling strategies."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, supporting DCM, Trading, and Sales teams with client requests across Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).",
+          "new": "Conducted fixed-effects econometric analysis in R on large panel datasets, applying robust standard errors and specification tests for financial research, relevant to Fixed Income issuer analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis",
+        "jobTitle": "Assistant Fixed Income Covered Bonds Analyst",
+        "task1": "contributing to research publications",
+        "task2": "financial analysis of bond issuers",
+        "task3": "market spread monitoring",
+        "specificDesk": "Fixed Income Research Desk",
+        "careerEnvironment": "a dynamic financial research environment",
+        "processType": "front-office research",
+        "closingAmbition": "I would like to make financial research in Global Markets my profession, and this position offers an ideal opportunity to deepen my expertise towards a career in Sales, Trading, or Structuring.",
+        "team": "your Global Markets Research team"
+      }
+    },
+    "id": "1788274086447",
+    "dateAdded": "2026-09-01"
+  },
+  {
     "company": "BlockTech",
     "jobTitle": "Quantitative Researcher | Internship | Summer '27",
     "location": "Amsterdam",
