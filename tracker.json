@@ -1,5 +1,50 @@
 [
   {
+    "company": "Nomura",
+    "jobTitle": "2027 - Global Markets (Sales, Trading, Structuring & Research) - Summer Internship - London (for 2028 Graduates)",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Markets",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered proficiently **portfolio optimization** (mean-variance framework), **option pricing** via Black-Scholes, and **hedging strategies** for **derivatives** (futures, forwards, and options)."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised **institutional clients** on FactSet's cross-asset **portfolio analytics** and workflow tools, managing a high volume of daily **client requests** across Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP **structured product options pricing engine** (NumPy), integrating Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a **market-making** simulator (Python) for **equity securities**, incorporating bid/ask quoting, inventory-based pricing, and incremental delta **hedging**."
+        }
+      ],
+      "letterFields": {
+        "company": "Nomura",
+        "jobTitle": "Global Markets Summer Analyst",
+        "task1": "client relationship management",
+        "task2": "structured product development",
+        "task3": "market making activities",
+        "specificDesk": "your Global Markets desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1788252753912",
+    "dateAdded": "2026-09-01"
+  },
+  {
     "company": "Caisse de dépôt et placement du Québec",
     "jobTitle": "Finance Quantitative",
     "location": "Québec",
