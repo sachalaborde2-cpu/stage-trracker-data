@@ -1,6 +1,51 @@
 [
   {
     "company": "Goldman Sachs",
+    "jobTitle": "2027 | APEJ | Singapore | FICC and Equities, Sales and Trading | Summer Analyst",
+    "location": "Singapore",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FICC and Equities Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset financial products and workflow tools, managing a high volume of daily client transactions across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Developed a market-making simulator (Python), incorporating bid/ask quoting, inventory-based pricing, and incremental delta hedging to facilitate client transactions and manage risk."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), equity option pricing via Black-Scholes, and hedging strategies for fixed income, equity, currency, and commodity products."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross trading strategy over a 10-year horizon across three geographies, utilizing strategy-testing tools and analyzing risk-adjusted performance to generate trading ideas."
+        }
+      ],
+      "letterFields": {
+        "company": "Goldman Sachs",
+        "jobTitle": "Summer Analyst",
+        "task1": "client transaction facilitation",
+        "task2": "market information analysis",
+        "task3": "trading idea generation",
+        "specificDesk": "FICC and Equities Sales & Trading",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your FICC and Equities team"
+      }
+    },
+    "id": "1788257522071",
+    "dateAdded": "2026-09-01"
+  },
+  {
+    "company": "Goldman Sachs",
     "jobTitle": "2027 | EMEA | London | FICC & Equities (Sales & Trading) | Seasonal/OffCycle",
     "location": "Londres",
     "jobUrl": "",
