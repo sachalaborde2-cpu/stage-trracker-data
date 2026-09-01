@@ -1,6 +1,39 @@
 [
   {
     "company": "Goldman Sachs",
+    "jobTitle": "2027 | EMEA | London | FICC & Equities (Sales & Trading) | Seasonal/OffCycle",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FICC & Equities Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator in Python, implementing bid/ask quoting, inventory-based pricing, and incremental delta hedging for various financial products."
+        }
+      ],
+      "letterFields": {
+        "company": "Goldman Sachs",
+        "jobTitle": "Off-Cycle FICC & Equities Sales & Trading Intern",
+        "task1": "client transaction facilitation",
+        "task2": "market analysis reports",
+        "task3": "trading idea distribution",
+        "specificDesk": "FICC & Equities Sales & Trading",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your FICC & Equities Sales & Trading team"
+      }
+    },
+    "id": "1788257150001",
+    "dateAdded": "2026-09-01"
+  },
+  {
+    "company": "Goldman Sachs",
     "jobTitle": "2027 | EMEA | London | FICC & Equities (Sales & Trading) | Summer Analyst",
     "location": "Paris",
     "jobUrl": "",
