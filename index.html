@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-08-31 11:02 UTC";
+const BUILD_VERSION = "2026-09-01 09:51 UTC";
 
 const LocalStore = {
   get(key) {
@@ -428,7 +428,21 @@ const CONTRACT_TYPES = {
    ============================================================ */
 function escapeLatex(str) {
   if (!str) return str;
-  return str.replace(/\\/g, "\\textbackslash{}").replace(/&/g, "\\&").replace(/%/g, "\\%")
+  // Defense en profondeur : neutralise en texte brut tout formatage
+  // markdown ou commande LaTeX que l'IA glisserait par erreur dans un
+  // texte cense etre brut (bug reel constate le 31/08 — "\textbf{...}"
+  // et "**...**" se retrouvaient affiches litteralement et casses dans
+  // le PDF final, ex: "\{}textbf{1st out of 12 participants}"). Sans
+  // cette etape, l'echappement ci-dessous transforme un \ ou un {
+  // legitime-en-apparence en charabia au lieu de le neutraliser proprement.
+  const cleaned = str
+    .replace(/\\textbf\{([^}]*)\}/g, "$1")
+    .replace(/\\textit\{([^}]*)\}/g, "$1")
+    .replace(/\\emph\{([^}]*)\}/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/\\([%&$#_{}])/g, "$1"); // neutralise un echappement LaTeX deja present (evite le double-echappement juste apres)
+  return cleaned.replace(/\\/g, "\\textbackslash{}").replace(/&/g, "\\&").replace(/%/g, "\\%")
     .replace(/\$/g, "\\$").replace(/#/g, "\\#").replace(/_/g, "\\_")
     .replace(/\{/g, "\\{").replace(/\}/g, "\\}")
     .replace(/~/g, "\\textasciitilde{}").replace(/\^/g, "\\textasciicircum{}");
@@ -596,7 +610,7 @@ async function saveMasterCv(contractType, tex) {
 function buildCvTex(contractType, headlineFill, keywordChanges, programType, programYear) {
   const ct = CONTRACT_TYPES[contractType];
   if (!ct || !ct.ready) return null;
-  const year = programYear || "2027";
+  const year = escapeLatex(programYear || "2027");
   const fill = escapeLatex(headlineFill || "Front Office");
   let sentence;
   if (contractType === "stage") {
@@ -627,7 +641,7 @@ function buildLmTex(contractType, fields, programType, programYear) {
   if (!ct || !ct.ready) return null;
   const f = fields || {};
   const rawJobTitle = f.jobTitle || "[Job Title]";
-  const year = programYear || "2027";
+  const year = escapeLatex(programYear || "2027");
   const article = articleFor(rawJobTitle);
   const jobTitle = escapeLatex(rawJobTitle);
   const company = escapeLatex(f.company || "[Company Name]");
@@ -678,7 +692,7 @@ ${programLine}
 RÈGLES STRICTES :
 1. Ne JAMAIS inventer de faits, dates, chiffres ou expériences.
 2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe, sans durée ni date. Doit se lire naturellement dans la phrase "seeking a 6-month ___ internship" — donc le nom du désk/métier/fonction visé tel qu'un anglophone l'écrirait, adapté à CE type de poste précis (front office comme "Sales \& Trading" ou "Equity Derivatives Structuring", MAIS AUSSI middle/back office comme "Derivatives Back Office", "Operations", "Risk Management", "Compliance" — ne jamais supposer que c'est du front office par défaut, adapte-toi strictement à l'offre fournie).
-3. "keywordChanges" — OBJECTIF : maximiser la correspondance de mots-clés ATS avec l'offre, sur TOUS les bullets modifiables fournis ci-dessous (il y en a 4). Pour CHACUN, cherche activement si un terme exact de l'offre peut remplacer un terme générique équivalent du bullet — si oui, fais-le systématiquement, même si le lien est un peu indirect (tant que ça reste factuellement vrai). Ne saute un bullet que si vraiment aucun terme de l'offre ne s'y prête. "old" = copie EXACTE et COMPLÈTE d'une des bullets fournies ci-dessous (le bullet entier, pas un extrait). "new" = reformulation de longueur TRÈS similaire à l'original (entre -5% et +15% de mots, jamais significativement plus courte — un bullet raccourci laisse du vide en bas de page), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Le naturel et la cohérence factuelle restent prioritaires sur la densité : n'insère jamais un mot-clé qui rend la phrase absurde ou fausse.
+3. "keywordChanges" — OBJECTIF : maximiser la correspondance de mots-clés ATS avec l'offre, sur TOUS les bullets modifiables fournis ci-dessous (il y en a 4). Pour CHACUN, cherche activement si un terme exact de l'offre peut remplacer un terme générique équivalent du bullet — si oui, fais-le systématiquement, même si le lien est un peu indirect (tant que ça reste factuellement vrai). Ne saute un bullet que si vraiment aucun terme de l'offre ne s'y prête. "old" = copie EXACTE et COMPLÈTE d'une des bullets fournies ci-dessous (le bullet entier, pas un extrait, y compris un éventuel \textbf{...} qu'il contient). "new" = reformulation de longueur TRÈS similaire à l'original (entre -5% et +15% de mots, jamais significativement plus courte — un bullet raccourci laisse du vide en bas de page), sans changer les faits, mais qui reprend LA TERMINOLOGIE EXACTE de l'offre plutôt que des synonymes (ex: si l'offre dit "structured products", écris "structured products", pas "derivative instruments") — les filtres ATS des recruteurs cherchent souvent des correspondances de mots exacts, pas des paraphrases. Le naturel et la cohérence factuelle restent prioritaires sur la densité : n'insère jamais un mot-clé qui rend la phrase absurde ou fausse. IMPORTANT : "new" doit être DU TEXTE BRUT UNIQUEMENT — n'inclus JAMAIS de \textbf{}, \textit{}, **gras**, ou tout autre balisage/formatage, même si le bullet original en contenait ; le gras éventuel de l'original sera perdu lors du remplacement, c'est normal et sans importance.
 4. "letterFields", valeurs COURTES (groupes nominaux, pas de phrases), attention à la grammaire :
    - company, jobTitle: courts
    - task1, task2, task3: 2-5 mots chacun, groupe nominal en minuscules qui s'insère dans "assist with ___task1___, preparing ___task2___, and monitoring ___task3___" (teste mentalement la phrase). ÉVITE d'empiler plus de 2 noms à la suite sans article/préposition — un anglophone ne dit jamais "production quality controls implementation" (4 noms empilés, illisible), il dirait "quality control processes" ou "production quality standards". BON: "structured product pricing", "quality control processes". MAUVAIS: "Monitor markets" (verbe + majuscule), "production quality controls implementation" (empilement de noms).
@@ -690,7 +704,7 @@ RÈGLES STRICTES :
      * SI cette offre est un poste back/middle office (Operations, Risk, Compliance, Back Office, IT...) : ne dis JAMAIS que Sacha veut faire de CE métier sa profession (ce serait faux) — présente au contraire ce stage comme un TREMPLIN vers son objectif front office, ex "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Derivatives Back Office internship would give me the operational rigor and market understanding essential to reach that goal."
      Garde le même registre et la même longueur que l'exemple front office (2 phrases maximum, jamais plus long). IMPORTANT : careerEnvironment, processType et closingAmbition doivent tous les trois raconter la MÊME histoire cohérente (soit front office partout, soit back/middle office + tremplin partout) — jamais un mélange incohérent entre eux.
    - team: complète "...within ___." — grammaticalement autonome, adapté au type d'employeur (jamais "Global Markets department" par défaut si ce n'est pas une banque). DOIT commencer par "your" (jamais "our" — Sacha postule depuis l'extérieur, ce n'est pas encore son équipe), ex "your expert trading team", "your Global Markets department".
-5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, careerEnvironment, processType, closingAmbition, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit.
+5. TOUS les champs (headlineFill, jobTitle, task1/2/3, specificDesk, careerEnvironment, processType, closingAmbition, team) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit. AUCUN de ces champs ne doit contenir de balisage (\textbf{}, **gras**, etc.) — texte brut uniquement, dans tous les cas.
 6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
 {"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","task1":"...","task2":"...","task3":"...","specificDesk":"...","careerEnvironment":"...","processType":"...","closingAmbition":"...","team":"..."}}`;
 
@@ -747,8 +761,9 @@ RÈGLES STRICTES :
 2. Ne modifie et n'invente RIEN d'autre que ce qui est décrit — reste factuel, pas d'exagération.
 3. Si c'est une nouvelle expérience/projet complet, propose un bloc complet au format d'un bloc existant du CV (\\noindent \\textbf{Nom} \\hfill \\textbf{Lieu} \\\\ \\textit{Titre} \\hfill \\textit{Dates} suivi de \\begin{itemize}...\\end{itemize}).
 4. Même si la description de Sacha ci-dessous est en français, le texte que tu ajoutes au CV doit être en ANGLAIS CORRECT ET NATUREL — jamais une traduction mot à mot ni l'ordre des mots français plaqué sur de l'anglais (ex: pas "Assistant Sales" mais "Sales Assistant"). Les noms propres (entreprises, lieux) restent tels quels.
-5. ${modeInstructions}
-6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
+5. ÉCHAPPE CORRECTEMENT tout caractère spécial LaTeX dans le texte que tu écris : % devient \\%, & devient \\&, $ devient \\$, # devient \\#. C'est CRITIQUE pour le %% en particulier — un % non échappé ne provoque PAS d'erreur de compilation, il tronque SILENCIEUSEMENT tout le reste de la ligne sans que Sacha s'en aperçoive (ex: "50% growth" doit s'écrire "50\\% growth", sinon "growth" et tout ce qui suit disparaît du PDF sans avertissement).
+6. ${modeInstructions}
+7. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balise markdown.`;
 
   let user = `CV LaTeX actuel :\n${currentCv}\n\nCe que Sacha veut faire :\n${description}`;
   if (previousProposal && feedback) {
@@ -796,6 +811,22 @@ RÈGLES STRICTES :
 function extractCvBullets(cvText) {
   const matches = [...cvText.matchAll(/\\item\s+([^\n]+?)(?=\n\s*(?:\\item|\\end\{itemize\}))/g)];
   return matches.map(m => m[1].trim()).filter(Boolean);
+}
+
+// Filet de securite : detecte les caracteres speciaux LaTeX non echappes
+// dans un texte que l'IA vient de proposer (assistant "Mon CV"), au cas ou
+// elle n'aurait pas suivi l'instruction d'echappement du prompt. Le % est
+// le plus dangereux car il tronque SILENCIEUSEMENT la ligne sans erreur de
+// compilation — c'est exactement le genre de bug deja rencontre le 31/08.
+function findUnescapedLatexSpecials(text) {
+  if (!text) return [];
+  const found = [];
+  const re = /(^|[^\\])([%&#])/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    found.push(m[2]);
+  }
+  return [...new Set(found)];
 }
 
 async function countPdfPages(blob) {
@@ -2304,16 +2335,23 @@ function CvEditor() {
 
   const handleApply = async () => {
     if (!proposal || !proposal._anchorFound) return;
-    let newText;
+    let newText, insertedText;
     if (proposal.mode === "replace") {
       newText = cvText.replace(proposal.target, proposal.replacement);
+      insertedText = proposal.replacement;
     } else {
-      newText = cvText.replace(proposal.insertAfter, proposal.insertAfter + "\n    " + proposal.snippet);
+      insertedText = proposal.snippet;
+      newText = cvText.replace(proposal.insertAfter, proposal.insertAfter + "\n    " + insertedText);
     }
     setCvText(newText);
-    setApplyMsg("Appliqué dans le texte ci-dessous — vérifie la mise en page puis enregistre.");
+    const risky = findUnescapedLatexSpecials(insertedText);
+    if (risky.length > 0) {
+      setApplyMsg(`⚠ Appliqué, MAIS caractère(s) potentiellement non échappé(s) détecté(s) : ${risky.join(" ")} — vérifie bien le rendu avant d'enregistrer, un "%" non échappé tronque silencieusement la ligne.`);
+    } else {
+      setApplyMsg("Appliqué dans le texte ci-dessous — vérifie la mise en page puis enregistre.");
+    }
     setProposal(null); setFeedback("");
-    setTimeout(() => setApplyMsg(""), 5000);
+    setTimeout(() => setApplyMsg(""), risky.length > 0 ? 10000 : 5000);
   };
 
   const handleCheck = async () => {
@@ -2428,7 +2466,7 @@ function CvEditor() {
             </div>
           </div>
         )}
-        {applyMsg && <div className="copy-note">{applyMsg}</div>}
+        {applyMsg && <div className={applyMsg.startsWith("⚠") ? "error-box" : "copy-note"}>{applyMsg}</div>}
       </div>
 
       <div className="settings-section" style={{borderBottom:"none"}}>
