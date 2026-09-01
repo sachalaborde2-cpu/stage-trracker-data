@@ -1,5 +1,50 @@
 [
   {
+    "company": "Goldman Sachs",
+    "jobTitle": "2027 | EMEA | London | FICC & Equities (Sales & Trading) | Summer Analyst",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FICC & Equities Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization techniques (mean-variance framework), pricing of options via Black-Scholes, and hedging strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Achieved 1st place out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator in Python, implementing bid/ask quoting, inventory-based pricing, and incremental delta hedging strategies."
+        }
+      ],
+      "letterFields": {
+        "company": "Goldman Sachs",
+        "jobTitle": "Sales & Trading Summer Analyst",
+        "task1": "client transaction facilitation",
+        "task2": "market analysis reports",
+        "task3": "trading idea generation",
+        "specificDesk": "FICC & Equities Sales & Trading desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your FICC & Equities Sales & Trading team"
+      }
+    },
+    "id": "1788256626106",
+    "dateAdded": "2026-09-01"
+  },
+  {
     "company": "Nomura",
     "jobTitle": "2027 - Global Markets (Sales, Trading, Structuring & Research) - Summer Internship - London (for 2028 Graduates)",
     "location": "Londres",
