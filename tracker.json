@@ -1,5 +1,50 @@
 [
   {
+    "company": "UBS",
+    "jobTitle": "2027 Off-Cycle Internship - Global Markets - Paris",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Markets Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's European offices, delivering a +6% return under strict trading constraints."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for global market futures, forwards, and options."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics for improved efficiency and outcomes."
+        }
+      ],
+      "letterFields": {
+        "company": "UBS",
+        "jobTitle": "Global Markets Off-Cycle Intern",
+        "task1": "market moving data extraction",
+        "task2": "market trends analysis",
+        "task3": "client trade execution",
+        "specificDesk": "Global Markets Sales and Trading desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets business"
+      }
+    },
+    "id": "1788341447790",
+    "dateAdded": "2026-09-02"
+  },
+  {
     "company": "All Options",
     "jobTitle": "Quantitative Intern",
     "location": "Austin",
