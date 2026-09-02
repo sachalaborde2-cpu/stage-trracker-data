@@ -1,5 +1,50 @@
 [
   {
+    "company": "Citi",
+    "jobTitle": "Markets – Sales and Trading, Summer Analyst, London – United Kingdom, 2027",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Markets Sales & Trading Analyst",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program interfacing finance and Quantitative Analysis (Python, R, financial econometrics), with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options across various asset classes."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional client base professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing daily client requests across Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging to manage risk."
+        }
+      ],
+      "letterFields": {
+        "company": "Citi",
+        "jobTitle": "Markets Sales and Trading Summer Analyst",
+        "task1": "trade idea pitching",
+        "task2": "macro market analysis",
+        "task3": "internal documentation",
+        "specificDesk": "Sales and Trading desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Markets team"
+      }
+    },
+    "id": "1788350258922",
+    "dateAdded": "2026-09-02"
+  },
+  {
     "company": "UBS",
     "jobTitle": "2027 Off-Cycle Internship - Global Markets - Paris",
     "location": "Paris",
