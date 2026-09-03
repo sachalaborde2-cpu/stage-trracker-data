@@ -1,5 +1,50 @@
 [
   {
+    "company": "Bank of America",
+    "jobTitle": "Global Markets, (Sales & Trading) Rotational Programme, Summer Analyst",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Markets Summer Analyst",
+      "keywordChanges": [
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return by anticipating market trends and executing trades under strict trading constraints."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine (NumPy) for derivatives, including Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a Python market-making simulator for bid/ask quoting, inventory-based pricing, and incremental delta hedging, applying risk management."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage an investment portfolio, computing advanced financial metrics and sector/geographic exposure analysis, revealing market trends."
+        }
+      ],
+      "letterFields": {
+        "company": "Bank of America",
+        "jobTitle": "Global Markets Summer Analyst",
+        "task1": "salesforce support",
+        "task2": "client presentation preparation",
+        "task3": "market data analysis",
+        "specificDesk": "Global Markets",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1788464107847",
+    "dateAdded": "2026-09-03"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Global Markets Off-cycle Intern (Jan to Apr 2027)",
     "location": "Hong Kong",
