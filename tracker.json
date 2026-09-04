@@ -1,5 +1,51 @@
 [
   {
+    "company": "BNP Paribas",
+    "jobTitle": "Equity sales assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "International Equity Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing daily client requests across desks under tight deadlines, including promotion of equity research."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6% return} under strict trading constraints.",
+          "new": "Ranked 1st of 12 participants in a 10-week simulated portfolio management challenge across FactSet offices, delivering a +6% return under strict trading constraints, leveraging equity research and daily market monitoring."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across Europe, U.S., and Emerging Asia using strategy-testing tools, analyzing risk-adjusted performance and supporting equity research."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics and providing sector/geographic exposure analysis for daily market monitoring."
+        }
+      ],
+      "letterFields": {
+        "company": "BNP Paribas",
+        "jobTitle": "International Equity Sales Assistant",
+        "task1": "equity research promotion",
+        "task2": "research note summaries",
+        "task3": "sectoral tracking tools",
+        "specificDesk": "International Equity Sales desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1788531140927",
+    "dateAdded": "2026-09-04"
+  },
+  {
     "company": "Bank of America",
     "jobTitle": "Global Markets, (Sales & Trading) Rotational Programme, Summer Analyst",
     "location": "Londres",
