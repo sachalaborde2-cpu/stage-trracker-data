@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-09-01 09:51 UTC";
+const BUILD_VERSION = "2026-09-04 14:08 UTC";
 
 const LocalStore = {
   get(key) {
@@ -404,7 +404,7 @@ Sacha Laborde
 `;
 
 const PARA1_P2 = String.raw`\noindent
-Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for operational challenges. Therefore, as an MSc Finance Technology Data student at the Sorbonne, currently completing my first internship at FactSet, I am submitting my application for my second 6-month gap-year internship, starting in January __YEAR__, within __TEAM__.`;
+Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for operational challenges. Therefore, as an MSc Finance Technology Data student at the Sorbonne, currently completing my first internship at FactSet, I am submitting my application for my second __DURATION__-month gap-year internship, starting in January __YEAR__, within __TEAM__.`;
 
 const PARA1_SUMMER = String.raw`\noindent
 Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for operational challenges. Therefore, as an MSc Finance Technology Data student at the Sorbonne, currently completing a six-month internship at FactSet, I am submitting my application for your Summer __YEAR__ internship program, within __TEAM__.`;
@@ -426,6 +426,36 @@ const CONTRACT_TYPES = {
 /* ============================================================
    UTILITAIRES
    ============================================================ */
+// Parsing robuste des reponses JSON de Gemini — utilise partout ou l'IA
+// doit renvoyer du JSON (5 endroits dans l'app). Gemini respecte presque
+// toujours le format demande, mais glisse parfois un backslash litteral
+// invalide pour JSON (ex: en recopiant un bout de texte source), ce qui
+// faisait planter le parsing avec une erreur brute et peu comprehensible
+// ("Bad escaped character..."). Trois niveaux de recuperation avant
+// d'abandonner :
+function parseAiJson(text) {
+  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
+  try {
+    return JSON.parse(text);
+  } catch (e1) {
+    // Niveau 2 : retire d'eventuelles balises markdown ```json ... ```
+    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
+    try {
+      return JSON.parse(clean);
+    } catch (e2) {
+      // Niveau 3 : repare les backslash invalides pour JSON (tout \ non
+      // suivi d'un caractere d'echappement valide devient \\, ce qui le
+      // transforme en backslash litteral au lieu de faire planter le parse).
+      const repaired = clean.replace(/\\(?!["\\/bfnrtu])/g, "\\\\");
+      try {
+        return JSON.parse(repaired);
+      } catch (e3) {
+        throw new Error("Réponse de l'IA illisible (JSON invalide) — réessaie, ça arrive occasionnellement.");
+      }
+    }
+  }
+}
+
 function escapeLatex(str) {
   if (!str) return str;
   // Defense en profondeur : neutralise en texte brut tout formatage
@@ -607,16 +637,17 @@ async function saveMasterCv(contractType, tex) {
   return { ok: true, localOnly: true };
 }
 
-function buildCvTex(contractType, headlineFill, keywordChanges, programType, programYear) {
+function buildCvTex(contractType, headlineFill, keywordChanges, programType, programYear, durationMonths) {
   const ct = CONTRACT_TYPES[contractType];
   if (!ct || !ct.ready) return null;
   const year = escapeLatex(programYear || "2027");
   const fill = escapeLatex(headlineFill || "Front Office");
+  const duration = escapeLatex(String(durationMonths || 6));
   let sentence;
   if (contractType === "stage") {
     sentence = programType === "summer"
       ? `Client Solutions Intern at FactSet, seeking a Summer ${fill} internship in ${year}.`
-      : `Client Solutions Intern at FactSet, seeking a 6-month ${fill} internship starting January ${year}.`;
+      : `Client Solutions Intern at FactSet, seeking a ${duration}-month ${fill} internship starting January ${year}.`;
   } else {
     sentence = `Client Solutions Intern at FactSet, seeking a ${fill} position.`;
   }
@@ -636,12 +667,13 @@ function buildCvTex(contractType, headlineFill, keywordChanges, programType, pro
   return tex;
 }
 
-function buildLmTex(contractType, fields, programType, programYear) {
+function buildLmTex(contractType, fields, programType, programYear, durationMonths) {
   const ct = CONTRACT_TYPES[contractType];
   if (!ct || !ct.ready) return null;
   const f = fields || {};
   const rawJobTitle = f.jobTitle || "[Job Title]";
   const year = escapeLatex(programYear || "2027");
+  const duration = escapeLatex(String(durationMonths || 6));
   const article = articleFor(rawJobTitle);
   const jobTitle = escapeLatex(rawJobTitle);
   const company = escapeLatex(f.company || "[Company Name]");
@@ -650,7 +682,8 @@ function buildLmTex(contractType, fields, programType, programYear) {
   const variant = ct.programVariants ? (ct.programVariants[programType] || Object.values(ct.programVariants)[0]) : null;
   let para1 = variant ? variant.para1 : String.raw`\noindent Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for this role, within __TEAM__.`;
   para1 = para1.split("__COMPANY__").join(company).split("__ARTICLE__").join(article)
-    .split("__JOBTITLE__").join(jobTitle).split("__YEAR__").join(year).split("__TEAM__").join(team);
+    .split("__JOBTITLE__").join(jobTitle).split("__YEAR__").join(year).split("__TEAM__").join(team)
+    .split("__DURATION__").join(duration);
 
   return ct.lmTemplate
     .split("__PARA1__").join(para1)
@@ -732,13 +765,7 @@ RÈGLES STRICTES :
   }
   const data = await response.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
-  try {
-    return JSON.parse(text);
-  } catch (e) {
-    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
-    return JSON.parse(clean);
-  }
+  return parseAiJson(text);
 }
 
 /* ============================================================
@@ -792,13 +819,7 @@ RÈGLES STRICTES :
   }
   const data = await response.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
-  let proposal;
-  try { proposal = JSON.parse(text); }
-  catch (e) {
-    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
-    proposal = JSON.parse(clean);
-  }
+  const proposal = parseAiJson(text);
   // Vérification cliente : l'ancrage doit exister EXACTEMENT dans le CV,
   // sinon l'application automatique serait impossible/dangereuse.
   const anchor = proposal.mode === "replace" ? proposal.target : proposal.insertAfter;
@@ -955,14 +976,7 @@ ${profileInfo || "(aucune info fournie)"}`;
   }
   const data = await response.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
-  let result;
-  try { result = JSON.parse(text); }
-  catch (e) {
-    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
-    result = JSON.parse(clean);
-  }
-  return result;
+  return parseAiJson(text);
 }
 
 // Mode "correction de brouillon" : Sacha a deja ecrit son message, l'IA le
@@ -1013,14 +1027,7 @@ ${draftText}`;
   }
   const data = await response.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
-  let result;
-  try { result = JSON.parse(text); }
-  catch (e) {
-    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
-    result = JSON.parse(clean);
-  }
-  return result;
+  return parseAiJson(text);
 }
 
 /* ============================================================
@@ -1220,10 +1227,9 @@ Réponds UNIQUEMENT avec un tableau JSON valide (vide si rien ne correspond vrai
   if (!text) return [];
   let arr;
   try {
-    arr = JSON.parse(text);
+    arr = parseAiJson(text);
   } catch (e) {
-    const clean = text.replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
-    try { arr = JSON.parse(clean); } catch (e2) { return []; }
+    return []; // email non exploitable, on l'ignore plutot que de faire planter tout le scan
   }
   if (!Array.isArray(arr)) return [];
 
@@ -2075,8 +2081,9 @@ function ApplicationDetail({ app }) {
   const contractType = app.contractType || "stage";
   const programType = app.programType || "p2";
   const programYear = app.programYear || "2027";
-  const cvTex = buildCvTex(contractType, adapt.headlineFill, adapt.keywordChanges, programType, programYear);
-  const lmTex = buildLmTex(contractType, adapt.letterFields, programType, programYear);
+  const durationMonths = app.durationMonths || 6;
+  const cvTex = buildCvTex(contractType, adapt.headlineFill, adapt.keywordChanges, programType, programYear, durationMonths);
+  const lmTex = buildLmTex(contractType, adapt.letterFields, programType, programYear, durationMonths);
   // Lecture simple des contacts de prospection lies a cette candidature —
   // pas besoin d'etat partage complexe, l'onglet Prospection est la source
   // de verite et sauvegarde deja dans LocalStore a chaque modification.
@@ -2128,6 +2135,7 @@ function NewApplication({ onSave, prefill }) {
   const [offerText, setOfferText] = useState((prefill && prefill.offerText) || "");
   const [programType, setProgramType] = useState("p2");
   const [programYear, setProgramYear] = useState("2027");
+  const [durationMonths, setDurationMonths] = useState("6");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [adaptation, setAdaptation] = useState(null);
@@ -2164,11 +2172,11 @@ function NewApplication({ onSave, prefill }) {
     });
   };
 
-  const cvTex = adaptation ? buildCvTex(contractType, adaptation.headlineFill, adaptation.keywordChanges, programType, programYear) : "";
-  const lmTex = adaptation ? buildLmTex(contractType, adaptation.letterFields, programType, programYear) : "";
+  const cvTex = adaptation ? buildCvTex(contractType, adaptation.headlineFill, adaptation.keywordChanges, programType, programYear, durationMonths) : "";
+  const lmTex = adaptation ? buildLmTex(contractType, adaptation.letterFields, programType, programYear, durationMonths) : "";
 
   const handleSave = () => {
-    onSave({ company, jobTitle, location, jobUrl, contractType, programType, programYear, status: "a_preparer", adaptation });
+    onSave({ company, jobTitle, location, jobUrl, contractType, programType, programYear, durationMonths, status: "a_preparer", adaptation });
   };
 
   if (!ct.ready) {
@@ -2228,6 +2236,12 @@ function NewApplication({ onSave, prefill }) {
               <label>Année</label>
               <input type="text" value={programYear} onChange={e => setProgramYear(e.target.value)} style={{maxWidth:120}} />
             </div>
+            {programType !== "summer" && (
+              <div className="form-field">
+                <label>Durée (mois)</label>
+                <input type="text" value={durationMonths} onChange={e => setDurationMonths(e.target.value)} style={{maxWidth:120}} placeholder="6" />
+              </div>
+            )}
           </React.Fragment>
         )}
         <div className="form-field">
