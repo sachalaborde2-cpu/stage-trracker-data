@@ -1,5 +1,51 @@
 [
   {
+    "company": "Citi",
+    "jobTitle": "Markets – Sales and Trading, Off-Cycle Internship, Paris – France, 2027",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Sales and Trading",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, option pricing theory via Black-Scholes, and hedging strategies for futures, forwards, and other derivatives products."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator in Python, including bid/ask quoting, inventory-based pricing, and incremental delta hedging for trading strategies."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics, managing a high volume of daily client requests for sales and trading desks."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a systematic trading strategy over a 10-year horizon across three geographies using strategy-testing tools, analyzing risk-adjusted performance and improving risk models."
+        }
+      ],
+      "letterFields": {
+        "company": "Citi",
+        "jobTitle": "Markets Sales and Trading Intern Analyst",
+        "task1": "market making activities",
+        "task2": "pricing and hedging strategies",
+        "task3": "trading book risk",
+        "specificDesk": "Sales and Trading Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Markets Sales and Trading team"
+      }
+    },
+    "id": "1788781587496",
+    "dateAdded": "2026-09-07"
+  },
+  {
     "company": "BNP Paribas",
     "jobTitle": "Equity sales assistant",
     "location": "Paris",
