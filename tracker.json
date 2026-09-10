@@ -1,5 +1,51 @@
 [
   {
+    "company": "Edmond de Rothschild",
+    "jobTitle": "STAGE - MIDDLE OFFICE PRODUITS STRUCTURÉS (H/F)",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Middle Office",
+      "keywordChanges": [
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Developed an OOP structured product pricing engine (NumPy) incorporating Black-Scholes, Monte Carlo, Greeks, and implied volatility for accurate valuation."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional clients on cross-asset portfolio analytics, managing a high volume of daily client requests for operational support and structured product reporting under tight deadlines."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered structured product valuation methods, including option pricing via Black-Scholes, and hedging strategies for various derivatives (futures, forwards, options)."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered a Python web application for dynamic investment portfolio management, computing advanced financial metrics for client reporting and ad-hoc IT projects."
+        }
+      ],
+      "letterFields": {
+        "company": "Edmond de Rothschild",
+        "jobTitle": "Middle Office Structured Products Intern",
+        "task1": "structured product valuations",
+        "task2": "client and banker reports",
+        "task3": "EMTN order flows",
+        "specificDesk": "Financial Engineering Middle Office",
+        "careerEnvironment": "a middle-office structured products environment",
+        "processType": "structured products operational",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales, Trading, or Structuring, I am convinced this Middle Office Structured Products internship would provide me with the operational rigor and detailed product understanding essential to reach that goal.",
+        "team": "your Financial Engineering Middle Office team"
+      }
+    },
+    "id": "1789040249466",
+    "dateAdded": "2026-09-10"
+  },
+  {
     "company": "Oddo BHF",
     "jobTitle": "Stage Equity Sales Trading - janvier 2027",
     "location": "Paris",
