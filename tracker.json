@@ -1,5 +1,51 @@
 [
   {
+    "company": "Oddo BHF",
+    "jobTitle": "Stage Equity Sales Trading - janvier 2027",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Sales Trading",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset market analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage an investment portfolio, computing advanced financial metrics and providing sector/geographic exposure analysis, as well as data visualization."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a Python-based equity market simulator including bid/ask quoting, inventory-based pricing, and incremental delta hedging."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested an equity trading strategy over a 10-year horizon across European and U.S. markets using internal strategy-testing tools, analyzing risk-adjusted performance."
+        }
+      ],
+      "letterFields": {
+        "company": "Oddo BHF",
+        "jobTitle": "Equity Sales Trading Intern",
+        "task1": "equity market news monitoring",
+        "task2": "Sales Trading reports",
+        "task3": "analytical tools development",
+        "specificDesk": "Equity Sales Trading desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Equity Sales Trading team"
+      }
+    },
+    "id": "1789031814374",
+    "dateAdded": "2026-09-10"
+  },
+  {
     "company": "BNP Paribas",
     "jobTitle": "London - 2027 Summer Internship - Global Markets",
     "location": "Londres",
