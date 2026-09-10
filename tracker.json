@@ -1,5 +1,51 @@
 [
   {
+    "company": "Barclays",
+    "jobTitle": "Sales, Trading and Structuring Off Cycle Internship Programme 2027 Paris",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Sales, Trading & Structuring",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing client requests across desks, providing market insights and execution services."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator (Python) implementing bid/ask quoting, inventory-based pricing, and incremental delta hedging, generating trade ideas and managing market risk."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine (NumPy) with Black-Scholes, Monte Carlo, the Greeks, and implied volatility, supporting financial models and new product development."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge, delivering a +6% return under strict trading constraints, identifying market opportunities and generating returns."
+        }
+      ],
+      "letterFields": {
+        "company": "Barclays",
+        "jobTitle": "Sales, Trading and Structuring Off Cycle Intern",
+        "task1": "industry and product research",
+        "task2": "market monitoring and trade idea formulation",
+        "task3": "fundamental and technical data analysis",
+        "specificDesk": "Global Markets division",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1789044741813",
+    "dateAdded": "2026-09-10"
+  },
+  {
     "company": "Edmond de Rothschild",
     "jobTitle": "STAGE - MIDDLE OFFICE PRODUITS STRUCTURÉS (H/F)",
     "location": "Paris",
