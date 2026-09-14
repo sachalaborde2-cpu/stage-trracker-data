@@ -1,5 +1,51 @@
 [
   {
+    "company": "Millennium",
+    "jobTitle": "Quantitative Researcher Intern",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Research",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program blending financial engineering and data science (Python, R, econometric techniques), with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization capabilities, derivative pricing via Black-Scholes, and hedging strategies for various financial instruments."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested investment strategies over a 10-year horizon across multiple geographies using internal strategy-testing tools, analyzing performance and robustness."
+        },
+        {
+          "old": "Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).",
+          "new": "Performed fixed-effects econometric analysis in R on a large panel dataset, applying robust standard errors and relevant specification tests."
+        }
+      ],
+      "letterFields": {
+        "company": "Millennium",
+        "jobTitle": "Quantitative Research Intern",
+        "task1": "data exploration and analysis",
+        "task2": "strategy backtesting",
+        "task3": "quantitative research tool development",
+        "specificDesk": "Quantitative Research",
+        "careerEnvironment": "a quantitative research environment",
+        "processType": "quantitative research",
+        "closingAmbition": "I would like to build a career in Sales, Trading, or Structuring, and this position perfectly aligns with the development of the quantitative skills essential for such a path.",
+        "team": "your quantitative research team"
+      }
+    },
+    "id": "1789371488342",
+    "dateAdded": "2026-09-14"
+  },
+  {
     "company": "Barclays",
     "jobTitle": "Sales, Trading and Structuring Off Cycle Internship Programme 2027 Paris",
     "location": "Paris",
