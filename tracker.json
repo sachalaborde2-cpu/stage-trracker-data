@@ -1,5 +1,51 @@
 [
   {
+    "company": "BMO",
+    "jobTitle": "BMO Capital Markets Summer 2027 Internship Global Markets Analyst, Commodity Derivatives, Calgary",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Commodity Derivatives Trading",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of finance and quantitative data science (Python, R, financial econometrics), with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics, managing a high volume of client requests for market and portfolio research under tight deadlines."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine in Python (NumPy) covering Black-Scholes, Monte Carlo simulations, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator in Python, including bid/ask quoting, inventory-based pricing, and incremental delta hedging strategies."
+        }
+      ],
+      "letterFields": {
+        "company": "BMO",
+        "jobTitle": "Global Markets Analyst, Commodity Derivatives",
+        "task1": "market fundamentals analysis",
+        "task2": "client presentation materials",
+        "task3": "market data and events",
+        "specificDesk": "Commodity Derivatives",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your expert trading team"
+      }
+    },
+    "id": "1789373499667",
+    "dateAdded": "2026-09-14"
+  },
+  {
     "company": "Scotiabank",
     "jobTitle": "Global Banking and Markets - Sales and Trading Intern Co-op - Winter/Summer 2027 - Montreal",
     "location": "Montréal",
