@@ -1,5 +1,51 @@
 [
   {
+    "company": "Crédit Agricole CIB",
+    "jobTitle": "Chargé(e) Middle Office Support Trading Rates H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Rates Middle Office Support",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing performance for risk management by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily support requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage an investment portfolio, computing advanced financial indicators (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Middle Office Support Trading Rates Officer",
+        "task1": "production of operational indicators",
+        "task2": "daily operational controls",
+        "task3": "post-trade process optimization",
+        "specificDesk": "Rates Middle Office Support",
+        "careerEnvironment": "a rates middle-office support environment",
+        "processType": "middle-office operational",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Rates Middle Office Support internship would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Global Markets Middle Office team"
+      }
+    },
+    "id": "1789374031140",
+    "dateAdded": "2026-09-14"
+  },
+  {
     "company": "BMO",
     "jobTitle": "BMO Capital Markets Summer 2027 Internship Global Markets Analyst, Commodity Derivatives, Calgary",
     "location": "Paris",
