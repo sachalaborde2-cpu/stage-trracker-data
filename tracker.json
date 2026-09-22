@@ -1,5 +1,51 @@
 [
   {
+    "company": "Autorité des marchés financiers",
+    "jobTitle": "Analyste financier - Direction des émetteurs",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Issuers Financial Analyst",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of finance and data analysis (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility, applicable to transversal studies."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered financial analysis fundamentals including portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for various derivatives."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, supporting benchmark work and transversal studies."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's cross-asset financial analysis and workflow tools, managing daily client requests under tight deadlines, fostering rigor."
+        }
+      ],
+      "letterFields": {
+        "company": "Autorité des marchés financiers",
+        "jobTitle": "Equity Issuers Financial Analyst",
+        "task1": "issuer information control",
+        "task2": "transversal financial studies",
+        "task3": "market activity monitoring",
+        "specificDesk": "Equity Issuers Directorate",
+        "careerEnvironment": "a financial information oversight environment",
+        "processType": "regulatory control",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Financial Analyst internship would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Equity Issuers Division"
+      }
+    },
+    "id": "1790062922294",
+    "dateAdded": "2026-09-22"
+  },
+  {
     "company": "Natixis Wealth Management",
     "jobTitle": "Stage - 6 mois - Produits Structurés F/H",
     "location": "Paris",
