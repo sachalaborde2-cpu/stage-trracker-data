@@ -1,5 +1,51 @@
 [
   {
+    "company": "BlackRock",
+    "jobTitle": "2027 Summer Internship Program - EMEA",
+    "location": "Londres",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Investment Management",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of quantitative finance and data analytics (Python, R, financial econometrics), with FRM Level 1 eligibility and Bloomberg Terminal access, essential for investment research."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options, fundamental to investment modeling."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge across FactSet's global offices, delivering a +6% return under strict trading constraints, demonstrating strong investment analysis skills."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using strategy-testing tools, analyzing risk-adjusted performance for investment research and analytics."
+        }
+      ],
+      "letterFields": {
+        "company": "BlackRock",
+        "jobTitle": "Summer Internship Analyst",
+        "task1": "financial market analysis",
+        "task2": "investment strategy preparation",
+        "task3": "portfolio performance monitoring",
+        "specificDesk": "Investment Research and Analytics",
+        "careerEnvironment": "an investment management environment",
+        "processType": "investment analysis",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Summer Internship at BlackRock would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Investment Research and Analytics team"
+      }
+    },
+    "id": "1790072310921",
+    "dateAdded": "2026-09-22"
+  },
+  {
     "company": "Autorité des marchés financiers",
     "jobTitle": "Analyste financier - Direction des émetteurs",
     "location": "Paris",
