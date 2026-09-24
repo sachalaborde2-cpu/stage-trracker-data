@@ -1,5 +1,51 @@
 [
   {
+    "company": "BNP Paribas CIB",
+    "jobTitle": "Stage - Assistant Trader (H/F)",
+    "location": "Luxembourg",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX Trading Desk",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, option pricing via Black-Scholes, and hedging strategies for futures, forwards, and foreign exchange products."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge, delivering a +6% return under strict trading constraints and processing transactions efficiently."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics, managing a high volume of daily client requests under tight deadlines."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator (Python) including bid/ask quoting, inventory-based pricing, and incremental hedging strategies for FX transactions."
+        }
+      ],
+      "letterFields": {
+        "company": "BNP Paribas CIB",
+        "jobTitle": "FX Trader Assistant",
+        "task1": "FX transaction processing",
+        "task2": "client order execution",
+        "task3": "transaction verification and control",
+        "specificDesk": "Managed FX and Overlay Solutions (MFOS) desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your FX Trading team"
+      }
+    },
+    "id": "1790236862776",
+    "dateAdded": "2026-09-24"
+  },
+  {
     "company": "BNP Paribas AM",
     "jobTitle": "Structurer Intern H/F",
     "location": "Paris",
