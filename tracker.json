@@ -1,5 +1,51 @@
 [
   {
+    "company": "Banque de france",
+    "jobTitle": "Analyste quantitatif - Valorisation d'actifs & risques de politique monétaire H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Valuation & Risk",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of quantitative finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP Python pricing engine (NumPy) for asset valuation, implementing Black-Scholes, Monte Carlo simulations, the Greeks, and implied volatility via numerical inversion methods."
+        },
+        {
+          "old": "Built a market data pipeline (pandas): Yahoo Finance ingestion, liquidity filtering, and pytest-based validation.",
+          "new": "Built a financial data pipeline (pandas) for data ingestion from various external sources, including liquidity filtering and pytest-based validation processes."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python for investment portfolio management, developing analysis, visualization, and calculation tools for financial metrics and exposure."
+        }
+      ],
+      "letterFields": {
+        "company": "Banque de France",
+        "jobTitle": "Quantitative Analyst, Asset Valuation & Monetary Policy Risks",
+        "task1": "Python pricing tool design",
+        "task2": "financial data structuring",
+        "task3": "valuation model testing",
+        "specificDesk": "Valuation & Risk Analysis",
+        "careerEnvironment": "a central bank quantitative valuation and risk environment",
+        "processType": "quantitative valuation",
+        "closingAmbition": "While my long-term ambition is to build a career in front-office roles such as Sales, Trading, or Structuring, I am convinced this Quantitative Analyst internship would provide me with the operational rigor, deep market understanding, and robust risk framework knowledge essential to excel in these fields.",
+        "team": "your central bank's Quantitative Analysis team"
+      }
+    },
+    "id": "1790242713407",
+    "dateAdded": "2026-09-24"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Stage Assistant Trading Global Debt Market - Cash Financing Solution Repo (f/m/d)",
     "location": "Paris",
