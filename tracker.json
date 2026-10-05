@@ -1,52 +1,6 @@
 [
   {
     "company": "BNP Paribas CIB",
-    "jobTitle": "Stage - Assistant Trader (H/F)",
-    "location": "Luxembourg",
-    "jobUrl": "",
-    "contractType": "stage",
-    "programType": "p2",
-    "programYear": "2027",
-    "durationMonths": "6",
-    "status": "a_preparer",
-    "adaptation": {
-      "headlineFill": "FX Trading Assistant",
-      "keywordChanges": [
-        {
-          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
-          "new": "English-taught program focusing on **Market Finance** and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility and Bloomberg Terminal access."
-        },
-        {
-          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
-          "new": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and **hedging strategies** for **foreign exchange products** (futures, forwards, and options)."
-        },
-        {
-          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
-          "new": "Built a **market-making** simulator (Python) featuring bid/ask quoting, inventory-based pricing, and incremental delta hedging, directly applicable to **FX Trading** activities."
-        },
-        {
-          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
-          "new": "Advised institutional **buy-side and sell-side** professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests and deadlines within **Securities Services**."
-        }
-      ],
-      "letterFields": {
-        "company": "BNP Paribas CIB",
-        "jobTitle": "FX Trader Assistant",
-        "task1": "transaction processing",
-        "task2": "order documentation",
-        "task3": "internal control procedures",
-        "specificDesk": "FX Trading Desk",
-        "careerEnvironment": "a trading room environment",
-        "processType": "front-office",
-        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
-        "team": "your FX Trading team"
-      }
-    },
-    "id": "1791192206769",
-    "dateAdded": "2026-10-05"
-  },
-  {
-    "company": "BNP Paribas CIB",
     "jobTitle": "ETS Derivatives & Trading Intern",
     "location": "Lisbonne",
     "jobUrl": "",
