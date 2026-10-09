@@ -1,5 +1,51 @@
 [
   {
+    "company": "Exoé",
+    "jobTitle": "Assistant Sales-Trading Cross Asset",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Sales & Trading",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks, gaining insights relevant to externalized trading desks serving asset managers and institutional clients."
+        },
+        {
+          "old": "Ranked \textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \textbf{+6\\% return} under strict trading constraints.",
+          "new": "Achieved first place out of 12 participants in a simulated portfolio management challenge across FactSet offices, delivering a +6% return on a €1M budget with a Stoxx Europe 600 benchmark, demonstrating strong interest in Actions markets and buy-side trading."
+        },
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Pursuing an English-taught program at the interface of finance and data science (Python, R, financial econometrics), providing strong foundations for the financial markets, with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization techniques, including option pricing models such as Black-Scholes, and hedging strategies for various derivatives and fixed income instruments."
+        }
+      ],
+      "letterFields": {
+        "company": "Exoé",
+        "jobTitle": "Cross-Asset Sales-Trading Assistant",
+        "task1": "institutional client onboarding",
+        "task2": "Middle-Office mailbox management",
+        "task3": "daily compliance alert monitoring",
+        "specificDesk": "Cross-Asset desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your expert trading team"
+      }
+    },
+    "id": "1791553637427",
+    "dateAdded": "2026-10-09"
+  },
+  {
     "company": "Euronext",
     "jobTitle": "Equity Listing Intern",
     "location": "Paris",
