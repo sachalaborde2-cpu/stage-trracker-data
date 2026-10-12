@@ -1,5 +1,51 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Assistant ANALYSTE FIXED INCOME",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Fixed Income Research Analyst",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "English-taught program focusing on financial market analysis and quantitative methods (Python, R, financial econometrics), with FRM Level 1 eligibility and extensive Bloomberg Terminal access."
+        },
+        {
+          "old": "Ran a fixed-effects econometric analysis in R on a panel dataset (8,000 obs., 4,000 firms, 2006--2007), applying robust standard errors and specification tests (Breusch-Pagan, Hausman).",
+          "new": "Conducted a fixed-effects econometric analysis in R on a large panel dataset of corporate issuers, applying robust standard errors and specification tests for in-depth financial analysis."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional professionals on cross-asset portfolio analytics and market workflow tools, managing daily client requests across desks and collaborating with Sales and Trading teams."
+        },
+        {
+          "old": "Ranked \textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \textbf{+6\\% return} under strict trading constraints.",
+          "new": "Achieved top ranking in a 10-week simulated portfolio management challenge with a +6% return under strict trading constraints, demonstrating aptitude for market strategy and risk management."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Assistant Fixed Income Analyst",
+        "task1": "research publication contributions",
+        "task2": "financial analysis of bond issuers",
+        "task3": "bond rating agency monitoring",
+        "specificDesk": "Global Markets Research",
+        "careerEnvironment": "a global markets research environment",
+        "processType": "fixed income research",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Assistant Fixed Income Analyst internship would provide me with the in-depth market understanding and analytical rigor essential to reach that goal.",
+        "team": "your Global Markets Research team"
+      }
+    },
+    "id": "1791797269024",
+    "dateAdded": "2026-10-12"
+  },
+  {
     "company": "CACIB",
     "jobTitle": " Assistant Sales BM",
     "location": "Paris",
