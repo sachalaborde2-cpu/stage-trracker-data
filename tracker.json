@@ -1,5 +1,51 @@
 [
   {
+    "company": "Bloomberg",
+    "jobTitle": "2027 London Summer Internship - Analytics & Sales - French Speakers",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "summer",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Analytics & Sales Summer Internship",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization and risk management strategies, including option pricing and hedging strategies for various financial products and global financial markets."
+        },
+        {
+          "old": "Ranked \textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st of 12 participants in a 10-week simulated portfolio management challenge across FactSet offices, demonstrating strong critical-thinking and investment decision-making skills in a dynamic financial market environment."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy across global financial markets using market-leading tools, analyzing risk-adjusted performance to identify drivers behind market events and inform investment decisions."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on portfolio analytics and workflow tools, managing a high volume of daily client requests, providing exceptional client service and building relationships."
+        }
+      ],
+      "letterFields": {
+        "company": "Bloomberg",
+        "jobTitle": "Analytics & Sales Summer Intern",
+        "task1": "client engagement",
+        "task2": "product feature promotion",
+        "task3": "new business prospecting",
+        "specificDesk": "Analytics and Sales",
+        "careerEnvironment": "a client-facing Analytics and Sales environment",
+        "processType": "client-facing sales and analytics",
+        "closingAmbition": "I am eager to build a career in client-facing financial services, and this position perfectly aligns with the continuity of my training and professional aspirations.",
+        "team": "your client-centric Analytics and Sales team"
+      }
+    },
+    "id": "1791792359915",
+    "dateAdded": "2026-10-12"
+  },
+  {
     "company": "Exoé",
     "jobTitle": "Assistant Sales-Trading Cross Asset",
     "location": "Paris",
