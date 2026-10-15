@@ -1,5 +1,51 @@
 [
   {
+    "company": "Amundi",
+    "jobTitle": "Stage - assistant prêt de titres H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Securities Lending Optimization",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program focusing on quantitative finance and data science (Python, R, financial econometrics) for developing optimization tools and analytical support."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), option pricing, and hedging strategies to maximize fund revenues."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio management challenge, delivering a +6% return through revenue optimization and active trading."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator (Python) for bid/ask quoting and inventory-based pricing, developing decision-making tools for negotiators."
+        }
+      ],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Securities Lending Assistant",
+        "task1": "development of optimization tools",
+        "task2": "book revenue analysis",
+        "task3": "decision-making tool enhancement",
+        "specificDesk": "Securities Lending & Repo Desk",
+        "careerEnvironment": "a quantitative trading support environment",
+        "processType": "quantitative trading support",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this quantitative trading support internship would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Securities Lending and Repo team"
+      }
+    },
+    "id": "1792049228257",
+    "dateAdded": "2026-10-15"
+  },
+  {
     "company": "Deutsche Bank",
     "jobTitle": "Cross-Asset Structured Products Sales Intern",
     "location": "Paris",
