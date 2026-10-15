@@ -1,5 +1,51 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Business Manager - Global Market Trading H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Market Trading Business Management",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "English-taught program interfacing market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) for risk and control, and Bloomberg Terminal access."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing client requests across desks, demonstrating project coordination and business management skills within Global Markets."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine (NumPy) for Black-Scholes, Monte Carlo, and the Greeks, supporting Global Markets product development, structuring, and trading activities."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance across geographies for Global Markets trading strategies and risk management."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Global Market Trading Business Manager",
+        "task1": "IT and management projects",
+        "task2": "Comex preparation",
+        "task3": "product development coordination",
+        "specificDesk": "Global Markets Division",
+        "careerEnvironment": "a Global Markets business management environment",
+        "processType": "transversal project management",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales, Trading, or Structuring, I am convinced this Global Market Trading Business Manager internship would give me the transversal project management skills and market understanding essential to reach that goal.",
+        "team": "your Global Markets Division"
+      }
+    },
+    "id": "1792049383509",
+    "dateAdded": "2026-10-15"
+  },
+  {
     "company": "Amundi",
     "jobTitle": "Stage - assistant prêt de titres H/F",
     "location": "Paris",
