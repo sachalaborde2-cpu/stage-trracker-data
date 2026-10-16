@@ -1,5 +1,51 @@
 [
   {
+    "company": "LCL",
+    "jobTitle": "STAGE – Assistant Sales Salle des Marchés H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Sales & Structuring",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional and corporate clients on FactSet's cross-asset structured product analytics and workflow tools, managing a high volume of daily client requests across Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP derivatives pricing engine (NumPy): Black-Scholes, Monte Carlo, implied volatility, and Greeks via numerical inversion for structured products."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), structured product pricing via Black-Scholes, and hedging strategies for market products."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market product simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging strategies."
+        }
+      ],
+      "letterFields": {
+        "company": "LCL",
+        "jobTitle": "Sales & Structuring Assistant",
+        "task1": "structured product origination",
+        "task2": "commercial proposals",
+        "task3": "market developments",
+        "specificDesk": "Client Market Solutions Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1792135143787",
+    "dateAdded": "2026-10-16"
+  },
+  {
     "company": "IRBIS",
     "jobTitle": "Stage - Assistant Sales / Structuration Produits Structurés",
     "location": "Paris",
