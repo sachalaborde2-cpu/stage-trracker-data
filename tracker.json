@@ -1,5 +1,51 @@
 [
   {
+    "company": "BNP Paribas Asset Management",
+    "jobTitle": "Stage - Structurer H/F",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Investment Structuring",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of financial markets and data science (Python, R, econometrics), in work-study format, with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered investment portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for financial instruments."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP options pricing engine in Python (NumPy), covering Black-Scholes, Monte Carlo simulations, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive web application in Python to manage an investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "BNP Paribas Asset Management",
+        "jobTitle": "Investment Structurer",
+        "task1": "investment vehicle structuring",
+        "task2": "legal documentation negotiation",
+        "task3": "quantitative analysis and modeling",
+        "specificDesk": "Investment Structuring Team",
+        "careerEnvironment": "an investment structuring environment",
+        "processType": "investment structuring",
+        "closingAmbition": "I would like to make Sales, Trading, and Structuring my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your expert investment structuring team"
+      }
+    },
+    "id": "1792135343049",
+    "dateAdded": "2026-10-16"
+  },
+  {
     "company": "LCL",
     "jobTitle": "STAGE – Assistant Sales Salle des Marchés H/F",
     "location": "Paris",
