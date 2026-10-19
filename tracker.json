@@ -1,5 +1,51 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Stage - 6 mois - IT Quant Equity F/H",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Quant Development",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of quantitative finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization (mean-variance framework), financial instrument valuation via Black-Scholes, and risk management strategies for futures, forwards, and options."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an object-oriented programming (OOP) financial valuation engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage an investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and market data analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "IT Quant Equity Analyst",
+        "task1": "analytical tool development",
+        "task2": "decision support model building",
+        "task3": "data flow automation",
+        "specificDesk": "IT Quant Equity Analysis & Expertise",
+        "careerEnvironment": "a financial IT development environment",
+        "processType": "financial IT development",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales, Trading, or Structuring, I am convinced this IT Quant Equity internship would provide the technical rigor and market understanding essential to reach that goal.",
+        "team": "your IT Quant Equity Analysis & Expertise team"
+      }
+    },
+    "id": "1792399440424",
+    "dateAdded": "2026-10-19"
+  },
+  {
     "company": "Nexo Capital",
     "jobTitle": "ASSISTANT(E) SALES PRODUITS STRUCTURÉS CROSS ASSET",
     "location": "Paris",
