@@ -1,5 +1,51 @@
 [
   {
+    "company": "HSBC",
+    "jobTitle": "Recherche Quantitative Equity Derivatives",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Equity Derivatives Research",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective program at the interface of market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, equity derivatives pricing via Black-Scholes, and hedging strategies for various equity derivatives instruments."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Performed quantitative analysis to backtest a Golden Cross strategy over a 10-year horizon across three geographies using internal strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Developed an object-oriented equity options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion."
+        }
+      ],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Quantitative Equity Derivatives Research Intern",
+        "task1": "volatility model approximation",
+        "task2": "volatility surface calibration",
+        "task3": "derivative pricing model development",
+        "specificDesk": "Quantitative Equity Derivatives Research",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office quantitative",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Quantitative Equity Derivatives Research team"
+      }
+    },
+    "id": "1792423555892",
+    "dateAdded": "2026-10-19"
+  },
+  {
     "company": "Crédit Agricole",
     "jobTitle": "Assistant(e) Sales FX, Rates Derivatives & Investment Solutions",
     "location": "Paris",
