@@ -1,5 +1,51 @@
 [
   {
+    "company": "Crédit Agricole",
+    "jobTitle": "Assistant(e) Sales FX, Rates Derivatives & Investment Solutions",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX, Rates & Structuring Sales",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program in market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, derivatives pricing (options, swaps) via Black-Scholes, and hedging strategies for FX, rates, and structured products."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset analytics tools, managing a high volume of daily client requests across the Paris and London sales desks under tight deadlines."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Designed an OOP derivatives pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole",
+        "jobTitle": "FX, Rates Derivatives & Investment Solutions Sales Assistant",
+        "task1": "daily market commentary drafting",
+        "task2": "FX, rates, and structured product pricing",
+        "task3": "regulatory developments monitoring",
+        "specificDesk": "FX, Rates & Structuring Sales Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your market sales team"
+      }
+    },
+    "id": "1792417630485",
+    "dateAdded": "2026-10-19"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Stage - 6 mois - IT Quant Equity F/H",
     "location": "Paris",
