@@ -1,6 +1,52 @@
 [
   {
     "company": "HSBC",
+    "jobTitle": "Sales Trading Cash Equity Execution",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cash Equity Sales Trading Execution",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on FactSet's analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks, contributing to strong client relationship management."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Achieved 1st place out of 12 participants in a simulated portfolio management challenge with a +6% return on the Stoxx Europe 600 benchmark under strict trading constraints, demonstrating aptitude for Cash Equity Execution."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Developed a market-making simulator in Python, incorporating bid/ask quoting, inventory-based pricing, and delta hedging, relevant to Electronic / Algo Trading execution strategies."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to manage personal investments, computing advanced financial metrics and sector/geographic exposure analysis, applicable to dashboard and reporting tool evolution."
+        }
+      ],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Sales Trading Cash Equity Execution Intern",
+        "task1": "daily sales trading activities",
+        "task2": "client synthesis reports",
+        "task3": "post-trade operational execution",
+        "specificDesk": "Cash Equity Execution",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Cash Equity Execution desk"
+      }
+    },
+    "id": "1792423666029",
+    "dateAdded": "2026-10-19"
+  },
+  {
+    "company": "HSBC",
     "jobTitle": "Recherche Quantitative Equity Derivatives",
     "location": "Paris",
     "jobUrl": "",
