@@ -1,5 +1,51 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Assistant Trader - Alternative Credit Loans Trading",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Alternative Credit Loans Trading",
+      "keywordChanges": [
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization techniques, derivative pricing models (Black-Scholes), and hedging strategies for diverse financial instruments."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated financial markets challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices, delivering a +6% return under strict trading constraints."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross trading strategy over a 10-year horizon across three geographies using strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side professionals on cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across financial desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Alternative Credit Loans Trading Assistant",
+        "task1": "daily trade booking",
+        "task2": "P&L reports",
+        "task3": "credit analysis",
+        "specificDesk": "Alternative Credit Loans Trading Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Alternative Credit Loans Trading team"
+      }
+    },
+    "id": "1792482722273",
+    "dateAdded": "2026-10-20"
+  },
+  {
     "company": "BNP Paribas CIB",
     "jobTitle": "Structured Credit Trading Analyst Trainee",
     "location": "Paris",
