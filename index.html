@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-09-29 20:06 UTC";
+const BUILD_VERSION = "2026-10-20 08:10 UTC";
 
 const LocalStore = {
   get(key) {
@@ -502,6 +502,96 @@ function downloadTextFile(filename, content) {
   a.href = url; a.download = filename;
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
+}
+
+/* ============================================================
+   AUDIT — boucle d'amélioration continue du moteur d'adaptation.
+   Chaque candidature enregistre l'offre, la sortie brute de Gemini et la
+   version finale (après tes retouches). Le "dossier d'audit" regroupe tout
+   dans un fichier que tu m'envoies : j'analyse, puis je corrige le prompt.
+   ============================================================ */
+function texToPlain(tex) {
+  if (!tex) return "";
+  let t = tex.split("\\begin{document}")[1] || tex;
+  t = t.split("\\end{document}")[0];
+  t = t.replace(/%.*$/gm, "");
+  t = t.replace(/\\(vspace|hspace)\*?\{[^}]*\}/g, "");
+  t = t.replace(/\\(noindent|par|flushbottom|raggedbottom|centering|hfill|newline)\b/g, "");
+  t = t.replace(/\\\\(\[[^\]]*\])?/g, "\n");
+  t = t.replace(/\\(begin|end)\{[^}]*\}(\[[^\]]*\])?/g, "");
+  for (let i = 0; i < 4; i++) t = t.replace(/\\[a-zA-Z]+\*?(\[[^\]]*\])?\{([^{}]*)\}/g, "$2");
+  t = t.replace(/\\&/g, "&").replace(/\\%/g, "%").replace(/\\_/g, "_").replace(/\\\$/g, "$");
+  return t.replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function auditEligible(app) {
+  return !!(app && app.adaptation && app.offerText && app.offerText.trim().length > 40);
+}
+
+function adaptationDiff(raw, final) {
+  const out = [];
+  if (!raw || !final) return out;
+  if ((raw.headlineFill || "") !== (final.headlineFill || "")) out.push("headlineFill");
+  const rl = raw.letterFields || {}, fl = final.letterFields || {};
+  new Set([...Object.keys(rl), ...Object.keys(fl)]).forEach(k => { if ((rl[k] || "") !== (fl[k] || "")) out.push("letterFields." + k); });
+  if (JSON.stringify(raw.keywordChanges || []) !== JSON.stringify(final.keywordChanges || [])) out.push("keywordChanges");
+  return out;
+}
+
+function buildAuditPack(apps, buildVersion) {
+  const L = [];
+  L.push("# DOSSIER D'AUDIT — adaptations CV / lettre générées par Gemini");
+  L.push("Généré le " + new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC · build de l'app : " + buildVersion + " · " + apps.length + " candidature(s)");
+  L.push("");
+  L.push("## Consigne pour Claude");
+  L.push("Audite chaque adaptation ci-dessous, puis corrige le prompt et/ou le moteur dans index.html (fichier à joindre avec ce dossier).");
+  L.push("Pour chaque adaptation, juge : (1) pertinence de l'accroche vs l'offre, (2) mots-clés de l'offre repris ou ratés dans les 4 bullets éditables, (3) cohérence du poste (front office vs autre), (4) qualité de l'anglais et grammaire des phrases une fois assemblées dans la lettre, (5) respect des règles, (6) longueur, (7) ce que Sacha a retouché à la main (c'est le signal le plus fiable : chaque retouche est un défaut du moteur).");
+  L.push("Règles à vérifier : sortie toujours en anglais même si l'offre est en français ; texte brut sans gras ni \\textbf ; seuls l'accroche et les bullets BULLET_1/2/3/5 sont modifiables dans le CV ; la lettre garde 4 paragraphes fixes, 1 page ; jamais de \"Streamlit\" dans la lettre ; aucun fait inventé ; ne pas toucher au format des templates.");
+  L.push("Ne corrige que les défauts qui reviennent sur plusieurs adaptations. Un cas isolé se signale, il ne justifie pas de changer le prompt. Termine par : défauts récurrents, corrections apportées, défauts isolés laissés tels quels.");
+  L.push("");
+  apps.forEach((a, i) => {
+    const raw = a.geminiOriginal || null;
+    const fin = a.adaptation || {};
+    const diff = raw ? adaptationDiff(raw, fin) : [];
+    const fb = a.feedback || {};
+    const statusLabel = (STATUS_OPTIONS.find(s => s.value === a.status) || {}).label || a.status;
+    const ptype = a.programType || "p2", pyear = a.programYear || "2027", dur = a.durationMonths || 6;
+    L.push("---");
+    L.push("## " + (i + 1) + ". " + a.company + " — " + a.jobTitle + " (" + (a.location || "?") + ")");
+    L.push("- Ajoutée le : " + (a.dateAdded || "?") + " · statut : " + statusLabel + " · programme : " + ptype + " " + pyear + (ptype !== "summer" ? " · " + dur + " mois" : ""));
+    L.push("- Build du moteur au moment de la génération : " + (a.engineBuild || "inconnu"));
+    L.push("- Note de Sacha : " + (fb.rating ? ({ bon: "bon", moyen: "moyen", mauvais: "à revoir" }[fb.rating] || fb.rating) : "non renseignée"));
+    if (fb.comment) L.push("- Commentaire de Sacha : " + fb.comment);
+    L.push("- Retouché à la main avant enregistrement : " + (raw ? (diff.length ? "OUI → " + diff.join(", ") : "non") : "inconnu (enregistré avant le suivi)"));
+    L.push("");
+    L.push("### Texte de l'offre");
+    L.push(a.offerText.trim());
+    L.push("");
+    if (raw) {
+      L.push("### Sortie brute de Gemini (JSON)");
+      L.push("```json\n" + JSON.stringify(raw, null, 1) + "\n```");
+      L.push("");
+    }
+    if (!raw || diff.length) {
+      L.push("### Version finale enregistrée (JSON)" + (raw ? " — après retouches de Sacha" : ""));
+      L.push("```json\n" + JSON.stringify(fin, null, 1) + "\n```");
+      L.push("");
+    }
+    try {
+      const cvTex = buildCvTex(a.contractType || "stage", fin.headlineFill, fin.keywordChanges, ptype, pyear, dur);
+      const lmTex = buildLmTex(a.contractType || "stage", fin.letterFields, ptype, pyear, dur);
+      const lmPlain = texToPlain(lmTex);
+      if (cvTex) {
+        const m = cvTex.match(/seeking[^\n]*/);
+        if (m) { L.push("### Accroche finale telle qu'elle apparaît dans le CV"); L.push(texToPlain(m[0]).replace(/\}+\s*$/, "")); L.push(""); }
+      }
+      if (lmPlain) { L.push("### Lettre finale assemblée (texte brut)"); L.push(lmPlain); L.push(""); }
+    } catch (e) {
+      L.push("(Impossible de reconstruire le CV/la lettre : " + e.message + ")");
+      L.push("");
+    }
+  });
+  return L.join("\n");
 }
 
 function downloadBinaryFile(filename, arrayBuffer, mime) {
@@ -1905,6 +1995,8 @@ function App() {
   const addApplication = (entry) => persist([{ ...entry, id: Date.now().toString(), dateAdded: new Date().toISOString().slice(0, 10) }, ...applications]);
   const updateStatus = (id, status) => persist(applications.map(a => a.id === id ? { ...a, status } : a));
   const deleteApp = (id) => persist(applications.filter(a => a.id !== id));
+  const updateApp = (id, patch) => persist(applications.map(a => a.id === id ? { ...a, ...patch } : a));
+  const markAudited = (ids) => { const d = new Date().toISOString().slice(0, 10); persist(applications.map(a => ids.includes(a.id) ? { ...a, auditExportedAt: d } : a)); };
 
   const counts = STATUS_OPTIONS.reduce((acc, s) => { acc[s.value] = 0; return acc; }, {});
   applications.forEach(a => { counts[a.status] = (counts[a.status] || 0) + 1; });
@@ -1940,7 +2032,7 @@ function App() {
       {syncStatus === "err" && <div className="error-box">Sync GitHub : {syncError} — tes données restent sauvegardées en local dans ce navigateur.</div>}
 
       {view === "tracker" && (
-        <Tracker applications={applications} loading={loadingApps} counts={counts} expandedId={expandedId} setExpandedId={setExpandedId} updateStatus={updateStatus} deleteApp={deleteApp} />
+        <Tracker applications={applications} loading={loadingApps} counts={counts} expandedId={expandedId} setExpandedId={setExpandedId} updateStatus={updateStatus} deleteApp={deleteApp} updateApp={updateApp} markAudited={markAudited} />
       )}
       {view === "emails" && (
         <GmailInbox onApply={(offer) => {
@@ -1964,7 +2056,24 @@ function App() {
   );
 }
 
-function Tracker({ applications, loading, counts, expandedId, setExpandedId, updateStatus, deleteApp }) {
+function Tracker({ applications, loading, counts, expandedId, setExpandedId, updateStatus, deleteApp, updateApp, markAudited }) {
+  const [onlyNew, setOnlyNew] = useState(true);
+  const [auditMsg, setAuditMsg] = useState("");
+  const eligible = applications.filter(auditEligible);
+  const toExport = onlyNew ? eligible.filter(a => !a.auditExportedAt) : eligible;
+  const handleExportAudit = async (mode) => {
+    if (toExport.length === 0) { setAuditMsg("Rien à exporter."); setTimeout(() => setAuditMsg(""), 3500); return; }
+    const pack = buildAuditPack(toExport, BUILD_VERSION);
+    if (mode === "copy") {
+      try { await navigator.clipboard.writeText(pack); setAuditMsg("Dossier copié (" + toExport.length + ")."); }
+      catch (e) { downloadTextFile("dossier_audit_" + new Date().toISOString().slice(0, 10) + ".md", pack); setAuditMsg("Copie impossible, fichier téléchargé."); }
+    } else {
+      downloadTextFile("dossier_audit_" + new Date().toISOString().slice(0, 10) + ".md", pack);
+      setAuditMsg("Dossier téléchargé (" + toExport.length + ").");
+    }
+    markAudited(toExport.map(a => a.id));
+    setTimeout(() => setAuditMsg(""), 4000);
+  };
   return (
     <React.Fragment>
       <div className="stat-grid">
@@ -1975,7 +2084,17 @@ function Tracker({ applications, loading, counts, expandedId, setExpandedId, upd
         <div className="stat-cell"><div className="stat-label">Refus</div><div className="stat-value">{counts.refus || 0}</div></div>
       </div>
       <div className="panel">
-        <div className="panel-head">Candidatures</div>
+        <div className="panel-head">
+          <span>Candidatures</span>
+          <span style={{display:"flex", alignItems:"center", gap:10, flexWrap:"wrap", fontFamily:"var(--font-mono)", fontSize:11}}>
+            {auditMsg && <span style={{color:"var(--bid)"}}>{auditMsg}</span>}
+            <label style={{display:"flex", alignItems:"center", gap:5, cursor:"pointer", opacity:0.8}}>
+              <input type="checkbox" checked={onlyNew} onChange={e => setOnlyNew(e.target.checked)} /> nouvelles seulement
+            </label>
+            <button className="btn" disabled={toExport.length === 0} onClick={() => handleExportAudit("download")}>Dossier d'audit ({toExport.length})</button>
+            <button className="btn" disabled={toExport.length === 0} onClick={() => handleExportAudit("copy")}>Copier</button>
+          </span>
+        </div>
         {loading ? <div className="empty-state"><span className="spinner"></span>Chargement...</div>
         : applications.length === 0 ? <div className="empty-state">Aucune candidature. Clique "+ Candidature" pour commencer.</div>
         : (
@@ -1999,7 +2118,7 @@ function Tracker({ applications, loading, counts, expandedId, setExpandedId, upd
                       <button className="danger" onClick={() => { if (confirm("Supprimer ?")) deleteApp(app.id); }}>Suppr.</button>
                     </td>
                   </tr>
-                  {expandedId === app.id && <tr className="detail-row"><td colSpan={6}><ApplicationDetail app={app} /></td></tr>}
+                  {expandedId === app.id && <tr className="detail-row"><td colSpan={6}><ApplicationDetail app={app} onUpdate={updateApp} /></td></tr>}
                 </React.Fragment>
               ))}
             </tbody>
@@ -2076,8 +2195,11 @@ function PdfDownloadButton({ tex, filename, docType }) {
 }
 
 
-function ApplicationDetail({ app }) {
+function ApplicationDetail({ app, onUpdate }) {
   const adapt = app.adaptation || {};
+  const fb = app.feedback || {};
+  const [fbComment, setFbComment] = useState(fb.comment || "");
+  const setFeedback = (patch) => { if (onUpdate) onUpdate(app.id, { feedback: { ...(app.feedback || {}), ...patch } }); };
   const contractType = app.contractType || "stage";
   const programType = app.programType || "p2";
   const programYear = app.programYear || "2027";
@@ -2116,6 +2238,18 @@ function ApplicationDetail({ app }) {
           </ul>
         </div>
       )}
+      {app.adaptation && onUpdate && (
+        <div className="detail-block" style={{padding:"0 20px 16px"}}>
+          <h4>Retour sur l'adaptation (sert à l'audit)</h4>
+          <div className="dl-buttons" style={{marginTop:6}}>
+            {[["bon","Bon"],["moyen","Moyen"],["mauvais","À revoir"]].map(([v, label]) => (
+              <button key={v} className={"btn" + (fb.rating === v ? " primary" : "")} onClick={() => setFeedback({ rating: fb.rating === v ? null : v })}>{label}</button>
+            ))}
+          </div>
+          <textarea rows={2} style={{width:"100%", marginTop:8}} value={fbComment} onChange={e => setFbComment(e.target.value)} onBlur={() => { if (fbComment !== (fb.comment || "")) setFeedback({ comment: fbComment }); }} placeholder="Ce qui allait ou non (accroche, mots-clés, lettre)..." />
+          {!app.offerText && <p style={{fontSize:11, opacity:0.6, margin:"6px 0 0"}}>Candidature enregistrée avant le suivi : le texte de l'offre manque, elle ne sera pas incluse dans le dossier d'audit.</p>}
+        </div>
+      )}
       <div className="dl-buttons">
         {cvTex && <PdfDownloadButton tex={cvTex} filename={`Sacha_Laborde_CV_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="cv" />}
         {lmTex && <PdfDownloadButton tex={lmTex} filename={`Sacha_Laborde_LM_${app.company.replace(/\s+/g,"_")}_${jobTitleAbbrev(app.jobTitle)}.pdf`} docType="lm" />}
@@ -2139,15 +2273,17 @@ function NewApplication({ onSave, prefill }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [adaptation, setAdaptation] = useState(null);
+  const [rawAdaptation, setRawAdaptation] = useState(null); // sortie brute de Gemini, avant tes retouches (pour l'audit)
 
   const ct = CONTRACT_TYPES[contractType];
   const canGenerate = ct.ready && company.trim() && jobTitle.trim() && offerText.trim().length > 40;
 
   const handleGenerate = async () => {
-    setError(""); setLoading(true); setAdaptation(null);
+    setError(""); setLoading(true); setAdaptation(null); setRawAdaptation(null);
     try {
       const geminiSettings = LocalStore.get("settings:gemini") || {};
       const result = await generateAdaptation(offerText, company, jobTitle, location, contractType, programType, programYear, geminiSettings);
+      setRawAdaptation(JSON.parse(JSON.stringify(result)));
       setAdaptation(result);
     } catch (e) {
       setError(e.message || "Une erreur est survenue.");
@@ -2176,7 +2312,7 @@ function NewApplication({ onSave, prefill }) {
   const lmTex = adaptation ? buildLmTex(contractType, adaptation.letterFields, programType, programYear, durationMonths) : "";
 
   const handleSave = () => {
-    onSave({ company, jobTitle, location, jobUrl, contractType, programType, programYear, durationMonths, status: "a_preparer", adaptation });
+    onSave({ company, jobTitle, location, jobUrl, contractType, programType, programYear, durationMonths, status: "a_preparer", adaptation, offerText, geminiOriginal: rawAdaptation, engineBuild: BUILD_VERSION });
   };
 
   if (!ct.ready) {
