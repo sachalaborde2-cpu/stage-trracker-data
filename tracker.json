@@ -1,5 +1,51 @@
 [
   {
+    "company": "Euronext",
+    "jobTitle": "Equity and ETF Sales Intern",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity & ETF Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side clients on cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across Paris and London desks, contributing to sales coordination and business development."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application to manage an investment portfolio, computing advanced financial metrics and sector/geographic exposure analysis, demonstrating familiarity with emerging technologies for data analysis."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization and pricing models for financial products such as equities, ETFs, and derivatives (futures, forwards, and options), along with associated hedging strategies."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested an equity strategy over a 10-year horizon across diverse geographies using strategy-testing tools, analyzing risk-adjusted performance by region and monitoring trends in financial markets."
+        }
+      ],
+      "letterFields": {
+        "company": "Euronext",
+        "jobTitle": "Equity and ETF Sales Intern",
+        "task1": "business development initiatives",
+        "task2": "client analysis reports",
+        "task3": "financial market trends",
+        "specificDesk": "Equity and ETF Sales team",
+        "careerEnvironment": "a dynamic capital markets sales environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Equity and ETF Sales team"
+      }
+    },
+    "id": "1792482840962",
+    "dateAdded": "2026-10-20"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Assistant Trader - Alternative Credit Loans Trading",
     "location": "Paris",
