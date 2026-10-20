@@ -1,5 +1,51 @@
 [
   {
+    "company": "BNP Paribas CIB",
+    "jobTitle": "Structured Credit Trading Analyst Trainee",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Credit Trading Analyst",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program integrating finance and data science (Python, R, financial econometrics), offering FRM Level 1 eligibility and Bloomberg Terminal access."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization techniques, including option pricing via Black-Scholes, and hedging strategies for various derivative instruments such as futures, forwards, and options."
+        },
+        {
+          "old": "Designed an OOP options pricing engine (NumPy): Black-Scholes, Monte Carlo, the Greeks, and implied volatility via numerical inversion.",
+          "new": "Developed an object-oriented options pricing engine (NumPy) encompassing Black-Scholes, Monte Carlo simulations, the Greeks, and implied volatility via numerical inversion."
+        },
+        {
+          "old": "Built a market-making simulator (Python): bid/ask quoting, inventory-based pricing, and incremental delta hedging.",
+          "new": "Built a market-making simulator in Python, implementing bid/ask quoting, inventory-based pricing, and incremental delta hedging techniques."
+        }
+      ],
+      "letterFields": {
+        "company": "BNP Paribas CIB",
+        "jobTitle": "Structured Credit Trading Analyst Trainee",
+        "task1": "daily P&L reporting",
+        "task2": "credit exotics risk analysis",
+        "task3": "structured credit valuations",
+        "specificDesk": "Structured Credit Products Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Global Markets department"
+      }
+    },
+    "id": "1792481657782",
+    "dateAdded": "2026-10-20"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Sales Trading Cash Equity Execution",
     "location": "Paris",
