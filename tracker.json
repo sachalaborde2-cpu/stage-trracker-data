@@ -1,5 +1,86 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Assistant Sales Forex",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Foreign Exchange Sales",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated capital markets portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines, contributing to client onboarding."
+        },
+        {
+          "old": "Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover.",
+          "new": "Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover, demonstrating strong commercial drive."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Forex Sales Assistant",
+        "task1": "existing client portfolios",
+        "task2": "new client onboarding",
+        "task3": "commercial documentation",
+        "specificDesk": "Foreign Exchange Sales Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Foreign Exchange Sales team"
+      }
+    },
+    "offerText": "Stage - 6 mois - Assistant Sales Forex F/H\nPartager cette offre : \nStage\n22385\nParis\n\nDescription de l’entreprise\n\nInstitution financière internationale de premier plan, Natixis Corporate & Investment Banking met à disposition des entreprises, institutions financières, fonds d’investissement, agences souverains et supranationaux une palette de services en conseil, investment banking, financements, banque commerciale et sur les marchés de capitaux.\n\nSes équipes d’experts, présentes dans environ 30 pays, conseillent les clients sur leur développement stratégique en les accompagnant dans le développement et la transformation de leurs activités tout en maximisant leur impact positif.  Natixis CIB s’engage sur un alignement de son portefeuille de financements sur une trajectoire de neutralité carbone d’ici 2050 tout en aidant ses clients à réduire l’impact environnemental de leur activité.\n\nNatixis CIB fait partie du Groupe BPCE, deuxième groupe bancaire en France à travers les réseaux Banque Populaire et Caisse d’Epargne. Elle bénéficie de la puissance financière et des solides notations du Groupe (Standard & Poor's : A+, Moody's : A2, Fitch Ratings: A+, R&I : A+).\n\n\nPoste et missions\n\nVous rejoignez notre équipe Vente Réseaux Actionnaires Forex, qui recherche un Assistant Sales, pour un stage de 6 mois à partir de décembre 2026.\n\nEn collaboration avec votre tuteur, vos missions principales seront : \n\nSuivre le portefeuille de clients existants en lien avec l'équipe ;\nParticiper à l'onboarding de nouveaux clients ;\nPréparer les documents commerciaux à l'attention des clients ;\nSuivre l'activité plateforme développée avec les Banques Populaires et Caisses d'Epargne.\n \n\n#FinanceTransformative\n\nEn tant que Top Employer, nous plaçons nos collaborateurs au centre de nos attentions. Des dispositifs de mobilité interne, développement de carrière et de formation vous permettent de grandir et de vous épanouir tout au long de votre parcours.\n\nVous évoluez dans un environnement de travail inclusif et favorisant le collaboratif qui vous donnera toutes les chances de réussir cette nouvelle mission.\n\nVous avez également la possibilité de vous engager en faveur de la société et de causes qui vous tiennent à cœur via notre fondation d’entreprise.  \n\nVous bénéficiez d’une indemnité de stage en fonction de votre formation et de votre niveau d’études, également d’un remboursement de votre titre de transport à hauteur de 60 %, d’un jour d’absence autorisé payé pour chaque mois travaillé et de l’accès au restaurant de l’entreprise. \n\n\nProfil et compétences requises\n\nÉtudiant de niveau BAC+4/5, vous préparez un diplôme (universitaire, d’école de commerce ou d’école d’ingénieur), avec une spécialisation en Finance.\n\nVous disposez d’un bon niveau en finance de marché.\nVous avez l'âme d'un commercial, aimez les contacts et souhaitez intégrer une équipe de vente au sein de la salle des marchés de Natixis.\nVous maîtrisez le VBA.\nAnd last but not least, you are fluent in English.\n\nVous serez contacté par l’un de nos recruteurs avant de rencontrer nos experts métier.\nUn moment d’échange idéal pour mettre en avant votre personnalité ainsi que votre projet.",
+    "geminiOriginal": {
+      "headlineFill": "Foreign Exchange Sales",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective, English-taught program at the interface of market finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access."
+        },
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated capital markets portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines, contributing to client onboarding."
+        },
+        {
+          "old": "Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover.",
+          "new": "Built and scaled an arbitrage and resale business (1,200+ transactions), owning sourcing, pricing, inventory, and the full accounting cycle to sustain positive cash flow and inventory turnover, demonstrating strong commercial drive."
+        }
+      ],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Forex Sales Assistant",
+        "task1": "existing client portfolios",
+        "task2": "new client onboarding",
+        "task3": "commercial documentation",
+        "specificDesk": "Foreign Exchange Sales Desk",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Foreign Exchange Sales team"
+      }
+    },
+    "engineBuild": "2026-10-20 08:10 UTC",
+    "id": "1792568308210",
+    "dateAdded": "2026-10-21"
+  },
+  {
     "company": "Euronext",
     "jobTitle": "Equity and ETF Sales Intern",
     "location": "Paris",
