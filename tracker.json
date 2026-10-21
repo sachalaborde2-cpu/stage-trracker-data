@@ -1,5 +1,86 @@
 [
   {
+    "company": "Deutsche Bank",
+    "jobTitle": "FX Risk Management Sales Intern",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX Risk Management Sales",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective program at the interface of finance and data science (Python, R, financial econometrics), with FRM Level 1 eligibility, enhancing understanding of financial products and risk management solutions."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, option pricing via Black-Scholes, and hedging strategies for derivative instruments, aligning with FX option strategies."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side clients on portfolio analytics and workflow tools, managing high volumes of client requests across Paris and London desks with focus on client needs."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive web application in Python to dynamically manage an investment portfolio, computing advanced financial metrics and sector/geographic exposure analysis, leveraging AI tools to optimize workflows."
+        }
+      ],
+      "letterFields": {
+        "company": "Deutsche Bank",
+        "jobTitle": "FX Risk Management Sales Intern",
+        "task1": "FX and metals pricing",
+        "task2": "client presentations",
+        "task3": "administrative support",
+        "specificDesk": "Corporate Foreign Exchange Sales",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Corporate Foreign Exchange Sales team"
+      }
+    },
+    "offerText": "FX Risk Management Sales Intern (f/m/x)\nApply\nlocations\nParis\ntime type\nFull time\nposted on\nPosted Yesterday\njob requisition id\nR0449103\nJob Description:\nDeutsche Bank is a client-focused global universal bank, driving change and innovation across the industry. We champion integrity, sustainable performance and innovation for our clients while continuing to reshape our culture and the way we work together.\n\n \n\nAcross the FX and metals (base and precious metals) product suite, the team supports clients based on their individual hedging requirements, including vanilla derivatives, structured solutions, general hedging and option strategies, and transformational transactions (project, M&A) through both e-commerce and voice-sales channels.\n\n \n\nJoin Deutsche Bank’s Risk Management Solutions (“RMS”) Corporate Foreign Exchange (“FX”) Sales team in Paris for a six-month internship starting in January 2027. The team serves a broad range of clients, including large-cap corporates, private equity and infrastructure funds, and non-bank financial institutions.\n\n \n\nResponsibilities\n\nSupport the Paris team with FX, and metals pricing and deal analysis.\nContribute to country, client and sector research.\nPrepare presentations for clients.\nSupport documentation and administrative activities.\nProvide broader assistance to sales colleagues in Italy and Spain.\n \n\nSkills\n\nEligibility to work in France is required.\nCandidates must be able to provide an internship agreement.\nStrong written and verbal communication skills in both French and English are mandatory. Another language is a plus.\nStrong analytical and synthesis skills, combined with a rigorous approach.\nA keen interest in and understanding of financial products and the financial services industry.\nA high level of commitment and the ability to work independently.\nA collaborative team player.\nProven ability to leverage AI tools to enhance productivity, optimise workflows to solve business problems, while applying critical judgment to ensure responsible and ethical use of data and AI outputs.\n \n\nBenefits and wellbeing:\n\nFeeling healthy, engaged and well-supported, enables us to do our best work and get the most out of life outside of the office. That’s why Deutsche Bank is committed to providing benefits and programmes centred around wellbeing. Benefits & Wellbeing – Deutsche Bank Careers (db.com)\n\n \n\nAbout us and our teams: \n\nOur values define the working environment we strive to create – where our people have a sense of belonging and everyone feels welcomed, respected and can contribute and grow. We know that high-performing teams have different skills, backgrounds, and experiences. We collaborate, encourage and enable open dialogue and diversity of views.  We build talented and diverse teams to drive business results and encourage our people to develop to their full potential.\n\nWe promote good working relationships and encourage high standards of conduct and work performance. We welcome applications from talented people from all cultures, countries, races, genders, sexual orientations, disabilities, beliefs and generations and are committed to providing a working environment free from harassment, discrimination and retaliation.\n\nVisit Inside Deutsche Bank to discover more about the culture of Deutsche Bank including Diversity & Inclusion, Leadership, Learning, Future of Work and more besides.\n\n \n\nHow to apply: \n\nWhether you're fresh out of school or already have some experience, you'll find a wealth of helpful tools and information on our Employability Hub that will support you with your application, prepare for the assessment processes and adapt to a new working environment.\n\nPlease visit www.careers.db.com/students-graduates to apply. \n\n \n\nA notice on Recruitment Scams\n\n \n\nWe strive for a culture in which we are empowered to excel together every day. This includes acting responsibly, thinking commercially, taking initiative and working collaboratively.\n\nTogether we share and celebrate the successes of our people. Together we are Deutsche Bank Group.\n\nWe welcome applications from all people and promote a positive, fair and inclusive work environment.",
+    "geminiOriginal": {
+      "headlineFill": "FX Risk Management Sales",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective program at the interface of finance and data science (Python, R, financial econometrics), with FRM Level 1 eligibility, enhancing understanding of financial products and risk management solutions."
+        },
+        {
+          "old": "Mastered portfolio optimization (mean-variance framework), option pricing via Black-Scholes, and hedging strategies for futures, forwards, and options.",
+          "new": "Mastered portfolio optimization, option pricing via Black-Scholes, and hedging strategies for derivative instruments, aligning with FX option strategies."
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advised institutional buy-side and sell-side clients on portfolio analytics and workflow tools, managing high volumes of client requests across Paris and London desks with focus on client needs."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive web application in Python to dynamically manage an investment portfolio, computing advanced financial metrics and sector/geographic exposure analysis, leveraging AI tools to optimize workflows."
+        }
+      ],
+      "letterFields": {
+        "company": "Deutsche Bank",
+        "jobTitle": "FX Risk Management Sales Intern",
+        "task1": "FX and metals pricing",
+        "task2": "client presentations",
+        "task3": "administrative support",
+        "specificDesk": "Corporate Foreign Exchange Sales",
+        "careerEnvironment": "a trading room environment",
+        "processType": "front-office",
+        "closingAmbition": "I would like to make Sales and Trading my profession, and this position perfectly aligns with the continuity of my training.",
+        "team": "your Corporate Foreign Exchange Sales team"
+      }
+    },
+    "engineBuild": "2026-10-20 08:10 UTC",
+    "id": "1792568462674",
+    "dateAdded": "2026-10-21"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Assistant Sales Forex",
     "location": "Paris",
