@@ -1,5 +1,86 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Analyste Résultat, Risques de Marché et Liquidité périmètre Trésorerie",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Treasury Market Risk Analysis",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective program at the interface of finance and data science (Python, R, financial econometrics), with FRM Level 1 eligibility for robust market risk analysis."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies using FactSet's internal strategy-testing tools, analyzing market risk-adjusted performance by region."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to manage an investment portfolio, computing advanced financial metrics and market exposure analysis."
+        },
+        {
+          "old": "Built a market data pipeline (pandas): Yahoo Finance ingestion, liquidity filtering, and pytest-based validation.",
+          "new": "Built a market data pipeline (pandas): data ingestion, liquidity filtering, and validation for market risk indicators."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Treasury Market Risk and Liquidity Analyst",
+        "task1": "market risk indicator calculation",
+        "task2": "results and ALM analysis",
+        "task3": "market liquidity risk monitoring",
+        "specificDesk": "Treasury Market Risk",
+        "careerEnvironment": "a market risk and liquidity management environment",
+        "processType": "market risk analytical",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Treasury Market Risk and Liquidity Analyst internship would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Market and Counterparty Risks team"
+      }
+    },
+    "offerText": "Analyste Résultat, Risques de Marché et Liquidité périmètre Trésorerie H/F\nModifiée le 20/10/2026\n\nLieu :Montrouge - France\nSecteur :Risques / Contrôles permanents\nDescription du poste\nVous recherchez un stage en analyse et vous avez un intérêt pour la finance de marché ? Alors cette offre est faite pour vous ! \n\n \n\nRisk & Permanent Control (RPC) assure le contrôle de l’ensemble des risques du groupe Crédit Agricole CIB. RPC répond au double enjeu de s'assurer que la réglementation est respectée, tout en contribuant au développement maîtrisé de Crédit Agricole CIB.\n\n\nMarket and Counterparty Risks (MCR) prend en charge le suivi et l'encadrement en risques de marché.\n\n \n\nConcrètement votre mission sera la suivante :\n\n \n\nContribuer aux travaux de l'équipe portant principalement sur le calcul, l'analyse et la certification des indicateurs de risques de marché et de résultats du périmètre Trésorerie et ALM.\n\n \n\nRejoindre Crédit Agricole CIB, c’est profiter d’une communauté importante de jeunes, évoluer sur un campus moderne offrant de nombreux services (boulangerie, salle de sport, etc.), bénéficier d’un suivi RH (matinée d’accueil, suivi régulier, etc.) et d’opportunités en alternance, VIE, CDD et CDI.\n\n\nCritères de candidature\nDate de prise de fonction\n04/01/2027\nDurée\n6 mois\nPoste avec management\nNon\nCadre / Non Cadre\nNon cadre\nNiveau d'étude minimum\nBac + 5 / M2 et plus\nFormation / Spécialisation\nEt si c'était vous ?  Formation :Université / Ecole d'ingénieur / Ecole de commerce / Ecole d'informatique Spécialisation :Finance de marché\n\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nHard Skills : \nBonne capacité de synthèse et d'analyse\nMaitrise du Pack Office \nVBA\nFrançais & Anglais courants\n \n Soft Skills : \nEsprit d’équipe\nCuriosité\n Crédit Agricole CIB s’engage en faveur de l’insertion des personnes en situation de handicap, ainsi ce poste est ouvert à toutes et à tous.Ce poste est éligible au télétravail dans les conditions prévues par notre accord reposant sur le double volontariat (collaborateur & manager) et après une période d’intégration réussie.\n\nEntreprise Crédit Agricole CIB",
+    "geminiOriginal": {
+      "headlineFill": "Treasury Market Risk Analysis",
+      "keywordChanges": [
+        {
+          "old": "Selective, English-taught program at the interface of finance and data science (Python, R, financial econometrics), in work-study format, with FRM Level 1 eligibility (GARP partnership) and Bloomberg Terminal access.",
+          "new": "Selective program at the interface of finance and data science (Python, R, financial econometrics), with FRM Level 1 eligibility for robust market risk analysis."
+        },
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies using FactSet's internal strategy-testing tools, analyzing market risk-adjusted performance by region."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to manage an investment portfolio, computing advanced financial metrics and market exposure analysis."
+        },
+        {
+          "old": "Built a market data pipeline (pandas): Yahoo Finance ingestion, liquidity filtering, and pytest-based validation.",
+          "new": "Built a market data pipeline (pandas): data ingestion, liquidity filtering, and validation for market risk indicators."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Treasury Market Risk and Liquidity Analyst",
+        "task1": "market risk indicator calculation",
+        "task2": "results and ALM analysis",
+        "task3": "market liquidity risk monitoring",
+        "specificDesk": "Treasury Market Risk",
+        "careerEnvironment": "a market risk and liquidity management environment",
+        "processType": "market risk analytical",
+        "closingAmbition": "While my long-term ambition is to build a career in Sales and Trading, I am convinced this Treasury Market Risk and Liquidity Analyst internship would give me the operational rigor and market understanding essential to reach that goal.",
+        "team": "your Market and Counterparty Risks team"
+      }
+    },
+    "engineBuild": "2026-10-20 08:10 UTC",
+    "id": "1792571429935",
+    "dateAdded": "2026-10-21"
+  },
+  {
     "company": "Deutsche Bank",
     "jobTitle": "FX Risk Management Sales Intern",
     "location": "Paris",
