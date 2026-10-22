@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-10-22 07:50 UTC";
+const BUILD_VERSION = "2026-10-22 08:20 UTC";
 
 const LocalStore = {
   get(key) {
@@ -420,10 +420,12 @@ const LM_PROOFS = {
   pipeline: String.raw`I built a market data pipeline in pandas, with liquidity filtering and pytest-based validation.`,
   econometrics: String.raw`I ran a fixed-effects econometric analysis in R on a panel of 4,000 firms, with specification tests (Breusch-Pagan, Hausman).`,
   business: String.raw`I built and ran an arbitrage and resale business (1,200+ transactions), handling sourcing, pricing, inventory and the full accounting cycle.`,
+  bloomberg: String.raw`I also hold the Bloomberg Market Concepts (BMC) certification.`,
 };
 const LM_PROOF_LABELS = {
   pricing: "Pricing d'options + market making", simulation: "Simulation FactSet (1er/12, +6%)", backtest: "Backtest Golden Cross",
   pipeline: "Pipeline de données (pandas, pytest)", econometrics: "Économétrie (R, effets fixes)", business: "Entreprise d'arbitrage (1 200+ transactions)",
+  bloomberg: "Certification Bloomberg (BMC)",
 };
 function buildProofsText(ids) {
   const list = (Array.isArray(ids) ? ids : []).filter((x, i, a) => LM_PROOFS[x] && a.indexOf(x) === i).slice(0, 2);
@@ -543,7 +545,7 @@ function texToPlain(tex) {
   if (!tex) return "";
   let t = tex.split("\\begin{document}")[1] || tex;
   t = t.split("\\end{document}")[0];
-  t = t.replace(/%.*$/gm, "");
+  t = t.replace(/(^|[^\\])%.*$/gm, "$1");
   t = t.replace(/\\(vspace|hspace)\*?\{[^}]*\}/g, "");
   t = t.replace(/\\(noindent|par|flushbottom|raggedbottom|centering|hfill|newline)\b/g, "");
   t = t.replace(/\\\\(\[[^\]]*\])?/g, "\n");
@@ -562,7 +564,7 @@ function adaptationDiff(raw, final) {
   if (!raw || !final) return out;
   if ((raw.headlineFill || "") !== (final.headlineFill || "")) out.push("headlineFill");
   const rl = raw.letterFields || {}, fl = final.letterFields || {};
-  new Set([...Object.keys(rl), ...Object.keys(fl)]).forEach(k => { if ((rl[k] || "") !== (fl[k] || "")) out.push("letterFields." + k); });
+  new Set([...Object.keys(rl), ...Object.keys(fl)]).forEach(k => { if (JSON.stringify(rl[k] || "") !== JSON.stringify(fl[k] || "")) out.push("letterFields." + k); });
   if (JSON.stringify(raw.keywordChanges || []) !== JSON.stringify(final.keywordChanges || [])) out.push("keywordChanges");
   return out;
 }
@@ -861,7 +863,10 @@ function buildLmTex(contractType, fields, programType, programYear, durationMont
 function plainBullet(t) {
   return (t || "").replace(/\\textbf\{([^{}]*)\}/g, "$1").replace(/\\([%&$#_{}])/g, "$1");
 }
-const GUARD_FILLER = /\b(demonstrating|utili[sz]ing|leverag(?:e|es|ing)|enhanc(?:e|es|ing)|aligning with|aligned with|contributing to|robust|with (?:a )?focus on|within market finance|commercial drive)\b/i;
+const GUARD_FILLER = /\b(demonstrating|utili[sz]ing|leverag(?:e|es|ing)|enhanc(?:e|es|ing)|aligning with|aligned with|contributing to|robust|with (?:a )?focus on|within market finance|commercial drive|counterparts|stakeholders|various|internal and external)\b/i;
+// Termes precis qui ne doivent pas disparaitre d'un bullet (constate : "challenge" -> "experience",
+// "buy-side and sell-side professionals" -> "counterparts", "portfolio management challenge" -> "trading challenge").
+const GUARD_PROTECTED = /\b(challenge|simulat\w+|engine|pipeline|backtest\w*|buy-side|sell-side|institutional|cross-asset|portfolio management)\b/gi;
 const IRREGULAR_PAST = new Set(["built", "ran", "led", "wrote", "made", "took", "won", "set", "drove", "grew"]);
 function verbIsPast(w) { const l = (w || "").toLowerCase(); return /ed$/.test(l) || IRREGULAR_PAST.has(l); }
 function guardKeywordChanges(changes) {
@@ -874,6 +879,16 @@ function guardKeywordChanges(changes) {
     const ratio = nw.length / Math.max(1, ow.length);
     if (ratio > 1.12) reason = "trop long (+" + Math.round((ratio - 1) * 100) + "%), clause ajoutée";
     else if (ratio < 0.85) reason = "raccourci de " + Math.round((1 - ratio) * 100) + "%, contenu perdu";
+    if (!reason) {
+      const tk = s => (s.toLowerCase().match(/[a-z0-9%+€$-]+/g) || []);
+      const ot = tk(o), nt = tk(n);
+      const removed = ot.filter(w => !nt.includes(w)), added = nt.filter(w => !ot.includes(w));
+      if (removed.length + added.length > 6) reason = "trop de mots modifiés (" + (removed.length + added.length) + "), réécriture au lieu d'un échange de vocabulaire";
+    }
+    if (!reason) {
+      const lostP = [...new Set((o.match(GUARD_PROTECTED) || []).map(x => x.toLowerCase()))].filter(x => !n.toLowerCase().includes(x));
+      if (lostP.length) reason = "terme précis supprimé (" + lostP.slice(0, 3).join(", ") + ")";
+    }
     if (!reason && GUARD_FILLER.test(n) && !GUARD_FILLER.test(o)) reason = "formule de remplissage (" + (n.match(GUARD_FILLER) || [""])[0] + ")";
     if (!reason) {
       const nums = o.match(/\d[\d,.]*\d|\d/g) || [];
@@ -924,6 +939,7 @@ RÈGLES STRICTES :
    - Remplacement de VOCABULAIRE uniquement. Interdit d'ajouter une activité, un but, un résultat, un outil ou une qualité absents de l'original. Interdit d'ajouter une proposition ou un membre de phrase en fin de bullet pour caser un mot-clé (exemples interdits, constatés sur de vraies candidatures : ", utilizing programming tools for internal systems", ", demonstrating strong commercial drive", ", contributing to client onboarding", "aligning with FX option strategies", "leveraging AI tools to optimize workflows"). Ne recopie pas les formules de l'offre ("stakeholders", "project deadlines", "internal systems") si elles ne décrivent pas exactement ce que Sacha a fait.
    - Ne remplace JAMAIS un terme précis par un terme plus vague ("options" → "derivative instruments" est interdit ; "buy-side and sell-side professionals" → "stakeholders" est interdit).
    - Conserve intacts : les chiffres, les noms d'outils, de données et de certifications (IRR, Alpha, volatility, Bloomberg, FRM, GARP, Yahoo Finance, pytest, Streamlit, FactSet...), le temps verbal du bullet (le poste FactSet est au présent, le reste au passé), et les groupes de mots qui étaient en gras dans l'original (le gras est rétabli automatiquement si le groupe est conservé tel quel).
+   - Taille du changement : un échange de vocabulaire = 1 à 3 mots remplacés dans le bullet, pas plus (le contrôle automatique rejette au-delà de 6 mots modifiés au total). Ne change jamais le nom de l'activité (un "challenge" ou une "simulation" reste tel quel, "portfolio management" ne devient pas "trading").
    - Longueur : même nombre de mots, à ±10 %. Ne répète pas deux fois le même mot dans un bullet.
    - Mots interdits (sauf s'ils sont déjà dans l'original) : demonstrating, utilizing, leveraging, enhancing, aligning with, contributing to, robust, strong, "within market finance", "with focus on".
    - "old" = copie EXACTE et COMPLÈTE d'un des bullets fournis ci-dessous (y compris un éventuel \textbf{...}). "new" = DU TEXTE BRUT UNIQUEMENT, sans \textbf{}, \textit{}, **gras** ni aucun balisage.
@@ -931,11 +947,11 @@ RÈGLES STRICTES :
 4. "letterFields" : la lettre est un gabarit fixe dont Gemini ne remplit que ces champs. Valeurs COURTES, en anglais naturel, grammaire irréprochable. Le gabarit lit :
    "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. The role covers {task1}, {task2} and {task3}. ... {proofPoints} ... {closingAmbition} Thank you for your attention..."
    - company : nom de l'entreprise tel quel. jobTitle : intitulé du poste en anglais naturel.
-   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur. DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le.
-   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...), ex "the combination of client follow-up and FX hedging solutions for corporates". Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3.
+   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team within Private Banking", pas "your Private Banking Investments and Wealth Solutions Structured Products team"). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le.
+   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...), ex "the combination of client follow-up and FX hedging solutions for corporates". Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation".
    - task1, task2, task3 : complètent "The role covers ___, ___ and ___." Trois groupes nominaux parallèles, 2 à 6 mots, en minuscules, sans verbe conjugué, tirés des missions réelles de l'offre et sans se répéter. Évite d'empiler plus de 2 noms sans article ou préposition. BON : "existing client portfolios", "new client onboarding", "market risk indicators", "client presentations". MAUVAIS : "Monitor markets" (verbe + majuscule), "production quality controls implementation" (4 noms empilés).
-   - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data → pipeline + business ; marketing produit ou clientèle → business ou pricing + simulation.
-   - closingAmbition : 1 à 2 phrases COMPLÈTES, en anglais naturel, qui concluent la lettre en reliant cette offre à l'objectif final de Sacha (Sales, Trading ou Structuration). Écris une formulation ORIGINALE à chaque candidature : ne recopie pas les exemples, ils ne montrent que l'intention. Interdits : "perfectly aligns with the continuity of my training" (calque du français), "essential", "convinced", "operational rigor", "ideal". Deux cas :
+   - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data → pipeline + business ; marketing produit ou clientèle → business ou pricing + simulation.
+   - closingAmbition : 1 à 2 phrases COMPLÈTES, en anglais naturel, qui concluent la lettre en reliant cette offre à l'objectif final de Sacha (Sales, Trading ou Structuration). Écris une formulation ORIGINALE à chaque candidature : ne recopie pas les exemples, ils ne montrent que l'intention. Interdits : "perfectly aligns with the continuity of my training" (calque du français), "essential", "convinced", "operational rigor", "ideal", "invaluable", "direct and invaluable opportunity", "comprehensive". Deux cas :
      * Offre front office (Sales, Trading, Structuring...) : directe et simple. Nomme la fonction de CETTE offre (une offre de trading : "Trading" ; une offre de vente : "Sales" ; une offre de structuration : "Structuring") plutôt que toujours "Sales and Trading". Intention : "I want to build my career in Trading, and this internship is a direct step toward it."
      * Offre back/middle office, risque, marketing, opérations, IT : ne dis JAMAIS que Sacha veut faire CE métier sa profession (ce serait faux). Présente-le comme un tremplin et cite ce que CE poste lui apporterait concrètement, tiré de l'offre. Intention : "My long-term goal is a career in Sales and Trading. This role would give me hands-on knowledge of market risk indicators that I would bring to a front-office desk."
      2 phrases maximum.
