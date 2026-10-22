@@ -1,5 +1,74 @@
 [
   {
+    "company": "CIC CIB",
+    "jobTitle": "Assistant Sales/Structuration",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Sales and Structuring",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage investment portfolios, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "CIC CIB",
+        "jobTitle": "Structured Products Sales and Structuring Assistant",
+        "team": "your Investment Solutions team within Capital Markets",
+        "offerHook": "the development and promotion of structured products for institutional, corporate, and private banking clients",
+        "task1": "daily sales and structuring support",
+        "task2": "structured product pricing",
+        "task3": "commercial documentation drafting",
+        "proofPoints": [
+          "simulation",
+          "pricing"
+        ],
+        "closingAmbition": "My long-term ambition is to build a career in Structured Products Sales and Structuring. This internship at CIC CIB offers a direct opportunity to develop the skills and market understanding crucial for such a role."
+      }
+    },
+    "offerText": "Stage Assistant – Sales/Structuration\nCIC Corporate & Institutional Banking\n\nDescription\nL’équipe « Investment Solutions », logée au sein de la salle des marchés du CIC CIB – Capital Markets, élabore, promeut et développe des « Produits Structurés » principalement à destination des marchés Grand Public, Banque Privée, Entreprises, Institutionnels du Groupe Crédit Mutuel Alliance Fédérale, tout en veillant à l’intérêt de la clientèle.\n\nAu sein de cette entité, le candidat aura pour tâche d’assister la structuration et de faire la liaison avec les différentes entités de la salle des marchés et les réseaux de distribution.\n\nMissions\n\nSoutien des Sales/Structureurs dans leurs tâches quotidiennes\nSaisie et booking des opérations\nParticipation à l’élaboration de Trade ideas\nPricing de produits structurés (Actions, Taux & Crédit)\nMise à jour des outils de suivi des opérations et des marges\nAssurer le lien avec les équipes du post-marché (Juridique, Back Office, Risques)\nDéveloppement marketing associé\nRédaction de documentation commerciale (en collaboration avec la structuration)\n\nDurée de la mission\n6 mois. Début : décembre 2026/janvier 2027.\n\nLieu\nParis 9ème.\n\nFormation\nÉcoles de commerce, Ingénieur, Université. Spécialisation finance de marché. Idéalement stage de césure.\n\nAptitudes requises\n\nMaîtrise de l’outil bureautique (Excel, Word, PowerPoint, ...)\nMaîtrise des produits financiers complexes\nCapacité de travail sous pression, autonomie, rigueur, curiosité\nAptitude à communiquer à l’écrit comme à l’oral, bon relationnel, réactivité\nConnaissance de Lexifi et/ou Kondor appréciée\nEsprit d’initiative\nAnglais lu, parlé et écrit\n\nContact\nemtnexs@cic.fr",
+    "geminiOriginal": {
+      "headlineFill": "Sales and Structuring",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage investment portfolios, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "CIC CIB",
+        "jobTitle": "Structured Products Sales and Structuring Assistant",
+        "team": "your Investment Solutions team within Capital Markets",
+        "offerHook": "the development and promotion of structured products for institutional, corporate, and private banking clients",
+        "task1": "daily sales and structuring support",
+        "task2": "structured product pricing",
+        "task3": "commercial documentation drafting",
+        "proofPoints": [
+          "simulation",
+          "pricing"
+        ],
+        "closingAmbition": "My long-term ambition is to build a career in Structured Products Sales and Structuring. This internship at CIC CIB offers a direct opportunity to develop the skills and market understanding crucial for such a role."
+      }
+    },
+    "engineBuild": "2026-10-22 08:20 UTC",
+    "id": "1792675844900",
+    "dateAdded": "2026-10-22"
+  },
+  {
     "company": "Aurel BGC",
     "jobTitle": "Assistant Equity Derivatives Broker",
     "location": "Paris",
