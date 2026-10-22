@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-10-22 08:20 UTC";
+const BUILD_VERSION = "2026-10-22 14:10 UTC";
 
 const LocalStore = {
   get(key) {
@@ -385,7 +385,7 @@ Dear Sir or Madam,
 __PARA1__
 
 \noindent
-__HOOKSENTENCE__The role covers __TASK1__, __TASK2__ and __TASK3__. At FactSet, I advise institutional clients on portfolio analytics and workflow tools across the Paris and London desks, handling a high volume of daily requests under tight deadlines. This is the precision and responsiveness I want to bring to the team.
+__HOOKSENTENCE__The role covers __TASK1__, __TASK2__ and __TASK3__. At FactSet, I advise institutional clients on portfolio analytics and workflow tools across the Paris and London desks, handling a high volume of daily requests under tight deadlines.
 
 \noindent
 On the technical side, I have a solid command of Python and VBA, and hands-on experience with the FactSet platform. __PROOFS__ I am also fluent in English (TOEIC 935/990).
@@ -825,7 +825,7 @@ function buildLmTex(contractType, fields, programType, programYear, durationMont
   const article = articleFor(rawJobTitle);
   const jobTitle = escapeLatex(rawJobTitle);
   const company = escapeLatex(f.company || "[Company Name]");
-  const team = escapeLatex(f.team || "your team");
+  const team = escapeLatex((f.team || "your team").replace(/\bwithin\b/gi, "in")); // le gabarit dit deja "within"
 
   const variant = ct.programVariants ? (ct.programVariants[programType] || Object.values(ct.programVariants)[0]) : null;
   let para1 = variant ? variant.para1 : String.raw`\noindent Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for this role, within __TEAM__.`;
@@ -866,7 +866,7 @@ function plainBullet(t) {
 const GUARD_FILLER = /\b(demonstrating|utili[sz]ing|leverag(?:e|es|ing)|enhanc(?:e|es|ing)|aligning with|aligned with|contributing to|robust|with (?:a )?focus on|within market finance|commercial drive|counterparts|stakeholders|various|internal and external)\b/i;
 // Termes precis qui ne doivent pas disparaitre d'un bullet (constate : "challenge" -> "experience",
 // "buy-side and sell-side professionals" -> "counterparts", "portfolio management challenge" -> "trading challenge").
-const GUARD_PROTECTED = /\b(challenge|simulat\w+|engine|pipeline|backtest\w*|buy-side|sell-side|institutional|cross-asset|portfolio management)\b/gi;
+const GUARD_PROTECTED = /\b(challenge|simulat\w+|engine|pipeline|backtest\w*|buy-side|sell-side|institutional|cross-asset|portfolio management|personal|application)\b/gi;
 const IRREGULAR_PAST = new Set(["built", "ran", "led", "wrote", "made", "took", "won", "set", "drove", "grew"]);
 function verbIsPast(w) { const l = (w || "").toLowerCase(); return /ed$/.test(l) || IRREGULAR_PAST.has(l); }
 function guardKeywordChanges(changes) {
@@ -935,8 +935,8 @@ RÈGLES STRICTES :
 1. Ne JAMAIS inventer de faits, dates, chiffres ou expériences.
 2. "headlineFill": 2-6 mots MAXIMUM, groupe nominal sans verbe, sans durée ni date. Doit se lire naturellement dans la phrase "seeking a 6-month ___ internship" — donc le nom du désk/métier/fonction visé tel qu'un anglophone l'écrirait, adapté à CE type de poste précis (front office comme "Sales \& Trading" ou "Equity Derivatives Structuring", MAIS AUSSI middle/back office comme "Derivatives Back Office", "Operations", "Risk Management", "Compliance" — ne jamais supposer que c'est du front office par défaut, adapte-toi strictement à l'offre fournie).
 3. "keywordChanges" — OBJECTIF : un CV crédible pour un RECRUTEUR HUMAIN d'abord, compatible avec les filtres ATS ensuite. Tu proposes un changement UNIQUEMENT quand un terme exact de l'offre désigne la même chose que ce que Sacha a réellement fait (ex : l'offre dit "portfolio analytics" et le bullet dit "portfolio analysis" : tu peux échanger). Règles :
-   - Tu n'es PAS obligé de modifier les 4 bullets : de 0 à 4. Un bullet laissé intact vaut mieux qu'un bullet étiré pour caser un mot-clé.
-   - Remplacement de VOCABULAIRE uniquement. Interdit d'ajouter une activité, un but, un résultat, un outil ou une qualité absents de l'original. Interdit d'ajouter une proposition ou un membre de phrase en fin de bullet pour caser un mot-clé (exemples interdits, constatés sur de vraies candidatures : ", utilizing programming tools for internal systems", ", demonstrating strong commercial drive", ", contributing to client onboarding", "aligning with FX option strategies", "leveraging AI tools to optimize workflows"). Ne recopie pas les formules de l'offre ("stakeholders", "project deadlines", "internal systems") si elles ne décrivent pas exactement ce que Sacha a fait.
+   - Tu n'es PAS obligé de modifier les 4 bullets : de 0 à 4. Un changement n'est autorisé que s'il introduit un terme EXACT de l'offre (ou sa traduction exacte). Si aucun terme de l'offre ne s'échange honnêtement, renvoie "keywordChanges": []. Un échange qui n'apporte aucun mot de l'offre ("requests" → "inquiries", "professionals" → "clients") est interdit : il ne sert à rien.
+   - Remplacement de VOCABULAIRE uniquement. Interdit d'ajouter une activité, un but, un résultat, un outil ou une qualité absents de l'original, et de modifier la portée d'un fait ("a personal investment portfolio" ne devient jamais "investment portfolios", "web application" ne devient pas "tool", un singulier ne devient pas un pluriel). Interdit d'ajouter une proposition ou un membre de phrase en fin de bullet pour caser un mot-clé (exemples interdits, constatés sur de vraies candidatures : ", utilizing programming tools for internal systems", ", demonstrating strong commercial drive", ", contributing to client onboarding", "aligning with FX option strategies", "leveraging AI tools to optimize workflows"). Ne recopie pas les formules de l'offre ("stakeholders", "project deadlines", "internal systems") si elles ne décrivent pas exactement ce que Sacha a fait.
    - Ne remplace JAMAIS un terme précis par un terme plus vague ("options" → "derivative instruments" est interdit ; "buy-side and sell-side professionals" → "stakeholders" est interdit).
    - Conserve intacts : les chiffres, les noms d'outils, de données et de certifications (IRR, Alpha, volatility, Bloomberg, FRM, GARP, Yahoo Finance, pytest, Streamlit, FactSet...), le temps verbal du bullet (le poste FactSet est au présent, le reste au passé), et les groupes de mots qui étaient en gras dans l'original (le gras est rétabli automatiquement si le groupe est conservé tel quel).
    - Taille du changement : un échange de vocabulaire = 1 à 3 mots remplacés dans le bullet, pas plus (le contrôle automatique rejette au-delà de 6 mots modifiés au total). Ne change jamais le nom de l'activité (un "challenge" ou une "simulation" reste tel quel, "portfolio management" ne devient pas "trading").
@@ -946,13 +946,13 @@ RÈGLES STRICTES :
    - Un contrôle automatique vérifie ensuite tes sorties et écarte celles qui violent ces règles : inutile de forcer.
 4. "letterFields" : la lettre est un gabarit fixe dont Gemini ne remplit que ces champs. Valeurs COURTES, en anglais naturel, grammaire irréprochable. Le gabarit lit :
    "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. The role covers {task1}, {task2} and {task3}. ... {proofPoints} ... {closingAmbition} Thank you for your attention..."
-   - company : nom de l'entreprise tel quel. jobTitle : intitulé du poste en anglais naturel.
-   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team within Private Banking", pas "your Private Banking Investments and Wealth Solutions Structured Products team"). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le.
-   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...), ex "the combination of client follow-up and FX hedging solutions for corporates". Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation".
+   - company : nom de l'entreprise tel quel. jobTitle : l'intitulé de l'offre traduit en anglais naturel, 6 mots maximum, SANS l'enrichir ("Stage Assistant – Sales/Structuration" donne "Sales/Structuring Assistant", pas "Structured Products Sales and Structuring Assistant").
+   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team", "your Capital Markets Investment Solutions team", pas "your Private Banking Investments and Wealth Solutions Structured Products team". N'écris JAMAIS "within" dans ce champ (le gabarit le dit déjà)). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le.
+   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...), ex "the combination of client follow-up and FX hedging solutions for corporates". Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation".
    - task1, task2, task3 : complètent "The role covers ___, ___ and ___." Trois groupes nominaux parallèles, 2 à 6 mots, en minuscules, sans verbe conjugué, tirés des missions réelles de l'offre et sans se répéter. Évite d'empiler plus de 2 noms sans article ou préposition. BON : "existing client portfolios", "new client onboarding", "market risk indicators", "client presentations". MAUVAIS : "Monitor markets" (verbe + majuscule), "production quality controls implementation" (4 noms empilés).
    - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data → pipeline + business ; marketing produit ou clientèle → business ou pricing + simulation.
-   - closingAmbition : 1 à 2 phrases COMPLÈTES, en anglais naturel, qui concluent la lettre en reliant cette offre à l'objectif final de Sacha (Sales, Trading ou Structuration). Écris une formulation ORIGINALE à chaque candidature : ne recopie pas les exemples, ils ne montrent que l'intention. Interdits : "perfectly aligns with the continuity of my training" (calque du français), "essential", "convinced", "operational rigor", "ideal", "invaluable", "direct and invaluable opportunity", "comprehensive". Deux cas :
-     * Offre front office (Sales, Trading, Structuring...) : directe et simple. Nomme la fonction de CETTE offre (une offre de trading : "Trading" ; une offre de vente : "Sales" ; une offre de structuration : "Structuring") plutôt que toujours "Sales and Trading". Intention : "I want to build my career in Trading, and this internship is a direct step toward it."
+   - closingAmbition : 1 à 2 phrases COMPLÈTES, en anglais naturel, qui concluent la lettre en reliant cette offre à l'objectif final de Sacha (Sales, Trading ou Structuration). Écris une formulation ORIGINALE à chaque candidature : ne recopie pas les exemples, ils ne montrent que l'intention. Interdits : "perfectly aligns with the continuity of my training" (calque du français), "essential", "convinced", "operational rigor", "ideal", "invaluable", "crucial", "direct opportunity", "towards achieving that goal", "comprehensive", "develop the skills" (creux). Deux cas :
+     * Offre front office : directe et simple. Les SEULS objectifs réels de Sacha sont Sales, Trading et Structuring : nomme celui qui est le plus proche de CETTE offre (Trading pour du trading, Sales pour de la vente, Structuring pour de la structuration). Si l'offre est un autre métier front office (brokerage, market making...), ne dis JAMAIS que Sacha veut faire ce métier toute sa carrière : écris "a career in equity derivatives markets" (ou le marché concerné). Appuie la phrase sur une mission concrète de l'offre. Intention : "I want to build my career in Structuring, and this internship would let me work on pricing and client documentation alongside the structuring desk."
      * Offre back/middle office, risque, marketing, opérations, IT : ne dis JAMAIS que Sacha veut faire CE métier sa profession (ce serait faux). Présente-le comme un tremplin et cite ce que CE poste lui apporterait concrètement, tiré de l'offre. Intention : "My long-term goal is a career in Sales and Trading. This role would give me hands-on knowledge of market risk indicators that I would bring to a front-office desk."
      2 phrases maximum.
 5. TOUS les champs (headlineFill, jobTitle, team, offerHook, task1/2/3, closingAmbition) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit. AUCUN de ces champs ne doit contenir de balisage (\textbf{}, **gras**, etc.) — texte brut uniquement, dans tous les cas.
@@ -987,6 +987,16 @@ RÈGLES STRICTES :
   const g = guardKeywordChanges(parsed.keywordChanges);
   parsed.keywordChanges = g.kept;
   if (g.rejected.length) parsed.guardrailRejected = g.rejected;
+  // Une accroche d'offre qui reprend mot pour mot une des 3 taches se lit comme
+  // une repetition (constate sur Aurel BGC : "option strategy elaboration" deux
+  // fois de suite). On la retire plutot que de la laisser.
+  const lf = parsed.letterFields || {};
+  const nz = s => (s || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const hk = nz(lf.offerHook);
+  if (hk && ["task1", "task2", "task3"].some(k => { const t = nz(lf[k]); return t.split(" ").length >= 2 && hk.includes(t); })) {
+    lf.offerHook = "";
+    parsed.letterNotes = ["Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."];
+  }
   return parsed;
 }
 
@@ -2552,6 +2562,7 @@ function NewApplication({ onSave, prefill }) {
           </div>
           <div className="preview-section">
             <h3>Champs de la lettre</h3>
+            {(adaptation.letterNotes || []).map((n, i) => <div className="hint" key={i} style={{marginBottom:8}}>{n}</div>)}
             <div className="field-grid">
               {["company","jobTitle","team","task1","task2","task3"].map(key => (
                 <div className="form-field" key={key}>
