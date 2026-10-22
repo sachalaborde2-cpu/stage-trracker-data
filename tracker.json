@@ -78,7 +78,8 @@
     },
     "engineBuild": "2026-10-20 08:10 UTC",
     "id": "1792653824519",
-    "dateAdded": "2026-10-22"
+    "dateAdded": "2026-10-22",
+    "auditExportedAt": "2026-10-22"
   },
   {
     "company": "Citi",
@@ -159,7 +160,8 @@
     },
     "engineBuild": "2026-10-20 08:10 UTC",
     "id": "1792653700750",
-    "dateAdded": "2026-10-22"
+    "dateAdded": "2026-10-22",
+    "auditExportedAt": "2026-10-22"
   },
   {
     "company": "BNP Paribas CIB",
