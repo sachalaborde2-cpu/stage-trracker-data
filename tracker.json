@@ -1,5 +1,74 @@
 [
   {
+    "company": "Aurel BGC",
+    "jobTitle": "Assistant Equity Derivatives Broker",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Derivatives Brokerage",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client inquiries across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Aurel BGC",
+        "jobTitle": "Assistant Equity Derivatives Broker",
+        "team": "your Equity Derivatives Brokerage team",
+        "offerHook": "the focus on option strategy elaboration and process optimization within equity derivatives brokerage",
+        "task1": "option strategy elaboration",
+        "task2": "RFQ processing",
+        "task3": "VBA macro development",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "closingAmbition": "My ambition is to build a career in Equity Derivatives Brokerage, and this internship is a direct step towards achieving that goal."
+      }
+    },
+    "offerText": "Transcription de l’offre\n\nAssistant Equity Derivatives Broker\nDurée : 6 mois / Démarrage ASAP\nGroupe : Aurel BGC – GFI\n\nLe profil\n\nBac+4/5 de type école de commerce ou d’ingénieur avec une spécialisation en finance de marché\nExcellente maîtrise d’Excel (VBA représente un atout majeur) et des autres outils du Pack Office\nCapacité à gérer la pression, à travailler en équipe, à s’organiser, rigueur, autonomie\nForce de proposition, curiosité et esprit logique\nTrès bon niveau de français et d’anglais, à l’écrit et à l’oral\nDe préférence une première expérience en finance de marché\n\nLes missions\n\nÉlaboration des stratégies optionnelles pour les traders et market makers\nCréation et envoi des confirmations de trades aux clients\nAssistance aux brokers dans leurs missions quotidiennes\nParticipation au traitement des RFQ auprès de market makers\nOptimisation et mise en place de processus et d’outils visant à faciliter la gestion des flux de l’équipe\nMaintien et développement de macros VBA\n\nLes apports du stage\n\nApprofondir ses compétences en produits et stratégies optionnelles\nDéveloppement de sa capacité d’anticipation, de concentration, de réactivité et de gestion du stress\nComprendre les enjeux de marché et le fonctionnement d’un desk de brokers en produits dérivés\n\nContact\nLieu du stage : 15-17 Rue Vivienne, 75002 Paris.\nEnvoyer CV et lettre de motivation à dan.hachmun@gfigroup.co.uk et axelle.gabus@gfigroup.co.uk.",
+    "geminiOriginal": {
+      "headlineFill": "Equity Derivatives Brokerage",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client inquiries across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterFields": {
+        "company": "Aurel BGC",
+        "jobTitle": "Assistant Equity Derivatives Broker",
+        "team": "your Equity Derivatives Brokerage team",
+        "offerHook": "the focus on option strategy elaboration and process optimization within equity derivatives brokerage",
+        "task1": "option strategy elaboration",
+        "task2": "RFQ processing",
+        "task3": "VBA macro development",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "closingAmbition": "My ambition is to build a career in Equity Derivatives Brokerage, and this internship is a direct step towards achieving that goal."
+      }
+    },
+    "engineBuild": "2026-10-22 08:20 UTC",
+    "id": "1792675636097",
+    "dateAdded": "2026-10-22"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Assistant spécialiste produits structurés",
     "location": "Paris",
