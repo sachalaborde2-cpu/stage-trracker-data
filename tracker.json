@@ -1,5 +1,66 @@
 [
   {
+    "company": "Société Générale CIB",
+    "jobTitle": "Assistant Sales",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Global Markets Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Société Générale CIB",
+        "jobTitle": "Sales Assistant",
+        "team": "your Cross-Asset Structured Products Sales team",
+        "offerHook": "the client-facing nature of cross-asset structured product sales and coordination with trading and structuring desks",
+        "task1": "daily sales desk support",
+        "task2": "client onboarding management",
+        "task3": "commercial presentation preparation",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "closingAmbition": "My ambition is a career in Sales. This internship would provide direct experience with cross-asset structured products and client relationship management, aligning with my professional goals."
+      }
+    },
+    "offerText": "Assistant Sales\nPostuler\n\nLa Defense, Ile de France, France\nSalaire entre et\nRéférence 26000JHG\nDate de début 01/12/2026\nDate de publication 22/10/2026\nVos missions au quotidien\nAu sein du groupe Société Générale, vous rejoindrez la Banque de Financement et d'Investissement. Vous accompagnerez la plateforme intégrée Global Markets, qui propose une approche multi produits sur l'ensemble des classes d'actifs. L'objectif est de proposer des solutions de qualité en matière d'investissement et de gestion des risques aux gestionnaires d'actifs, fonds de pension, entreprises, banques privées, assurances, hedge funds, family offices, fonds souverains et distributeurs à travers le monde.\n\nAu sein de cette activité, vous serez intégré au sein d’une équipe Commerciale dédiée à la vente de produits Fixed Income ou de produits structurés sur tous sous-jacents (Cross Asset).\n\nConcrètement, vous serez notamment amené, sous la supervision de votre tuteur à :\n\nAider et assister les vendeurs dans leur quotidien\nGérer les demandes d'enregistrement et des renouvellements des contreparties / clients dans nos outils internes\nÊtre en coordination avec les équipes risques, légales, middle office et back office pour assurer la bonne gestion des opérations\nAider à la préparation des présentations commerciales et des supports stratégiques à destination du management\nAider à la rédaction et à l’automatisation des commentaires marchés journaliers\nAider à l’optimisation de process\nAnalyser les données\nMettre à jour la base de données clients\nSuivre globalement les relations avec les clients\nAu sein de la salle des marchés, vous serez amené à travailler en collaboration avec les sales mais également les équipes de trading, d’ingénierie ainsi que les équipes du Middle et du Back Office.\n\nCe stage offre l’opportunité unique découvrir une classe d’actif, de découvrir une large gamme de produits structuré et de comprendre les éléments participant à la formation des prix de ces produits au sein d’une équipe dynamique.\n\nDurée du stage : 6 mois\n\nEt si c’était vous ?\nVous êtes étudiant de niveau Bac+4/5 en École de Commerce, d'Ingénieur ou Université avec une spécialisation en Finance de Marché ou Marchés de Capitaux\nVous possédez de bonnes connaissances académiques en Finance de marché, en Finance d’entreprise et des grandes familles de produits financiers, notamment les produits dérivés actions\nVous possédez une excellente maîtrise du Pack Office\nVous êtes curieux, passionné, rigoureux, avec des capacités d’analyse et de synthèse et possédez des qualités rédactionnelles ainsi qu’une bonne aisance relationnelle\nVous aimez relever des challenges, travailler dans un environnement dynamique et vous avez le sens du travail en équipe\nUne première expérience en finance de marchés est souhaitable\nYou're fluent in English ! Vous êtes notre candidat idéal ! En fonction du poste\nPlus qu’un poste, un tremplin\nRejoignez-nous pour faire grandir vos ambitions ! Dès votre arrivée, vous serez intégré dans nos équipes et apprendrez chaque jour aux côtés de nos experts qui vous accompagneront dans vos missions. Progressivement, vous gagnerez en autonomie sur vos projets pour faire de cette expérience un vrai accélérateur de carrière. Vous découvrirez également toute la diversité de nos métiers, dans un secteur qui évolue et innove en permanence.\n\nA la fin de vos études, diverses opportunités pourront s’offrir à vous, en France et à l’international.\n\nPourquoi nous choisir ?\nAttentif à votre qualité de vie et conditions de travail, vous bénéficiez d’avantages :\n\nPrise en charge de 60% de votre titre de transport\nBilletterie à prix réduits de notre Comité d’Entreprise (concerts, cinéma, sport)\nOffre variée de restaurants d’entreprise et de cafétérias à tarifs compétitifs\nCréer, oser, innover, entreprendre font partie de notre ADN. Si vous aussi vous souhaitez être dans l’action, évoluer dans un environnement stimulant et bienveillant, vous sentir utile au quotidien et développer ou renforcer votre expertise, nous sommes faits pour nous rencontrer !\n\nVous hésitez encore ?\n\nSachez que nos collaborateurs peuvent s’engager quelques jours par an pour des actions de solidarité sur leur temps de travail : parrainer des personnes en difficulté dans leur orientation ou leur insertion professionnelle, participer à l’éducation financière de jeunes en apprentissage ou encore partager leurs compétences avec une association. Les formats d’engagement sont multiples.",
+    "geminiOriginal": {
+      "headlineFill": "Global Markets Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Société Générale CIB",
+        "jobTitle": "Sales Assistant",
+        "team": "your Cross-Asset Structured Products Sales team",
+        "offerHook": "the client-facing nature of cross-asset structured product sales and coordination with trading and structuring desks",
+        "task1": "daily sales desk support",
+        "task2": "client onboarding management",
+        "task3": "commercial presentation preparation",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "closingAmbition": "My ambition is a career in Sales. This internship would provide direct experience with cross-asset structured products and client relationship management, aligning with my professional goals."
+      }
+    },
+    "engineBuild": "2026-10-22 14:10 UTC",
+    "id": "1792756663550",
+    "dateAdded": "2026-10-23"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Assistant Business Manager Cross Asset",
     "location": "Paris",
