@@ -58,7 +58,8 @@
     },
     "engineBuild": "2026-10-22 14:10 UTC",
     "id": "1792756663550",
-    "dateAdded": "2026-10-23"
+    "dateAdded": "2026-10-23",
+    "auditExportedAt": "2026-10-23"
   },
   {
     "company": "HSBC",
@@ -119,7 +120,8 @@
     },
     "engineBuild": "2026-10-22 14:10 UTC",
     "id": "1792756418984",
-    "dateAdded": "2026-10-23"
+    "dateAdded": "2026-10-23",
+    "auditExportedAt": "2026-10-23"
   },
   {
     "company": "CIC CIB",
