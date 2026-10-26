@@ -1,5 +1,80 @@
 [
   {
+    "company": "KAYS Wealth Management",
+    "jobTitle": "Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "KAYS Wealth Management",
+        "jobTitle": "Structured Products Sales",
+        "team": "your Structured Products Sales team",
+        "offerHook": "",
+        "task1": "client portfolio management",
+        "task2": "structured products sales opportunities",
+        "task3": "financial markets research and analysis",
+        "proofPoints": [
+          "simulation",
+          "pricing"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "contribute to structured product sales and client portfolio growth"
+      },
+      "guardrailRejected": [
+        {
+          "old": "sector/geographic exposure analysis",
+          "new": "financial markets exposure analysis",
+          "reason": "trop long (+33%), clause ajoutée"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "offerText": "Stage: Sales Produits Structurés\nStage 6 mois\n\n240 Rue de Rivoli, 75001 Paris (France)\n\n\nKAYS Wealth Management\nPME30 employésConseil\nPubliée le 23 octobre 2026\n\nCandidature simplifiée\n\n\nDate de début\nDécembre 2026\n\nSalaire\nInformation non renseignée\n\nTélétravail\nPas de télétravail\n\nAvec plus de 1Md€ d’actifs conseillés en 9 ans, vous intégrez le groupe qui connait la plus forte dynamique du marché.\n\nNotre cabinet conseille et accompagne sa clientèle en toute objectivité sur l’ensemble des thématiques financières, immobilières, juridiques et fiscales.\n\nNotre forte croissance est le résultat de notre approche globale de la profession qui nous différencie des autres acteurs. En effet, nous internalisons toutes les compétences métier pour proposer un service plus complet et une meilleure réactivité.\n\nNos clients bénéficient ainsi de toutes les expertises réunies au travers des 3 entités du groupe :\n\nKAYS WM pour le conseil en investissements financiers et immobiliers\nExpert IP pour l’expertise fiscale et comptable\nK Financement pour le courtage en crédit et assurance\nDe plus, notre savoir-faire dans le domaine de l’Asset Management est clairement un atout ! Nous créons et élaborons nos propres allocations et solutions financières : Portefeuille ISR, Produits Structurés, Private Equity …\n\nNous recherchons 1 stagiaire ambitieux(se) Sales Produits Structurés.\n\nLe candidat(e) retenu(e) travaillera en étroite collaboration avec nos membres expérimentés de l'équipe, aura une connaissance de base des produits financiers structurés et sera en mesure d'apprendre rapidement.\n\nResponsabilités :\n\n- Assister les membres de l'équipe dans la gestion et le développement d'un portefeuille de clients\n\n- Participer à l'identification de nouvelles opportunités de vente de produits structurés\n\n- Contribuer à la recherche et à l'analyse des marchés financiers\n\nExigences :\n\nCours universitaires en finance, économie ou un domaine connexe\n\nConnaissance de base des produits financiers structurés\n\nCapacité à travailler de manière autonome et à collaborer efficacement en équipe\n\nExcellentes compétences interpersonnelles et de communication\n\nNous offrons une expérience de stage pratique et une opportunité d'apprentissage dans un environnement stimulant et dynamique. Si vous êtes intéressé(e) par ce poste, veuillez soumettre votre CV et une lettre de motivation. Nous sommes impatients de vous rencontrer.\n\nUn bac +4/5 délivré par une école d’ingénieur, de commerce ou université est nécessaire.\n\nSi vous êtes ambitieux, rigoureux, chaleureux et doté d’un très fort sens du relationnel, nous serons ravis de vous recevoir à l’une de nos sessions de recrutement.\n\nNos bureaux se situent au 240 Rue de Rivoli, 75001 Paris.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "KAYS Wealth Management",
+        "jobTitle": "Structured Products Sales",
+        "team": "your Structured Products Sales team",
+        "offerHook": "",
+        "task1": "client portfolio management",
+        "task2": "structured products sales opportunities",
+        "task3": "financial markets research and analysis",
+        "proofPoints": [
+          "simulation",
+          "pricing"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "contribute to structured product sales and client portfolio growth"
+      },
+      "guardrailRejected": [
+        {
+          "old": "sector/geographic exposure analysis",
+          "new": "financial markets exposure analysis",
+          "reason": "trop long (+33%), clause ajoutée"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-10-23 12:40 UTC",
+    "id": "1793007758418",
+    "dateAdded": "2026-10-26"
+  },
+  {
     "company": "Crédit Agricole Corporate & Investment Bank",
     "jobTitle": "Assistant Sales Forex",
     "location": "Paris",
