@@ -1,5 +1,90 @@
 [
   {
+    "company": "Crédit Agricole Corporate & Investment Bank",
+    "jobTitle": "Assistant Sales Forex",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and \textbf{workflow tools}, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and IT tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole Corporate & Investment Bank",
+        "jobTitle": "FX Sales Assistant",
+        "team": "your Global Markets FX Sales team",
+        "offerHook": "",
+        "task1": "structured product pricing",
+        "task2": "commercial presentations",
+        "task3": "Python and VBA tool development",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "contribute to FX structured product pricing and corporate client engagement"
+      },
+      "guardrailRejected": [
+        {
+          "old": "\textbf{Engineered} an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "temps verbal changé (extbf{Engineered} → Developed)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "offerText": "OFFRE DE STAGE\nAssistant Sales Forex, Paris\nCrédit Agricole Corporate & Investment Bank\n\nDurée : 6 mois\nDate de début du stage : 9 novembre 2026 et début février\nDirection : Global Markets Division / Ventes Régionales\nSite : Salle des Marchés CACIB Montrouge, Île-de-France, 92 Hauts-de-Seine\nMétier : Global Markets Division, FX Corp.\nType de contrat : Stage\n\nDescriptif du stage\nVous assisterez une équipe de FX Sales (4 vendeurs) :\n\nMulti-activités : principalement gestion du risque de change avec une importante composante de produits structurés, mais pourrez également aborder des problématiques de gestion du risque de taux, et de placements structurés\nProduit : flux et produits structurés de devises\nClients : entreprises (ETI)\n\nLors de cette mission vous serez chargé(e) d’assister les Sales travaillant sur le Desk :\n\nPricing des opérations, notamment des produits structurés\nRéalisation des présentations commerciales\nRéalisation et diffusion des documents d’information (points économiques, point sur les parités de change, etc.)\nPré-confirmation des opérations traitées\nContrôle de cohérence sur les opérations traitées\nAdministration des outils de suivi des positions de change\nInterface entre les différents Back-Offices de CA CIB, les desks de Trading (Paris, Londres, New York, ...), les Caisses Régionales de Crédit Agricole et les clients\nReporting et suivi de l’activité\nPoursuite du développement des outils informatiques sur Python et VBA (en fonction des besoins et des aptitudes)\n\nProfil du candidat / aptitudes requises\n\nFormation : École d’Ingénieur, École de Commerce ou Université\nNiveau d’études : Bac+4 a minima\nSpécialisation : Finance de marché\nOutils informatiques : Pack Microsoft Office, Reuters, VBA, Python et SQL est un plus\nQualités recherchées : rigueur, dynamisme, sens commercial, écoute, autonomie, curiosité intellectuelle, capacité à travailler en équipe et à gérer le stress\nLangue : français et anglais courant",
+    "geminiOriginal": {
+      "headlineFill": "FX Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and \textbf{workflow tools}, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and IT tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole Corporate & Investment Bank",
+        "jobTitle": "FX Sales Assistant",
+        "team": "your Global Markets FX Sales team",
+        "offerHook": "",
+        "task1": "structured product pricing",
+        "task2": "commercial presentations",
+        "task3": "Python and VBA tool development",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "contribute to FX structured product pricing and corporate client engagement"
+      },
+      "guardrailRejected": [
+        {
+          "old": "\textbf{Engineered} an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "temps verbal changé (extbf{Engineered} → Developed)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-10-23 12:40 UTC",
+    "id": "1793006553718",
+    "dateAdded": "2026-10-26"
+  },
+  {
     "company": "Société Générale CIB",
     "jobTitle": "Assistant Sales",
     "location": "Paris",
