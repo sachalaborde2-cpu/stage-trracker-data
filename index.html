@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-10-23 12:40 UTC";
+const BUILD_VERSION = "2026-10-26 10:20 UTC";
 
 const LocalStore = {
   get(key) {
@@ -420,8 +420,8 @@ const LM_PROOFS = {
   pipeline: String.raw`I built a market data pipeline in pandas, with liquidity filtering and pytest-based validation.`,
   econometrics: String.raw`I ran a fixed-effects econometric analysis in R on a panel of 4,000 firms, with specification tests (Breusch-Pagan, Hausman).`,
   business: String.raw`I built and ran an arbitrage and resale business (1,200+ transactions), handling sourcing, pricing, inventory and the full accounting cycle.`,
-  bloomberg: String.raw`I also hold the Bloomberg Market Concepts (BMC) certification.`,
-  automation: String.raw`I have also automated internal processes at FactSet using the Claude API.`,
+  bloomberg: String.raw`I hold the Bloomberg Market Concepts (BMC) certification.`,
+  automation: String.raw`I have automated internal processes at FactSet using the Claude API.`,
 };
 const LM_PROOF_LABELS = {
   pricing: "Pricing d'options + market making", simulation: "Simulation FactSet (1er/12, +6%)", backtest: "Backtest Golden Cross",
@@ -474,8 +474,17 @@ const CONTRACT_TYPES = {
 // faisait planter le parsing avec une erreur brute et peu comprehensible
 // ("Bad escaped character..."). Trois niveaux de recuperation avant
 // d'abandonner :
+// Gemini ecrit parfois \textbf{...} avec UN seul backslash dans son JSON : \t est
+// alors un echappement valide (tabulation) et le texte devient "<TAB>extbf{...}"
+// sans aucune erreur de parsing (constate le 26/10 : une modification de bullet
+// etait ignoree en silence). On double le backslash devant les commandes LaTeX
+// dont la premiere lettre est un echappement JSON valide (b, f, n, r, t).
+function fixLatexEscapes(text) {
+  return text.replace(/(^|[^\\])\\(?=(?:textbf|textit|texttt|textsc|textbackslash|noindent|newline|newcommand|renewcommand|begin|bf|bullet|frac|rule|raggedright)\b)/g, "$1\\\\");
+}
 function parseAiJson(text) {
   if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
+  text = fixLatexEscapes(text);
   try {
     return JSON.parse(text);
   } catch (e1) {
@@ -883,7 +892,9 @@ function plainBullet(t) {
 const GUARD_FILLER = /\b(demonstrating|utili[sz]ing|leverag(?:e|es|ing)|enhanc(?:e|es|ing)|aligning with|aligned with|contributing to|robust|with (?:a )?focus on|within market finance|commercial drive|counterparts|stakeholders|various|internal and external)\b/i;
 // Termes precis qui ne doivent pas disparaitre d'un bullet (constate : "challenge" -> "experience",
 // "buy-side and sell-side professionals" -> "counterparts", "portfolio management challenge" -> "trading challenge").
-const GUARD_PROTECTED = /\b(challenge|simulat\w+|engine|pipeline|backtest\w*|buy-side|sell-side|institutional|cross-asset|portfolio management|personal|application)\b/gi;
+// "workflow tools" : ecarte a chaque fois que Gemini y a touche ("process optimization tools" le 23/10,
+// "IT tools" le 26/10) ; un workflow tool FactSet n'est ni l'un ni l'autre.
+const GUARD_PROTECTED = /\b(challenge|simulat\w+|engine|pipeline|backtest\w*|buy-side|sell-side|institutional|cross-asset|portfolio management|personal|application|workflow tools?)\b/gi;
 const IRREGULAR_PAST = new Set(["built", "ran", "led", "wrote", "made", "took", "won", "set", "drove", "grew"]);
 function verbIsPast(w) { const l = (w || "").toLowerCase(); return /ed$/.test(l) || IRREGULAR_PAST.has(l); }
 function guardKeywordChanges(changes) {
@@ -906,6 +917,12 @@ function guardKeywordChanges(changes) {
       const lostP = [...new Set((o.match(GUARD_PROTECTED) || []).map(x => x.toLowerCase()))].filter(x => !n.toLowerCase().includes(x));
       if (lostP.length) reason = "terme précis supprimé (" + lostP.slice(0, 3).join(", ") + ")";
     }
+    if (!reason) {
+      // Un groupe en gras du CV (chiffre cle, resultat) doit rester tel quel.
+      const bolds = [...String(c.old).matchAll(/\\textbf\{([^{}]*)\}/g)].map(m => m[1].replace(/\\([%&$#_{}])/g, "$1")).filter(Boolean);
+      const lostB = bolds.filter(b => !n.toLowerCase().includes(b.toLowerCase()));
+      if (lostB.length) reason = "groupe en gras supprimé (" + lostB.slice(0, 2).join(", ") + ")";
+    }
     if (!reason && GUARD_FILLER.test(n) && !GUARD_FILLER.test(o)) reason = "formule de remplissage (" + (n.match(GUARD_FILLER) || [""])[0] + ")";
     if (!reason) {
       const nums = o.match(/\d[\d,.]*\d|\d/g) || [];
@@ -917,6 +934,8 @@ function guardKeywordChanges(changes) {
       const lostNames = names.filter(x => !n.includes(x));
       if (lostNames.length) reason = "élément concret supprimé (" + [...new Set(lostNames)].slice(0, 3).join(", ") + ")";
     }
+    // Le verbe d'ouverture est un choix du CV ("Engineered" -> "Developed" n'apporte rien et affaiblit).
+    if (!reason && ow[0] && nw[0] && ow[0].toLowerCase() !== nw[0].toLowerCase()) reason = "verbe d'ouverture changé (" + ow[0] + " → " + nw[0] + ")";
     if (!reason && ow[0] && nw[0] && verbIsPast(ow[0]) !== verbIsPast(nw[0])) reason = "temps verbal changé (" + ow[0] + " → " + nw[0] + ")";
     if (!reason) {
       const cnt = (arr, w) => arr.filter(x => x.toLowerCase().replace(/[^a-z]/g, "") === w).length;
@@ -959,18 +978,18 @@ RÈGLES STRICTES :
    - Taille du changement : un échange de vocabulaire = 1 à 3 mots remplacés dans le bullet, pas plus (le contrôle automatique rejette au-delà de 6 mots modifiés au total). Ne change jamais le nom de l'activité (un "challenge" ou une "simulation" reste tel quel, "portfolio management" ne devient pas "trading").
    - Longueur : même nombre de mots, à ±10 %. Ne répète pas deux fois le même mot dans un bullet.
    - Mots interdits (sauf s'ils sont déjà dans l'original) : demonstrating, utilizing, leveraging, enhancing, aligning with, contributing to, robust, strong, "within market finance", "with focus on".
-   - "old" = copie EXACTE et COMPLÈTE d'un des bullets fournis ci-dessous (y compris un éventuel \textbf{...}). "new" = DU TEXTE BRUT UNIQUEMENT, sans \textbf{}, \textit{}, **gras** ni aucun balisage.
+   - "old" = copie EXACTE et COMPLÈTE d'un des bullets fournis ci-dessous, tel qu'affiché : il n'a un \textbf{...} que si le bullet affiché en a un, n'en ajoute jamais. "new" = DU TEXTE BRUT UNIQUEMENT, sans \textbf{}, \textit{}, **gras** ni aucun balisage.
    - Un contrôle automatique vérifie ensuite tes sorties et écarte celles qui violent ces règles : inutile de forcer.
 4. "letterFields" : la lettre est un gabarit fixe dont Gemini ne remplit que ces champs. Valeurs COURTES, en anglais naturel, grammaire irréprochable. Le gabarit lit :
    "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. The role covers {task1}, {task2} and {task3}. ... {proofPoints} ... {conclusion : ambition + closingGain} Thank you for your attention..."
-   - company : nom de l'entreprise tel quel. jobTitle : l'intitulé de l'offre traduit en anglais naturel, 6 mots maximum, SANS l'enrichir ("Stage Assistant – Sales/Structuration" donne "Sales/Structuring Assistant", pas "Structured Products Sales and Structuring Assistant").
-   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team", "your Capital Markets Investment Solutions team", pas "your Private Banking Investments and Wealth Solutions Structured Products team". N'écris JAMAIS "within" dans ce champ (le gabarit le dit déjà)). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le.
+   - company : nom de l'entreprise tel quel. jobTitle : l'intitulé de l'offre traduit en anglais naturel, 6 mots maximum, SANS l'enrichir ("Stage Assistant – Sales/Structuration" donne "Sales/Structuring Assistant", pas "Structured Products Sales and Structuring Assistant"). C'est un NOM DE POSTE (on peut être embauché comme tel), pas une fonction seule : si l'offre ne donne que le métier, termine par "Intern".
+   - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team", "your Capital Markets Investment Solutions team", pas "your Private Banking Investments and Wealth Solutions Structured Products team". N'écris JAMAIS "within" dans ce champ (le gabarit le dit déjà)). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le. Si l'offre ne nomme aucune équipe, écris "your team" : n'invente pas une équipe en recopiant l'intitulé du poste.
    - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...), ex "the combination of client follow-up and FX hedging solutions for corporates". Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation".
    - task1, task2, task3 : complètent "The role covers ___, ___ and ___." Trois groupes nominaux parallèles, 2 à 6 mots, en minuscules, sans verbe conjugué, tirés des missions réelles de l'offre et sans se répéter. Évite d'empiler plus de 2 noms sans article ou préposition. BON : "existing client portfolios", "new client onboarding", "market risk indicators", "client presentations". MAUVAIS : "Monitor markets" (verbe + majuscule), "production quality controls implementation" (4 noms empilés).
    - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg) ; automation = automatisation de processus internes chez FactSet avec l'API Claude (À INCLURE comme l'une des 2 dès que l'offre parle d'IA, d'automatisation, d'optimisation de processus ou de digitalisation). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data, business management → automation + pipeline ; marketing produit ou clientèle → business ou pricing + simulation.
    - ambition : l'objectif de carrière de Sacha, choisi EXACTEMENT parmi : "Sales", "Trading", "Structuring", "Sales and Trading", "Sales and Structuring", "Trading and Structuring". Ce sont ses seuls objectifs réels : jamais un autre métier (brokerage, risque, marketing, opérations...). Choisis le plus proche de l'offre ; pour une offre qui n'est pas front office, prends l'objectif le plus proche du desk ou de la classe d'actifs visés, par défaut "Sales and Trading".
    - frontOffice : true si l'offre est un poste front office (sales, trading, structuration, broker, market making), false pour tout le reste (risque, opérations, business management, marketing, IT...).
-   - closingGain : complète "This internship would let me ___." Groupe verbal commençant par un verbe à l'infinitif sans "to" (work on, learn, see, build...), 6 à 14 mots, qui nomme une mission CONCRÈTE tirée de l'offre. Pas d'adjectif flatteur, pas de "skills", "experience" ou "understanding" vagues. BON : "work on structured product pricing and client documentation alongside the structuring desk". MAUVAIS : "develop the skills and market understanding needed for such a role".
+   - closingGain : complète "This internship would let me ___." Groupe verbal commençant par "learn how", "see how", "understand how", "work alongside" ou "work on" (JAMAIS "contribute"), 6 à 14 mots. La lettre a déjà dit les 3 tâches : closingGain NE DOIT PAS les redire. Puise dans un autre élément de l'offre (type de clients, flux ou produits traités par la desk, interfaces avec d'autres équipes, destinataires des livrables) et dis ce que Sacha apprendrait ou verrait de l'intérieur. C'est un souhait d'apprentissage, jamais une compétence déjà acquise. Pas d'adjectif flatteur, pas de "skills", "experience" ou "understanding" vagues. Structure à suivre (ne recopie pas, remplis avec l'offre) : "learn how <produit ou flux de l'offre> are handled for <type de clients ou d'interlocuteurs de l'offre>". MAUVAIS : "contribute to <une des 3 tâches>", "develop the skills and market understanding needed for such a role".
 5. TOUS les champs (headlineFill, jobTitle, team, offerHook, task1/2/3, closingGain) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit. AUCUN de ces champs ne doit contenir de balisage (\textbf{}, **gras**, etc.) — texte brut uniquement, dans tous les cas.
 6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
 {"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","team":"...","offerHook":"...","task1":"...","task2":"...","task3":"...","proofPoints":["...","..."],"ambition":"...","frontOffice":true,"closingGain":"..."}}`;
@@ -1000,20 +1019,49 @@ RÈGLES STRICTES :
   const data = await response.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
   const parsed = parseAiJson(text);
+  // Retrouve le bullet exact du CV meme si Gemini a ajoute un \textbf qui n'y est
+  // pas (constate le 26/10 : "\textbf{workflow tools}" et "\textbf{Engineered}"
+  // inventes dans des bullets sans gras -> modification ignoree en silence).
+  const normB = s => plainBullet(s).replace(/\s+/g, " ").trim().toLowerCase();
+  const editable = Object.values(ct.editableBullets || {});
+  parsed.keywordChanges = (parsed.keywordChanges || []).map(c => {
+    if (!c || !c.old || !c.new) return c;
+    const hit = editable.find(b => normB(b) === normB(c.old));
+    return hit ? { ...c, old: hit } : c;
+  });
   const g = guardKeywordChanges(parsed.keywordChanges);
   parsed.keywordChanges = g.kept;
   if (g.rejected.length) parsed.guardrailRejected = g.rejected;
-  // Une accroche d'offre qui reprend mot pour mot une des 3 taches se lit comme
-  // une repetition (constate sur Aurel BGC : "option strategy elaboration" deux
-  // fois de suite). On la retire plutot que de la laisser.
   const lf = parsed.letterFields || {};
+  // Intitule : un nom de poste, pas une fonction seule ("as a Structured Products
+  // Sales" = faute dans la premiere phrase, constate le 26/10).
+  if (lf.jobTitle) {
+    lf.jobTitle = String(lf.jobTitle).trim();
+    if (/\b(sales|trading|structuring|research|strategy|analysis|operations|marketing|management|risk|compliance)$/i.test(lf.jobTitle)) lf.jobTitle += " Intern";
+  }
+  // Equipe : si elle ne fait que recopier l'intitule ("as X, within your X team"), on dit "your team".
+  const roleCore = s => (s || "").toLowerCase().replace(/\b(your|team|desk|department|the|an?|intern|assistant|analyst|associate|trainee)\b/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+  if (lf.team && lf.jobTitle && roleCore(lf.team) && roleCore(lf.team) === roleCore(lf.jobTitle)) lf.team = "your team";
+  // Conclusion : "contribute to <tache>" redisait la tache (3 lettres sur 3 le 26/10).
+  if (lf.closingGain) lf.closingGain = String(lf.closingGain).trim().replace(/^contribute to\b/i, "work on");
+  // Une accroche d'offre qui reprend une des 3 taches se lit comme une repetition
+  // (Aurel BGC : "option strategy elaboration" deux fois de suite). On la retire,
+  // mais seulement quand TOUS les mots de la tache y sont, ou au moins 3 mots
+  // communs : le seuil precedent (66 % des mots) retirait l'accroche des 3
+  // lettres du 26/10 sur de simples mots du metier ("structured products").
+  // Le texte retire est conserve dans la note, pour pouvoir le juger.
   const nz = s => (s || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   const toks = s => nz(s).split(" ").filter(w => w.length >= 3).map(w => w.replace(/(ing|es|s)$/, ""));
-  const hset = new Set(toks(lf.offerHook));
-  const overlaps = ["task1", "task2", "task3"].some(k => { const t = toks(lf[k]); return t.length >= 2 && t.filter(w => hset.has(w)).length / t.length >= 0.66; });
-  if (hset.size && overlaps) {
+  const hookTxt = String(lf.offerHook || "").trim();
+  const hset = new Set(toks(hookTxt));
+  const repeated = ["task1", "task2", "task3"].map(k => lf[k]).find(tk => {
+    const t = toks(tk), shared = t.filter(w => hset.has(w)).length;
+    return t.length >= 2 && (shared === t.length || (shared >= 3 && shared / t.length >= 0.66));
+  });
+  if (hset.size && repeated) {
+    parsed.removedHook = hookTxt;
     lf.offerHook = "";
-    parsed.letterNotes = ["Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."];
+    parsed.letterNotes = ["Accroche retirée (« " + hookTxt + " ») : elle répétait « " + repeated + " ». Tu peux la réécrire dans le champ offerHook."];
   }
   return parsed;
 }
