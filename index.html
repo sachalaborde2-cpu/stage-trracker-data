@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-10-26 10:20 UTC";
+const BUILD_VERSION = "2026-10-26 10:35 UTC";
 
 const LocalStore = {
   get(key) {
@@ -439,7 +439,7 @@ function buildClosing(f) {
   if (amb && gain) {
     const g = escapeLatex(gain);
     return f.frontOffice === false
-      ? "My long-term goal is a career in " + amb + ". This role would let me " + g + ", which I would then bring to a front-office desk."
+      ? "This role would let me " + g + ". My long-term goal is a career in " + amb + "."
       : "I want to build my career in " + amb + ", and this internship would let me " + g + ".";
   }
   return escapeLatex(f.closingAmbition) || "[Closing Ambition]";
