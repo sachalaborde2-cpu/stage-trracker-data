@@ -1,5 +1,80 @@
 [
   {
+    "company": "Banque de France",
+    "jobTitle": "Analyste des marchés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Market Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Banque de France",
+        "jobTitle": "Market Analyst",
+        "team": "your Market Monitoring and Analysis team",
+        "offerHook": "",
+        "task1": "daily market monitoring",
+        "task2": "in-depth market analysis",
+        "task3": "process automation and tool development",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "contribute to in-depth market analysis and develop process automation tools"
+      },
+      "guardrailRejected": [
+        {
+          "old": "analyzing risk-adjusted performance by region.",
+          "new": "conducting risk-adjusted performance analysis by region.",
+          "reason": "trop long (+20%), clause ajoutée"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "offerText": "Analyste des marchés - H/F\nPostuler\nLogo Capital 2025\nlocations\nPARIS\nposted on\nOffre publiée il y a 3 jours\njob requisition id\nJR101617\nType de recrutement : ‎ \n\nStage\n‎ \n\nDomaine de compétences :\n\nEmplois Divers (Famille d'emploi)\n‎ \n\nVille :\n\nParis\n‎ \n\nDépartement :\n\nParis\n‎ \n\nDescription du poste:\n\n‎ \n\nPrésentation de la direction générale et du service\n\nVous serez intégré(e) à la Direction Générale de la Stabilité Financière et des Opérations (DGSO) de la Banque de France, qui exerce une grande partie de ses activités dans le cadre de l'Eurosystème. Mise en œuvre de la politique monétaire, conduite des opérations de change, gestion des réserves, promotion du bon fonctionnement des systèmes de paiement, stabilité financière sont autant de domaines dans lesquels la DGSO ambitionne d'être un acteur majeur.\n\n\nLa Direction de la Mise en œuvre de la Politique Monétaire (DMPM) est en charge de la mise en œuvre décentralisée des opérations de politique monétaire. Au sein de la DMPM, le Service de Suivi et Animation des Marchés (SAM) est chargé de mettre en œuvre les différents programmes d'achats de titres dans le cadre de la politique monétaire et de l'analyse des marchés financiers.\n\nSitué dans la salle des marchés de la Banque, le SAM se compose d'opérateurs de marché, data scientists et d'économistes qui assurent le suivi, l'animation et l'analyse des marchés financiers. Cette équipe à taille humaine et collaborative, au cœur des interactions avec les marchés financiers, offre un cadre formateur et bienveillant.\n\n\n\nDescriptif de mission\n\nAssurer un suivi réactif des évolutions des marchés via la production de rapports quotidiens afin d'assurer en permanence l'information du gouvernement de la Banque ;\nAssister l'équipe dans le cadre d'analyses approfondies ayant vocation à être utilisées notamment pour la préparation du conseil des Gouverneurs de la BCE ;\nParticiper aux missions de « market intelligence » conduites avec une large palette d'acteurs des marchés financiers (traders, sales, stratégistes...) ;\nContribuer à différents projets internes : optimisation/développement d'outils afin d'automatiser les processus et approfondir l'analyse ;\nParticiper aux présentations hebdomadaires sur les marchés financiers à destination de la Direction Générale.\n\nLe poste est à pourvoir à partir du 1er janvier 2027 pour une période de 6 mois.\n\n‎ \n\nProfil recherché:\n\n‎ \n\nFormation recherchée :\n\nEn cours de validation de la dernière année d'un diplôme Bac +5 en finance de marché ou macroéconomie (université, école de commerce, école d'ingénieur).\n\n\nCompétences :\n\nCompréhension générale du fonctionnement des marchés financiers, en macro-économie et politique monétaire ;\n\nD'excellentes capacités rédactionnelles afin d'expliquer simplement des concepts complexes ;\n\nCompétences quantitatives afin de développer de nouveaux outils d'analyse\n\n\nQualités :\n\nFaire preuve d'autonomie et de curiosité ;\n\nTrès grande rigueur dans l'analyse ;\n\nCapacité à travailler efficacement dans des délais resserrés ;\n\nEsprit d'équipe et aisance en matière de communication (écrite et orale) ;\n\nBon niveau d'anglais (écrit, oral).\n\n‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ \n\n‎ ‎ ‎ ‎ ‎ ‎ ‎ \n\nLa Banque de France est une institution socialement responsable, attachée au respect de la diversité sous toutes ses formes, à la lutte contre les discriminations, à favoriser la parité Femme/Homme et à garantir un environnement de travail de qualité.\n\nDes aménagements de poste peuvent être organisés pour tenir compte des handicaps des personnes recrutées.\n\nContactez nos ambassadeurs Myjobglasses",
+    "geminiOriginal": {
+      "headlineFill": "Market Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Banque de France",
+        "jobTitle": "Market Analyst",
+        "team": "your Market Monitoring and Analysis team",
+        "offerHook": "",
+        "task1": "daily market monitoring",
+        "task2": "in-depth market analysis",
+        "task3": "process automation and tool development",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "contribute to in-depth market analysis and develop process automation tools"
+      },
+      "guardrailRejected": [
+        {
+          "old": "analyzing risk-adjusted performance by region.",
+          "new": "conducting risk-adjusted performance analysis by region.",
+          "reason": "trop long (+20%), clause ajoutée"
+        }
+      ],
+      "letterNotes": [
+        "Accroche d'offre retirée : elle répétait une des tâches. Tu peux en écrire une dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-10-23 12:40 UTC",
+    "id": "1793008540030",
+    "dateAdded": "2026-10-26"
+  },
+  {
     "company": "KAYS Wealth Management",
     "jobTitle": "Sales Produits Structurés",
     "location": "Paris",
