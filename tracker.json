@@ -1,5 +1,74 @@
 [
   {
+    "company": "Marigny Capital",
+    "jobTitle": "Assistant Desk Structuration",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Marigny Capital",
+        "jobTitle": "Structuring Desk Assistant",
+        "team": "your team",
+        "offerHook": "the structuring of cross-asset products for institutional clients",
+        "task1": "product pricing",
+        "task2": "value analysis",
+        "task3": "secondary market monitoring",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how structured products are designed for diverse institutional clients and bank partners"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced value analysis (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "mot répété (analysis)"
+        }
+      ]
+    },
+    "offerText": "Offre de Stage – Assistant Desk Structuration\nMarigny Capital\n\nDescription de l’entreprise\nMarigny Capital est une société indépendante de conseil et d’intermédiation/courtage de produits financiers (fonds, produits structurés, certificats, etc.).\n\nLa société est en relation avec une vingtaine de banques partenaires et distribue des produits cross-assets (taux, actions, fonds, CDS...) auprès d’une clientèle de gérants institutionnels, de banques privées, de gérants indépendants en Europe.\n\nDans le cadre de son activité, la société recherche un assistant au sein du département de structuration.\n\nDescriptif du poste\nBasé à Paris, le futur stagiaire aura les missions suivantes :\n\nPricing de produits\nAnalyse de valeurs\nSuivi du marché secondaire des produits émis\nÉlaboration de produits en accord avec les besoins de la clientèle\nSaisie des produits émis dans les systèmes internes\n\nProfil recherché\n\nBonne connaissance des produits dérivés\nBonne connaissance des marchés financiers\nGrande rigueur, autonomie, dynamisme, et forte motivation\nMaîtrise du pack Office, de VBA\nConnaissances en Python appréciées\nAnglais courant\n\nFormation\nBac+4/5 école de commerce, d’ingénieur ou université avec une spécialisation en finance de marché.\n\nDate de début et durée\nDébut : janvier 2027. Durée : 6 mois.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Marigny Capital",
+        "jobTitle": "Structuring Desk Assistant",
+        "team": "your team",
+        "offerHook": "the structuring of cross-asset products for institutional clients",
+        "task1": "product pricing",
+        "task2": "value analysis",
+        "task3": "secondary market monitoring",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how structured products are designed for diverse institutional clients and bank partners"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced value analysis (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "mot répété (analysis)"
+        }
+      ]
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793091531548",
+    "dateAdded": "2026-10-27"
+  },
+  {
     "company": "Banque de France",
     "jobTitle": "Analyste des marchés",
     "location": "Paris",
