@@ -1,5 +1,84 @@
 [
   {
+    "company": "Amundi",
+    "jobTitle": "Assistant Securities Lending Trading",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Securities Lending Trading Support",
+      "keywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal decision-making tools, analyzing risk-adjusted performance by region."
+        }
+      ],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Securities Lending Trading Assistant",
+        "team": "your Securities Lending and Repo team",
+        "offerHook": "the focus on optimizing fund revenues through securities lending operations and developing trading tools",
+        "task1": "revenue analysis and anomaly detection",
+        "task2": "existing BOT maintenance and development",
+        "task3": "trader decision support tool development",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how securities lending operations optimize fund revenues in a trading environment"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (Engineered → Developed)"
+        }
+      ]
+    },
+    "offerText": "Stage - Assistant Securities Lending Trading H/F\nModifiée le 26/10/2026\n\nLieu :Paris - France\nSecteur :Financement et Investissement\nDescription du poste\nL’équipe Securities Lending et Repo, composée de 6 négociateurs à Paris, et 3 supports à Dublin ont pour mission d’optimiser les revenus des fonds via les opérations de Cession Temporaire de Titres. Situé au sein d’Amundi Intermédiation qui a pour mission l’Exécution des ordres de la gestion, le desk effectue du prêt de titre et du Repo en mode Agent (Agency lending).\n\n \n\nLa mission principale est d’assister les négociateurs dans le développement d’outils d’optimisation.  \n\nLes projets identifiés sont les suivants :\n\nAnalyse de revenus et détection d’anomalies du book\n\nMaintenance et développement du BOT existant\n\nDéveloppement d’outils d’aide à la décision à destination des négociateurs\n\nVous serez assis au sein de l’équipe de négociation, et travaillerez avec l’équipe pour l’optimisation du book.\n\n \n\n \n\nComplément\nParfaitement intégré à l’équipe de trading, vous participerez à l’optimisation des outils utilisés grâce à vos capacités de comprendre et de perfectionner les codes. Les impacts peuvent être rapidement perçus.\nCe stage exigeant vous permettra de vous familiariser avec l’environnement de trading, et de contribuer au développement du desk.\n\n\nCritères de candidature\nDate de prise de fonction\n19/01/2027\nDurée\n6 mois\nNiveau d'étude minimum\nBac + 4 / M1\nFormation / Spécialisation\nFormation : Université / Ecole de commerce / IngénieurSpécialisation : Informatique et/ou Finance \nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nCompréhension, Rigueur, Fiabilité, orienté résultats, transparence, intégrité, proposition de Valeur Ajoutée\nOutils informatiques\n« R » ou « Python »\nLangues\nAnglais et Français courant\n\nEntreprise Amundi",
+    "geminiOriginal": {
+      "headlineFill": "Securities Lending Trading Support",
+      "keywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal decision-making tools, analyzing risk-adjusted performance by region."
+        }
+      ],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Securities Lending Trading Assistant",
+        "team": "your Securities Lending and Repo team",
+        "offerHook": "the focus on optimizing fund revenues through securities lending operations and developing trading tools",
+        "task1": "revenue analysis and anomaly detection",
+        "task2": "existing BOT maintenance and development",
+        "task3": "trader decision support tool development",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how securities lending operations optimize fund revenues in a trading environment"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (Engineered → Developed)"
+        }
+      ]
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793091726798",
+    "dateAdded": "2026-10-27"
+  },
+  {
     "company": "Marigny Capital",
     "jobTitle": "Assistant Desk Structuration",
     "location": "Paris",
