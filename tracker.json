@@ -1,5 +1,60 @@
 [
   {
+    "company": "AYDO",
+    "jobTitle": "Assistant Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AYDO",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the creation, optimization, and monitoring of structured products facilitated by technology and data",
+        "task1": "RFQ participation",
+        "task2": "commercial presentation design",
+        "task3": "monitoring existing positions",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are conceived and optimized through collaboration with various stakeholders"
+      }
+    },
+    "offerText": "AYDO – Structured Products Sales\nAssistant(e) Sales Produits Structurés, stage conventionné, Paris\n\nDate de début : décembre 2026, janvier 2027\nDurée : 6 mois\nLieu : Paris, France\n\nÀ propos d’AYDO\nCréée en 2021 par des professionnels du secteur financier, AYDO se présente comme une plateforme nouvelle génération dédiée à la création de Produits Structurés. L’entreprise combine expertise, technologie et data pour accompagner la conception, l’optimisation et le suivi de produits structurés.\n\nMission\nSitué au cœur de l’écosystème AYDO, le/la stagiaire est en relation directe avec les différentes parties prenantes du projet : Management, Vente, Structuration, Sales Trading, CTO, Chargés de Projet et fournisseurs. Le poste implique également une relation quotidienne avec les émetteurs afin d’apporter une assistance personnalisée aux équipes d’AYDO.\n\nParticiper aux appels d’offres\nAssurer le suivi des positions existantes\nUtiliser les systèmes internes et externes\nCréer et concevoir des présentations commerciales\nAssurer le suivi des documents contractuels liés aux produits lancés par AYDO\nContribuer plus largement aux besoins opérationnels et commerciaux du desk\n\nProfil recherché\n\nÉcole de commerce ou université, Bac+4/5, avec une spécialisation en Finance de Marché\nFrançais et anglais courants\nParfaite maîtrise du Pack Office\nCuriosité, dynamisme, rigueur et autonomie\nAdhésion aux principes fondateurs d’AYDO : créativité, agilité et intégrité\n\nCandidature",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AYDO",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the creation, optimization, and monitoring of structured products facilitated by technology and data",
+        "task1": "RFQ participation",
+        "task2": "commercial presentation design",
+        "task3": "monitoring existing positions",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are conceived and optimized through collaboration with various stakeholders"
+      }
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793623207615",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Crédit Agricole S.A.",
     "jobTitle": "Validation de modèles ALM",
     "location": "Paris",
