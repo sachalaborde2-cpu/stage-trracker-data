@@ -1,5 +1,68 @@
 [
   {
+    "company": "Leonteq",
+    "jobTitle": "Sales Cross-Asset Structured Products",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Leonteq",
+        "jobTitle": "Cross-Asset Structured Products Sales Assistant",
+        "team": "your Frabelux Structured Products Sales team",
+        "offerHook": "",
+        "task1": "structured products pricing assistance",
+        "task2": "structured products marketing support",
+        "task3": "order monitoring and booking",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how structured products are managed from pricing to settlement for various clients"
+      },
+      "removedHook": "the combination of structured products pricing, marketing support, and cross-departmental collaboration",
+      "letterNotes": [
+        "Accroche retirée (« the combination of structured products pricing, marketing support, and cross-departmental collaboration ») : elle répétait « structured products pricing assistance ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Leonteq, desk Frabelux, Sales Cross-Asset Structured Products\nStage Assistant Sales, Paris\n\nLe desk Frabelux est à la recherche de son prochain stagiaire pour rejoindre l’équipe de vente en produits structurés à Paris, à partir de décembre 2026.\n\nMissions\n\nAide au pricing de produits structurés\nSupport marketing relatif aux divers types de produits structurés (Capital Garanti, Reverse Convertible, Autocall, CLN, ...)\nSuivi et booking des ordres aux marchés primaire et secondaire, gestion du settlement\nLien continu avec les autres départements (Trading, Structuration, Middle-Office, Back-Office)",
+    "geminiOriginal": {
+      "headlineFill": "Cross-Asset Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Leonteq",
+        "jobTitle": "Cross-Asset Structured Products Sales Assistant",
+        "team": "your Frabelux Structured Products Sales team",
+        "offerHook": "",
+        "task1": "structured products pricing assistance",
+        "task2": "structured products marketing support",
+        "task3": "order monitoring and booking",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how structured products are managed from pricing to settlement for various clients"
+      },
+      "removedHook": "the combination of structured products pricing, marketing support, and cross-departmental collaboration",
+      "letterNotes": [
+        "Accroche retirée (« the combination of structured products pricing, marketing support, and cross-departmental collaboration ») : elle répétait « structured products pricing assistance ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793624689040",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Vega Investment Solutions",
     "jobTitle": "Analyste Quantitatif Multi Actifs Privés",
     "location": "Paris",
