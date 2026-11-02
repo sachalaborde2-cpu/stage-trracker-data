@@ -1,5 +1,60 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Structured Finance Hedging Sales Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Finance Hedging Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Structured Finance Hedging Sales Assistant",
+        "team": "your Global Markets Structured Finance Hedging team",
+        "offerHook": "the combination of hedging interest rate and FX exposures for corporate clients and liaising with structured finance teams",
+        "task1": "pricing interest rate and FX derivatives",
+        "task2": "calculating credit risk",
+        "task3": "developing marketing materials",
+        "proofPoints": [
+          "bloomberg",
+          "pricing"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how complex hedging solutions are tailored for corporate clients in structured finance deals"
+      }
+    },
+    "offerText": "OFFRE DE STAGE\nStructured Finance Hedging Sales Assistant, Paris\nCrédit Agricole Corporate & Investment Bank\n\nDurée : 6 mois\nDate de début du stage : mi-décembre 2026\nDirection : Global Markets Division\nSite : Salle des marchés CACIB, Paris / Montrouge\nType de contrat : Stage\n\nDescriptif du stage\nAu sein de la salle des marchés de CACIB, le desk SFH (Structured Finance Hedging) est spécialisé dans la couverture des expositions taux et change des clients corporate de la région EMEA, dans le cadre de transactions dites « secured » (asset & project finance, acquisitions LBO). L’équipe interagit au quotidien avec les départements de financements structurés de la banque.\n\nAux côtés d’une équipe composée de 3 sales et du Global Head de l’activité, le stagiaire sera en charge de :\n\nPricer les dérivés de taux d’intérêt et FX (swaps, caps, collars, CCS, FX Fwd, etc.)\nCalculer le risque de crédit et la profitabilité associés à chaque opération\nPréparer des notes à destination des comités de risques internes résumant les transactions envisagées\nRédiger et diffuser une newsletter hebdomadaire sur l’actualité des marchés\nÉlaborer des supports marketing pour les activités du desk\nEffectuer la liaison avec le trading, la structuration, et les équipes de financements structurés\n\nProfil du candidat / aptitudes requises\n\nFormation : École d’Ingénieur, École de Commerce ou Université\nNiveau d’études : Bac+4 a minima\nSpécialisation : Finance de marché / Économie\nAttendus : excellente connaissance des marchés financiers et des dérivés\nOutils informatiques : Pack Microsoft Office, Bloomberg, VBA, Python peut-être un plus\nQualités recherchées : rigueur, détermination, dynamisme, autonomie, volonté d’apprendre\nLangue : français et anglais courant",
+    "geminiOriginal": {
+      "headlineFill": "Structured Finance Hedging Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Structured Finance Hedging Sales Assistant",
+        "team": "your Global Markets Structured Finance Hedging team",
+        "offerHook": "the combination of hedging interest rate and FX exposures for corporate clients and liaising with structured finance teams",
+        "task1": "pricing interest rate and FX derivatives",
+        "task2": "calculating credit risk",
+        "task3": "developing marketing materials",
+        "proofPoints": [
+          "bloomberg",
+          "pricing"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how complex hedging solutions are tailored for corporate clients in structured finance deals"
+      }
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793623369186",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "AYDO",
     "jobTitle": "Assistant Sales Produits Structurés",
     "location": "Paris",
