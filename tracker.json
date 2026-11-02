@@ -1,5 +1,70 @@
 [
   {
+    "company": "Crédit Agricole S.A.",
+    "jobTitle": "Validation de modèles ALM",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "ALM Model Validation",
+      "keywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, interpreting risk-adjusted performance by region."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole S.A.",
+        "jobTitle": "ALM Model Validation Intern",
+        "team": "your Risk Management and ALM Model Validation team",
+        "offerHook": "the use of Python for data analysis and statistical methods in ALM model validation",
+        "task1": "Python data analysis tool development",
+        "task2": "statistical methods application",
+        "task3": "ALM behavioral options modeling",
+        "proofPoints": [
+          "backtest",
+          "simulation"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how ALM models are validated for banking group entities"
+      }
+    },
+    "offerText": "Stage - Validation de modèles ALM H/F\nModifiée le 01/11/2026\n\nLieu :Montrouge - France\nSecteur :Risques / Contrôles permanents\nDescription du poste\nVous rejoindrez l’équipe de Risk Management et Validation de Modèles ALM de la Direction Risques Groupe de Crédit Agricole S.A. Cette équipe est en charge de la validation de modèles ALM établis en central par Crédit Agricole SA pour les entités du groupe (Caisses Régionales et LCL), ainsi que pour la supervision des risques financiers associés. Le stage sera consacré à la partie validation de modèles.\n\n \n\nVous aurez pour missions principales de :\n\ndévelopper des outils d’analyse de données en Python ;\nappliquer les méthodes statistiques afin d’analyser et d’interpréter les informations disponibles ;\nparticiper à la modélisation des options comportementales comprises dans les expositions de l’ALM d’un acteur bancaire de premier plan ;\ndocumenter vos méthodes et résultats ;\ninteragir avec les experts du métier (modélisateurs, gestionnaires ALM) afin de développer un jugement sur la pertinence d’un modèle proposé\nComplément\nL'entreprise versera une gratification au stagiaire si la durée du stage est supérieur à deux mois consécutifs\n\n\nCritères de candidature\nDate de prise de fonction\n01/03/2027\nDurée\n6 mois\nNiveau d'étude minimum\nBac + 5 / M2 et plus\nFormation / Spécialisation\nFinance quantitative, statistiques\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nCompétences techniques :\n\nMaîtrise des fondamentaux en mathématiques financières\nConnaissance du traitement de données\nCompétence en statistiques\nProgrammation en Python\nConnaissances de bases en Finance, idéalement en gestion de risque de taux\nCompétences générales :\n\nIntérêt pour l’application pratique des concepts théoriques\nCuriosité et ouverture d’esprit\nRigueur et persévérance\nBon relationnel et capacité à travailler avec des personnes de différents horizons\nOutils informatiques\nPython, idéalement y compris des librairies de data science comme scikit-learn\n\nLangues\nAnglais opérationnel\n\nEntreprise Crédit Agricole S.A.",
+    "geminiOriginal": {
+      "headlineFill": "ALM Model Validation",
+      "keywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, interpreting risk-adjusted performance by region."
+        }
+      ],
+      "letterFields": {
+        "company": "Crédit Agricole S.A.",
+        "jobTitle": "ALM Model Validation Intern",
+        "team": "your Risk Management and ALM Model Validation team",
+        "offerHook": "the use of Python for data analysis and statistical methods in ALM model validation",
+        "task1": "Python data analysis tool development",
+        "task2": "statistical methods application",
+        "task3": "ALM behavioral options modeling",
+        "proofPoints": [
+          "backtest",
+          "simulation"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how ALM models are validated for banking group entities"
+      }
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793622951344",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Amundi",
     "jobTitle": "Assistant Securities Lending Trading",
     "location": "Paris",
