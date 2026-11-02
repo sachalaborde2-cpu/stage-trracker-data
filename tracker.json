@@ -1,5 +1,78 @@
 [
   {
+    "company": "Marex Financial",
+    "jobTitle": "CROSS ASSET SALES ASSISTANT",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross Asset Sales Assistant",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client demands across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Marex Financial",
+        "jobTitle": "Cross Asset Sales Assistant",
+        "team": "your Paris-based Cross Asset Sales team",
+        "offerHook": "",
+        "task1": "structured product pricing",
+        "task2": "client documentation and reporting",
+        "task3": "product booking and monitoring",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are distributed and managed for diverse clients"
+      },
+      "removedHook": "the daily support of sales teams on structured product pricing and client interactions with trading teams",
+      "letterNotes": [
+        "Accroche retirée (« the daily support of sales teams on structured product pricing and client interactions with trading teams ») : elle répétait « structured product pricing ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "*** OFFRE DE STAGE – CROSS ASSET SALES ASSISTANT, STRUCTURED PRODUCTS – Marex Financial ***\n \nDisponibilité : début décembre 2026\nDurée : 6 mois\n \nL’équipe Cross Asset Sales de Marex, basée à Paris, recherche son prochain stagiaire.\n \nMissions :\n- Assister au quotidien les vendeurs (préparation des pricings, documents clients, reporting)\n- Pricing de produits structurés\n- Interagir avec les équipes de trading pour répondre aux demandes clients\n- Assurer le booking et le suivi des produits\n \nProfil recherché :\n- Étudiant(e) en école de commerce, d’ingénieurs ou université (préférence pour un stage de P2)\n- Intérêt marqué pour les marchés financiers et les produits structurés\n- Rigueur, réactivité et bon relationnel\n \nLes missions sont variées et le stage très enrichissant. N’hésitez pas à me contacter si vous avez des questions.",
+    "geminiOriginal": {
+      "headlineFill": "Cross Asset Sales Assistant",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client demands across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Marex Financial",
+        "jobTitle": "Cross Asset Sales Assistant",
+        "team": "your Paris-based Cross Asset Sales team",
+        "offerHook": "",
+        "task1": "structured product pricing",
+        "task2": "client documentation and reporting",
+        "task3": "product booking and monitoring",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are distributed and managed for diverse clients"
+      },
+      "removedHook": "the daily support of sales teams on structured product pricing and client interactions with trading teams",
+      "letterNotes": [
+        "Accroche retirée (« the daily support of sales teams on structured product pricing and client interactions with trading teams ») : elle répétait « structured product pricing ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793623500005",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Structured Finance Hedging Sales Assistant",
     "location": "Paris",
