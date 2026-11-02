@@ -1,5 +1,70 @@
 [
   {
+    "company": "Finaval Conseil",
+    "jobTitle": "ASSISTANT SALES PRODUITS STRUCTURÉS",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Finaval Conseil",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the exposure to a wide range of structured products and interaction with experienced sales professionals",
+        "task1": "pricing structured products",
+        "task2": "managing client requests",
+        "task3": "reporting and automation",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are developed and offered to investment partners"
+      }
+    },
+    "offerText": "OFFRE DE STAGE – ASSISTANT(E) SALES, PRODUITS STRUCTURÉS\nFinaval Conseil\n\nPrincipales missions\nAu sein de l’activité de vente de produits structurés chez Finaval Conseil, vous serez au contact de vendeurs expérimentés à la recherche des meilleures solutions d’investissement pour leurs partenaires.\n\nCe stage offre l’opportunité de découvrir une large gamme de produits structurés dans un environnement dynamique et entrepreneurial.\n\nVotre principale mission sera d’accompagner l’équipe de vente dans leurs activités quotidiennes.\n\nEn tant qu’Assistant(e) Sales de Produits Structurés, vous serez amené(e) à :\n\nProduire les reportings et participer à leur automatisation\nÉchanger régulièrement avec les banques\nGérer des demandes clients\nPricer des produits structurés\nGérer des opportunités du marché secondaire\nRechercher des idées d’investissement avec l’équipe\n\nProfil recherché\nBac+4/5 au sein d’une école de commerce ou université avec une spécialisation en finance de marché.\n\nCompétences requises :\n\nConnaissances financières avec un intérêt pour la finance de marché\nMaîtrise du Pack Office, en particulier Excel et PowerPoint\nQualités rédactionnelles\nEsprit d’analyse et de synthèse\nRigueur, autonomie et proactivité\nLa maîtrise de VBA est un plus\n\nInformations complémentaires\n\nDate de début : début février 2027\nDurée : 6 mois\nContrat : stage conventionné à temps plein",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterFields": {
+        "company": "Finaval Conseil",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the exposure to a wide range of structured products and interaction with experienced sales professionals",
+        "task1": "pricing structured products",
+        "task2": "managing client requests",
+        "task3": "reporting and automation",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how structured products are developed and offered to investment partners"
+      }
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793624878047",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Leonteq",
     "jobTitle": "Sales Cross-Asset Structured Products",
     "location": "Paris",
