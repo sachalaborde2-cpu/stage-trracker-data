@@ -1,5 +1,84 @@
 [
   {
+    "company": "Vega Investment Solutions",
+    "jobTitle": "Analyste Quantitatif Multi Actifs Privés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Private Markets Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Vega Investment Solutions",
+        "jobTitle": "Quantitative Multi-Asset Private Markets Analyst Intern",
+        "team": "your Multi-Asset Private Markets team",
+        "offerHook": "the focus on private asset portfolio construction and quantitative strategy modeling",
+        "task1": "private fund creation",
+        "task2": "multi-asset private allocation",
+        "task3": "quantitative data production",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how new private and semi-liquid funds are created and managed for client mandates"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio construction challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "terme précis supprimé (portfolio management)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, producing quantitative data (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "trop de mots modifiés (7), réécriture au lieu d'un échange de vocabulaire"
+        }
+      ]
+    },
+    "offerText": "\nAfficher plus d'emplois\nStage - 6 mois – Analyste Quantitatif - Multi Actifs Privés F/H\nParis, France\nTendance\nDescription de l'emploi\nVous rejoignez l’équipe Multi Actifs Privés, au sein de Vega Investment Solutions qui recherche un Stagiaire Analyste Quantitatif - Multi Actifs Privés, pour un stage de 6 mois à partir de Janvier 2027.\n\nEn collaboration avec votre tuteur, vos missions principales seront :\n\nParticiper aux travaux de construction de portefeuilles sur les problématiques de gestion suivantes : \n\nMise en place et création de nouveaux fonds d'actifs privés et de fonds de type semi-liquides / evergreen ;\nTravaux autour de l’allocation multi-actifs privés combinant les classes d’actifs suivantes :  Capital-investissement, Dette privée, Immobilier, Infrastructure ;\nModéliser les stratégies d'actifs privés ;\nParticiper aux réponses aux appels d'offres ;\nAssister l'équipe sur la production de données quantitatives pour les reportings et le suivi de la gestion des fonds et mandats non cotés ;\nContribuer au développement quantitatif des comités d'investissement.\n\nVous travaillez dans un environnement international, au sein d’une communauté d’experts qui place l’excellence, l’impact et l’action collective au cœur de tout ce qu’elle entreprend.\n\n\n #FinanceTransformative\n \nVous évoluez dans un environnement international et inclusif, favorisant le collaboratif avec des missions concrètes et un impact réel. Nous vous accompagnerons tout au long de votre expérience chez nous pour que vous puissiez apprendre et développer vos compétences en travaillant aux côtés de professionnels expérimentés.\n\nVous avez également la possibilité de vous engager en faveur de la société et de causes qui vous tiennent à cœur via notre fondation d’entreprise.  \n\nEn plus d’une indemnité de stage attractive calculée en fonction de votre formation et de votre niveau d’études, vous bénéficiez du remboursement de votre titre de transport à hauteur de 60 %, d’un jour d’absence autorisé payé pour chaque mois travaillé et de l’accès au restaurant de l’entreprise.\n\nVous pourrez également avoir accès au comité d’entreprise suivant votre temps de présence.\n\nQui sommes nous ?\nSpécialiste de l’épargne financière, VEGA Investment Solutions privilégie une gestion patrimoniale fondée sur des convictions fortes qu’elle décline au sein de ses quatre métiers fondamentaux : Gestion sous Mandat / Gestion Collective / Conseil et Sélection de fonds / Gestion Conseillée Premium. Reconnue pour la qualité de sa gestion « croissance » sur les marchés actions européens, la société se distingue également par son expertise sur les marchés obligataires, les stratégies diversifiées et les actifs privés. Grâce à son approche d’allocataire dynamique et forte d’une expérience, de plus 20 ans, en conseil et sélection de fonds en architecture ouverte, VEGA Investment Solutions sélectionne et assemble, selon son analyse, les meilleures expertises des univers cotés et non cotés pour construire des solutions lisibles et efficientes qui répondent aux attentes de tous ses clients.",
+    "geminiOriginal": {
+      "headlineFill": "Private Markets Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Vega Investment Solutions",
+        "jobTitle": "Quantitative Multi-Asset Private Markets Analyst Intern",
+        "team": "your Multi-Asset Private Markets team",
+        "offerHook": "the focus on private asset portfolio construction and quantitative strategy modeling",
+        "task1": "private fund creation",
+        "task2": "multi-asset private allocation",
+        "task3": "quantitative data production",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how new private and semi-liquid funds are created and managed for client mandates"
+      },
+      "guardrailRejected": [
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio construction challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "terme précis supprimé (portfolio management)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, producing quantitative data (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "trop de mots modifiés (7), réécriture au lieu d'un échange de vocabulaire"
+        }
+      ]
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793624208083",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Kepler Cheuvreux",
     "jobTitle": "Assistant Equity Sales",
     "location": "Paris",
