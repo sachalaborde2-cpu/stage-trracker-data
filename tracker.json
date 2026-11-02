@@ -1,5 +1,60 @@
 [
   {
+    "company": "Kepler Cheuvreux",
+    "jobTitle": "Assistant Equity Sales",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Kepler Cheuvreux",
+        "jobTitle": "Assistant Equity Sales Intern",
+        "team": "your Equity Sales France team",
+        "offerHook": "the opportunity to support institutional clients and develop market data tools within an equity sales desk",
+        "task1": "developing sales materials",
+        "task2": "analyzing equity stories",
+        "task3": "preparing client calls",
+        "proofPoints": [
+          "simulation",
+          "pipeline"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "learn how equity solutions are addressed to institutional clients through cross-functional collaboration"
+      }
+    },
+    "offerText": "Kepler Cheuvreux, Equity Sales France\nStage Assistant Equity Sales, Paris\n\nNotre équipe Equity Sales France de Kepler Cheuvreux à Paris recherche son/sa futur(e) stagiaire pour une durée de 6 mois à partir de début janvier 2027.\n\nAu cœur de la salle des marchés, vous ferez partie de l’équipe Sales France et nous aiderez à adresser nos ressources et nos solutions auprès de la clientèle institutionnelle.\n\nProfil recherché\nÉtudiant(e) en M2 (stage de fin d’études), avec un fort intérêt pour les marchés financiers, l’actualité macroéconomique et l’analyse.\n\nEn tant qu’Assistant Equity Sales, vous serez amené(e) à\n\nParticiper à l’élaboration de supports de vente à destination des gérants buy-side\nTravailler en profondeur sur l’equity story des principales sociétés cotées\nContribuer à l’organisation d’événements dédiés aux investisseurs (roadshows analystes et corporate, conférences digitales et physiques)\nPréparer et assister aux calls clients aux côtés des Sales\nDévelopper des outils axés sur la data, les flux et les signaux de marché\nÉvoluer au sein d’une salle des marchés stimulante, en interaction avec les équipes Trading, Sales Trading, Recherche et Quant",
+    "geminiOriginal": {
+      "headlineFill": "Equity Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Kepler Cheuvreux",
+        "jobTitle": "Assistant Equity Sales Intern",
+        "team": "your Equity Sales France team",
+        "offerHook": "the opportunity to support institutional clients and develop market data tools within an equity sales desk",
+        "task1": "developing sales materials",
+        "task2": "analyzing equity stories",
+        "task3": "preparing client calls",
+        "proofPoints": [
+          "simulation",
+          "pipeline"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "learn how equity solutions are addressed to institutional clients through cross-functional collaboration"
+      }
+    },
+    "engineBuild": "2026-10-26 10:35 UTC",
+    "id": "1793623956611",
+    "dateAdded": "2026-11-02"
+  },
+  {
     "company": "Marex Financial",
     "jobTitle": "CROSS ASSET SALES ASSISTANT",
     "location": "Paris",
