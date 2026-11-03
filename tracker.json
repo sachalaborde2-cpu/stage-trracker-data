@@ -1,5 +1,62 @@
 [
   {
+    "company": "Lynceus Partners",
+    "jobTitle": "Structured products dealing",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Dealing",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Lynceus Partners",
+        "jobTitle": "Structured Products Dealing Intern",
+        "team": "your Dealing Team",
+        "offerHook": "the independent investment firm's deep internal expertise in structured products and tailor-made investment solutions",
+        "task1": "pricing structured products",
+        "task2": "monitoring secondary product valuations",
+        "task3": "generating trade ideas",
+        "proofPoints": [
+          "pricing",
+          "bloomberg"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how your team provides tailored investment solutions to asset managers and institutional clients"
+      },
+      "proposedKeywordChanges": []
+    },
+    "offerText": "Lynceus Partners – Dealing\nParis, stage de 6 mois\n\nÀ propos de nous\nLynceus Partners est une société d’investissement indépendante spécialisée dans les investissements alternatifs, qui dispose d’une expertise interne approfondie dans les produits structurés.\n\nEn tant que société financière mondiale dont le siège social est situé en Suisse et présente sur trois continents, nous sommes au service des gestionnaires d’actifs, des conseillers financiers et des clients institutionnels du monde entier en leur fournissant des services et une assistance de la plus haute qualité sur un large éventail d’actifs financiers et non financiers.\n\nEn tant que fournisseur leader de solutions de haute technologie, nous offrons un univers infini de produits d’investissement sur mesure, associés aux dernières technologies de soutien.\n\nDescription du poste\nNous recherchons le prochain membre de notre équipe du Dealing. Le poste sera basé à Paris.\n\nIntégré(e) directement à l’Équipe Dealing, tu contribueras activement au développement de l’activité à travers les missions suivantes :\n\nPricing de produits structurés\nSuivi des valorisations de produits en secondaire\nSuivi du référencement des produits en assurance vie (interaction avec émetteur, assureur, marketing et vente en interne)\nBooking des produits traités dans nos outils internes\nCréation de trade idea\n\nProfil recherché\n\nFormation de niveau Bac+4/5, Grande École de commerce avec une spécialité en finance de marché\nBonne culture macroéconomique et des marchés en général\nBonne connaissance des produits dérivés\nIdéalement une première expérience en desk de structuration ou Sales en produits structurés dans une banque\nMaîtrise du pack Office et Bloomberg\nMaîtrise de l’anglais à l’écrit comme à l’oral",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Dealing",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Lynceus Partners",
+        "jobTitle": "Structured Products Dealing Intern",
+        "team": "your Dealing Team",
+        "offerHook": "the independent investment firm's deep internal expertise in structured products and tailor-made investment solutions",
+        "task1": "pricing structured products",
+        "task2": "monitoring secondary product valuations",
+        "task3": "generating trade ideas",
+        "proofPoints": [
+          "pricing",
+          "bloomberg"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how your team provides tailored investment solutions to asset managers and institutional clients"
+      },
+      "proposedKeywordChanges": []
+    },
+    "engineBuild": "2026-11-02 13:14 UTC",
+    "id": "1793695844150",
+    "dateAdded": "2026-11-03"
+  },
+  {
     "company": "Finaval Conseil",
     "jobTitle": "ASSISTANT SALES PRODUITS STRUCTURÉS",
     "location": "Paris",
