@@ -1,5 +1,114 @@
 [
   {
+    "company": "HSBC",
+    "jobTitle": "Assistant Trader desk Cash & Liquidité et Portefeuille",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cash & Liquidity Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Cash and Liquidity Portfolio Trading Assistant",
+        "team": "your Markets Treasury team within Global Markets",
+        "offerHook": "",
+        "task1": "monitoring balance sheet liquidity",
+        "task2": "tracking liquidity coverage ratios",
+        "task3": "developing front office tools",
+        "proofPoints": [
+          "simulation",
+          "automation"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how the desk manages the bank’s balance sheet and liquidity risks"
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, \u001b[1manalyzing risk-adjusted performance\u001b[0m by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk by region."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Ranked \u001b[1m1st out of 12 participants\u001b[0m in a 10-week simulated \u001b[1mportfolio management challenge\u001b[0m across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \u001b[1m+6% return\u001b[0m under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "trop de mots modifiés (10), réécriture au lieu d'un échange de vocabulaire"
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and \u001b[1mworkflow tools\u001b[0m, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and process tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "chiffre supprimé (1, 0)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal \u001b[1minvestment portfolio\u001b[0m, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "chiffre supprimé (1, 0)"
+        }
+      ],
+      "removedHook": "the bank's balance sheet, liquidity, and portfolio management activities within a trading desk environment",
+      "letterNotes": [
+        "Accroche retirée (« the bank's balance sheet, liquidity, and portfolio management activities within a trading desk environment ») : elle répétait « monitoring balance sheet liquidity ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Stage - Assistant Trader desk Cash & Liquidité et Portefeuille (f/m/d)\nPARIS, Paris, France\n\nJob description\nJob ID\n62245\nWork Style\nOffice Worker\nBrand\nHSBC\nJob Type\nFixed Term - Full Time\nDate Posted\n26 October 2026\nApply By\n30 November 2026\nMin Salary\nEUR 6930\nMax Salary\nEUR 19200\nHSBC : notre mission est de créer un « monde d’opportunités ». Nous encourageons nos collaborateurs à partager leurs compétences et insuffler un changement positif pour la société. En outre, nous abordons nos activités à travers le prisme de l’inclusion et de l’accessibilité.\n\n \n\nHSBC en France recrute chaque année des étudiants en stage ou en alternance et offre l’opportunité d’apprendre et gagner en expérience dans un contexte international. Ci-dessous plus de détails sur la mission concernée. N’hésitez pas à postuler !\n\n \n\n \n\nEquipe :\n\n \n\nNous recherchons un/e stagiaire pour rejoindre l’équipe Markets Treasury (MKTY) composée d’une dizaine de personnes et intégrée à la salle des marchés. Elle opère la gestion du bilan, de la liquidité, du financement et du risque de taux structurel de la banque.\n\n \n\nLe stage se déroule au 38 avenue Kléber à Paris, à temps plein et sur 6 mois.\n\n \n\nLe stage est à pourvoir pour janvier 2027.  \n\n \n\n \n\nMission :\n\n \n\nDans ce rôle, vous endosserez plusieurs responsabilités :\n\n \n\nProduction des estimés des résultats pour les 2 activités en Accrual & MtM.\nSuivi de la liquidité et du bilan HSBC Continental Europe (HBCE).\nSuivi du Liquidity Coverage Ratio (LCR) ainsi que du Liquid Asset Buffer (LAB).\nSuivi du portefeuille HQLA et de la Stress Var.\nSuivi du marché et des daily market indicators.\nContribuer aux divers projets qui consisteront à mettre en place de nouveaux outils et processus front office dans le développement de nouvelles activités ou l’amélioration de l’existant\nIntégration de nouveaux Business, produits et devises dans le bilan HBCE,\nOutils de monitoring et d’aide à la décision pour le suivi du marché,\nMise à jour d’organisation/activité suite à de nouvelles demandes réglementaires, etc.\n \n\n \n\nProfil :\n\n \n\nBac +4/5 en écoles de commerce, d’ingénieur, ou universités avec un cursus en Mathématiques appliquées à la finance, MBFA, Ingénierie financière qui auront permis d’acquérir des connaissances en finance de marché et les applications en mathématiques et programmation\nInformatique : excellente maîtrise de Python et VBA indispensable (projet scolaire à minima ou autoformation avancée). Des connaissances en SQL et de PowerBI seraient un plus.\nLangues : Français et excellente maîtrise de l’anglais (écrit et oral) indispensables\n \n\n \n\nMême si vous ne remplissez pas 100% des critères, nous vous encourageons à candidater si vous pensez que le rôle est fait pour vous ! \n\n \n\n \n\n \n\n \n\nPourquoi rejoindre HSBC ?\n\n \n\nHSBC a été certifié « Top Employer 2026 » en Europe ! Cette reconnaissance du « Top Employers Institute » récompense nos pratiques RH et nous reconnaît comme leader RH dans plusieurs pays d’Europe Continentale. Créer un environnement inclusif pour nos collaborateurs, c’est aussi favoriser un bon équilibre entre vie personnelle et professionnelle :\n\nAutonomie et flexibilité, notamment grâce à notre accord de télétravail\nUne politique de développement de carrière dynamique grâce à des programmes de développement, du mentorat, du coaching, et une offre de formation de qualité déployée par notre « HSBC University »\nUn accès à divers dispositifs permettant de garantir votre bien-être psychologique (yoga, sophrologie, Mindfulness, etc.)\nDes opportunités à l’international car ce poste peut constituer un point de départ qui vous permettra ensuite d’évoluer potentiellement dans les autres pays où nous opérons\nUn environnement de travail qui favorise les thèmes de Diversité & Inclusion, et vous permet de travailler dans une atmosphère de support en étant vous-même\nUne carte tickets restaurants ou accès au restaurant d’entreprise selon votre lieu d’affectation\n \n\n \n\nÊtre ouvert à différents points de vue est important pour notre activité et pour l'ensemble de nos interlocuteurs. Chez HSBC, nous nous engageons à faire de notre environnement de travail un lieu inclusif en éliminant les obstacles et en veillant à ce que les carrières soient accessibles à tous.\n\nSi vous avez besoin d’un aménagement particulier dans le cadre du processus de recrutement, merci de nous le faire savoir.\n\nVos données personnelles, recueillies par HSBC dans le cadre du traitement de votre candidature, seront utilisées dans le respect de notre politique « Privacy Statement » consultable sur notre site Internet.\n\n \n\nPlus d’informations sur nos offres et nos perspectives de carrières sont disponibles sur www.hsbc.com/careers",
+    "geminiOriginal": {
+      "headlineFill": "Cash & Liquidity Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Cash and Liquidity Portfolio Trading Assistant",
+        "team": "your Markets Treasury team within Global Markets",
+        "offerHook": "",
+        "task1": "monitoring balance sheet liquidity",
+        "task2": "tracking liquidity coverage ratios",
+        "task3": "developing front office tools",
+        "proofPoints": [
+          "simulation",
+          "automation"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how the desk manages the bank’s balance sheet and liquidity risks"
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, \u001b[1manalyzing risk-adjusted performance\u001b[0m by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk by region."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Ranked \u001b[1m1st out of 12 participants\u001b[0m in a 10-week simulated \u001b[1mportfolio management challenge\u001b[0m across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \u001b[1m+6% return\u001b[0m under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week simulated portfolio challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "trop de mots modifiés (10), réécriture au lieu d'un échange de vocabulaire"
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and \u001b[1mworkflow tools\u001b[0m, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and process tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "chiffre supprimé (1, 0)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal \u001b[1minvestment portfolio\u001b[0m, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "chiffre supprimé (1, 0)"
+        }
+      ],
+      "removedHook": "the bank's balance sheet, liquidity, and portfolio management activities within a trading desk environment",
+      "letterNotes": [
+        "Accroche retirée (« the bank's balance sheet, liquidity, and portfolio management activities within a trading desk environment ») : elle répétait « monitoring balance sheet liquidity ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-02 13:14 UTC",
+    "id": "1793703814625",
+    "dateAdded": "2026-11-03"
+  },
+  {
     "company": "Natixis Corporate & Investment Banking",
     "jobTitle": "Calculation Agent Assistant",
     "location": "Paris",
