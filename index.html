@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-11-02 13:14 UTC";
+const BUILD_VERSION = "2026-11-03 11:07 UTC";
 
 const LocalStore = {
   get(key) {
@@ -404,10 +404,10 @@ Sacha Laborde
 `;
 
 const PARA1_P2 = String.raw`\noindent
-I am applying to join __COMPANY__ as __ARTICLE__ __JOBTITLE__, within __TEAM__, for my second __DURATION__-month gap-year internship, and I am available from January __YEAR__. I am currently an Analytics and Sales Intern at FactSet in Paris and London, on a gap year after the first year of my Master's in Finance at Paris 1 Panthéon-Sorbonne (top 5 out of 120), and I am admitted to the Master 2 in Finance Technology Data for September 2027.`;
+I am applying to join __COMPANY__ as __ARTICLE__ __JOBTITLE__, within __TEAM__, for my second __DURATION__-month gap-year internship, and I am available from January __YEAR__. I am currently an Analytics and Sales Intern at FactSet in Paris and London, on a gap year after the first year of my Master's in Finance (MBFA) at Paris 1 Panthéon-Sorbonne (top 5 out of 120), and I am admitted to the Master 2 in Finance Technology Data for September 2027.`;
 
 const PARA1_SUMMER = String.raw`\noindent
-I am applying to join __COMPANY__ as __ARTICLE__ __JOBTITLE__, within __TEAM__, for your Summer __YEAR__ internship program. I am currently an Analytics and Sales Intern at FactSet in Paris and London, on a gap year after the first year of my Master's in Finance at Paris 1 Panthéon-Sorbonne (top 5 out of 120), and I am admitted to the Master 2 in Finance Technology Data for September 2027.`;
+I am applying to join __COMPANY__ as __ARTICLE__ __JOBTITLE__, within __TEAM__, for your Summer __YEAR__ internship program. I am currently an Analytics and Sales Intern at FactSet in Paris and London, on a gap year after the first year of my Master's in Finance (MBFA) at Paris 1 Panthéon-Sorbonne (top 5 out of 120), and I am admitted to the Master 2 in Finance Technology Data for September 2027.`;
 
 // Realisations reelles reutilisables dans la lettre (chacune vient mot pour mot
 // d'un bullet du CV). Gemini ne fait que CHOISIR 2 identifiants : il ne
@@ -479,8 +479,11 @@ const CONTRACT_TYPES = {
 // sans aucune erreur de parsing (constate le 26/10 : une modification de bullet
 // etait ignoree en silence). On double le backslash devant les commandes LaTeX
 // dont la premiere lettre est un echappement JSON valide (b, f, n, r, t).
+// Retire aussi les codes de gras de terminal (ESC[1m ... ESC[0m) que Gemini a
+// glisses le 03/11 dans le texte des bullets : le bullet n'etait plus reconnu et
+// le controle qualite rejetait a tort ("chiffre supprime (1, 0)" a cause de [1m/[0m).
 function fixLatexEscapes(text) {
-  return text.replace(/(^|[^\\])\\(?=(?:textbf|textit|texttt|textsc|textbackslash|noindent|newline|newcommand|renewcommand|begin|bf|bullet|frac|rule|raggedright)\b)/g, "$1\\\\");
+  return text.replace(/\\u001[bB]\[[0-9;]*m/g, "").replace(/\x1b\[[0-9;]*m/g, "").replace(/(^|[^\\])\\(?=(?:textbf|textit|texttt|textsc|textbackslash|noindent|newline|newcommand|renewcommand|begin|bf|bullet|frac|rule|raggedright)\b)/g, "$1\\\\");
 }
 function parseAiJson(text) {
   if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
@@ -896,7 +899,7 @@ function wordDiff(a, b) {
   return { from: x.slice(i, x.length - j).join(" ") || "(rien)", to: y.slice(i, y.length - j).join(" ") || "(rien)" };
 }
 function plainBullet(t) {
-  return (t || "").replace(/\\textbf\{([^{}]*)\}/g, "$1").replace(/\\([%&$#_{}])/g, "$1");
+  return (t || "").replace(/\x1b\[[0-9;]*m/g, "").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\\textbf\{([^{}]*)\}/g, "$1").replace(/\\([%&$#_{}])/g, "$1");
 }
 const GUARD_FILLER = /\b(demonstrating|utili[sz]ing|leverag(?:e|es|ing)|enhanc(?:e|es|ing)|aligning with|aligned with|contributing to|robust|with (?:a )?focus on|within market finance|commercial drive|counterparts|stakeholders|various|internal and external)\b/i;
 // Termes precis qui ne doivent pas disparaitre d'un bullet (constate : "challenge" -> "experience",
@@ -993,7 +996,7 @@ RÈGLES STRICTES :
    "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. The role covers {task1}, {task2} and {task3}. ... {proofPoints} ... {conclusion : ambition + closingGain} Thank you for your attention..."
    - company : nom de l'entreprise tel quel. jobTitle : l'intitulé de l'offre traduit en anglais naturel, 6 mots maximum, SANS l'enrichir ("Stage Assistant – Sales/Structuration" donne "Sales/Structuring Assistant", pas "Structured Products Sales and Structuring Assistant"). C'est un NOM DE POSTE (on peut être embauché comme tel), pas une fonction seule : si l'offre ne donne que le métier, termine par "Intern".
    - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team", "your Capital Markets Investment Solutions team", pas "your Private Banking Investments and Wealth Solutions Structured Products team". N'écris JAMAIS "within" dans ce champ (le gabarit le dit déjà)). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le. Si l'offre ne nomme aucune équipe, écris "your team" : n'invente pas une équipe en recopiant l'intitulé du poste.
-   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...). Après "the", va droit au sujet concret : jamais "the opportunity to", "the exposure to", "the combination of", "the focus on" (formules creuses, constatées sur 6 lettres sur 10). Tire-le UNIQUEMENT du texte de l'offre. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation" ; "demandes clients" = "client requests" (jamais "client demands") ; "analyse de valeurs" = "stock analysis" (jamais "value analysis") ; "adresser une clientèle" = "cover clients" (jamais "address to clients") ; "supports de vente" = "sales materials". Ce glossaire vaut pour TOUS les champs.
+   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...). Après "the", va droit au sujet concret : jamais "the opportunity to", "the exposure to", "the combination of", "the focus on" (formules creuses, constatées sur 6 lettres sur 10). Tire-le UNIQUEMENT des missions, de l'équipe, des produits ou des clients décrits dans le poste, JAMAIS de la présentation de l'entreprise ni des avantages RH (paragraphes "À propos", "Qui sommes-nous", "General information", "Pourquoi nous rejoindre" : "tailor-made solutions", "wide range of investors", "deep expertise", "experienced professionals" en viennent et ne disent rien). Même règle pour closingGain. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation" ; "demandes clients" = "client requests" (jamais "client demands") ; "analyse de valeurs" = "stock analysis" (jamais "value analysis") ; "adresser une clientèle" = "cover clients" (jamais "address to clients") ; "supports de vente" = "sales materials" ; "émissions structurées" = "structured note issues" (jamais "structured issues") ; "évènements (coupon, call, pay off)" = "coupon, call and payoff events". Ce glossaire vaut pour TOUS les champs.
    - task1, task2, task3 : complètent "The role covers ___, ___ and ___." Chaque tâche = un verbe en -ing + son complément, 2 à 5 mots, en minuscules, UNE seule activité : jamais "and" ni virgule dans une tâche (sinon la phrase enchaîne les "and"). Les 3 sont tirées des missions réelles de l'offre, sans se répéter, et ne répètent pas le même groupe de mots ("structured products" une seule fois sur les 3). BON : "pricing structured products", "preparing client presentations", "monitoring existing positions". MAUVAIS : "structured products pricing assistance" et "Python data analysis tool development" (noms empilés), "client documentation and reporting" (deux activités), "Monitor markets" (verbe conjugué + majuscule).
    - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg) ; automation = automatisation de processus internes chez FactSet avec l'API Claude (À INCLURE comme l'une des 2 dès que l'offre parle d'IA, d'automatisation, d'optimisation de processus ou de digitalisation). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data, business management → automation + pipeline ; marketing produit ou clientèle → business ou pricing + simulation.
    - ambition : l'objectif de carrière de Sacha, choisi EXACTEMENT parmi : "Sales", "Trading", "Structuring", "Sales and Trading", "Sales and Structuring", "Trading and Structuring". Ce sont ses seuls objectifs réels : jamais un autre métier (brokerage, risque, marketing, opérations...). Choisis le plus proche de l'offre ; pour une offre qui n'est pas front office, prends l'objectif le plus proche du desk ou de la classe d'actifs visés, par défaut "Sales and Trading".
@@ -1093,6 +1096,26 @@ RÈGLES STRICTES :
     lf.offerHook = "";
     parsed.letterNotes = ["Accroche retirée (« " + hookTxt + " ») : elle répétait « " + repeated + " ». Tu peux la réécrire dans le champ offerHook."];
   }
+  // Accroche et conclusion qui disent la meme chose (Natixis Treasury 03/11 :
+  // "tailored ... products for a wide range of investors" deux fois ; CACIB SFH
+  // 02/11). La conclusion est obligatoire dans le gabarit, l'accroche non : on
+  // retire l'accroche. Racines de 4 lettres et plus, au moins 3 en commun.
+  const stem = s => nz(s).split(" ").filter(w => w.length >= 4 && !["your", "with", "from", "that", "this", "team", "learn", "understand"].includes(w)).map(w => w.replace(/(ing|ed|es|s)$/, ""));
+  if (lf.offerHook && lf.closingGain) {
+    const hs = new Set(stem(lf.offerHook));
+    const common = [...new Set(stem(lf.closingGain).filter(w => hs.has(w)))];
+    if (common.length >= 3) {
+      parsed.removedHook = lf.offerHook;
+      parsed.letterNotes = [...(parsed.letterNotes || []), "Accroche retirée (« " + lf.offerHook + " ») : elle disait la même chose que la conclusion (" + common.join(", ") + ")."];
+      lf.offerHook = "";
+    }
+  }
+  // Mots creux que Gemini ecrit malgre l'interdiction (3 lettres sur 4 le 03/11) : on te le signale.
+  const HOLLOW = /\b(diverse|various|stakeholders|cross-functional|complex|tailor(?:ed|-made)?|solutions|wide range|experienced professionals|deep (?:internal )?expertise)\b/i;
+  ["offerHook", "closingGain"].forEach(k => {
+    const hit = (lf[k] || "").match(HOLLOW);
+    if (hit) parsed.letterNotes = [...(parsed.letterNotes || []), (k === "offerHook" ? "Accroche" : "Conclusion") + " : formule creuse « " + hit[0] + " » (« " + lf[k] + " »). À reformuler avec un élément précis des missions."];
+  });
   // "The role covers A, B and C" avec un "and" dans B ou C donnait "client
   // documentation and reporting and product booking and monitoring" (4 lettres sur
   // 10 le 02/11). Une seule tache avec "and" : on la met en premier
