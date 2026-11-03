@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-11-03 11:07 UTC";
+const BUILD_VERSION = "2026-11-03 11:15 UTC";
 
 const LocalStore = {
   get(key) {
@@ -371,11 +371,11 @@ sacha.laborde@etu.univ-paris1.fr \\
 \vspace{1.2em}
 
 \noindent
-For the attention of __COMPANY__ teams.
+For the attention of the __COMPANY__ recruitment team
 \vspace{1em}
 
 \noindent
-Subject: Cover letter for the position of __JOBTITLE__
+Subject: Application for the position of __JOBTITLE__
 \vspace{1em}
 
 \noindent
@@ -385,17 +385,17 @@ Dear Sir or Madam,
 __PARA1__
 
 \noindent
-__HOOKSENTENCE__The role covers __TASK1__, __TASK2__ and __TASK3__. At FactSet, I advise institutional clients on portfolio analytics and workflow tools across the Paris and London desks, handling a high volume of daily requests under tight deadlines.
+__HOOKSENTENCE____TASKSENTENCE__At FactSet, I advise institutional clients on portfolio analytics and workflow tools across the Paris and London desks, handling a high volume of daily requests under tight deadlines.
 
 \noindent
-On the technical side, I have a solid command of Excel, VBA and Python, and hands-on experience with the FactSet platform. __PROOFS__ I am also fluent in English (TOEIC 935/990).
+On the technical side, I have a solid command of __TOOLS__, and hands-on experience with the FactSet platform. __PROOFS__ __LANGUAGES__
 
 \noindent
-I learn quickly and I intend to be useful from the first weeks. __CLOSINGAMBITION__ Thank you for your attention, and I look forward to meeting you for an interview.
+__CLOSINGAMBITION__ Thank you for considering my application. I would be glad to discuss it with you in an interview.
 \vspace{1.5em}
 
 \noindent
-Yours sincerely,
+Yours faithfully,
 \vspace{1.5em}
 
 \noindent
@@ -449,6 +449,41 @@ function buildProofsText(ids) {
   for (const d of ["pricing", "simulation", "pipeline"]) if (list.length < 2 && !list.includes(d)) list.push(d);
   return list.map(k => LM_PROOFS[k]).join(" ");
 }
+// Meme realisations, en groupe nominal, pour les relier a une mission de l'offre
+// (valide par Sacha le 03/11 : "The role covers X, Y and Z" redisait l'annonce et
+// les realisations n'etaient reliees a rien). Les listes sont entre parentheses
+// pour que la phrase reste correcte quand le groupe est sujet.
+const LM_PROOF_NP = {
+  pricing: String.raw`the options pricing engine and market-making simulator I built in Python (Black-Scholes, Monte Carlo, the Greeks, delta hedging)`,
+  simulation: String.raw`FactSet's 10-week portfolio management simulation (ranked first out of 12 participants, +6\% return)`,
+  backtest: String.raw`the ten-year Golden Cross backtest I ran with FactSet's strategy-testing tools (Europe, U.S., Emerging Asia)`,
+  pipeline: String.raw`the market data pipeline I built in pandas (liquidity filtering, pytest-based validation)`,
+  econometrics: String.raw`the fixed-effects econometric analysis I ran in R on 4,000 firms (Breusch-Pagan and Hausman tests)`,
+  business: String.raw`the resale business I ran (1,200+ transactions, from sourcing and pricing to the full accounting cycle)`,
+  bloomberg: String.raw`my Bloomberg Market Concepts (BMC) certification`,
+  automation: String.raw`the internal processes I automated at FactSet with the Claude API`,
+};
+// "For {mission A}, I can draw on {realisation A}. {Realisation B} is also directly
+// relevant to {mission B}." Une realisation sans mission evidente reste en phrase
+// seule (texte de LM_PROOFS), jamais un lien force.
+function buildLinkedProofs(ids, tasks) {
+  const list = (Array.isArray(ids) ? ids : []).filter((x, i, a) => LM_PROOFS[x] && a.indexOf(x) === i).slice(0, 2);
+  const t = (Array.isArray(tasks) ? tasks : []).map(s => String(s || "").trim().replace(/[.\s]+$/, ""));
+  const pairs = list.map((id, i) => ({ id, task: t[i] || "" }));
+  for (const d of ["pricing", "simulation", "pipeline"]) if (pairs.length < 2 && !pairs.some(p => p.id === d)) pairs.push({ id: d, task: "" });
+  if (pairs.length === 2 && pairs[0].task && pairs[0].task.toLowerCase() === pairs[1].task.toLowerCase()) pairs[1].task = "";
+  pairs.sort((a, b) => (b.task ? 1 : 0) - (a.task ? 1 : 0));
+  return pairs.map((p, i) => {
+    if (!p.task) return LM_PROOFS[p.id];
+    const np = LM_PROOF_NP[p.id];
+    return i === 0
+      ? "For " + escapeLatex(p.task) + ", I can draw on " + np + "."
+      : np[0].toUpperCase() + np.slice(1) + (LM_PROOF_PLURAL.has(p.id) ? " are" : " is") + " also directly relevant to " + escapeLatex(p.task) + ".";
+  }).join(" ");
+}
+// Groupes nominaux au pluriel ("the options pricing engine and market-making simulator ... are").
+const LM_PROOF_PLURAL = new Set(["pricing", "automation"]);
+function joinList(a) { return a.length > 1 ? a.slice(0, -1).join(", ") + " and " + a[a.length - 1] : (a[0] || ""); }
 
 // Registre des types de contrat. "alternance" et "cdi" attendent tes templates .tex.
 const CONTRACT_TYPES = {
@@ -625,6 +660,7 @@ function buildAuditPack(apps, buildVersion) {
     L.push("## " + (i + 1) + ". " + a.company + " — " + a.jobTitle + " (" + (a.location || "?") + ")");
     L.push("- Ajoutée le : " + (a.dateAdded || "?") + " · statut : " + statusLabel + " · programme : " + ptype + " " + pyear + (ptype !== "summer" ? " · " + dur + " mois" : ""));
     L.push("- Build du moteur au moment de la génération : " + (a.engineBuild || "inconnu"));
+    if (a.adaptation && a.adaptation.fit) L.push("- Contrôle d'adéquation : début demandé « " + (a.adaptation.fit.start || "non précisé") + " » ; points bloquants : " + ((a.adaptation.fit.blockers || []).join(" · ") || "aucun"));
     L.push("- Note de Sacha : " + (fb.rating ? ({ bon: "bon", moyen: "moyen", mauvais: "à revoir" }[fb.rating] || fb.rating) : "non renseignée"));
     if (fb.comment) L.push("- Commentaire de Sacha : " + fb.comment);
     L.push("- Retouché à la main avant enregistrement : " + (raw ? (diff.length ? "OUI → " + diff.join(", ") : "non") : "inconnu (enregistré avant le suivi)"));
@@ -871,10 +907,12 @@ function buildLmTex(contractType, fields, programType, programYear, durationMont
     .split("__ARTICLE__").join(article)
     .split("__JOBTITLE__").join(jobTitle)
     .split("__HOOKSENTENCE__").join(hookSentence)
-    .split("__TASK1__").join(escapeLatex(f.task1) || "[Task 1]")
-    .split("__TASK2__").join(escapeLatex(f.task2) || "[Task 2]")
-    .split("__TASK3__").join(escapeLatex(f.task3) || "[Task 3]")
-    .split("__PROOFS__").join(buildProofsText(f.proofPoints))
+    // Ancien format (candidatures enregistrees avant le 03/11, sans proofTasks) :
+    // on garde "The role covers ..." et les realisations en phrases seules.
+    .split("__TASKSENTENCE__").join(Array.isArray(f.proofTasks) ? "" : "The role covers " + (escapeLatex(f.task1) || "[Task 1]") + ", " + (escapeLatex(f.task2) || "[Task 2]") + " and " + (escapeLatex(f.task3) || "[Task 3]") + ". ")
+    .split("__PROOFS__").join(Array.isArray(f.proofTasks) ? buildLinkedProofs(f.proofPoints, f.proofTasks) : buildProofsText(f.proofPoints))
+    .split("__TOOLS__").join(joinList((Array.isArray(f.tools) && f.tools.length ? f.tools : ["Excel", "VBA", "Python"]).map(x => escapeLatex(String(x).trim())).filter(Boolean)))
+    .split("__LANGUAGES__").join(f.spanish ? "I am fluent in English (TOEIC 935/990) and speak intermediate Spanish." : "I am also fluent in English (TOEIC 935/990).")
     .split("__CLOSINGAMBITION__").join(buildClosing(f))
     .split("__TEAM__").join(team);
 }
@@ -993,18 +1031,19 @@ RÈGLES STRICTES :
    - "old" = copie EXACTE et COMPLÈTE d'un des bullets fournis ci-dessous, tel qu'affiché : il n'a un \textbf{...} que si le bullet affiché en a un, n'en ajoute jamais. "new" = DU TEXTE BRUT UNIQUEMENT, sans \textbf{}, \textit{}, **gras** ni aucun balisage.
    - Un contrôle automatique vérifie ensuite tes sorties et écarte celles qui violent ces règles : inutile de forcer.
 4. "letterFields" : la lettre est un gabarit fixe dont Gemini ne remplit que ces champs. Valeurs COURTES, en anglais naturel, grammaire irréprochable. Le gabarit lit :
-   "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. The role covers {task1}, {task2} and {task3}. ... {proofPoints} ... {conclusion : ambition + closingGain} Thank you for your attention..."
+   "I am applying to join {company} as {a/an} {jobTitle}, within {team}, ... What draws me to this role is {offerHook}. At FactSet, I advise institutional clients... On the technical side, I have a solid command of Excel, VBA and Python... For {proofTasks[0]}, I can draw on {réalisation 1}. {Réalisation 2} is also directly relevant to {proofTasks[1]}. ... {conclusion : ambition + closingGain} Thank you for considering my application..."
    - company : nom de l'entreprise tel quel. jobTitle : l'intitulé de l'offre traduit en anglais naturel, 6 mots maximum, SANS l'enrichir ("Stage Assistant – Sales/Structuration" donne "Sales/Structuring Assistant", pas "Structured Products Sales and Structuring Assistant"). C'est un NOM DE POSTE (on peut être embauché comme tel), pas une fonction seule : si l'offre ne donne que le métier, termine par "Intern".
    - team : complète "...within ___." — grammaticalement autonome, adapté au type d'employeur, 8 MOTS MAXIMUM (ex "your Structured Products team", "your Capital Markets Investment Solutions team", pas "your Private Banking Investments and Wealth Solutions Structured Products team". N'écris JAMAIS "within" dans ce champ (le gabarit le dit déjà)). DOIT commencer par "your" (jamais "our"), ex "your Foreign Exchange Sales team", "your Global Markets department". Jamais un nom d'équipe laissé en français : traduis-le. Si l'offre ne nomme aucune équipe, écris "your team" : n'invente pas une équipe en recopiant l'intitulé du poste.
-   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...). Après "the", va droit au sujet concret : jamais "the opportunity to", "the exposure to", "the combination of", "the focus on" (formules creuses, constatées sur 6 lettres sur 10). Tire-le UNIQUEMENT des missions, de l'équipe, des produits ou des clients décrits dans le poste, JAMAIS de la présentation de l'entreprise ni des avantages RH (paragraphes "À propos", "Qui sommes-nous", "General information", "Pourquoi nous rejoindre" : "tailor-made solutions", "wide range of investors", "deep expertise", "experienced professionals" en viennent et ne disent rien). Même règle pour closingGain. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas task1/2/3. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation" ; "demandes clients" = "client requests" (jamais "client demands") ; "analyse de valeurs" = "stock analysis" (jamais "value analysis") ; "adresser une clientèle" = "cover clients" (jamais "address to clients") ; "supports de vente" = "sales materials" ; "émissions structurées" = "structured note issues" (jamais "structured issues") ; "évènements (coupon, call, pay off)" = "coupon, call and payoff events". Ce glossaire vaut pour TOUS les champs.
-   - task1, task2, task3 : complètent "The role covers ___, ___ and ___." Chaque tâche = un verbe en -ing + son complément, 2 à 5 mots, en minuscules, UNE seule activité : jamais "and" ni virgule dans une tâche (sinon la phrase enchaîne les "and"). Les 3 sont tirées des missions réelles de l'offre, sans se répéter, et ne répètent pas le même groupe de mots ("structured products" une seule fois sur les 3). BON : "pricing structured products", "preparing client presentations", "monitoring existing positions". MAUVAIS : "structured products pricing assistance" et "Python data analysis tool development" (noms empilés), "client documentation and reporting" (deux activités), "Monitor markets" (verbe conjugué + majuscule).
-   - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg) ; automation = automatisation de processus internes chez FactSet avec l'API Claude (À INCLURE comme l'une des 2 dès que l'offre parle d'IA, d'automatisation, d'optimisation de processus ou de digitalisation). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data, business management → automation + pipeline ; marketing produit ou clientèle → business ou pricing + simulation.
+   - offerHook : complète "What draws me to this role is ___." Un groupe nominal qui commence par "the" (8 à 20 mots) et nomme ce qui, DANS CETTE OFFRE, croise réellement le parcours de Sacha (clients institutionnels, produits dérivés, analyse de risque, outils Python/VBA, environnement marchés...). Après "the", va droit au sujet concret : jamais "the opportunity to", "the exposure to", "the combination of", "the focus on" (formules creuses, constatées sur 6 lettres sur 10). Tire-le UNIQUEMENT des missions, de l'équipe, des produits ou des clients décrits dans le poste, JAMAIS de la présentation de l'entreprise ni des avantages RH (paragraphes "À propos", "Qui sommes-nous", "General information", "Pourquoi nous rejoindre" : "tailor-made solutions", "wide range of investors", "deep expertise", "experienced professionals" en viennent et ne disent rien). Même règle pour closingGain. N'affirme RIEN sur l'entreprise que l'offre ne dit pas (ni classement, ni culture, ni réputation, ni chiffres). Pas d'adjectifs flatteurs (prestigious, leading, exciting, dynamic). Ne répète pas les missions de proofTasks. Sois CONCRET : jamais "comprehensive", "invaluable", "exciting". Ne traduis pas le français mot à mot : traduis le SENS. Pièges fréquents : "élaboration des stratégies" = "building/designing strategies" (jamais "elaboration") ; "animer l'offre produits" = "promoting the product range" (jamais "market animation") ; "cotations" = "quotes" ; "appels d'offres" = "RFQs" ; "tombées de coupons" = "coupon payments" ; "suivre le book" = "monitoring the book" ; "gré à gré" = "OTC" ; "digitalisation" = "digitalisation" ; "demandes clients" = "client requests" (jamais "client demands") ; "analyse de valeurs" = "stock analysis" (jamais "value analysis") ; "adresser une clientèle" = "cover clients" (jamais "address to clients") ; "supports de vente" = "sales materials" ; "émissions structurées" = "structured note issues" (jamais "structured issues") ; "évènements (coupon, call, pay off)" = "coupon, call and payoff events". Ce glossaire vaut pour TOUS les champs.
+   - proofTasks : tableau de 2 chaînes, dans le MÊME ordre que proofPoints. Pour chaque réalisation, la mission de CETTE offre qu'elle sert vraiment. Le gabarit écrit : "For {proofTasks[0]}, I can draw on {réalisation 1}." puis "{Réalisation 2} is also directly relevant to {proofTasks[1]}." Chaque mission = un verbe en -ing + son complément, 2 à 6 mots, en minuscules, UNE seule activité (jamais "and"), tirée des missions écrites dans l'offre et traduite selon le glossaire. Les 2 missions sont différentes. Le lien doit sauter aux yeux d'un recruteur : pricing (moteur de pricing d'options) → pricing de produits, dérivés, structurés ; automation → automatisation, outils, reportings, bots ; pipeline → suivi de données ou d'indicateurs de marché, outils data en Python ; bloomberg → suivi des marchés, données Bloomberg ; simulation → gestion de portefeuille, allocation, analyse de marché ; backtest → analyse quantitative, recherche d'idées d'investissement ou de stratégies ; econometrics → méthodes statistiques, modélisation, validation de modèles ; business → relation client, vente, gestion commerciale. Si aucune mission de l'offre ne correspond clairement, mets "" : la réalisation sera citée seule, ce qui vaut mieux qu'un lien forcé. BON : "pricing structured products", "developing front office tools", "monitoring daily market indicators". MAUVAIS : "structured products pricing assistance" (noms empilés), "client documentation and reporting" (deux activités).
+   - proofPoints : tableau d'EXACTEMENT 2 identifiants DISTINCTS, choisis parmi cette liste (les 2 réalisations réelles de Sacha les plus pertinentes pour CETTE offre, chacune au service d'une mission différente de l'offre). Tu ne rédiges rien : le texte est fixe. pricing = moteur de pricing d'options + simulateur de market making ; simulation = 1er sur 12 à la simulation de gestion de portefeuille FactSet (+6%) ; backtest = backtest Golden Cross sur 3 zones ; pipeline = pipeline de données de marché (pandas, pytest) ; econometrics = analyse économétrique à effets fixes sous R ; business = entreprise d'arbitrage et revente (1 200+ transactions, comptabilité complète) ; bloomberg = certification Bloomberg Market Concepts (À INCLURE comme l'une des 2 réalisations dès que l'offre cite Bloomberg) ; automation = automatisation de processus internes chez FactSet avec l'API Claude (À INCLURE comme l'une des 2 dès que l'offre parle d'IA, d'automatisation, d'optimisation de processus ou de digitalisation). Guide : sales, trading, structuration, produits dérivés → pricing + simulation ; risque de marché → backtest + econometrics (ou pipeline) ; opérations, IT, data, business management → automation + pipeline ; marketing produit ou clientèle → business ou pricing + simulation.
    - ambition : l'objectif de carrière de Sacha, choisi EXACTEMENT parmi : "Sales", "Trading", "Structuring", "Sales and Trading", "Sales and Structuring", "Trading and Structuring". Ce sont ses seuls objectifs réels : jamais un autre métier (brokerage, risque, marketing, opérations...). Choisis le plus proche de l'offre ; pour une offre qui n'est pas front office, prends l'objectif le plus proche du desk ou de la classe d'actifs visés, par défaut "Sales and Trading".
    - frontOffice : true si l'offre est un poste front office (sales, trading, structuration, broker, market making), false pour tout le reste (risque, opérations, business management, marketing, IT...).
-   - closingGain : complète "This internship would let me ___." Groupe verbal commençant par "learn how", "see how", "understand how", "work alongside" ou "work on" (JAMAIS "contribute"), 6 à 14 mots. La lettre a déjà dit les 3 tâches : closingGain NE DOIT PAS les redire. Puise dans un autre élément de l'offre (type de clients, flux ou produits traités par la desk, interfaces avec d'autres équipes, destinataires des livrables) et dis ce que Sacha apprendrait ou verrait de l'intérieur. C'est un souhait d'apprentissage, jamais une compétence déjà acquise. Ne reprends pas les mots de l'accroche (offerHook). Écris à la voix ACTIVE avec un acteur nommé par l'offre (the desk, the sales team, traders, the structuring team, the risk committee...) : jamais de passif en doublon du type "products are developed and offered". Si un client est cité, c'est celui que l'offre nomme (corporates, private banks, independent asset managers...). Mots interdits : diverse, various, stakeholders, cross-functional, complex, tailored, solutions. Pas d'adjectif flatteur, pas de "skills", "experience" ou "understanding" vagues. MAUVAIS : "contribute to <une des 3 tâches>", "learn how structured products are distributed and managed for diverse clients", "develop the skills and market understanding needed for such a role".
-5. TOUS les champs (headlineFill, jobTitle, team, offerHook, task1/2/3, closingGain) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit. AUCUN de ces champs ne doit contenir de balisage (\textbf{}, **gras**, etc.) — texte brut uniquement, dans tous les cas.
-6. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
-{"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","team":"...","offerHook":"...","task1":"...","task2":"...","task3":"...","proofPoints":["...","..."],"ambition":"...","frontOffice":true,"closingGain":"..."}}`;
+   - closingGain : complète "This internship would let me ___." Groupe verbal commençant par "learn how", "see how", "understand how", "work alongside" ou "work on" (JAMAIS "contribute"), 6 à 14 mots. La lettre cite déjà les 2 missions de proofTasks : closingGain NE DOIT PAS les redire. Puise dans un autre élément de l'offre (type de clients, flux ou produits traités par la desk, interfaces avec d'autres équipes, destinataires des livrables) et dis ce que Sacha apprendrait ou verrait de l'intérieur. C'est un souhait d'apprentissage, jamais une compétence déjà acquise. Ne reprends pas les mots de l'accroche (offerHook). Écris à la voix ACTIVE avec un acteur nommé par l'offre (the desk, the sales team, traders, the structuring team, the risk committee...) : jamais de passif en doublon du type "products are developed and offered". Si un client est cité, c'est celui que l'offre nomme (corporates, private banks, independent asset managers...). Mots interdits : diverse, various, stakeholders, cross-functional, complex, tailored, solutions. Pas d'adjectif flatteur, pas de "skills", "experience" ou "understanding" vagues. MAUVAIS : "contribute to <une des missions>", "learn how structured products are distributed and managed for diverse clients", "develop the skills and market understanding needed for such a role".
+5. TOUS les champs (headlineFill, jobTitle, team, offerHook, proofTasks, closingGain) doivent être en ANGLAIS CORRECT ET NATUREL, MÊME SI l'offre fournie est en français. Ne traduis JAMAIS mot à mot ni ne conserve l'ordre des mots français plaqué sur de l'anglais. Exemple concret : si l'offre dit "Assistant Sales Equity Derivatives" (ordre français), le jobTitle correct en anglais est "Equity Derivatives Sales Assistant" (qualificatifs avant le nom, comme un anglophone l'écrirait). Le nom de l'entreprise (company) reste tel quel, jamais traduit. AUCUN de ces champs ne doit contenir de balisage (\textbf{}, **gras**, etc.) — texte brut uniquement, dans tous les cas.
+6. "fit" : contrôle d'adéquation FACTUEL, en français, tiré uniquement du texte de l'offre. "start" = la date de début demandée telle qu'écrite dans l'offre ("" si absente). "blockers" = 0 à 3 conditions EXIGÉES par l'offre que Sacha ne remplit pas, 15 mots maximum chacune. Ce que l'on sait de Sacha : M1 Finance (MBFA) terminé, en césure, PAS en M2 ni en dernière année (admis en M2 pour septembre 2027) ; en stage chez FactSet jusqu'à fin décembre 2026, ${programType === "summer" ? "et il postule ici pour l'été " + year : "donc disponible à partir de janvier 2027"} ; aucune expérience en banque ni sur un desk ; outils : Python, VBA, Excel, FactSet, certification BMC. Exemples : "Exige un M2 ou un stage de fin d'études", "Début en décembre 2026, Sacha est chez FactSet jusqu'à fin décembre", "Expérience préalable sur un desk exigée". Ce qui est "idéalement", "un plus" ou "apprécié" n'est PAS bloquant. N'invente aucune condition : si l'offre n'exige rien que Sacha n'ait pas, "blockers": [].
+7. Réponds UNIQUEMENT en JSON valide, sans texte avant/après, sans balises markdown :
+{"headlineFill":"...","keywordChanges":[{"old":"...","new":"..."}],"letterFields":{"company":"...","jobTitle":"...","team":"...","offerHook":"...","proofPoints":["...","..."],"proofTasks":["...","..."],"ambition":"...","frontOffice":true,"closingGain":"..."},"fit":{"start":"...","blockers":["..."]}}`;
 
   const user = `Entreprise : ${company}\nPoste : ${jobTitle}\nVille : ${location}\n\nBullets du CV disponibles pour reformulation (choisis "old" EXACTEMENT parmi ces textes) :\n${bulletsList}\n\nTexte de l'offre :\n${offerText}`;
 
@@ -1065,12 +1104,31 @@ RÈGLES STRICTES :
   // Realisations imposees par l'offre : Gemini oubliait la regle (Finaval 02/11 :
   // "participer a leur automatisation" sans la preuve automation ; SG et HSBC avant).
   {
-    let pp = (Array.isArray(lf.proofPoints) ? lf.proofPoints : []).filter((x, i, a) => LM_PROOFS[x] && a.indexOf(x) === i);
+    // Mission reliee a chaque realisation (meme ordre que proofPoints).
+    const rawPP = Array.isArray(lf.proofPoints) ? lf.proofPoints : [];
+    const rawPT = Array.isArray(lf.proofTasks) ? lf.proofTasks : [];
+    const taskOf = {};
+    rawPP.forEach((id, i) => { if (LM_PROOFS[id] && !(id in taskOf)) taskOf[id] = String(rawPT[i] || "").trim(); });
+    let pp = rawPP.filter((x, i, a) => LM_PROOFS[x] && a.indexOf(x) === i);
     const want = [];
     if (/bloomberg/i.test(offerText || "")) want.push("bloomberg");
     if (/automatis|automatiz|automation|intelligence artificielle|digitali[sz]|\bbots?\b/i.test(offerText || "") || /\b(IA|AI)\b/.test(offerText || "")) want.push("automation");
     want.forEach(w => { if (!pp.includes(w)) pp = pp.length >= 2 ? [pp[0], w] : [...pp, w]; });
     lf.proofPoints = pp;
+    // Une mission en minuscule ("Pricing structured products" -> "pricing ..."), sauf sigle.
+    const lower = s => /^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s;
+    lf.proofTasks = pp.map(id => lower(taskOf[id] || ""));
+    if (lf.proofTasks.length === 2 && lf.proofTasks[0] && lf.proofTasks[0].toLowerCase() === lf.proofTasks[1].toLowerCase()) lf.proofTasks[1] = "";
+  }
+  // Outils cites dans la lettre : la base, plus ceux de ton CV que l'offre demande.
+  {
+    const o = offerText || "";
+    const tools = ["Excel", "VBA", "Python"];
+    if (/\bSQL\b/i.test(o)) tools.push("SQL");
+    if (/(^|[\s«"'(,/])R(?=[\s»"').,/]|$)|R-?Studio|langage R\b/m.test(o)) tools.push("R");
+    if (/\bGit(Hub)?\b/.test(o)) tools.push("Git");
+    lf.tools = tools;
+    lf.spanish = /espagnol|spanish|español/i.test(o);
   }
   // Equipe : si elle ne fait que recopier l'intitule ("as X, within your X team"), on dit "your team".
   const roleCore = s => (s || "").toLowerCase().replace(/\b(your|team|desk|department|the|an?|intern|assistant|analyst|associate|trainee)\b/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
@@ -1084,10 +1142,11 @@ RÈGLES STRICTES :
   // lettres du 26/10 sur de simples mots du metier ("structured products").
   // Le texte retire est conserve dans la note, pour pouvoir le juger.
   const nz = s => (s || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
-  const toks = s => nz(s).split(" ").filter(w => w.length >= 3).map(w => w.replace(/(ing|es|s)$/, ""));
+  const STOP = new Set(["and", "the", "for", "with", "your", "our", "into", "from", "of", "new"]);
+  const toks = s => nz(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w)).map(w => w.replace(/(ing|es|s)$/, ""));
   const hookTxt = String(lf.offerHook || "").trim();
   const hset = new Set(toks(hookTxt));
-  const repeated = ["task1", "task2", "task3"].map(k => lf[k]).find(tk => {
+  const repeated = [...(lf.proofTasks || []), lf.task1, lf.task2, lf.task3].filter(Boolean).find(tk => {
     const t = toks(tk), shared = t.filter(w => hset.has(w)).length;
     return t.length >= 2 && (shared === t.length || (shared >= 3 && shared / t.length >= 0.66));
   });
@@ -1116,18 +1175,9 @@ RÈGLES STRICTES :
     const hit = (lf[k] || "").match(HOLLOW);
     if (hit) parsed.letterNotes = [...(parsed.letterNotes || []), (k === "offerHook" ? "Accroche" : "Conclusion") + " : formule creuse « " + hit[0] + " » (« " + lf[k] + " »). À reformuler avec un élément précis des missions."];
   });
-  // "The role covers A, B and C" avec un "and" dans B ou C donnait "client
-  // documentation and reporting and product booking and monitoring" (4 lettres sur
-  // 10 le 02/11). Une seule tache avec "and" : on la met en premier
-  // ("covers reporting and automation, pricing X and managing Y"). Plusieurs : note.
-  const andKeys = ["task1", "task2", "task3"].filter(k => /\sand\s/i.test(lf[k] || ""));
-  if (andKeys.length === 1 && andKeys[0] !== "task1") {
-    const k = andKeys[0], tmp = lf.task1;
-    lf.task1 = lf[k];
-    lf[k] = tmp;
-  } else if (andKeys.length > 1) {
-    parsed.letterNotes = [...(parsed.letterNotes || []), "Plusieurs tâches contiennent « and » (" + andKeys.map(k => lf[k]).join(" ; ") + ") : la phrase enchaîne les « and ». Raccourcis-en une."];
-  }
+  // Realisations sans mission reliee : tu le vois avant d'envoyer.
+  const unlinked = (lf.proofPoints || []).filter((id, i) => !(lf.proofTasks || [])[i]);
+  if (unlinked.length) parsed.letterNotes = [...(parsed.letterNotes || []), "Réalisation citée sans mission de l'offre (" + unlinked.map(id => LM_PROOF_LABELS[id] || id).join(", ") + ") : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."];
   return parsed;
 }
 
@@ -2672,6 +2722,12 @@ function NewApplication({ onSave, prefill }) {
 
       {adaptation && (
         <div className="preview-wrap">
+          {adaptation.fit && (adaptation.fit.blockers || []).length > 0 && (
+            <div className="error-box" style={{marginBottom:16}}>
+              <strong>À vérifier avant d'envoyer.</strong> L'offre exige ce que tu n'as pas : {(adaptation.fit.blockers || []).join(" · ")}. Avec ça, un recruteur trie souvent avant de lire la lettre.
+              {adaptation.fit.start ? <div style={{marginTop:6}}>Début demandé : {adaptation.fit.start}</div> : null}
+            </div>
+          )}
           <div className="preview-section">
             <h3>Accroche CV</h3>
             <input type="text" value={adaptation.headlineFill || ""} onChange={e => updateField(["headlineFill"], e.target.value)} />
@@ -2702,12 +2758,16 @@ function NewApplication({ onSave, prefill }) {
             <h3>Champs de la lettre</h3>
             {(adaptation.letterNotes || []).map((n, i) => <div className="hint" key={i} style={{marginBottom:8}}>{n}</div>)}
             <div className="field-grid">
-              {["company","jobTitle","team","task1","task2","task3"].map(key => (
+              {["company","jobTitle","team"].concat(Array.isArray((adaptation.letterFields || {}).proofTasks) ? [] : ["task1","task2","task3"]).map(key => (
                 <div className="form-field" key={key}>
                   <label>{key}</label>
                   <input type="text" value={(adaptation.letterFields || {})[key] || ""} onChange={e => updateField(["letterFields", key], e.target.value)} />
                 </div>
               ))}
+            </div>
+            <div className="form-field full" style={{marginTop:12}}>
+              <label>Outils cités dans la lettre (séparés par des virgules)</label>
+              <input type="text" value={((adaptation.letterFields || {}).tools || ["Excel", "VBA", "Python"]).join(", ")} onChange={e => updateField(["letterFields", "tools"], e.target.value.split(",").map((s, i, a) => i === a.length - 1 ? s.replace(/^\s+/, "") : s.trim()))} />
             </div>
             <div className="form-field full" style={{marginTop:12}}>
               <label>offerHook — "What draws me to this role is …"</label>
@@ -2725,6 +2785,13 @@ function NewApplication({ onSave, prefill }) {
                     <option value="">(par défaut)</option>
                     {Object.entries(LM_PROOF_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                   </select>
+                  {Array.isArray((adaptation.letterFields || {}).proofTasks) && (
+                    <input type="text" style={{marginTop:6}} placeholder="Mission de l'offre qu'elle sert (vide = phrase seule)" value={((adaptation.letterFields || {}).proofTasks || [])[n] || ""} onChange={e => {
+                      const cur = [...(((adaptation.letterFields || {}).proofTasks) || ["", ""])];
+                      cur[n] = e.target.value;
+                      updateField(["letterFields", "proofTasks"], cur);
+                    }} />
+                  )}
                 </div>
               ))}
             </div>
