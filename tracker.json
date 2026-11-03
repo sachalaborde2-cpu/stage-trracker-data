@@ -1,6 +1,71 @@
 [
   {
     "company": "Natixis Corporate & Investment Banking",
+    "jobTitle": "Calculation Agent Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Calculation Agent",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis Corporate & Investment Banking",
+        "jobTitle": "Calculation Agent Assistant",
+        "team": "your GMO OQC Calculation Agent & Data Management team",
+        "offerHook": "",
+        "task1": "modeling new structured issues",
+        "task2": "determining product events",
+        "task3": "automating Fixed Income structures",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "work alongside experienced professionals to manage the full lifecycle of structured products"
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the modeling of new structured issues and the automation of Fixed Income structures, serving various internal desks",
+      "letterNotes": [
+        "Accroche retirée (« the modeling of new structured issues and the automation of Fixed Income structures, serving various internal desks ») : elle répétait « modeling new structured issues ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Stage - 6 mois - Calculation Agent Assistant - F/H\nParis, France\nDescription de l'emploi\nVous rejoignez notre équipe au sein du département GMO OQC Calculation Agent & Data Management, qui recherche un Assistant Calculation Agent & Data Management, pour un stage de 6 mois à partir de janvier 2027.\n\n \n\nEn collaboration avec votre tuteur, vos missions principales seront : \n\nModéliser les nouvelles émissions structurées;\n\nDéterminer les évènements (coupon, call, pay off);\n\nMonitorer les structures daily callable;\n\nContrôler la cohérence de la documentation Final Terms / Term Sheet;\n\nRépondre aux demandes des acteurs (Clearers, PayingAgent, Sales, Traders, LT Treasury Desk);\n\nPerfectionner / automatiser (Excel VBA) les structures Fixed Income (range/double-triple range/corridor).\n\nD’autres missions pourront vous être confiées selon votre profil.\n \n\n#FinanceTransformative\n\nVous évoluez dans un environnement international et inclusif, favorisant le collaboratif avec des missions concrètes et un impact réel. Nous vous accompagnerons tout au long de votre expérience chez nous pour que vous puissiez apprendre et développer vos compétences en travaillant aux côtés de professionnels expérimentés.\n\nVous avez également la possibilité de vous engager en faveur de la société et de causes qui vous tiennent à cœur via notre fondation d’entreprise.  \n\nEn plus d’une indemnité de stage attractive calculée en fonction de votre formation et de votre niveau d’études, vous bénéficiez du remboursement de votre titre de transport à hauteur de 60 %, d’un jour d’absence autorisé payé pour chaque mois travaillé et de l’accès au restaurant de l’entreprise. \n\nVous pourrez également avoir accès au comité d’entreprise.\n\nQui sommes nous ?\nInstitution financière internationale de premier plan, Natixis Corporate & Investment Banking met à disposition des entreprises, institutions financières, fonds d’investissement, agences souverains et supranationaux une palette de services en conseil, investment banking, financements, banque commerciale et sur les marchés de capitaux.\n\nSes équipes d’experts, présentes dans environ 30 pays, conseillent les clients sur leur développement stratégique en les accompagnant dans le développement et la transformation de leurs activités tout en maximisant leur impact positif.  Natixis CIB s’engage sur un alignement de son portefeuille de financements sur une trajectoire de neutralité carbone d’ici 2050 tout en aidant ses clients à réduire l’impact environnemental de leur activité.\n\nNatixis CIB fait partie du Groupe BPCE, deuxième groupe bancaire en France à travers les réseaux Banque Populaire et Caisse d’Epargne. Elle bénéficie de la puissance financière et des solides notations du Groupe (Standard & Poor's : A+, Moody's : A2, Fitch Ratings: A+, R&I : A+).",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Calculation Agent",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis Corporate & Investment Banking",
+        "jobTitle": "Calculation Agent Assistant",
+        "team": "your GMO OQC Calculation Agent & Data Management team",
+        "offerHook": "",
+        "task1": "modeling new structured issues",
+        "task2": "determining product events",
+        "task3": "automating Fixed Income structures",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "work alongside experienced professionals to manage the full lifecycle of structured products"
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the modeling of new structured issues and the automation of Fixed Income structures, serving various internal desks",
+      "letterNotes": [
+        "Accroche retirée (« the modeling of new structured issues and the automation of Fixed Income structures, serving various internal desks ») : elle répétait « modeling new structured issues ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-02 13:14 UTC",
+    "id": "1793703659579",
+    "dateAdded": "2026-11-03"
+  },
+  {
+    "company": "Natixis Corporate & Investment Banking",
     "jobTitle": "Treasury Assistant Sales",
     "location": "Paris",
     "jobUrl": "",
