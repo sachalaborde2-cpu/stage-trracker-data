@@ -1,5 +1,62 @@
 [
   {
+    "company": "Natixis Corporate & Investment Banking",
+    "jobTitle": "Treasury Assistant Sales",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Treasury Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis Corporate & Investment Banking",
+        "jobTitle": "Treasury Sales Assistant",
+        "team": "your Treasury Department",
+        "offerHook": "the team's mission to diversify funding sources and provide tailored short-term investment products for a wide range of investors",
+        "task1": "interacting with various teams",
+        "task2": "preparing activity reports",
+        "task3": "booking trades for the team",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "learn how your sales team offers tailored investment products to a wide range of investors"
+      },
+      "proposedKeywordChanges": []
+    },
+    "offerText": "Internship – Treasury Assistant Sales\nNatixis Corporate & Investment Banking\n\nDepartment: Treasury Department\nLocation: Tour BPCE Est, 7 Prom. Germaine Sablon, 75013 Paris\nEmployment type: Full-time\nStart date: 4 January 2027\nDuration: 6 months\n\nGeneral information\nNatixis Corporate & Investment Banking is part of Global Financial Services, the global arm of Groupe BPCE, France’s 2nd largest banking group and Europe’s 5th largest banking group.\n\nNatixis CIB provides companies, financial institutions, financial sponsors, and sovereign & supranational issuers with a full range of financial services: investment banking/advisory services, financing solutions, commercial banking, capital markets.\n\nNatixis Treasury aims to diversify its funding sources by offering products tailored to the short-term investment needs of a wide range of investors. The Treasury centralizes short-term financing to direct it towards the various entities within the group.\n\nMain responsibilities\n\nInteracting with various teams to facilitate day-to-day business\nPreparing activity reports, assisting in preparing management presentations\nPreparing frequent communications on activity and developments\nAssisting, booking trades for the team and in contact with Back-Office teams\nAssisting with sales & business setup improvement projects\n\nTechnical skills\n\nDemonstrable interest in the financial markets or economic affairs\nProactive and enthusiastic self-starter\nStrong attention to detail, organizational and time management skills\nTeam player\nProficiency in spoken and written French and English, other languages an advantage\n\nQualification required\n\nA degree from a business school or university (year-off or end of studies)\nAbility to work under pressure and to multi-task in a fast-paced environment\nProven analytical and problem-solving skills, ability to work independently and diligently\nAdvanced skills in Microsoft Office (Excel and PowerPoint essential)\nStrong interest and knowledge of financial markets and products\nMotivation and initiative",
+    "geminiOriginal": {
+      "headlineFill": "Treasury Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis Corporate & Investment Banking",
+        "jobTitle": "Treasury Sales Assistant",
+        "team": "your Treasury Department",
+        "offerHook": "the team's mission to diversify funding sources and provide tailored short-term investment products for a wide range of investors",
+        "task1": "interacting with various teams",
+        "task2": "preparing activity reports",
+        "task3": "booking trades for the team",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "learn how your sales team offers tailored investment products to a wide range of investors"
+      },
+      "proposedKeywordChanges": []
+    },
+    "engineBuild": "2026-11-02 13:14 UTC",
+    "id": "1793703467620",
+    "dateAdded": "2026-11-03"
+  },
+  {
     "company": "Lynceus Partners",
     "jobTitle": "Structured products dealing",
     "location": "Paris",
