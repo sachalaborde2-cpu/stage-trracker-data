@@ -1,5 +1,98 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Assistant Structuration Credit Derivatives and Structured Products",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Credit and Hybrid Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Credit Derivatives Structuring Assistant",
+        "team": "your New Product & Innovation team for Credit and Hybrid Derivatives",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured credit products",
+          "developing market monitoring tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the structuring and trading teams develop investment and hedging solutions for clients",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Début en décembre 2026, Sacha est chez FactSet jusqu'à fin décembre"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the structuring of credit and hybrid derivatives for institutional and retail clients, including pricing and market monitoring tool development",
+      "letterNotes": [
+        "Accroche retirée (« the structuring of credit and hybrid derivatives for institutional and retail clients, including pricing and market monitoring tool development ») : elle répétait « developing market monitoring tools ». Tu peux la réécrire dans le champ offerHook.",
+        "Conclusion : formule creuse « solutions » (« learn how the structuring and trading teams develop investment and hedging solutions for clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "offerText": "[Offre de Stage – Structuration Crédit & Hybrides – Natixis CIB]\n\nL’équipe de Structuration Crédit & Hybrides est à la recherche d’un stagiaire pour une durée de 6 mois à compter de décembre 2026.\n\nAssistant Structuration – Credit Derivatives and Structured Products\n\nEntreprise\nNatixis est la banque de financement, de gestion, d’assurance et de services financiers du groupe BPCE, deuxième groupe bancaire de France. Avec plus de 16 000 collaborateurs présents dans 38 pays, Natixis a trois métiers cœurs : la banque de grande clientèle, l’épargne & assurance (gestion d’actifs, banque privée, assurance) et les services financiers spécialisés.\n\nMissions\nAu sein du département Fixed Income de Natixis CIB, vous rejoindrez l’équipe New Product & Innovation dédiée aux Dérivés de Crédit et Hybrides.\n\nDans le cadre de ce stage en salle des marchés, vous participerez à :\n\nPricing de CLN/repacks structurés crédit ou hybrides\nSuivi des demandes clients (cotations, push des différentes structures) et mise en place d’un outil d’analyses\nDéveloppement d’outils de suivi du marché du crédit, d’indicateurs d’aide à la décision permettant d’identifier des opportunités de marché\n\nVous travaillerez en étroite collaboration avec les équipes de structuration et de trading, pour offrir des solutions d’investissement et de couverture à une clientèle institutionnelle et retail européenne.\n\nDurée : 6 mois\nDate de début : décembre 2026\nLieu : Paris, Tours Duo\nFormation : Bac+4/Bac+5, Magistère/Césure École d’ingénieur, École de commerce, Université. Spécialisation finance de marché.\nAptitudes requises : très bonne maîtrise informatique/programmation (VBA, Python, IA), anglais nécessaire, travail d’équipe au sein d’un environnement dynamique, rigueur, autonomie et aisance relationnelle.\nRémunération : selon la grille Natixis",
+    "geminiOriginal": {
+      "headlineFill": "Credit and Hybrid Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Credit Derivatives Structuring Assistant",
+        "team": "your New Product & Innovation team for Credit and Hybrid Derivatives",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured credit products",
+          "developing market monitoring tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the structuring and trading teams develop investment and hedging solutions for clients",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Début en décembre 2026, Sacha est chez FactSet jusqu'à fin décembre"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the structuring of credit and hybrid derivatives for institutional and retail clients, including pricing and market monitoring tool development",
+      "letterNotes": [
+        "Accroche retirée (« the structuring of credit and hybrid derivatives for institutional and retail clients, including pricing and market monitoring tool development ») : elle répétait « developing market monitoring tools ». Tu peux la réécrire dans le champ offerHook.",
+        "Conclusion : formule creuse « solutions » (« learn how the structuring and trading teams develop investment and hedging solutions for clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793781658865",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "Sigma Investissement",
     "jobTitle": "Assistant Sales Produits Structurés",
     "location": "Paris",
