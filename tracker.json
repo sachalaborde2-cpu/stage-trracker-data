@@ -1,5 +1,94 @@
 [
   {
+    "company": "RBC Capital Markets",
+    "jobTitle": "Rates/FX Sales Intern",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Rates and FX Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "RBC Capital Markets",
+        "jobTitle": "Rates/FX Sales Intern",
+        "team": "your Risk Solutions Group desk",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing derivatives",
+          "monitoring product performance"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "work alongside sales to deliver derivatives solutions to corporate clients",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the comprehensive product design and execution services for corporate clients across global Fixed Income, FX and Commodity derivatives",
+      "letterNotes": [
+        "Accroche retirée (« the comprehensive product design and execution services for corporate clients across global Fixed Income, FX and Commodity derivatives ») : elle disait la même chose que la conclusion (derivativ, corporate, client).",
+        "Conclusion : formule creuse « solutions » (« work alongside sales to deliver derivatives solutions to corporate clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "offerText": "[6 Month Off-Cycle – Global Markets – Rates/FX Sales Intern – Risk Solutions Group – Paris Based]\nRBC Capital Markets\n\nApplication deadline: 6 November 2026\n\nThe Royal Bank of Canada Capital Markets RSG (Risk Solutions Group) desk is looking for an intern, start date: 4 January 2027.\n\nThe desk\nRSG specializes in global Fixed Income, Inflation, FX and Commodities products, providing product design and execution services to RBC’s corporate clients. Our private-side derivatives solutions expertise enables our deal teams to provide clients with a seamless interface between our Fixed Income and Currency business and Corporate & Investment Banking.\n\nYour missions\n\nPricing of Rates, FX, and Commodity derivatives (IRS, XCCY, FX Swap, Options...)\nDrafting of termsheets\nClient presentations\nProducts life tracking & monitoring\nInteraction with trading and structuring teams across the world\nAssist the Sales on a daily basis\n\nYou are a student specialized in Market Finance and you already have an experience in finance.",
+    "geminiOriginal": {
+      "headlineFill": "Rates and FX Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "RBC Capital Markets",
+        "jobTitle": "Rates/FX Sales Intern",
+        "team": "your Risk Solutions Group desk",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing derivatives",
+          "monitoring product performance"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "work alongside sales to deliver derivatives solutions to corporate clients",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the comprehensive product design and execution services for corporate clients across global Fixed Income, FX and Commodity derivatives",
+      "letterNotes": [
+        "Accroche retirée (« the comprehensive product design and execution services for corporate clients across global Fixed Income, FX and Commodity derivatives ») : elle disait la même chose que la conclusion (derivativ, corporate, client).",
+        "Conclusion : formule creuse « solutions » (« work alongside sales to deliver derivatives solutions to corporate clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793780866516",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Assistant Trader desk Cash & Liquidité et Portefeuille",
     "location": "Paris",
