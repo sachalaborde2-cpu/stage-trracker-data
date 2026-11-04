@@ -1,5 +1,110 @@
 [
   {
+    "company": "Sigma Investissement",
+    "jobTitle": "Assistant Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Sigma Investissement",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing and structuring products",
+          "automating internal tools"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how your team monitors structured products in the secondary market",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Le stage débute en décembre 2026, Sacha est disponible en janvier 2027"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and internal tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the pricing and structuring of structured products across equities, indices, rates, and credit, coupled with client advisory",
+      "letterNotes": [
+        "Accroche retirée (« the pricing and structuring of structured products across equities, indices, rates, and credit, coupled with client advisory ») : elle répétait « pricing and structuring products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Sigma Investissement – Stage Assistant Sales Produits Structurés\n\nPoste : Assistant Sales Produits Structurés\nLieu : Paris\nContrat : Stage à temps plein\nDébut : décembre 2026\n\nMissions principales\n\nPricer et structurer des produits sur actions, indices, taux et crédit\nAssister l’équipe commerciale : propositions et brochures clients, lecture des termsheets et DIC\nSuivre les marchés de taux, la macroéconomie, les actions et le crédit\nProposer des idées d’investissement à partir de cette veille\nSuivre les produits sur le marché secondaire : observations, rappels, distance aux barrières, valorisations\nAutomatiser et améliorer les outils internes\n\nCompétences\n\nDynamique et rigoureux\nFort sens du relationnel\nCompréhension profonde des marchés financiers et des produits dérivés\nÀ l’aise dans un environnement rapide et exigeant\n\nProfil\n\nFormation en école de commerce, d’ingénieur ou université, M1 minimum, en césure ou en fin d’études\nPremière expérience en finance de marché nécessaire",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Sigma Investissement",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing and structuring products",
+          "automating internal tools"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how your team monitors structured products in the secondary market",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Le stage débute en décembre 2026, Sacha est disponible en janvier 2027"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and internal tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the pricing and structuring of structured products across equities, indices, rates, and credit, coupled with client advisory",
+      "letterNotes": [
+        "Accroche retirée (« the pricing and structuring of structured products across equities, indices, rates, and credit, coupled with client advisory ») : elle répétait « pricing and structuring products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793781039051",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "RBC Capital Markets",
     "jobTitle": "Rates/FX Sales Intern",
     "location": "Paris",
