@@ -1,5 +1,120 @@
 [
   {
+    "company": "Indosuez Wealth Management",
+    "jobTitle": "Stagiaire Salle des marchés",
+    "location": "Monaco",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Market Room Activities",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Indosuez Wealth Management",
+        "jobTitle": "Market Room Intern",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured and derivative products",
+          "automating post-trade tasks"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the desk manages risk and contributes to weekly investment letters",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/01/2027",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset data manipulation and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Performed strategy backtesting over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (backtested, strategy-testing)"
+        }
+      ],
+      "removedHook": "the hands-on experience of developing VBA and Python tools for trade automation and pricing structured and derivative products",
+      "letterNotes": [
+        "Accroche retirée (« the hands-on experience of developing VBA and Python tools for trade automation and pricing structured and derivative products ») : elle répétait « pricing structured and derivative products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Stagiaire - Salle des marchés H/F\nModifiée le 03/11/2026\n\nLieu :Monaco - Monaco\nSecteur :Autres\nDescription du poste\nAu sein de la salle des marchés de CFM Indosuez Wealth Management, sous la responsabilité du le Responsable du desk, le stagiaire effectuera les missions suivantes : \n\nCréation d’outils Excel / VBA afin de faciliter les tâches quotidiennes des opérateurs de la salle des marchés :Suivi en risque des positions\nAssistance dans la rédaction de présentations commerciales\nAutomatisation des taches post trades (FX, Produits Structurés, OTC Equity …)\nRenforcer l’équipe dans les activités de marchés (Hors trades) : Pricings de produits structurés et produits dérivés de change, métaux et actions.\nParticipation à l’élaboration de lettre d’investissement hebdomadaire\nEn collaboration avec le gérant FX, amélioration et suivi des outils d’aide à la prise de décision, assistance dans les opérations day-to-day\nTélétravail : non-autorisé\n\n\nCritères de candidature\nDate de prise de fonction\n01/01/2027\nDurée\n6 mois minimum\nPoste avec management\nNon\nCadre / Non Cadre\nNon cadre\nNiveau d'étude minimum\nBac + 5 / M2 et plus\nFormation / Spécialisation\nBanque - Finance – Ecole de Commerce\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nConnaissance des mécanismes économiques et financiers fondamentaux\nCompréhension de l’environnement de banque privée ; fort intérêt pour les produits dérivés et leurs mécanismes ;\nCapacité à trouver des solutions techniques à implémentation rapide ;\nExcellentes capacités de communication.\nOutils informatiques\nMaîtrise des techniques de conception et de développement rapide d’applications\nMaîtrise des techniques de manipulation de données (datasets, séries temporelles, backtesting)\nMaîtrise de VBA et Python au minimum\nParfaite connaissance d’Excel\nLangues\nAnglais (Bilingue)\n\nEntreprise Indosuez Wealth Management\nLe Groupe Indosuez Wealth Management est la marque mondiale de gestion de fortune du groupe Crédit Agricole, 10ème banque au monde par la taille des actifs (the banker 2022). Suite à l'acquisition de Degroof Petercam, banque belge de premier plan, le Groupe Indosuez Wealth Management intègre le Top 10 des acteurs du secteur de la gestion de fortune en Europe avec plus de 200 milliards d'euros d'actifs sous gestion.\n\nFaçonné par plus de 145 ans d'expérience, le Groupe Indosuez Wealth Management accompagne des grands clients privés, des familles, des entrepreneurs et des investisseurs professionnels du monde entier en leur proposant un continuum de services et d'offres intégrant Conseil & Financement, Solutions d'investissement, Fund servicing & Solutions technologiques et bancaires. Le Groupe Indosuez Wealth Management détient la société Azqore, filiale qui apporte une solution technologique complète et intégrée ainsi que des services d'opérations bancaires aux acteurs de la gestion de fortune. Distingué pour sa dimension à la fois humaine et résolument internationale, le Groupe Indosuez Wealth Management rassemble 4 500 collaborateurs dans 16 différents territoires en Europe, en Asie-Pacifique et au Moyen-Orient.\n\nwww.ca-indosuez.com",
+    "geminiOriginal": {
+      "headlineFill": "Market Room Activities",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Indosuez Wealth Management",
+        "jobTitle": "Market Room Intern",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured and derivative products",
+          "automating post-trade tasks"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the desk manages risk and contributes to weekly investment letters",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/01/2027",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset data manipulation and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Performed strategy backtesting over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (backtested, strategy-testing)"
+        }
+      ],
+      "removedHook": "the hands-on experience of developing VBA and Python tools for trade automation and pricing structured and derivative products",
+      "letterNotes": [
+        "Accroche retirée (« the hands-on experience of developing VBA and Python tools for trade automation and pricing structured and derivative products ») : elle répétait « pricing structured and derivative products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793782280806",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "Amundi",
     "jobTitle": "Structuration et Innovation Produit ETF & Indiciel",
     "location": "Paris",
