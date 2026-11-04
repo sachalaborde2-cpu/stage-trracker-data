@@ -1,5 +1,108 @@
 [
   {
+    "company": "Amundi",
+    "jobTitle": "Structuration et Innovation Produit ETF & Indiciel",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "ETF and Index Product Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "ETF and Index Product Structuring Intern",
+        "team": "your ETF & Index Product Structuring team",
+        "offerHook": "the development of ETF and index products and the creation of related optimization and reporting tools",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "monitoring market data",
+          "developing optimization tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "see how the team structures and manages the full lifecycle of ETF and index products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "12/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset data analysis and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ]
+    },
+    "offerText": "Stage - FINANCE DE MARCHE - Structuration et Innovation Produit ETF & Indiciel H/F\nModifiée le 03/11/2026\n\nLieu :Paris - France\nSecteur :Gestion d'Actifs\nDescription du poste\nService d'accueil:\n\nLe stage est rattaché à l’équipe qui crée, structure et développe la gamme de trackers (ETF et fonds indiciels ouverts) du groupe Amundi Investment Solutions. Cette équipe de 13 personnes fait partie de la ligne métier ETF & Indexing qui regroupe une centaine de personnes en Europe et en Asie. Leader de la gestion d’actifs et filiale du Crédit agricole cotée en Bourse, Amundi est le premier Asset Manager européen avec 2.4 trillions d’Euro d’actifs sous gestion.\n\n \n\nVos missions: \n\nMembre de l’équipe à part entière, le stagiaire participe au développement de l’activité au sein d’AMUNDI, en collaboration avec les autres équipes de la ligne métier (gestion, vente, marketing, MO). Le stagiaire devra faire preuve de polyvalence et aura pour missions plus spécifiques:\n• Participer à l’évolution de la gamme ETF & Index en prenant en charge des tâches de contrôle ainsi que des tâches liées aux évènements produits (du lancement à la clôture)\n• Réaliser différentes études sur les indices ou produits d’Amundi ou de ses concurrents : comparaison méthodologique, étude de corrélation, de composition, élaboration du cahier des charges avec les fournisseurs d’indice etc…\n• Assurer le support de l’équipe sur les tâches courantes : analyses de données, base de données, factures, en charge des publications règlementaires\n• Concevoir et développer différents outils permettant d’optimiser la gestion et la création de rapports et d’outils d’aide à la décision\n• Rédiger différents documents support de vente sur des sujets de marché : stratégies obligataires, fonctionnement des commodities, mécanisme des swaps, etc…\n\nApport du stage :\n\nLe stage offre une vision très riche de l’asset management, de la banque de marché et de la structuration produit, avec une spécialisation sur les produits indiciels. Le stagiaire participe à l’ensemble des étapes de développement des produits en assistant les membres de l’équipe, de l’idée au suivi de la vie d’un produit lancé ou de sa clôture.\n\n\nCritères de candidature\nDate de prise de fonction\n12/01/2027\nDurée\n6\nNiveau d'étude minimum\nBac + 4 / M1\nFormation / Spécialisation\nFormation: : Ecoles de commerce / Ingénieur / UniversitéSpécialisation: finance de marché\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nAutonomie, réactivité, sens critique, capacités rédactionnelles, créativité, notions de finance de marché\nOutils informatiques\nTrès bonne connaissance de Microsoft Excel, VBA, Python et Bloomberg\nLangues\nAnglais courant\n\nEntreprise Amundi\nPremier gérant d'actifs européen parmi les 10 premiers acteurs mondiaux (1), Amundi propose à ses 100 millions de clients - particuliers, institutionnels et entreprises - une gamme complète de solutions d'épargne et d'investissement en gestion active et passive, en actifs traditionnels ou réels. Cette offre est enrichie de services et d'outils technologiques qui permettent de couvrir toute la chaîne de valeur de l'épargne. Filiale du groupe Crédit Agricole, Amundi est cotée en Bourse et gère aujourd'hui près de 2 300 milliards d'euros d'encours (2). Ses six plateformes de gestion internationales (3), sa capacité de recherche financière et extra-financière, ainsi que son engagement de longue date dans l'investissement responsable en font un acteur de référence dans le paysage de la gestion d'actifs.\nLes clients d'Amundi bénéficient de l'expertise et des conseils de 5 500 professionnels dans 35 pays.\nAmundi, un partenaire de confiance qui agit chaque jour dans l'intérêt de ses clients et de la société.\n\n(1) Source : IPE « Top 500 Asset Managers » publié en juin 2025 sur la base des encours sous gestion au 31/12/2024\n(2) Données Amundi au 30/06/2025\n(3) Paris, Londres, Dublin, Milan, Tokyo et San Antonio (via notre partenariat stratégique avec Victory Capital)",
+    "geminiOriginal": {
+      "headlineFill": "ETF and Index Product Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "ETF and Index Product Structuring Intern",
+        "team": "your ETF & Index Product Structuring team",
+        "offerHook": "the development of ETF and index products and the creation of related optimization and reporting tools",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "monitoring market data",
+          "developing optimization tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "see how the team structures and manages the full lifecycle of ETF and index products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "12/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset data analysis and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793782116600",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Stage trading dérivés : swaps et produits structurés de taux",
     "location": "Paris",
