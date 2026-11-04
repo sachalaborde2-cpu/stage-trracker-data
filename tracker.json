@@ -1,5 +1,106 @@
 [
   {
+    "company": "HSBC",
+    "jobTitle": "Stage trading dérivés : swaps et produits structurés de taux",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Rates Derivatives Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Rates Derivatives Trading Intern",
+        "team": "your Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "backtesting trading strategies",
+          "developing and improving trading tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the trading desk manages its exposure and risks across structured rates products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        }
+      ],
+      "removedHook": "the development and enhancement of trading tools for swaps and structured rates products, including reporting, data analysis, and client quotation tools",
+      "letterNotes": [
+        "Accroche retirée (« the development and enhancement of trading tools for swaps and structured rates products, including reporting, data analysis, and client quotation tools ») : elle disait la même chose que la conclusion (trad, structur, rat, product)."
+      ]
+    },
+    "offerText": "Stage trading dérivés : swaps et produits structurés de taux (f/m/d)\nPARIS, Paris, France\n\nJob description\nJob ID\n65747\nWork Style\nOffice Worker\nBrand\nHSBC\nJob Type\nFixed Term - Full Time\nDate Posted\n03 November 2026\nApply By\n30 November 2026\nMin Salary\nEUR 6930\nMax Salary\nEUR 19200\nHSBC : notre mission est de créer un « monde d’opportunités ». Nous encourageons nos collaborateurs à partager leurs compétences et insuffler un changement positif pour la société. En outre, nous abordons nos activités à travers le prisme de l’inclusion et de l’accessibilité.\n\n \n\nHSBC en France recrute chaque année des étudiants en stage ou en stage et offre l’opportunité d’apprendre et gagner en expérience dans un contexte international. Ci-dessous plus de détails sur la mission concernée. N’hésitez pas à postuler !\n\n \n\n \n\nEquipe :\n\n \n\nNous recherchons un stagiaire pour rejoindre l’équipe Trading, et découvrir l’activité d’un desk de trading de swaps, son fonctionnement, les risques qui lui sont liés, et la façon dont ils sont gérés.\n\n \n\nLe stage se déroulera au 38 avenue Kléber à Paris.\n\n \n\nMission :\n\n \n\nAmélioration et développement d’outils sur le desk de trading :\nDéveloppement d’outils de reporting et d’analyses de données (Analyses de hit ratio, Analyses payoffs, Analyse des prix broker, Analyse de Relative Value)\nAméliorations des outils de trading existants (migration en Python)\nAmélioration d’outils de quotation clients\nDéveloppement d’outils de trading et de backtesting de stratégies\n \n\nProfil :\n\n \n\nFormation Bac +4/5 Ecole d’Informatique ou d’Ingénieur avec des connaissances en Finance de marché et mathématiques financières \nInformatique : excellente maitrise du Python et bases de données\nCommunication, travail en équipe\n \n\n \n\nMême si vous ne remplissez pas 100% des critères, nous vous encourageons à candidater si vous pensez que le rôle est fait pour vous ! \n\n \n\n \n\nPourquoi rejoindre HSBC ?\n\n \n\nNous offrons un ensemble d’avantages compétitif, destinés à soutenir votre bien-être.\n\n \n\nAutonomie et flexibilité, notamment grâce à notre accord de télétravail\nUne politique de développement de carrière dynamique grâce à des programmes de développement, du mentorat, du coaching, et une offre de formation de qualité déployée par notre « HSBC University »\nUn accès à divers dispositifs permettant de garantir votre bien-être psychologique (yoga, sophrologie, Mindfulness, etc.)\nDes opportunités en France et à l’international car ce poste peut constituer un point de départ qui vous permettra ensuite d’évoluer au sein du Groupe\nUn environnement de travail qui favorise les thèmes de Diversité & Inclusion, et vous permet de travailler dans une atmosphère de support en étant vous-même\nUne carte tickets restaurants ou accès au restaurant d’entreprise selon votre lieu d’affectation\n \n\nHSBC a été certifié « Top Employer 2026 » en Europe. Cette reconnaissance du « Top Employers Institute » récompense nos pratiques RH et nous reconnaît comme leader RH dans plusieurs pays d’Europe Continentale. HSBC est reconnu pour ses opportunités de développement professionnel, ses avantages sociaux et son environnement de travail inclusif.\n\n \n\nÊtre ouvert à différents points de vue est important pour notre activité et pour l'ensemble de nos interlocuteurs. Chez HSBC, nous nous engageons à faire de notre environnement de travail un lieu inclusif en éliminant les obstacles et en veillant à ce que les carrières soient accessibles à tous.\n\n \n\nSi vous avez besoin d’un aménagement particulier dans le cadre du processus de recrutement, merci de nous le faire savoir.\n\n \n\nVos données personnelles, recueillies par HSBC dans le cadre du traitement de votre candidature, seront utilisées dans le respect de notre politique « Privacy Statement » consultable sur notre site Internet.\n\n \n\nPlus d’informations sur nos offres et nos perspectives de carrières sont disponibles sur www.hsbc.com/careers !\n\n #MARKETTRADING ",
+    "geminiOriginal": {
+      "headlineFill": "Rates Derivatives Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HSBC",
+        "jobTitle": "Rates Derivatives Trading Intern",
+        "team": "your Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "backtesting trading strategies",
+          "developing and improving trading tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the trading desk manages its exposure and risks across structured rates products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        }
+      ],
+      "removedHook": "the development and enhancement of trading tools for swaps and structured rates products, including reporting, data analysis, and client quotation tools",
+      "letterNotes": [
+        "Accroche retirée (« the development and enhancement of trading tools for swaps and structured rates products, including reporting, data analysis, and client quotation tools ») : elle disait la même chose que la conclusion (trad, structur, rat, product)."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793781930711",
+    "dateAdded": "2026-11-04"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Assistant Structuration Credit Derivatives and Structured Products",
     "location": "Paris",
