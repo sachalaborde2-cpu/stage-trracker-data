@@ -1,5 +1,84 @@
 [
   {
+    "company": "BNP Paribas Asset Management",
+    "jobTitle": "Stage Assistant Trader FX & Listed Derivatives",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX & Listed Derivatives Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BNP Paribas Asset Management",
+        "jobTitle": "FX & Listed Derivatives Trading Assistant",
+        "team": "your Global Trading Function's FX and Listed Derivatives team",
+        "offerHook": "the development of statistical analysis and reporting tools and the automation of trading processes using Python and Bloomberg data",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "developing market analysis tools",
+          "automating existing processes and tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how the Global Trading Function optimizes order routing and execution",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": []
+    },
+    "offerText": "BNP Paribas Asset Management – Stage Assistant Trader FX & Listed Derivatives, 6 mois\nDébut : 4 janvier 2027\n\nVotre environnement\nBNPP AM est la branche d’activités spécialisée en gestion d’actifs du groupe BNP Paribas. Fournisseur de solutions d’investissement international, nous combinons le meilleur de l’offre des grands groupes avec la réactivité, la spécialisation et l’esprit d’entreprise des boutiques d’investissement. Forts d’un encours sous gestion de plus de 1600 milliards d’euros suite à l’acquisition d’AXA IM, nous offrons une gamme complète de services de gestion financière aux clients institutionnels et aux distributeurs à travers le monde.\n\nVous rejoindrez l’équipe de trading Forex et Dérivés Listés (Options et Futures) composée de 5 traders, au sein de la Global Trading Function, l’entité en charge du routage et de la transmission d’ordres des gérants de portefeuilles de BNP Paribas Asset Management. Vous serez basé à la Défense, dans la tour Majunga.\n\nVotre rôle\nAu cœur de la salle des marchés, vos missions seront de :\n\nContribuer au développement d’outils d’analyse statistique et de reporting afin de répondre aux besoins du desk de trading, notamment sur les volumes traités avec les contreparties, les hit ratios, les inquiry shares et les spreads obtenus lors des appels d’offres, à l’aide de Tableau, Python et VBA\nParticiper à une revue bimensuelle des évènements de marché\nDévelopper des indicateurs et outils d’analyse de marché sur BQuant, en utilisant Python et les données Bloomberg, afin d’améliorer le suivi des marchés et des produits traités par le desk\nPrendre part aux réunions sur les projets d’évolution du TCA (Trading Cost Analysis) et de l’automatisation du trading\nMener en autonomie des projets de développement et d’automatisation répondant aux besoins du desk, afin d’optimiser et de fiabiliser les processus et outils existants\n\nVotre profil\nBac+4/5 en école de commerce, école d’ingénieurs ou équivalent universitaire avec une spécialisation en Finance de Marché. Dynamisme, autonomie, rigueur et aisance relationnelle seront des atouts essentiels.\n\nEt après ?\nCe poste vous permettra de découvrir de nombreuses classes d’actifs (FX, Equity & Fixed Income Index) et de produits (cash, forward/futures, swap, options) tout en vous familiarisant avec le fonctionnement d’un desk de trading buy-side.\n\nIl vous apportera des connaissances spécifiques en matière de trading électronique et d’automatisation des flux. Vous serez amené(e) notamment à :\n\nDévelopper votre réseau en travaillant avec des brokers\nDévelopper vos connaissances en matière de trading et de programmation\nIntervenir sur différents outils d’aide à la décision pour les traders\nContribuer à l’innovation notamment digitale en matière d’autorouting des ordres\n\nCompétences requises\n\nNiveau d’études : Bac+4/5\nConvention de stage d’une durée de 6 mois\nProgrammation : VBA et Python\nAnglais courant\nConnaissance de Bloomberg et Tableau Software est un plus",
+    "geminiOriginal": {
+      "headlineFill": "FX & Listed Derivatives Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BNP Paribas Asset Management",
+        "jobTitle": "FX & Listed Derivatives Trading Assistant",
+        "team": "your Global Trading Function's FX and Listed Derivatives team",
+        "offerHook": "the development of statistical analysis and reporting tools and the automation of trading processes using Python and Bloomberg data",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "developing market analysis tools",
+          "automating existing processes and tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how the Global Trading Function optimizes order routing and execution",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": []
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793869740295",
+    "dateAdded": "2026-11-05"
+  },
+  {
     "company": "Altitude Investment Solutions",
     "jobTitle": "Stage Assistant Sales Produits Structurés",
     "location": "Paris",
