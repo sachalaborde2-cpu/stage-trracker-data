@@ -1,5 +1,102 @@
 [
   {
+    "company": "Altitude Investment Solutions",
+    "jobTitle": "Stage Assistant Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Altitude Investment Solutions",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "generating investment proposals"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the Sales team supports institutional partners and monitors structured product portfolios",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced valuation metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "removedHook": "the comprehensive lifecycle of structured products, from their pricing and marketing to emissions monitoring and secondary market valuations",
+      "letterNotes": [
+        "Accroche retirée (« the comprehensive lifecycle of structured products, from their pricing and marketing to emissions monitoring and secondary market valuations ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Altitude Investment Solutions – Stage Assistant Sales Produits Structurés\n\nPrésent en France et en Suisse, Altitude IS est un acteur indépendant spécialisé dans la conception et la distribution de produits structurés à destination de cabinets de conseil en gestion de patrimoine, FOs, banques privées et investisseurs institutionnels.\n\nAltitude IS a pour vocation d’accompagner ses partenaires sur l’ensemble de la chaîne de valeur : de la recherche, puis l’élaboration, à la gestion et au suivi des Produits Structurés.\n\nAinsi nous avons pour but de fournir un accès aux meilleures solutions d’investissement du marché et aux meilleurs prix. Véritable atout technologique et parfait complément de nos équipes de vente et de structuration, notre plateforme digitale Platon permet à nos partenaires d’avoir une vue d’ensemble instantanée de leur portefeuille de Produits Structurés, de piloter leur exposition et leurs risques, de créer des reporting en marque blanche et de recevoir des notifications d’observations.\n\nDans le cadre de son développement sur le marché français, Altitude IS recherche son ou sa prochain(e) stagiaire qui assistera l’équipe dans ses tâches quotidiennes.\n\nVos missions\n\nAssister l’équipe de vente dans ses tâches quotidiennes\nPricing de produits structurés sur les différentes classes d’actifs (Actions, Taux, Crédit, Matières Premières)\nGénération de propositions d’investissements en lien avec l’équipe Recherche\nRéalisation de présentations marketing\nSuivi des émissions et analyse des valorisations sur le marché secondaire\nRécapitulatif des transactions de la semaine afin de les promouvoir auprès de l’équipe de vente\nUtilisation de la plateforme digitale interne pour ajouter les nouvelles émissions, suivre les évènements (autocalls, coupons, etc.) et proposer des opportunités de réinvestissement\nSuivi des relations avec les émetteurs et screening de leur offre\n\nVotre profil\nLe/la candidat(e) idéal(e) présente un parcours académique remarquable ; il/elle sait faire preuve de curiosité pour différents secteurs et évolue avec facilité dans un environnement qui demande une forte adaptation et un grand sens du service.\n\nBac+4/5, étudiant(e) en école de commerce ou à l’université, spécialisation en Finance de marché\nIdéalement déjà une première expérience (stage ou alternance) en finance de marché/produits structurés\nExcellent relationnel, disposition pour le travail en équipe et forte capacité d’adaptation\nEsprit d’analyse et de synthèse\nAutonomie, rapidité et dynamisme\nMaîtrise de l’anglais\n\nRythme de travail, lieu et rémunération\nPoste basé à Paris, 8ème arrondissement. Durée du stage : 6 mois. Date de début : début janvier 2027. Rémunération fixe, selon politique AIS.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Altitude Investment Solutions",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "generating investment proposals"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the Sales team supports institutional partners and monitors structured product portfolios",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced valuation metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "removedHook": "the comprehensive lifecycle of structured products, from their pricing and marketing to emissions monitoring and secondary market valuations",
+      "letterNotes": [
+        "Accroche retirée (« the comprehensive lifecycle of structured products, from their pricing and marketing to emissions monitoring and secondary market valuations ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793869270900",
+    "dateAdded": "2026-11-05"
+  },
+  {
     "company": "Indosuez Wealth Management",
     "jobTitle": "Stagiaire Salle des marchés",
     "location": "Monaco",
