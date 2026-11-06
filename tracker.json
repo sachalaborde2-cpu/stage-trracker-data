@@ -1,5 +1,106 @@
 [
   {
+    "company": "Crédit Agricole CIB",
+    "jobTitle": "Flow Rates Sales Intern",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Flow Rates Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Flow Rates Sales Intern",
+        "team": "your Fixed Income Flow Rates Sales Team",
+        "offerHook": "",
+        "proofPoints": [
+          "simulation",
+          "bloomberg"
+        ],
+        "proofTasks": [
+          "managing portfolio performance",
+          "monitoring financial markets"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how your sales team covers institutional clients and structures fixed income products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "removedHook": "the fast-paced environment of your Trading Floor and the provision of capital markets products for institutional clients",
+      "letterNotes": [
+        "Accroche retirée (« the fast-paced environment of your Trading Floor and the provision of capital markets products for institutional clients ») : elle disait la même chose que la conclusion (institutional, client, product)."
+      ]
+    },
+    "offerText": "Crédit Agricole CIB is hiring!\nPosted by Arnaud Gorge, Managing Director, Head of Flow Rates & STM Sales – France\n\nIf you are curious about capital markets and have strong analytical and technical skills, please apply for our internship position. Join our Paris Based Fixed Income Flow Rates Sales Team for 6 months in January 2027.\n\nCV to: charles.thiolon@ca-cib.com, Subject: Internship – Flow Rates Sales\nNote: resume sent to another email address or via private messages on LinkedIn will not be considered\nLevel of education: Master in Finance / gap year\nEducation: University, business or engineering school\nSpecialisation: Financial Markets\n\nCrédit Agricole CIB is the corporate and investment banking arm of Crédit Agricole Group, one of the largest banking groups worldwide. Crédit Agricole CIB offers its large corporate and institutional clients a range of products and services in capital markets activities, investment banking, structured finance, commercial banking and international trade.\n\nThis internship will give you the opportunity to deepen your knowledge of financial markets while working on our Trading Floor.\n\n“Working every day in the interest of our customers and society”",
+    "geminiOriginal": {
+      "headlineFill": "Flow Rates Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Flow Rates Sales Intern",
+        "team": "your Fixed Income Flow Rates Sales Team",
+        "offerHook": "",
+        "proofPoints": [
+          "simulation",
+          "bloomberg"
+        ],
+        "proofTasks": [
+          "managing portfolio performance",
+          "monitoring financial markets"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how your sales team covers institutional clients and structures fixed income products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "removedHook": "the fast-paced environment of your Trading Floor and the provision of capital markets products for institutional clients",
+      "letterNotes": [
+        "Accroche retirée (« the fast-paced environment of your Trading Floor and the provision of capital markets products for institutional clients ») : elle disait la même chose que la conclusion (institutional, client, product)."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793970308427",
+    "dateAdded": "2026-11-06"
+  },
+  {
     "company": "Tradition",
     "jobTitle": "Assistant Sales Produits Structurés",
     "location": "Paris",
