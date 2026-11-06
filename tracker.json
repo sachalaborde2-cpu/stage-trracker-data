@@ -1,5 +1,116 @@
 [
   {
+    "company": "Tradition",
+    "jobTitle": "Assistant Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "analyzing financial markets",
+          "automating desk processes"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the sales team engages institutional clients and investment banks on structured products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "à partir de janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side ­tbf{professionals} on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit ­tbf{web application} in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the cross-asset coverage of structured products and the involvement in developing analytical tools and client marketing materials",
+      "letterNotes": [
+        "Accroche retirée (« the cross-asset coverage of structured products and the involvement in developing analytical tools and client marketing materials ») : elle disait la même chose que la conclusion (client, structur, product)."
+      ]
+    },
+    "offerText": "[Offre de Stage – Assistant Sales Produits Structurés – Tradition]\n\nDescriptif\n\nDurée du stage : 6 mois\nDébut souhaité : à partir de janvier 2027\nConvention de stage : obligatoire\nLieu du stage : 9 Place Vendôme, 75001 Paris\n\nLa société Tradition\nTradition est la 3ème maison de courtage (interdealer broker) sur produits financiers au monde, et la 1ère en Europe. Le stage se déroule à Paris au sein de la salle des marchés de Tradition, sur le desk Produits Structurés.\n\nDescription du poste\nNous recrutons un(e) stagiaire sur le desk de Paris pour venir renforcer l’équipe de vente. Le/La stagiaire travaillera en étroite collaboration avec les autres services de Tradition pour assurer le bon déroulement des opérations.\n\nAu sein de la salle des marchés, le/la futur(e) stagiaire sera notamment en charge des activités suivantes :\n\nAnalyse des marchés financiers et d’opportunités d’investissement sur différentes classes d’actifs\nDéveloppement d’outils d’analyse avec Python et VBA, afin d’automatiser les processus du desk\nÉlaboration de supports marketing et commerciaux à destination des clients\nAssister les vendeurs dans leurs activités commerciales quotidiennes\nAssurer le suivi des opérations post-trade\nDévelopper le marketing de projet stratégique pour la marque\n\nProfil recherché\n\nÉtudiant en Grande École de Commerce, d’Ingénieur ou Université avec une spécialisation en finance de marché (Bac+4/5)\nUne première expérience en salle des marchés sur les Produits Structurés est recommandée\nBonne connaissance des produits dérivés (Call, Put, CDS, etc.) et des produits structurés\nBonne connaissance des marchés financiers et une bonne compréhension de l’environnement macroéconomique sont nécessaires\nBonne maîtrise du pack Office (Excel, PowerPoint), Bloomberg est un plus\nRigueur, réactivité et proactivité sont requises\nAnglais courant\n\nOpportunité pour le candidat\nCe stage est une opportunité pour le candidat d’acquérir de l’expérience au sein d’un acteur majeur de la finance au niveau mondial tout en étant en relation quotidiennement avec la majorité des banques d’investissement.\n\nIl évoluera au sein d’une équipe « Cross-Asset », ce qui signifie qu’il sera amené à intervenir sur tous types de sous-jacents : Actions / Taux / Crédit / Matières premières...\n\nLe desk couvrant une large typologie de clientèles (Banque privée, CGP, Institutionnel, Family office, etc.), cela permettra au stagiaire de mieux appréhender les besoins spécifiques à chaque segment.\n\nContact\nEmma.CHAUVEY@tsaf-paris.com, Laura-Rose.SAINT-AIGNAN@tsaf-paris.com, Lucas.MORILHAT@tsaf-paris.com",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "analyzing financial markets",
+          "automating desk processes"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "learn how the sales team engages institutional clients and investment banks on structured products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "à partir de janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side ­tbf{professionals} on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit ­tbf{web application} in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the cross-asset coverage of structured products and the involvement in developing analytical tools and client marketing materials",
+      "letterNotes": [
+        "Accroche retirée (« the cross-asset coverage of structured products and the involvement in developing analytical tools and client marketing materials ») : elle disait la même chose que la conclusion (client, structur, product)."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793957572586",
+    "dateAdded": "2026-11-06"
+  },
+  {
     "company": "Crédit Agricole CIB",
     "jobTitle": "Assistant Risk Analyst MAM Equity",
     "location": "Paris",
