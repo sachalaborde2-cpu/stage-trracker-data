@@ -1,6 +1,91 @@
 [
   {
     "company": "Crédit Agricole CIB",
+    "jobTitle": "Assistant Risk Analyst MAM Equity",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Risk Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "MAM Equity Risk Analyst Intern",
+        "team": "your MAM Equity team",
+        "offerHook": "the comprehensive scope of equity risk analysis, covering P&L explanation, market sensitivities, stress tests, and tool automation",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "calculating market adjustments",
+          "automating control tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "learn how the MAM Equity team analyzes new product types and improves P&L explanations",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Début en décembre 2026, Sacha est en stage jusqu'à fin décembre"
+        ]
+      },
+      "proposedKeywordChanges": []
+    },
+    "offerText": "Transcription de l’offre\n\nOffre de stage – Assistant Risk Analyst MAM Equity H/F\nCrédit Agricole CIB\n\nNotre équipe MAM Equity recherche son/sa futur(e) stagiaire pour le mois de décembre 2026 (6 mois).\n\nVous serez en charge de\n\nCalculer et expliquer le P&L de trading (Profits & Losses)\nVérifier les sensibilités de marché (vega, delta, gamma, theta, cega, etc.)\nCalculer des stress tests et Value at Risk (VaR)\nCalculer des réserves, ajustement mid market ajustement (Totem, Bloomberg, etc.)\n\nMais également de\n\nL’amélioration et l’automatisation des outils du contrôle\nL’analyse des nouveaux types de produit\nL’amélioration des explications de P&L\n\nCompétences recherchées\n\nHard Skills :\n\nMaîtrise du Pack Microsoft Office\nExcel VBA\nAccess\nSQL\nPython\nFrançais & anglais courants",
+    "geminiOriginal": {
+      "headlineFill": "Equity Risk Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "MAM Equity Risk Analyst Intern",
+        "team": "your MAM Equity team",
+        "offerHook": "the comprehensive scope of equity risk analysis, covering P&L explanation, market sensitivities, stress tests, and tool automation",
+        "proofPoints": [
+          "bloomberg",
+          "automation"
+        ],
+        "proofTasks": [
+          "calculating market adjustments",
+          "automating control tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "learn how the MAM Equity team analyzes new product types and improves P&L explanations",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": [
+          "Début en décembre 2026, Sacha est en stage jusqu'à fin décembre"
+        ]
+      },
+      "proposedKeywordChanges": []
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793953753717",
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "company": "Crédit Agricole CIB",
     "jobTitle": "Equity derivatives market risk analyst",
     "location": "Paris",
     "jobUrl": "",
