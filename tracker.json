@@ -1,5 +1,94 @@
 [
   {
+    "company": "Crédit Agricole CIB",
+    "jobTitle": "Equity derivatives market risk analyst",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Derivatives Market Risk Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Equity Derivatives Market Risk Analyst",
+        "team": "your Market Risk Manager Equity Derivatives team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "analyzing market risk",
+          ""
+        ],
+        "ambition": "Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the EQD team manages market risk for structured and exotic products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "mi-janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the in-depth analysis of market risk for equity derivatives, especially structured and exotic products",
+      "letterNotes": [
+        "Accroche retirée (« the in-depth analysis of market risk for equity derivatives, especially structured and exotic products ») : elle disait la même chose que la conclusion (market, risk, structur, exotic, product).",
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "[Stage – Janvier 2027]\nCrédit Agricole CIB\n\nL’équipe Market Risk Manager Equity Derivatives (EQD) de Crédit Agricole CIB à Paris recherche son/sa prochain(e) stagiaire pour une prise de poste à partir de mi-janvier 2027 (6 mois).\n\nProfil recherché\n\nBonne connaissance des produits structurés et exotiques\nNiveau avancé en Python et VBA\nFamilier avec les outils IA (prompt, cotex...)\nEsprit analytique, rigueur et autonomie\nFrançais et anglais courants",
+    "geminiOriginal": {
+      "headlineFill": "Equity Derivatives Market Risk Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Equity Derivatives Market Risk Analyst",
+        "team": "your Market Risk Manager Equity Derivatives team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "analyzing market risk",
+          ""
+        ],
+        "ambition": "Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the EQD team manages market risk for structured and exotic products",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "mi-janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the in-depth analysis of market risk for equity derivatives, especially structured and exotic products",
+      "letterNotes": [
+        "Accroche retirée (« the in-depth analysis of market risk for equity derivatives, especially structured and exotic products ») : elle disait la même chose que la conclusion (market, risk, structur, exotic, product).",
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1793953505406",
+    "dateAdded": "2026-11-06"
+  },
+  {
     "company": "BNP Paribas Asset Management",
     "jobTitle": "Stage Assistant Trader FX & Listed Derivatives",
     "location": "Paris",
