@@ -1,5 +1,106 @@
 [
   {
+    "company": "CA CIB",
+    "jobTitle": "Assistant Sales",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Fixed Income Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CA CIB",
+        "jobTitle": "Sales Assistant Intern",
+        "team": "your Fixed Income Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing interest rate derivatives",
+          "optimizing IT tools"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how your Sales team covers institutional clients across Fixed Income cash and derivatives.",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and IT tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the fast-paced environment of your Fixed Income Sales team and assisting with interest rate derivatives pricing and IT tool development",
+      "letterNotes": [
+        "Accroche retirée (« the fast-paced environment of your Fixed Income Sales team and assisting with interest rate derivatives pricing and IT tool development ») : elle répétait « pricing interest rate derivatives ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Assistant Sales H/F (Stage) - 2026-110286\n\nCA CIB FRANCE\nFrance\n\nVous recherchez un stage de césure ou fin d'études en Finance de marché en tant que Sales ? Alors postulez !\n\nAu sein de la division Global Markets vous effectuerez votre stage dans la salle des marchés du département FIC. Ces équipes sont en charge de la vente des produits Fixed Income, cash et dérivés, auprès de la clientèle institutionnelle (Assureurs, Asset Managers, Banques et Hedge Funds).\n\nVous évoluerez dans un environnement dynamique au cœur d'une activité stratégique pour CA CIB. Intégré au sein des équipes Front Office (Trading, Sales, Structuration) ce stage vous donnera l'occasion d'approfondir vos connaissances en finance de marchés.\n\nVous aurez pour principales missions d'assister l'équipe dans ses opérations quotidiennes, plus précisément:\n\nCollaborer avec les équipes de vente et de trading mais aussi l'ensemble des départements de la banque (Syndication, Middle-Office, Legal...)\nAider au pricing des dérivés de Taux (IRS, XCCY, ASW, Options)\nDéveloppement et optimisation d'outils informatiques\nPréparer les Termsheets et suivi des opérations.\nAccompagner l'équipe sur les émissions primaires\n\nMerci de bien vouloir indiquer votre date de disponibilité sur votre cv!\n \nRejoindre Crédit Agricole CIB, c’est profiter d’une communauté importante de jeunes, évoluer sur un campus moderne offrant de nombreux services (boulangerie, salle de sport, etc.), bénéficier d’un suivi RH (matinée d’accueil, suivi régulier, etc.) et d’opportunités en alternance, VIE, CDD et CDI.\n \n\nConsulter cette description de poste : 2026-110286 Assistant Sales H/F\n\n",
+    "geminiOriginal": {
+      "headlineFill": "Fixed Income Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CA CIB",
+        "jobTitle": "Sales Assistant Intern",
+        "team": "your Fixed Income Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing interest rate derivatives",
+          "optimizing IT tools"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "see how your Sales team covers institutional clients across Fixed Income cash and derivatives.",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and IT tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the fast-paced environment of your Fixed Income Sales team and assisting with interest rate derivatives pricing and IT tool development",
+      "letterNotes": [
+        "Accroche retirée (« the fast-paced environment of your Fixed Income Sales team and assisting with interest rate derivatives pricing and IT tool development ») : elle répétait « pricing interest rate derivatives ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1794213480546",
+    "dateAdded": "2026-11-09"
+  },
+  {
     "company": "BNP Paribas CIB",
     "jobTitle": "Assistant Sales Produits Structurés Privalto",
     "location": "Paris",
