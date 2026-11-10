@@ -1,5 +1,90 @@
 [
   {
+    "company": "CACEIS",
+    "jobTitle": "FX Sales Assistant",
+    "location": "Luxembourg",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FX Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACEIS",
+        "jobTitle": "FX Sales Assistant",
+        "team": "your team",
+        "offerHook": "the daily commercial activities and client engagement focused on FX and currency overlay solutions",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "optimizing reporting tools",
+          "monitoring financial markets"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the FX Sales Desk navigates the entire Front-to-Back Office chain",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Accroche : formule creuse « solutions » (« the daily commercial activities and client engagement focused on FX and currency overlay solutions »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "offerText": "STAGE - FX Sales Assistant (Front Office) H/F\nModifiée le 09/11/2026\n\nLieu :Luxembourg - Luxembourg\nSecteur :Finances / Comptabilité / Contrôle de gestion\nDescription du poste\nAre you looking for a rewarding experience in financial markets within a dynamic and international environment?\n\nCACEIS offers you an internship as an FX Sales Assistant within its Market Solutions Department.\n\n\nThe Environment\nThe Market Solutions business unit within the CACEIS Group provides market access and post-trade solutions tailored to clients' needs, enabling them to optimize costs and revenues while managing their financial risks.\n\n\nYour Team\nYou will join the FX Sales Desk, which is responsible for offering FX and currency overlay solutions to CACEIS clients.\n\nBased in the dealing room in Luxembourg, the team works closely with various entities across the Group.\n\n\nYour Missions\n\nContribute to the desk's daily commercial activities:\nPrepare commercial presentations and supporting materials for client meetings and pitches.\nUpdate performance dashboards for senior management, including monthly reviews and steering committees.\nContribute to the desk's responses to Requests for Proposals (RFPs) and Requests for Information (RFIs).\nCoordinate activities between the bank's Relationship Managers, who manage client relationships, and operational/support teams to address requests related to FX activities.\nContribute to the improvement and optimization of reporting tools (VBA, Power BI).\nLiaise with other departments across the bank on various topics (Risk, Middle Office, Legal, Compliance, Client Onboarding, etc.).\nMonitor financial markets and industry developments, including competitor analysis and emerging trends.\n\nWhat You Will Gain From This Internship\nThis position offers an opportunity to develop your commercial skills in a financial markets environment while acquiring strong technical knowledge and gaining exposure to a cross-functional role.\n\nMarket Knowledge\n\nUnderstanding of the main financial instruments.\nKnowledge of FX products.\nUnderstanding of the organization and key stakeholders across the entire Front-to-Back Office chain.\nBusiness Expertise\n\nUnderstanding of how financial products are marketed and sold to different types of clients (institutional investors, regulated funds, private banks, etc.).\nExperience interacting with various departments within an international financial institution on cross-functional topics.\nProfessional Skills\n\nAbility to work in a demanding environment requiring responsiveness and adaptability.\nAbility to collaborate within a team spread across several geographical locations.\nAbility to work independently and take initiative.\nDevelopment of effective communication skills with clients with diverse needs and requirements.\n\nCritères de candidature\nDate de prise de fonction\n01/01/2027\nDurée\n6\nPoste avec management\nNon\nCadre / Non Cadre\nNon cadre\nNiveau d'étude minimum\nBac + 4 / M1\nFormation / Spécialisation\nCurrently pursuing a master’s degree (Bac +4 / M1 level and above).Business school, engineering school or university student specializing in financial markets.\nPrevious experience in a Sales or client-facing position would be a strong advantage.\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nYou demonstrate rigor and reliability in the tasks entrusted to you.You enjoy working in a team and fostering a collaborative environment.You have strong written and verbal communication skills in both French and English.You are recognized for your ability to adapt to different stakeholders and working environments.\nTechnical knowledge: Knowledge of financial markets and vanilla financial products, including FX, would be an advantage.\nOutils informatiques\nIT skills: Proficiency in Microsoft Office; knowledge of VBA and PowerBI.\nLangues\nVery good command of English, both written and spoken. A third language would be an advantage.\n\nEntreprise CACEIS\nCACEIS est un établissement bancaire, filiale du groupe Crédit Agricole spécialisé dans les services financiers aux sociétés de gestion et investisseurs institutionnels.\nPrésent en Europe, en Amérique du Nord, en Amérique du Sud et en Asie, CACEIS propose une gamme complète de produits et services : exécution, compensation, change, prêt-emprunt de titres, conservation d'actifs, banque dépositaire et administration de fonds, support à la distribution des fonds, solutions de Middle-Office et services aux émetteurs.\nCACEIS est un consolidateur du marché européen de l'asset servicing et affiche une activité en croissance régulière. Le groupe détient plus de 5 900 milliards d'actifs en conservation et plus de 3 700 milliards d'encours sous administration (chiffres au 31 décembre 2025).\n\nEn agissant chaque jour dans l'intérêt de la société, nous sommes un groupe engagé en faveur des diversités et de l'inclusion et plaçons l'humain au cœur de toutes nos transformations. Tous nos postes sont ouverts aux personnes en situation de handicap.\n\n\n",
+    "geminiOriginal": {
+      "headlineFill": "FX Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACEIS",
+        "jobTitle": "FX Sales Assistant",
+        "team": "your team",
+        "offerHook": "the daily commercial activities and client engagement focused on FX and currency overlay solutions",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "optimizing reporting tools",
+          "monitoring financial markets"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the FX Sales Desk navigates the entire Front-to-Back Office chain",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Accroche : formule creuse « solutions » (« the daily commercial activities and client engagement focused on FX and currency overlay solutions »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1794306681581",
+    "dateAdded": "2026-11-10"
+  },
+  {
     "company": "CA CIB",
     "jobTitle": "Assistant Sales",
     "location": "Paris",
