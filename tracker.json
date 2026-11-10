@@ -1,5 +1,110 @@
 [
   {
+    "company": "HARVEST Group",
+    "jobTitle": "Cross-Asset Structurer Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HARVEST Group",
+        "jobTitle": "Cross-Asset Structurer Assistant",
+        "team": "your Structured Products team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "improving operational processes and tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "This internship would let me see how the team books transactions and manages relationships with issuers.",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "novembre 2026",
+        "blockers": [
+          "Début en novembre 2026, Sacha est disponible en janvier 2027"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and operational tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the daily pricing and booking of structured products and the interaction with sales, operations and issuers",
+      "letterNotes": [
+        "Accroche retirée (« the daily pricing and booking of structured products and the interaction with sales, operations and issuers ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "À propos de l’offre d’emploi\nFeefty est une Fintech spécialisée dans les produits d’investissement sur-mesure liés aux marchés financiers (Produits Structurés). Dédiée aux professionnels de la finance, notre plateforme permet aux utilisateurs de créer et de suivre leurs produits en totale autonomie.\n\nSon approche pédagogique et transparente vise à simplifier l'accès à l'investissement sur-mesure. Agréée en tant que Conseiller en Investissement Financier, Courtier en Assurance et Courtier en Opération de Banque et Services de Paiement, Feefty exerce une activité régulée, est adhérente à l’Anacofi et régulée par l’Autorité des Marchés Financiers.\n\nNous recherchons un(e) stagiaire disponible à partir de novembre 2026 pour un stage de 6 mois à temps plein\n\nDescription Du Poste\n\n Pricing de produits structurés\n Booking des transactions\n Assurer les relations avec les émetteurs\n Interaction quotidienne avec l'équipe Sales et Opérations\n Amélioration des processus opérationnels et des outils\n\nProfil Recherché\n\nÉtudiant(e) bac+4/+5 en école d'ingénieur, de commerce ou université avec une spécialisation en finance de marché.\n\nVous avez idéalement acquis une première expérience sur un poste similaire (stage ou alternance).\n\nVous êtes reconnu(e) pour votre rigueur, votre autonomie, votre sens du relationnel ainsi que votre esprit d'équipe.",
+    "geminiOriginal": {
+      "headlineFill": "Cross-Asset Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "HARVEST Group",
+        "jobTitle": "Cross-Asset Structurer Assistant",
+        "team": "your Structured Products team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "improving operational processes and tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "This internship would let me see how the team books transactions and manages relationships with issuers.",
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "novembre 2026",
+        "blockers": [
+          "Début en novembre 2026, Sacha est disponible en janvier 2027"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and operational tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the daily pricing and booking of structured products and the interaction with sales, operations and issuers",
+      "letterNotes": [
+        "Accroche retirée (« the daily pricing and booking of structured products and the interaction with sales, operations and issuers ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-03 11:15 UTC",
+    "id": "1794307524070",
+    "dateAdded": "2026-11-10"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Rates Systematic Trading",
     "location": "Paris",
