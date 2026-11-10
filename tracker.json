@@ -1,5 +1,92 @@
 [
   {
+    "company": "Tradition",
+    "jobTitle": "Assistant Broker D1 Equity Derivatives",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Derivatives Brokerage",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Equity Derivatives Broker Assistant",
+        "team": "your Equity Derivatives Delta-One desk",
+        "offerHook": "the opportunity to assist with daily trade management and contribute to desk tools in a fast-paced equity derivatives environment",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing equity derivatives",
+          "improving desk processes"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Delta-One desk covers institutional clients and interacts with Back-Office",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "mi-décembre 2026",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": []
+    },
+    "offerText": "Tradition – Assistant Broker D1 Equity Derivatives\nStage de fin d’études uniquement, 6 mois, mi-décembre 2026\n\nTradition Securities and Futures est un des leaders mondiaux de l’intermédiation financière et opère dans plus de 27 pays, c’est la 3ème maison de courtage en produits financiers au monde et la 1ère en Europe. Ce stage se déroule à Paris, Place Vendôme, au sein de la salle des marchés.\n\nLe desk Equity Derivatives - Delta-one opère sur les Futures, TRF, Options et Swaps pour le compte de clients institutionnels. L’équipe est composée de 3 Brokers Seniors. Vous aurez l’opportunité d’évoluer dans un environnement dynamique et la possibilité d’acquérir une connaissance approfondie des produits dérivés.\n\nMissions\n\nAssister les brokers dans leurs tâches quotidiennes, notamment la confirmation, le booking et le suivi des Trades\nGérer et améliorer les macros et pricers du desk (VBA)\nRédiger quotidiennement des points économiques, analyses de risques et analyses des dividendes à destination de l’équipe et de ses clients\nRéaliser des reportings quotidiens et trimestriels\nInteragir avec le Back-Office pour assurer la bonne exécution des opérations, ainsi qu’avec l’IT situé à Londres\n\nProfil recherché\nFormation supérieure dans une Grande École (Commerce, Ingénieur) ou Université avec une spécialisation en finance. Vous êtes en fin d’études (Master) et bénéficiant de préférence d’une première expérience en salle des marchés.\n\nCompétences\n\nAnglais courant\nConnaissances en finance de marché et en produits dérivés\nExcellente maîtrise des outils informatiques (Excel indispensable, VBA fortement apprécié)\n\nQualités\nDynamisme, rigueur, adaptabilité, résistance au stress, aisance relationnelle\n\nContact\nLieu : 9 Place Vendôme, 75001 Paris. Début : mi-décembre 2026. Durée : 6 mois.\nleopold.formento@tsaf-paris.com, objet « Candidature Stage – NOM Prénom », en précisant tes dates de disponibilité dans le mail.",
+    "geminiOriginal": {
+      "headlineFill": "Equity Derivatives Brokerage",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Equity Derivatives Broker Assistant",
+        "team": "your Equity Derivatives Delta-One desk",
+        "offerHook": "the opportunity to assist with daily trade management and contribute to desk tools in a fast-paced equity derivatives environment",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing equity derivatives",
+          "improving desk processes"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Delta-One desk covers institutional clients and interacts with Back-Office",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "mi-décembre 2026",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": []
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794317138745",
+    "dateAdded": "2026-11-10"
+  },
+  {
     "company": "HARVEST Group",
     "jobTitle": "Cross-Asset Structurer Assistant",
     "location": "Paris",
