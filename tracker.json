@@ -102,7 +102,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1794307524070",
-    "dateAdded": "2026-11-10"
+    "dateAdded": "2026-11-10",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "HSBC",
@@ -217,7 +218,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1794307243649",
-    "dateAdded": "2026-11-10"
+    "dateAdded": "2026-11-10",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "CACEIS",
@@ -302,7 +304,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1794306681581",
-    "dateAdded": "2026-11-10"
+    "dateAdded": "2026-11-10",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "CA CIB",
@@ -403,7 +406,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1794213480546",
-    "dateAdded": "2026-11-09"
+    "dateAdded": "2026-11-09",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "BNP Paribas CIB",
@@ -496,7 +500,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1793981318905",
-    "dateAdded": "2026-11-06"
+    "dateAdded": "2026-11-06",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "Crédit Agricole CIB",
@@ -597,7 +602,8 @@
     },
     "engineBuild": "2026-11-03 11:15 UTC",
     "id": "1793970308427",
-    "dateAdded": "2026-11-06"
+    "dateAdded": "2026-11-06",
+    "auditExportedAt": "2026-11-10"
   },
   {
     "company": "Tradition",
