@@ -116,7 +116,8 @@
     },
     "engineBuild": "2026-11-10 10:51 UTC",
     "id": "1794472798618",
-    "dateAdded": "2026-11-12"
+    "dateAdded": "2026-11-12",
+    "auditExportedAt": "2026-11-12"
   },
   {
     "company": "BNP PWM",
@@ -207,7 +208,8 @@
     },
     "engineBuild": "2026-11-10 10:51 UTC",
     "id": "1794472600306",
-    "dateAdded": "2026-11-12"
+    "dateAdded": "2026-11-12",
+    "auditExportedAt": "2026-11-12"
   },
   {
     "company": "Montpensier Arbevel",
@@ -298,7 +300,8 @@
     },
     "engineBuild": "2026-11-10 10:51 UTC",
     "id": "1794472468306",
-    "dateAdded": "2026-11-12"
+    "dateAdded": "2026-11-12",
+    "auditExportedAt": "2026-11-12"
   },
   {
     "company": "Tradition",
@@ -385,7 +388,8 @@
     },
     "engineBuild": "2026-11-10 10:51 UTC",
     "id": "1794317138745",
-    "dateAdded": "2026-11-10"
+    "dateAdded": "2026-11-10",
+    "auditExportedAt": "2026-11-12"
   },
   {
     "company": "HARVEST Group",
