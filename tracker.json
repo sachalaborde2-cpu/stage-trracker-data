@@ -1,5 +1,124 @@
 [
   {
+    "company": "AUREL BGC",
+    "jobTitle": "Quantitative Intern Rates Derivatives",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Rates Derivatives Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AUREL BGC",
+        "jobTitle": "Rates Derivatives Quantitative Intern",
+        "team": "your Rates Futures & Options team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating desk workflows",
+          "developing rates derivatives models"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how quantitative models drive trading decisions for major hedge funds",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": [
+          "Exige un étudiant en M2 ou en fin de cycle Master"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal analytical tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit analytical tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the opportunity to develop and improve a rates derivatives model used by major hedge funds in a live trading environment",
+      "letterNotes": [
+        "Accroche retirée (« the opportunity to develop and improve a rates derivatives model used by major hedge funds in a live trading environment ») : elle répétait « developing rates derivatives models ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "[AUREL BGC | Paris] Quantitative Intern – Rates Derivatives (posté par Azerit)\n\nOur Rates Futures & Options team at Aurel BGC is looking for a Quantitative Intern to start ASAP, for 6 months.\n\nYou will work directly with the brokers in the front office, on a model used by major hedge funds to make their trades. You will develop it, improve it and bring your own ideas.\n\nWe are looking for someone proactive and motivated, with good financial intuition and ideas of their own.\n\nQuantitative Intern – Rates Futures & Options\n\nRole details\n\n6-month internship\nBased in Paris, front-office\nStart date: ASAP, we want someone quickly\n\nThe role\nYou will join the Rates Futures & Options desk and work directly with brokers in a live trading environment. Your main project is a model used by major hedge funds to make their trades: you will develop it, improve it and turn the desk’s needs into concrete features. The role mixes quantitative finance, programming and applied machine learning, with real autonomy from day one.\n\nWhat you will do\n\nDevelop and improve the model in Python (statistics, machine learning)\nWork on futures and options data (volatility, term structure, flow analysis) to extract actionable insights\nBuild AI-driven tools that help brokers with market analysis and client advisory\nAutomate the desk’s workflows and existing analytical tools\nBring your own ideas, test them and push the ones that work into production\nCode every day with Claude Code\n\nWho we are looking for\n\nProactive and motivated, you don’t wait to be told what to do\nGood financial intuition and a real interest in markets and derivatives\nSomeone with ideas, who likes to try things\nStrong Python skills\nSolid background in probability, statistics and time series\nMaster’s student in engineering, quantitative finance, applied mathematics or computer science\nData science or machine learning projects are a plus, as is startup experience\nFluent English, French is a plus\n\nWhy join\n\nYour work is used by hedge funds, not left in a drawer\nYou sit on the desk, close to the brokers and the market\nSmall team, short feedback loops, a lot of freedom on how you build things\n\nHow to apply\nSend your CV to jacques@azerit.tech, with a few lines on a project you are proud of. Applications are reviewed as they come in and the process is short: the sooner you apply, the better. Subject: “Quant Intern Rates – First Name Last Name”.\n\nL’offre demande quelques lignes sur un projet dont tu es fier, et je ne veux pas en inventer une description. J’ai laissé un [À COMPLÉTER] dans le mail. Ton backtest Golden Cross sur le S&P 500 colle bien à ce poste (stats, séries temporelles, Python). Dis-moi ce que tu veux mettre et je rédige les deux lignes. Le démarrage est ASAP, j’ai mis janvier 2027.",
+    "geminiOriginal": {
+      "headlineFill": "Rates Derivatives Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AUREL BGC",
+        "jobTitle": "Rates Derivatives Quantitative Intern",
+        "team": "your Rates Futures & Options team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating desk workflows",
+          "developing rates derivatives models"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how quantitative models drive trading decisions for major hedge funds",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": [
+          "Exige un étudiant en M2 ou en fin de cycle Master"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal analytical tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit analytical tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the opportunity to develop and improve a rates derivatives model used by major hedge funds in a live trading environment",
+      "letterNotes": [
+        "Accroche retirée (« the opportunity to develop and improve a rates derivatives model used by major hedge funds in a live trading environment ») : elle répétait « developing rates derivatives models ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794472798618",
+    "dateAdded": "2026-11-12"
+  },
+  {
     "company": "BNP PWM",
     "jobTitle": "Spécialiste Produits Structurés Et Produits De Bourse",
     "location": "Paris",
