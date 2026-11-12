@@ -1,5 +1,92 @@
 [
   {
+    "company": "NATIXIS CIB",
+    "jobTitle": "ASSISTANT TRADER REPO",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Fixed Income Repo Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "NATIXIS CIB",
+        "jobTitle": "Repo Trader Assistant",
+        "team": "your Repo Trading team",
+        "offerHook": "the development of Python and VBA tools for pricing and data management, as well as monitoring market prices and assisting with collateral management",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating data processes",
+          "building pricing tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Repo desk manages collateral and financing processes for various fixed income products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Conclusion : formule creuse « various » (« see how the Repo desk manages collateral and financing processes for various fixed income products »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "offerText": "[OFFRE DE STAGE – ASSISTANT TRADER REPO – NATIXIS CIB]\nPosté par Charlotte Otrio, Repo Trader Intern chez Natixis CIB\n\nAssistant Trader sur le Desk Repo de Natixis (Govies, Crédits et Emerging)\n\nMissions\n\nDéveloppement / amélioration des outils en Python/VBA type pricing et gestion des données\nAssistance dans la gestion du collatéral et des processus de financement\nSurveillance des prix du marché et réalisation des rapports pour soutenir les traders\n\nDate de début précise et impérative du stage : 4 janvier 2027, pour 6 mois (durée impérative). Convention de stage requise.\n\nProfil recherché\nBac+4, profil quantitatif, potentiellement sans expérience en salle de marché, dynamique, curieux.\n\nBonne maîtrise de VBA et surtout de Python (tests pendant l’entretien). Connaissances des marchés financiers, de leurs environnements et de l’anglais.\n\nCandidature\ncharlotte.otrio-ext@natixis.com, objet au format « Candidature Stage - NOM PRENOM »",
+    "geminiOriginal": {
+      "headlineFill": "Fixed Income Repo Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "NATIXIS CIB",
+        "jobTitle": "Repo Trader Assistant",
+        "team": "your Repo Trading team",
+        "offerHook": "the development of Python and VBA tools for pricing and data management, as well as monitoring market prices and assisting with collateral management",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating data processes",
+          "building pricing tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Repo desk manages collateral and financing processes for various fixed income products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Conclusion : formule creuse « various » (« see how the Repo desk manages collateral and financing processes for various fixed income products »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794478633800",
+    "dateAdded": "2026-11-12"
+  },
+  {
     "company": "AYDO",
     "jobTitle": "Produits Structurés",
     "location": "Paris",
