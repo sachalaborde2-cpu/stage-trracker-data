@@ -1,5 +1,94 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Equity Derivatives Structuring",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Equity Derivatives Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Equity Derivatives Structuring Intern",
+        "team": "your Equity Structuring team",
+        "offerHook": "the opportunity to design and develop structured investment products for clients and optimize IT tools",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the desk interacts daily with sales and trading teams",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "OFFRE DE STAGE – Stagiaire Equity Derivatives Structuring\nCACIB, posté par Théo Boltz\n\nL’équipe Structuration Equity de CACIB Paris recherche son prochain stagiaire à partir de décembre 2026.\n\nLe structureur a pour mission la conception, le développement et l’ingénierie de nouvelles solutions répondant aux besoins des clients, au sein d’une enveloppe de risques et de protection adaptée à leurs contraintes et leurs souhaits. Il fournit ainsi des prestations quotidiennes de pricing, de formation et de marketing pour les équipes de ventes sous la gamme de sous-jacents proposée par CACIB. Tout au long de leurs missions, ils sont amenés à travailler de façon transverse et proche avec les équipes de vente et de trading.\n\nMissions\n\nPricing et montage de dérivés et de deals sur les produits de votre équipe, principalement des produits structurés d’investissement Equity\nL’optimisation des outils informatiques\nL’accompagnement quotidien de la vente par :\nL’élaboration de pricings pertinents, adaptés aux besoins spécifiques du client\nService après-vente sur les produits\nL’interaction avec les équipes de trading\nAssurer et vérifier le post-trade des opérations traitées\n\nProfil recherché\n\nÉtudiant : école d’ingénieur, commerce, universités\nBonne culture générale des marchés financiers\nConnaissances des produits dérivés equity indispensables (pricing, stratégies, réplication...)\nDynamisme, rigueur, esprit d’analyse, sens relationnel\nConnaissances en programmation\n\nCandidature\ntheo.boltz@ca-cib.com, nelsonpablo.vannierreyes@ca-cib.com\nObjet : Candidature Stage – « NOM Prénom »\nDate de début : décembre 2026. Durée : 6 mois. Lieu : Montrouge. Gratification selon grille CACIB.",
+    "geminiOriginal": {
+      "headlineFill": "Equity Derivatives Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Equity Derivatives Structuring Intern",
+        "team": "your Equity Structuring team",
+        "offerHook": "the opportunity to design and develop structured investment products for clients and optimize IT tools",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the desk interacts daily with sales and trading teams",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794472974311",
+    "dateAdded": "2026-11-12"
+  },
+  {
     "company": "AUREL BGC",
     "jobTitle": "Quantitative Intern Rates Derivatives",
     "location": "Paris",
