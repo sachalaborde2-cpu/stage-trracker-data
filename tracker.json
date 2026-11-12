@@ -1,5 +1,108 @@
 [
   {
+    "company": "AYDO",
+    "jobTitle": "Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AYDO",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the innovative platform for structured products creation and the opportunity to interact with diverse market participants on the structured products market",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "",
+          "monitoring existing positions"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "work alongside your sales and structuring teams to develop and distribute structured products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Février 2027 - Mars 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "client requests",
+          "new": "RFQs",
+          "reason": "raccourci de 50%, contenu perdu"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : formule creuse « diverse » (« the innovative platform for structured products creation and the opportunity to interact with diverse market participants on the structured products market »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Créée en 2021 par des professionnels chevronnés du secteur financier, AYDO est LA plateforme « nouvelle génération » de création de Produits Structurés. AYDO cherche sa ou son nouveau stagiaire, prêt à participer à cette aventure extrêmement ambitieuse.Le stagiaire aura la chance de côtoyer des profils internationaux divers, qui pourront lui apporter des éclairages variés sur le marché des Produits Structurés dans son ensemble.Le candidat idéal pour ce poste doit être curieux, dynamique, rigoureux et autonome. Le projet est attractif, et promet d’être un combat contre la monotonie ! POINTS CLES\nFonction : Assistant(e) Sales Produits Structurés\nType: Stage conventionné\nDate de début : Février 2027 - Mars 2027\nDurée : 6 mois\nLieu du Stage : Paris (France)\n MISSIONSitué au cœur de l’écosystème AYDO, les stagiaires sont en relation directe avec toutes les parties prenantes du projet : Management, Vente, Structuration, Sales Trading, CTO, Chargés de Projet, Fournisseurs…\nIls seront en relation quotidienne avec les émetteurs afin d’apporter une assistance personnalisée aux équipes d’ AYDO. Il abordera ainsi les taches suivantes (parmi tant d’autres) :\nAppel d’Offres\nSuivi des Positions existantes\nUtilisation des systèmes internes et externes\nCréation et conception de présentations commerciales\nSuivi des documents contractuels liés aux produits lancés par AYDO\n…\n PROFIL\nEcole de Commerce / Université : BAC+4/5, Spécialisation Finance de Marché\nFrançais et Anglais courant\nParfaite maîtrise du Pack Office\n Créativité, Agilité et Intégrité sont les principes fondateurs de l’offre AYDO. Si cela vous correspond, n’hésitez pas à envoyer dès maintenant votre candidature à :careers@aydofinance.com.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "AYDO",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "the innovative platform for structured products creation and the opportunity to interact with diverse market participants on the structured products market",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "",
+          "monitoring existing positions"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "work alongside your sales and structuring teams to develop and distribute structured products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Février 2027 - Mars 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "client requests",
+          "new": "RFQs",
+          "reason": "raccourci de 50%, contenu perdu"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : formule creuse « diverse » (« the innovative platform for structured products creation and the opportunity to interact with diverse market participants on the structured products market »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794473128422",
+    "dateAdded": "2026-11-12"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Equity Derivatives Structuring",
     "location": "Paris",
