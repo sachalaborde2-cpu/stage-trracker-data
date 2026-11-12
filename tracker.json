@@ -1,5 +1,96 @@
 [
   {
+    "company": "Montpensier Arbevel",
+    "jobTitle": "Analyste Quantitatif",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Montpensier Arbevel",
+        "jobTitle": "Quantitative Analyst",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "leveraging generative AI tools",
+          "performing quantitative backtesting"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the firm's quantitative analysts apply models to real-time market data",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "Git"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the quantitative analysis focus, leveraging statistical methods, backtesting, and advanced generative AI tools to inform market strategies",
+      "letterNotes": [
+        "Accroche retirée (« the quantitative analysis focus, leveraging statistical methods, backtesting, and advanced generative AI tools to inform market strategies ») : elle répétait « leveraging generative AI tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Montpensier Arbevel, Stage Analyste Quantitatif\n\nProfil\n\nBonne maîtrise d’Excel et VBA\nBases solides en statistiques et économétrie (régressions, séries temporelles, backtesting)\nPratique avancée des outils d’IA générative, avec le recul nécessaire pour challenger leurs réponses plutôt que les appliquer telles quelles\nConnaissance de Bloomberg et/ou FactSet, et de Git : un plus\nIntérêt réel pour les marchés financiers\nRigueur, esprit critique, autonomie, réactivité et goût du travail en équipe\n\nCandidature\nEnvoyez votre CV à p.amram@montpensier-arbevel.com avec l’objet « Stage Analyste Quantitatif ».",
+    "geminiOriginal": {
+      "headlineFill": "Quantitative Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Montpensier Arbevel",
+        "jobTitle": "Quantitative Analyst",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "leveraging generative AI tools",
+          "performing quantitative backtesting"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the firm's quantitative analysts apply models to real-time market data",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "Git"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the quantitative analysis focus, leveraging statistical methods, backtesting, and advanced generative AI tools to inform market strategies",
+      "letterNotes": [
+        "Accroche retirée (« the quantitative analysis focus, leveraging statistical methods, backtesting, and advanced generative AI tools to inform market strategies ») : elle répétait « leveraging generative AI tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794472468306",
+    "dateAdded": "2026-11-12"
+  },
+  {
     "company": "Tradition",
     "jobTitle": "Assistant Broker D1 Equity Derivatives",
     "location": "Paris",
