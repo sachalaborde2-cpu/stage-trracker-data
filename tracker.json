@@ -1,5 +1,104 @@
 [
   {
+    "company": "Tradition",
+    "jobTitle": "Assistant Sales Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Structured Products trading floor team",
+        "offerHook": "the direct involvement in structured products sales and the development of desk automation tools",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating desk processes",
+          ""
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the desk covers a wide range of institutional clients",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily commercial activities across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : formule creuse « wide range » (« understand how the desk covers a wide range of institutional clients »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Stage - Assistant Sales Produits Structurés (H/F)\nTradition - Salle des marchés, desk Produits Structurés\nLieu : 9 Place Vendôme, 75001 Paris    Contrat : Stage de 6 mois (convention obligatoire)\nDémarrage : janvier 2027\nLa société\nTradition est la 3e maison de courtage (interdealer broker) sur produits financiers au monde, et la 1re\nen Europe. Le stage se déroule à Paris au sein de la salle des marchés de Tradition, sur le desk\nProduits Structurés, pour renforcer l'équipe de vente.\nVos missions\n• Analyser les marchés financiers et les opportunités d'investissement sur différentes classes d'actifs\n• Développer des outils d'analyse avec Python et VBA afin d'automatiser les processus du desk\n• Élaborer des supports marketing et commerciaux à destination des clients\n• Assister les vendeurs dans leurs activités commerciales quotidiennes\n• Assurer le suivi des opérations post-trade\n• Développer le marketing de projets stratégiques pour la marque\nProfil recherché\n• Étudiant(e) en Grande École de Commerce, d'Ingénieur ou Université, spécialisation finance de\nmarché (Bac+4/5)\n• Une première expérience en salle des marchés sur les produits structurés est recommandée\n• Bonne connaissance des produits dérivés (call, put, CDS, etc.) et des produits structurés\n• Bonne connaissance des marchés financiers et compréhension de l'environnement\nmacroéconomique\n• Bonne maîtrise du Pack Office (Excel, PowerPoint), Bloomberg est un plus\n• Rigueur, réactivité et proactivité\n• Anglais courant\nCe que vous y gagnez\n• Une expérience au sein d'un acteur majeur de la finance mondiale, en relation quotidienne avec la\nmajorité des banques d'investissement\n• Une équipe cross-asset : actions, taux, crédit, matières premières\n• Une large typologie de clients (banque privée, CGP, institutionnels, family offices) pour comprendre\nles besoins de chaque segment\nComment postuler\nEnvoyer votre CV et votre lettre de motivation aux trois adresses suivantes, avec pour\nobjet « Candidature Assistant Sales Produits Structurés - Prénom Nom » ",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Tradition",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Structured Products trading floor team",
+        "offerHook": "the direct involvement in structured products sales and the development of desk automation tools",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating desk processes",
+          ""
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the desk covers a wide range of institutional clients",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily commercial activities across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : formule creuse « wide range » (« understand how the desk covers a wide range of institutional clients »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794558095459",
+    "dateAdded": "2026-11-13"
+  },
+  {
     "company": "NATIXIS CIB",
     "jobTitle": "ASSISTANT TRADER REPO",
     "location": "Paris",
