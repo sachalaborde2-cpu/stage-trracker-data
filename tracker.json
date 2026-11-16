@@ -1,5 +1,130 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Trading Convertible Bond",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Convertible Bond Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Convertible Bonds Trading Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "developing decision-making tools",
+          "pricing convertible bonds"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how your Trading team manages convertible bond issuance and market-making",
+        "availableFrom": "December 2026",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "fin décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy analysis tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and decision-making tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (Engineered → Developed)"
+        }
+      ],
+      "removedHook": "the market-making and trading strategies for convertible bonds, involving Python and VBA tool development",
+      "letterNotes": [
+        "Accroche retirée (« the market-making and trading strategies for convertible bonds, involving Python and VBA tool development ») : elle répétait « developing decision-making tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nPosté par Elias Aras (Convertible Bonds Trader, CACIB)\n\nLe desk de Trading Obligations Convertibles du Crédit Agricole recherche un stagiaire pour une durée de 6 mois à partir de fin décembre 2026.\n\nPour postuler, merci d’envoyer votre CV avec l’objet [Stage Trading Convertible Bond] aux adresses suivantes : anastasia.ifergan@ca-cib.com ; elias.aras@ca-cib.com ; sacha.marciano@ca-cib.com\n\nAssistant Trader Convertible Bonds – Front Office – (H/F)\n\nCrédit Agricole CIB est la Banque de Financement et d’Investissement du groupe Crédit Agricole, groupe bancaire français majeur à envergure mondiale.\n\nCrédit Agricole CIB propose à ses clients une gamme de produits et services dans les métiers de la banque de marchés, de la banque d’investissement, des financements structurés et de la banque commerciale. La Banque accompagne les clients sur les grands marchés internationaux grâce à son réseau mondial dans les principaux pays d’Europe, des Amériques, d’Asie et du Moyen-Orient.\n\nEnvironnement\nVous effectuerez votre stage au sein de la ligne métier Global Markets Division (GMD), qui est la Direction des marchés de capitaux de CACIB couvrant les activités suivantes : Trading, Vente, Origination obligataire, Titrisation, et Coverage des Institutions Financières. Vous rejoindrez l’équipe de Trading Convertible Bonds spécialisée dans l’émission et le market-making d’obligations convertibles.\n\nMissions\nNotre métier nécessite à la fois des connaissances techniques en finance de marché, une forte capacité de travail et un goût de l’innovation. Au sein du métier, nous recherchons un stagiaire pour rejoindre notre équipe.\n\nVous aurez pour missions principales :\n\nAssistance des membres de l’équipe de trading dans le suivi des trades\nLe développement d’outils d’aide à la décision (Python et VBA indispensables) dont :\nL’analyse des transactions passées et des évolutions du marché\nLa gestion et l’amélioration des outils existants\nL’implémentation de nouvelles méthodes de prédiction et d’analyse de données (Machine Learning, NLP...)\nÉtude d’opportunités et de stratégies sur les Obligations Convertibles\nPricing, suivi des hedges et analyse du P&L\nParticipation à l’analyse technique et fondamentale de l’univers existant\nExtraction et analyse par le biais de Bloomberg/Reuters de données financières\nCréation de reportings de l’activité\n\nProfil\n\nFormation : école d’ingénieurs / école de commerce\nSpécialisation : finance de marché\nExpérience : une première expérience en finance ou salle des marchés est un plus\nOutils informatiques : Python (avancé), Excel / VBA\nQualités recherchées : intérêt marqué pour la finance, rigueur, organisation, curiosité intellectuelle, réactivité, capacité d’adaptation, capacité de synthèse en anglais, esprit d’équipe, grande disponibilité. La maîtrise de Python, de ses packages (pandas, streamlit, plotly...) et des modèles de Machine Learning (Embedding, RAG, LLM, Random Forests, Logit, ANN) sont nécessaires\nLangue(s) : anglais courant\n\nDurée : 6 mois",
+    "geminiOriginal": {
+      "headlineFill": "Convertible Bond Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Convertible Bonds Trading Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "developing decision-making tools",
+          "pricing convertible bonds"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how your Trading team manages convertible bond issuance and market-making",
+        "availableFrom": "December 2026",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "fin décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy analysis tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and decision-making tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (Engineered → Developed)"
+        }
+      ],
+      "removedHook": "the market-making and trading strategies for convertible bonds, involving Python and VBA tool development",
+      "letterNotes": [
+        "Accroche retirée (« the market-making and trading strategies for convertible bonds, involving Python and VBA tool development ») : elle répétait « developing decision-making tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794821896577",
+    "dateAdded": "2026-11-16"
+  },
+  {
     "company": "MAREX",
     "jobTitle": "CREDIT SALES TRADER ASSISTANT",
     "location": "Paris",
