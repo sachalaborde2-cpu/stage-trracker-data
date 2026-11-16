@@ -1,5 +1,98 @@
 [
   {
+    "company": " BRED Banque Populaire",
+    "jobTitle": "Trading Fixed Income",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Fixed Income Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BRED Banque Populaire",
+        "jobTitle": "Fixed Income Trader Assistant",
+        "team": "your Fixed Income trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "",
+          "pricing fixed income products"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how traders manage risks and positions across different market rates",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "début décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the technical expertise required for developing and maintaining monitoring and pricing tools for fixed income products",
+      "letterNotes": [
+        "Accroche retirée (« the technical expertise required for developing and maintaining monitoring and pricing tools for fixed income products ») : elle répétait « pricing fixed income products ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nOFFRE DE STAGE – Trading Fixed Income\nPosté par Valentin Critelli (Fixed Income Trader, BRED Banque Populaire)\n\nL’équipe de Trading Fixed Income de la BRED recherche son prochain stagiaire à partir de mi-décembre 2026. Lisez bien l’offre, et postulez par mail ou sur le site recrutement BPCE !\n\nStage Assistant(e) Trader Fixed Income\n\nLieu : 18 quai de la Rapée, 75012 Paris\nDurée : 6 mois\nDébut : début décembre 2026\nContacts : eric.de-sousa@bred.fr ET valentin.critelli@bred.fr\nFormation : Bac+4/5, école d’ingénieur, de commerce, ou université\n\nCompétences\n\nFinance : connaissance du fonctionnement des obligations (pricing, sensibilité, duration), des swaps (taux, cross-currency, inflation) et des taux de marché\nProgrammation : Python (Pandas) indispensable, JavaScript et HTML sont des bonus\nAnglais\n\nProcess de sélection\n\nSi votre dossier nous intéresse, nous vous appellerons 10 minutes afin de vérifier vos disponibilités, et nous poserons 2-3 questions très larges sur le fixed income ainsi qu’un brain teaser\nSuite à cela, un entretien en deux parties : une première sur les notions de finance citées plus haut, et une deuxième partie de tests Python\nPour finir, un entretien RH\n\nDans la salle des marchés de la BRED, au sein de l’équipe trading fixed income, vous assisterez les opérateurs au quotidien dans diverses missions :\n\nDéveloppement et maintenance d’outils de monitoring et de pricing en accord avec les besoins du trading\nContribution à l’évolution et à la transition d’une interface utilisateur vers un nouvel environnement technique\n\nCette expérience de stage sera une excellente opportunité pour un étudiant de se familiariser avec le monde de la finance de marché, et de développer ses compétences professionnelles. En travaillant dans une équipe de taille réduite, vous aurez l’occasion de progresser tout en étant accompagné, et de découvrir plusieurs domaines d’activités de marché.\n\nPour candidater\nEnvoyez par mail votre CV au format CV_Prénom_Nom.pdf avec pour objet : « Stage Assistant(e) Trader Fixed Income ». Toutes les candidatures ne respectant pas cela ne seront pas considérées.",
+    "geminiOriginal": {
+      "headlineFill": "Fixed Income Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BRED Banque Populaire",
+        "jobTitle": "Fixed Income Trader Assistant",
+        "team": "your Fixed Income trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "",
+          "pricing fixed income products"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "learn how traders manage risks and positions across different market rates",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "début décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the technical expertise required for developing and maintaining monitoring and pricing tools for fixed income products",
+      "letterNotes": [
+        "Accroche retirée (« the technical expertise required for developing and maintaining monitoring and pricing tools for fixed income products ») : elle répétait « pricing fixed income products ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794821098068",
+    "dateAdded": "2026-11-16"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Assistant Trader",
     "location": "Paris",
