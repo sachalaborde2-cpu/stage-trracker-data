@@ -1,5 +1,100 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Cross-Asset Derivatives Structured Products Sales Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Cross-Asset Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the Sales team coordinates with Trading and Structuring for product issuances",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January/February 2027",
+        "blockers": [
+          "First experience on a trading floor required"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the daily involvement with pricing cross-asset structured products and OTC derivatives for primary and secondary market issuances",
+      "letterNotes": [
+        "Accroche retirée (« the daily involvement with pricing cross-asset structured products and OTC derivatives for primary and secondary market issuances ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "[Offre de stage 6 mois – Natixis CIB – Cross-Asset Derivatives Structured Products Sales Assistant – January/February 2027]\nPosté par Simon Depret (Structured Product & EQD Sales Intern chez Natixis CIB)\n\nLe desk de Vente Produits Structurés Cross-Asset – Switzerland/Monaco/Luxembourg recherche son ou sa futur(e) stagiaire à compter de fin janvier 2027 pour une durée de 6 mois.\n\nSi vous êtes intéressé(e)s, merci d’envoyer votre CV et lettre de motivation par mail à investors-switzerland@natixis.com, avec pour objet : “Internship Sales Assistant SML – First Name & Last Name”\n\nStructured Products / Cross Asset Derivatives Sales Assistant – Internship offer (Paris – January/February 2027)\n\nCompany description\nNatixis is the corporate, investment banking, insurance and financial services arm of Groupe BPCE, the second largest banking group in France. With more than 16,000 employees in 38 countries, Natixis has three core businesses: retail banking, savings & insurance (asset management, private banking, insurance) and specialized financial services.\n\nPosition title\nStructured Products / Cross Asset Derivatives Sales Assistant\n\nStart date\nJanuary/February 2027\n\nFull description of the mission\nPosition based in Paris (6 months, desk Switzerland/Monaco/Luxembourg)\n\nThe internship will take place in the Equity Derivatives trading room of Natixis Paris in contact with sales, financial engineers and traders.\n\nMission: role to assist Sales in their daily tasks:\n\nPricing of structured products for primary market issuances\nPricing of OTC derivatives\nAssisting Sales on secondary market\nTermsheets, pre-confirmations, reporting, life cycle management\nLiaise with Trading, Structuring, Legal, MO, BO\nMonitoring product proposals, marketing pitches, newsletter\n\nProfile\n\nTeam oriented / client centric / organized / strong negotiator and excellent communicator / self-motivated / able to work effectively under pressure / rigorous\nFirst experience on a trading floor required\nFluent in French/English required\nGap year or Master in Banking & Finance\nGood understanding of structured products / derivatives\n\nRecruitment procedure\nSend your CV to Investors-Switzerland@natixis.com. Please mention in object: « Internship Sales Assistant SML – First Name & Last Name »",
+    "geminiOriginal": {
+      "headlineFill": "Cross-Asset Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Cross-Asset Structured Products Sales Assistant",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "understand how the Sales team coordinates with Trading and Structuring for product issuances",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January/February 2027",
+        "blockers": [
+          "First experience on a trading floor required"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the daily involvement with pricing cross-asset structured products and OTC derivatives for primary and secondary market issuances",
+      "letterNotes": [
+        "Accroche retirée (« the daily involvement with pricing cross-asset structured products and OTC derivatives for primary and secondary market issuances ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794820721500",
+    "dateAdded": "2026-11-16"
+  },
+  {
     "company": "Tradition",
     "jobTitle": "Assistant Sales Produits Structurés",
     "location": "Paris",
