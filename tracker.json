@@ -1,5 +1,102 @@
 [
   {
+    "company": "Indosuez",
+    "jobTitle": "Assistant Sales Produits Structurés",
+    "location": "Luxembourg",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Indosuez",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Structured Products Sales and Structuring team",
+        "offerHook": "the focus on structured products sales and structuring, and enhancing operational workflows for Private Banking clients",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how the desk coordinates with middle and back office teams on trade booking",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and operational workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nOffre de Stage départ Janvier 2027 – Assistant Sales Produits Structurés – Indosuez Luxembourg (durée 6 mois)\nPosté par Thomas Malaval (Cross Asset Derivatives Structurer)\n\nDescription du poste\nNous recherchons un(e) stagiaire motivé(e) pour rejoindre notre équipe de structuration et vente de produits structurés. Ce stage offre une immersion au cœur des marchés financiers et une expérience pratique sur des missions variées.\n\nMissions principales\n\nAssister l’équipe de structuration et sales dans les tâches quotidiennes\nMaintenir et améliorer les outils et automatisations des flux opérationnels\nRédiger et créer des supports marketing à destination de la clientèle BP\nEffectuer le booking des opérations traitées\nFaire le lien avec les équipes middle office et back office\n\nCompétences requises\n\nBonne connaissance des produits dérivés\nForte appétence pour les marchés financiers\nMaîtrise d’Excel VBA et aisance dans la suite Office\nAnglais et français courants\n\nProfil recherché\nÉtudiant(e) en école de commerce, université ou formation équivalente, rigoureux(se), autonome, ayant des bases en produits dérivés et une bonne maîtrise d’Excel/VBA.\n\nCandidature\nEnvoyer votre candidature à thomas.malaval@ca-indosuez.lu avec “Candidature stage” en objet, les autres mails ne seront pas considérés.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Indosuez",
+        "jobTitle": "Structured Products Sales Assistant",
+        "team": "your Structured Products Sales and Structuring team",
+        "offerHook": "the focus on structured products sales and structuring, and enhancing operational workflows for Private Banking clients",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how the desk coordinates with middle and back office teams on trade booking",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and operational workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794822679100",
+    "dateAdded": "2026-11-16"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Trading Convertible Bond",
     "location": "Paris",
