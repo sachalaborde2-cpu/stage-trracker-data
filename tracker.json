@@ -1,5 +1,96 @@
 [
   {
+    "company": "MAREX",
+    "jobTitle": "CREDIT SALES TRADER ASSISTANT",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Credit Sales Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "MAREX",
+        "jobTitle": "Credit Sales Trader Assistant",
+        "team": "your High Yield and Distressed Debt team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "developing automation tools",
+          "identifying investment strategies"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the desk monitors credit market trends and supports client relationships daily",
+        "availableFrom": "December 2026",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the intersection of credit market analysis, automation tool development, and direct support to brokers",
+      "letterNotes": [
+        "Accroche retirée (« the intersection of credit market analysis, automation tool development, and direct support to brokers ») : elle répétait « developing automation tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nOFFRE DE STAGE – CREDIT SALES TRADER ASSISTANT (HIGH YIELD & DISTRESSED) – MAREX\nPosté par Merwan Khoufache\n\nLocalisation : Paris\nDisponibilité : décembre 2026\nDurée : 6 mois\n\nL’équipe Credit de Marex, basée à Paris, recherche son prochain stagiaire pour accompagner le desk High Yield & Distressed Debt.\n\nMissions\n\nAssurer une veille des marchés du crédit et participer à la rédaction de rapports quotidiens et hebdomadaires\nAssister au quotidien les Brokers dans leurs activités et le suivi des demandes clients\nDévelopper des outils d’automatisation, de suivi et d’analyse des marchés financiers afin d’accompagner les activités du desk\nParticiper au développement et à la mise à jour d’un CRM pour le suivi des clients, des contreparties et des opportunités de marché\nContribuer à l’identification, à l’analyse et à la rédaction d’idées de stratégies d’investissement sur les marchés du crédit\n\nProfil recherché\n\nÉtudiant(e) en école de commerce, d’ingénieurs ou université, avec un intérêt marqué pour la finance de marché\nIntérêt pour les marchés obligataires, le crédit et les produits financiers\nBonne maîtrise d’Excel ; des connaissances en Python et Bloomberg sont un plus\nRigueur, curiosité, autonomie et réactivité\n\nCandidature\nEnvoyer votre CV avec pour objet « Candidature – Stage Credit Sales Trader Assistant – Décembre 2026 » à mkhoufache@marex.com",
+    "geminiOriginal": {
+      "headlineFill": "Credit Sales Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "MAREX",
+        "jobTitle": "Credit Sales Trader Assistant",
+        "team": "your High Yield and Distressed Debt team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "developing automation tools",
+          "identifying investment strategies"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the desk monitors credit market trends and supports client relationships daily",
+        "availableFrom": "December 2026",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "décembre 2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the intersection of credit market analysis, automation tool development, and direct support to brokers",
+      "letterNotes": [
+        "Accroche retirée (« the intersection of credit market analysis, automation tool development, and direct support to brokers ») : elle répétait « developing automation tools ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794821336395",
+    "dateAdded": "2026-11-16"
+  },
+  {
     "company": " BRED Banque Populaire",
     "jobTitle": "Trading Fixed Income",
     "location": "Paris",
