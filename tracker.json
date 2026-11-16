@@ -1,6 +1,97 @@
 [
   {
     "company": "Natixis CIB",
+    "jobTitle": "Assistant Trader",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Rates & Liquidity Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Trader Assistant",
+        "team": "your Long-Term Treasury Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "supporting pricing activities",
+          "creating pricers and tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "work alongside your traders to manage long-term treasury refinancing files and strategies",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "07/12/2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the long-term treasury refinancing activities, pricing support, and VBA tool creation within your trading team",
+      "letterNotes": [
+        "Accroche retirée (« the long-term treasury refinancing activities, pricing support, and VBA tool creation within your trading team ») : elle répétait « supporting pricing activities ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "[OFFRE DE STAGE – Natixis CIB – Assistant Trader – Décembre 2026]\nPosté par Anaëlle Couery (Rates & Liquidity Assistant Trader chez Natixis CIB)\n\nL’équipe Trading de la Trésorerie Long Terme de Natixis CIB recherche un(e) stagiaire Assistant Trader à partir de décembre 2026 pour une durée de 6 mois.\n\nMerci d’envoyer votre CV par mail à anaelle.couery-ext@natixis.com avec pour objet « Candidature - NOM Prénom ».\n\nFiche de poste : Assistant Trader Taux et Liquidité – Trésorerie Long Terme, Natixis CIB\nStage Front Office\n\nDomaine : Finance de Marché\nDate de début : 07/12/2026\nDurée : 6 mois\nRémunération : selon grille\nLieu : Tour BPCE Est, 7 Promenade Germaine Sablon, 75013 Paris\n\nEntreprise\nLe groupe BPCE s’impose comme le deuxième acteur bancaire français avec 35 millions de clients et plus de 100 000 collaborateurs. Véritable pilier de l’économie nationale, le groupe assure 22% du financement de l’économie française, démontrant son rôle central dans le développement économique du pays.\n\nNatixis CIB, avec plus de 6 500 collaborateurs présents dans près de 30 pays, s’est forgée une réputation d’excellence grâce à ses capacités d’innovation et son expertise reconnue. La banque accompagne un large éventail de clients, des réseaux BPCE aux investisseurs institutionnels, en passant par les entreprises et les entités publiques.\n\nLe Desk de Trésorerie Long Terme est au cœur de cette activité. Face aux gaps de trésorerie considérables générés par d’autres métiers de Front, l’équipe Trésorerie assure le refinancement quotidien et garantit des taux stables à tous les desks dans toutes les devises.\n\nPoste\nMissions : au sein de la Trésorerie Long Terme, vous aurez pour mission d’assister les traders pour la mise en place et la gestion des dossiers de refinancement :\n\nCréation de pricers et outils en VBA\nSupport aux traders pour le pricing\nInteraction avec le back/middle office\nMissions variées en environnement front office\n\nCompétences / profil recherché\n\nGrande École de Commerce ou d’Ingénieurs, ou Master Finance (césure ou fin d’études)\nÀ l’aise en Excel (VBA ++)\nAnglais courant\nRigueur, dynamisme, bonne capacité d’intégration et d’adaptation, et excellente communication écrite et orale\n\nCandidature\nanaelle.couery-ext@natixis.com",
+    "geminiOriginal": {
+      "headlineFill": "Rates & Liquidity Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Trader Assistant",
+        "team": "your Long-Term Treasury Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "supporting pricing activities",
+          "creating pricers and tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "work alongside your traders to manage long-term treasury refinancing files and strategies",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "07/12/2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the long-term treasury refinancing activities, pricing support, and VBA tool creation within your trading team",
+      "letterNotes": [
+        "Accroche retirée (« the long-term treasury refinancing activities, pricing support, and VBA tool creation within your trading team ») : elle répétait « supporting pricing activities ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794820925584",
+    "dateAdded": "2026-11-16"
+  },
+  {
+    "company": "Natixis CIB",
     "jobTitle": "Cross-Asset Derivatives Structured Products Sales Assistant",
     "location": "Paris",
     "jobUrl": "",
