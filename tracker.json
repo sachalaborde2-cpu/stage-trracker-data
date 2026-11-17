@@ -1,5 +1,96 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "EMTN Assistant Trader",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "EMTN Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "EMTN Assistant Trader",
+        "team": "your Long Term Treasury Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing financial instruments",
+          "creating pricing tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how the Long Term Treasury Desk ensures daily refinancing for other desks",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "07/12/2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the daily pricing and management of EMTN issuances within your Long Term Treasury Desk",
+      "letterNotes": [
+        "Accroche retirée (« the daily pricing and management of EMTN issuances within your Long Term Treasury Desk ») : elle disait la même chose que la conclusion (long, term, treasury, desk, daily)."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\n[OFFRE DE STAGE – Natixis CIB – Assistant Trader – Décembre 2026]\nPosté par Samuel Zeitoun (EMTN Assistant Trader at Natixis CIB)\n\nL’équipe Trading de la Trésorerie Long Terme de Natixis CIB – EMTN recherche un(e) stagiaire Assistant Trader à partir du 07 décembre 2026 pour une durée de 6 mois.\n\nMerci d’envoyer votre CV par mail à samuel.zeitoun-ext@natixis.com avec pour objet « Candidature - NOM Prénom ».\n\nAssistant Trader Taux et MTN – Trésorerie Long Terme, Natixis CIB\nStage Front Office\n\nDomaine : Finance de Marché\nDate de début : 07/12/2026\nDurée : 6 mois\nRémunération : selon grille\nLieu : Tour BPCE Est, 7 Promenade Germaine Sablon, 75013 Paris\n\nEntreprise\nLe groupe BPCE s’impose comme le deuxième acteur bancaire français avec 35 millions de clients et plus de 100 000 collaborateurs. Véritable pilier de l’économie nationale, le groupe assure 22% du financement de l’économie française, démontrant son rôle central dans le développement économique du pays.\n\nNatixis CIB, avec plus de 6 500 collaborateurs présents dans près de 30 pays, s’est forgée une réputation d’excellence grâce à ses capacités d’innovation et son expertise reconnue. La banque accompagne un large éventail de clients, des réseaux BPCE aux investisseurs institutionnels, en passant par les entreprises et les entités publiques.\n\nLe Desk de Trésorerie Long Terme est au cœur de cette activité. Face aux gaps de trésorerie considérables générés par d’autres métiers de Front, l’équipe Trésorerie assure le refinancement quotidien et garantit des taux stables à tous les desks dans toutes les devises.\n\nPoste\nMissions : au sein de la Trésorerie Long Terme, vous aurez pour mission d’assister les traders dans le pricing et la gestion des émissions de MTN :\n\nParticiper à la saisie et au suivi des émissions de MTN dans Summit\nSupport aux traders pour le pricing\nInteraction avec le back/middle office\nCréation de pricers et outils en VBA\n\nCompétences / profil recherché\n\nGrande École de Commerce ou d’Ingénieurs, ou Master Finance (césure ou fin d’études)\nÀ l’aise en Excel (VBA ++)\nAnglais courant\nRigueur, dynamisme, bonne capacité d’intégration et d’adaptation, et excellente communication écrite et orale\n\nCandidature\nsamuel.zeitoun-ext@natixis.com",
+    "geminiOriginal": {
+      "headlineFill": "EMTN Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "EMTN Assistant Trader",
+        "team": "your Long Term Treasury Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing financial instruments",
+          "creating pricing tools"
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "understand how the Long Term Treasury Desk ensures daily refinancing for other desks",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "07/12/2026",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the daily pricing and management of EMTN issuances within your Long Term Treasury Desk",
+      "letterNotes": [
+        "Accroche retirée (« the daily pricing and management of EMTN issuances within your Long Term Treasury Desk ») : elle disait la même chose que la conclusion (long, term, treasury, desk, daily)."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1794922861967",
+    "dateAdded": "2026-11-17"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Structuration Quantitative Investment Strategies",
     "location": "Paris",
