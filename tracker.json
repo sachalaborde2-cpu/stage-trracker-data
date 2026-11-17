@@ -1,5 +1,110 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "FI Solutions Sales Assistant ",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "FI Solutions Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "FI Solutions Sales Assistant",
+        "team": "your Commercial Banks Solutions team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing financial products",
+          "creating activity monitoring tools"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "work alongside sales professionals developing client pitches and market insights",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and activity monitoring tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the support for commercial banks solutions sales, involving market analysis for client proposals and pitch development within Global Markets.",
+      "letterNotes": [
+        "Accroche retirée (« the support for commercial banks solutions sales, involving market analysis for client proposals and pitch development within Global Markets. ») : elle disait la même chose que la conclusion (sal, client, pitch, market)."
+      ]
+    },
+    "offerText": "Offre de Stage – Vente Commercial Banks Solutions | CACIB (Global Markets Division) | 6 mois\nPosté par Jules Ott (FI Solutions Sales Assistant @CACIB)\n\nDébut souhaité : ASAP\n\nNous recrutons un(e) stagiaire pour rejoindre l’équipe Commercial Banks Solutions, au sein des activités de marché de Crédit Agricole CIB (Global Markets Division).\n\nVos missions\nIntégré(e) pleinement à l’équipe, vous participerez activement à son quotidien :\n\nContribution à l’élaboration de propositions commerciales et de pitchs\nSuivi et analyse des tendances de marché pour alimenter la réflexion commerciale de l’équipe\nContribution à la création de nouveaux outils de suivi de l’activité\nCollaboration avec d’autres équipes (structuration, trading, risk) sur des sujets ponctuels\nSuivi des opérations post-trade en lien avec les équipes middle et back office\n\nProfil recherché\n\nFormation Bac+4/Bac+5 : école de commerce, école d’ingénieurs ou cursus universitaire en finance de marché\nLangues : français et anglais courants\nOutils : Excel, VBA\nAisance relationnelle et sens de la communication\nSolides bases techniques et mathématiques, avec une appétence pour les mathématiques financières (pricing)\nAutonomie, force de proposition et capacité à gérer plusieurs sujets en parallèle\nRigueur, curiosité pour les marchés financiers et esprit d’équipe\n\nCe que nous offrons\nUn stage où vous serez un membre à part entière de l’équipe, avec des missions concrètes et variées au cœur des marchés financiers.\n\nCandidature\nEnvoyer votre CV à jules.ott@ca-cib.com avec pour objet : « Candidature stage – NOM Prénom ».",
+    "geminiOriginal": {
+      "headlineFill": "FI Solutions Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "FI Solutions Sales Assistant",
+        "team": "your Commercial Banks Solutions team",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing financial products",
+          "creating activity monitoring tools"
+        ],
+        "ambition": "Sales",
+        "frontOffice": true,
+        "closingGain": "work alongside sales professionals developing client pitches and market insights",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and activity monitoring tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "removedHook": "the support for commercial banks solutions sales, involving market analysis for client proposals and pitch development within Global Markets.",
+      "letterNotes": [
+        "Accroche retirée (« the support for commercial banks solutions sales, involving market analysis for client proposals and pitch development within Global Markets. ») : elle disait la même chose que la conclusion (sal, client, pitch, market)."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794905342342",
+    "dateAdded": "2026-11-17"
+  },
+  {
     "company": "Indosuez",
     "jobTitle": "Assistant Sales Produits Structurés",
     "location": "Luxembourg",
