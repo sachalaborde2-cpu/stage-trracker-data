@@ -1,5 +1,118 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Structuration Quantitative Investment Strategies",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Investment Strategies Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Quantitative Investment Strategies Structuring Intern",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "automating performance reports",
+          "developing backtesting tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the QIS Structuring team designs and delivers tailor-made solutions to institutional clients",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": [
+          "Bac+5 : école d’ingénieur",
+          "Expérience en salle des marchés exigée"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        }
+      ],
+      "removedHook": "the design, development, and backtesting of systematic investment strategies for institutional clients",
+      "letterNotes": [
+        "Accroche retirée (« the design, development, and backtesting of systematic investment strategies for institutional clients ») : elle disait la même chose que la conclusion (design, institutional, client).",
+        "Conclusion : formule creuse « tailor-made » (« see how the QIS Structuring team designs and delivers tailor-made solutions to institutional clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nOFFRE DE STAGE – Stagiaire Structuration Quantitative Investment Strategies (QIS)\nPosté par Anas Khalil (CACIB)\n\nL’équipe QIS Structuration de CACIB Paris recherche son prochain stagiaire.\n\nAu sein de l’équipe Structuration, le structureur QIS a pour mission de concevoir des solutions d’investissement sur mesure pour des distributeurs et pour des clients institutionnels. Pour cela, il/elle prend en charge la conception, le développement et l’ingénierie de nouvelles stratégies systématiques dans un format investissable via des sous-jacents innovants et efficaces répondant aux besoins des clients. Il/elle fournit également des prestations de formation et de marketing pour les équipes de Ventes sous la gamme de sous-jacents proposée par CACIB. Tout au long de sa mission, le structureur est amené à travailler de façon transverse et proche avec les équipes de structuration, risque, vente et de trading.\n\nCe stage vous permettra une immersion dans l’environnement stimulant de la salle des marchés.\n\nMissions\n\nParticipation à la conception et lancement de nouveaux indices ou stratégies quantitatives\nOptimisation, automatisation et implémentation de rapport de performance et analyse de risque\nDéveloppement d’outils de backtesting de stratégies equity et cross-asset\nProjets de développement et d’optimisation d’outils Python\nRéaliser une veille concurrentielle\nL’interaction avec les équipes trading, R&D, Risk et IT\nL’accompagnement de la vente par :\nL’élaboration de solutions pertinentes, adaptées aux besoins spécifiques du client\nService après-vente sur les produits\n\nCe stage représente une opportunité de développer vos connaissances sur les produits financiers et votre compréhension de la banque d’investissement.\n\nProfil recherché\n\nBac+5 : école d’ingénieur\nConnaissance des produits dérivés equity (pricing, stratégies, réplications...)\nDynamisme, rigueur, esprit d’analyse, sens relationnel\nExpérience en salle des marchés\nBonne culture générale des marchés financiers\nMaîtrise de Python\n\nCandidature\nEnvoyer votre CV à anas.khalil@ca-cib.com\nObjet : Candidature Stage – « NOM Prénom »\nDate de début : ASAP. Durée : 6 mois. Lieu : Montrouge. Gratification selon grille CACIB.",
+    "geminiOriginal": {
+      "headlineFill": "Quantitative Investment Strategies Structuring",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Quantitative Investment Strategies Structuring Intern",
+        "team": "your team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "automating performance reports",
+          "developing backtesting tools"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": true,
+        "closingGain": "see how the QIS Structuring team designs and delivers tailor-made solutions to institutional clients",
+        "availableFrom": "December 2026",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "ASAP",
+        "blockers": [
+          "Bac+5 : école d’ingénieur",
+          "Expérience en salle des marchés exigée"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        }
+      ],
+      "removedHook": "the design, development, and backtesting of systematic investment strategies for institutional clients",
+      "letterNotes": [
+        "Accroche retirée (« the design, development, and backtesting of systematic investment strategies for institutional clients ») : elle disait la même chose que la conclusion (design, institutional, client).",
+        "Conclusion : formule creuse « tailor-made » (« see how the QIS Structuring team designs and delivers tailor-made solutions to institutional clients »). À reformuler avec un élément précis des missions."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794908926310",
+    "dateAdded": "2026-11-17"
+  },
+  {
     "company": "HSBC",
     "jobTitle": "Structuration Produits Structurés Action",
     "location": "Paris",
