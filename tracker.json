@@ -1,5 +1,104 @@
 [
   {
+    "company": "Heroics Capital Monaco SAM",
+    "jobTitle": "Structured Products Sales-Trader Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales & Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Heroics Capital Monaco SAM",
+        "jobTitle": "Structured Products Sales-Trader Assistant",
+        "team": "your Structured Products Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "developing automation tools",
+          "pricing structured products"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Sales team provides bespoke structured product brokerage to family offices and asset managers",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "removedHook": "the front-to-back trading architecture, structured product pricing, and automation of desk processes using Python and AI tools",
+      "letterNotes": [
+        "Accroche retirée (« the front-to-back trading architecture, structured product pricing, and automation of desk processes using Python and AI tools ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\nInternship – Structured Products Sales-Trader Assistant\nHeroics Capital Monaco SAM, Structured Products Sales team\n\nLocation: 57 Rue Grimaldi, Monaco\nContract: 6-month internship\nStart: January 2027\n\nThe company\nHeroics Capital is a hedge fund and investment advisory firm offering structuring services to professional investors. The group is based in Luxembourg and Monaco and is expanding in France and Geneva. It was founded by former Capital Markets traders. Its main strategies rely on financial derivatives to generate uncorrelated performance, through a hedge fund and a range of actively managed certificates. In Monaco, the firm is developing an advisory mandate for private and professional UHNWI clients, along with a structured product brokerage activity for family offices and asset managers.\n\nThe intern joins the Monaco Structured Products Sales team and works closely with the Sales-Trader and the CEO of the entity.\n\nYour tasks\n\nTake part in the front-to-back trading architecture at Heroics Group level\nPrice and book structured products in internal platforms\nPrepare the investment morning brief for private and professional clients\nBook the sales’ trades\nAnalyse P&L, discrepancies and performance attribution\nDevelop tools (Python/Excel/AI) to automate desk processes and maintain systems\nUse new-generation tools (AI, LLMs) to streamline research and pricing workflows\nAccess all pricing, research and quantitative tools to support trading\nSupport Distribution / Marketing with pitches and investment solutions for the Sales team\n\nProfile\n\nAttention to detail, able to perform in a challenging environment\nExcellent analytical skills, highly numerate\nProficient in Python\nAt ease with new-generation tools, notably AI (LLMs, coding assistants)\nExcellent written and verbal communication\nInterest in capital markets (macro fundamentals) and understanding of financial instruments, mainly derivatives; structured products are a plus\nA first experience in financial markets, ideally in structured products, is highly valued\n\nSelection process\n2 to 3 interviews, including one live case study (Python) / pricing session. If you do not hear back within three weeks, consider that your application does not match current needs.\n\nHow to apply\nSend your CV and a short introduction to: t.chebeaux@heroics-capital.mc",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales & Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Heroics Capital Monaco SAM",
+        "jobTitle": "Structured Products Sales-Trader Assistant",
+        "team": "your Structured Products Sales team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "developing automation tools",
+          "pricing structured products"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Sales team provides bespoke structured product brokerage to family offices and asset managers",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of client requests across the Paris and London desks under tight deadlines."
+        }
+      ],
+      "removedHook": "the front-to-back trading architecture, structured product pricing, and automation of desk processes using Python and AI tools",
+      "letterNotes": [
+        "Accroche retirée (« the front-to-back trading architecture, structured product pricing, and automation of desk processes using Python and AI tools ») : elle répétait « pricing structured products ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-10 10:51 UTC",
+    "id": "1794905469082",
+    "dateAdded": "2026-11-17"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "FI Solutions Sales Assistant ",
     "location": "Paris",
