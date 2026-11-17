@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-11-10 10:51 UTC";
+const BUILD_VERSION = "2026-11-17 09:55 UTC";
 
 const LocalStore = {
   get(key) {
@@ -339,7 +339,7 @@ Two-year intensive program in advanced mathematics and economics preparing for h
 \vspace{0.06cm}\hrule\vspace{0.14cm}
 
 \noindent \textbf{Languages:} French (Native), English (TOEIC 935/990), Spanish (Intermediate) \\
-\noindent \textbf{IT Skills:} Python, Excel, FactSet, VBA, SQL, Git/GitHub, AI Process Automation (Claude API), R-Studio \\
+\noindent \textbf{IT Skills:} Excel, PowerPoint, VBA, Python, SQL, FactSet, AI Process Automation (Claude API), Git/GitHub, R-Studio \\
 \noindent \textbf{Certifications:} Bloomberg Market Concepts (BMC), Financial Markets (Yale University) \\
 \noindent \textbf{Interests:} Personal Investment (Active management of a €20,000 diversified portfolio), Calisthenics
 
@@ -904,6 +904,8 @@ function buildLmTex(contractType, fields, programType, programYear, durationMont
 
   const variant = ct.programVariants ? (ct.programVariants[programType] || Object.values(ct.programVariants)[0]) : null;
   let para1 = variant ? variant.para1 : String.raw`\noindent Joining __COMPANY__ as __ARTICLE__ __JOBTITLE__ represents the ideal opportunity for me to combine my academic rigor with my appetite for this role, within __TEAM__.`;
+  // "within your team" ne dit rien (audit 17/11 : 4 lettres sur 15) : on retire l'incise.
+  if (/^your team$/i.test((f.team || "your team").trim())) para1 = para1.split(", within __TEAM__,").join(",");
   para1 = para1.split("__COMPANY__").join(company).split("__ARTICLE__").join(article)
     .split("__JOBTITLE__").join(jobTitle).split("__YEAR__").join(year).split("__TEAM__").join(team)
     .split("__DURATION__").join(duration)
@@ -1114,6 +1116,20 @@ RÈGLES STRICTES :
       if (parsed.fit && Array.isArray(parsed.fit.blockers)) parsed.fit.blockers = parsed.fit.blockers.filter(b => !/d[ée]cembre|janvier|disponib/i.test(b) || /novembre/i.test(b));
     }
   }
+  // Lieu hors de Paris : a signaler avant d'envoyer (audit 17/11 : Indosuez Luxembourg,
+  // Heroics Monaco, aucun signal dans la fiche).
+  if (parsed.fit) {
+    const o = String(offerText || "");
+    const m = o.match(/(?:^|\n)\s*(?:Location|Localisation|Lieu(?: du stage)?|Lieu)\s*:\s*([^\n]{2,80})/i);
+    const loc = (m ? m[1] : String(location || "")).trim();
+    const near = /paris|[îi]le-de-france|montrouge|la d[ée]fense|courbevoie|puteaux|nanterre|issy|boulogne|saint-denis|levallois|neuilly|\b75\d{3}\b|remote|t[ée]l[ée]travail/i;
+    const abroad = /monaco|luxembourg|gen[èe]ve|geneva|zurich|z[üu]rich|london|londres|bruxelles|brussels|milan|madrid|frankfurt|francfort|new york|singapo|hong kong|dubai|duba[ïi]/i;
+    if (loc && !near.test(loc) && (abroad.test(loc) || abroad.test(String(location || "")))) {
+      parsed.fit.blockers = [...(parsed.fit.blockers || []), "Lieu hors de Paris : " + loc.replace(/^\d+[^,]*,\s*/, "").slice(0, 40)].slice(0, 3);
+    } else if (!m && abroad.test(String(location || "")) && !near.test(String(location || ""))) {
+      parsed.fit.blockers = [...(parsed.fit.blockers || []), "Lieu hors de Paris : " + String(location).slice(0, 40)].slice(0, 3);
+    }
+  }
   // Intitule : un nom de poste, dans l'ordre anglais.
   if (lf.jobTitle) {
     lf.jobTitle = String(lf.jobTitle).trim();
@@ -1155,6 +1171,10 @@ RÈGLES STRICTES :
       business: /client|sales|commercial|relationship|booking|account|invoic/i,
     };
     lf.proofTasks = lf.proofTasks.map((t, i) => (t && LINK_OK[pp[i]] && LINK_OK[pp[i]].test(t)) ? t : "");
+    // Le pricer d'options ne price ni obligations, ni repos, ni dettes (audit 17/11 :
+    // "For pricing fixed income products, I can draw on the options pricing engine",
+    // BRED et HSBC Repo) : un trader de taux n'y croit pas. On parle d'outils de pricing.
+    lf.proofTasks = lf.proofTasks.map((t, i) => (pp[i] === "pricing" && t && /fixed income|bonds?\b|debt|repo|\brates?\b|treasury|money market|credit|swaps?\b/i.test(t) && !/convertible/i.test(t)) ? "building pricing tools" : t);
     lf.bmcLine = /bloomberg/i.test(offerText || "") && !pp.includes("bloomberg");
     if (lf.proofTasks.length === 2 && lf.proofTasks[0] && lf.proofTasks[0].toLowerCase() === lf.proofTasks[1].toLowerCase()) lf.proofTasks[1] = "";
   }
@@ -1171,8 +1191,28 @@ RÈGLES STRICTES :
   // Equipe : si elle ne fait que recopier l'intitule ("as X, within your X team"), on dit "your team".
   const roleCore = s => (s || "").toLowerCase().replace(/&/g, " and ").replace(/\b(your|team|desk|department|the|an?|intern|assistant|analyst|associate|trainee)\b/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
   if (lf.team && lf.jobTitle && roleCore(lf.team) && roleCore(lf.team) === roleCore(lf.jobTitle)) lf.team = "your team";
+  // Nom de l'entreprise recopie en capitales depuis le titre de l'offre (audit 17/11 :
+  // "MAREX", "NATIXIS CIB" alors que "Natixis CIB" ailleurs). Les sigles courts restent.
+  if (lf.company && lf.company === String(lf.company).toUpperCase() && /[A-Z]{5,}/.test(lf.company)) {
+    const KEEP = new Set(["CACIB", "HSBC", "BNP", "BRED", "AYDO", "BPCE", "CIB", "SG", "UBS", "ING", "KBC", "ODDO", "AXA", "LCL", "CMS", "ABN", "AMRO", "ICBC", "MUFG", "SMBC", "EFG", "BGC", "TP", "ICAP"]);
+    lf.company = String(lf.company).split(/(\s+)/).map(w => (/^[A-Z]{5,}$/.test(w) && !KEEP.has(w)) ? w[0] + w.slice(1).toLowerCase() : w).join("");
+  }
   // Conclusion : "contribute to <tache>" redisait la tache (3 lettres sur 3 le 26/10).
   if (lf.closingGain) lf.closingGain = cleanGain(lf.closingGain).replace(/^contribute to\b/i, "work on");
+  // Adjectifs creux que Gemini ajoute malgre l'interdiction (audit 17/11 : "tailor-made",
+  // "innovative", "bespoke", "various", "diverse", "a wide range of" dans 6 lettres sur 15).
+  // Retirer le mot ne change pas le sens de la phrase : on le fait au lieu de le signaler.
+  {
+    const FILLER = /\b(?:a\s+)?wide\s+range\s+of\s+|\b(?:various|diverse|innovative|tailor-made|tailored|bespoke|cutting-edge)\s+/gi;
+    ["offerHook", "closingGain"].forEach(k => {
+      const before = lf[k] || "";
+      const after = before.replace(FILLER, "").replace(/\s{2,}/g, " ").trim();
+      if (before && after !== before) {
+        lf[k] = after;
+        parsed.letterNotes = [...(parsed.letterNotes || []), (k === "offerHook" ? "Accroche" : "Conclusion") + " : mot creux retiré automatiquement (« " + before + " » → « " + after + " »)."];
+      }
+    });
+  }
   // Une accroche d'offre qui reprend une des 3 taches se lit comme une repetition
   // (Aurel BGC : "option strategy elaboration" deux fois de suite). On la retire,
   // mais seulement quand TOUS les mots de la tache y sont, ou au moins 3 mots
