@@ -1,5 +1,100 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Analyste Quantitatif",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Stress Tests Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Quantitative Stress Tests Analyst",
+        "team": "your Market Stress Tests team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating calibration processes",
+          "studying derivatives pricing models"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the Market Stress Tests team leverages quantitative models to manage market risk",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Janvier 2027",
+        "blockers": [
+          "Maîtrise de SQL exigée"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the development of AI-powered tools for stress testing and derivatives pricing models",
+      "letterNotes": [
+        "Accroche retirée (« the development of AI-powered tools for stress testing and derivatives pricing models ») : elle répétait « studying derivatives pricing models ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "offerText": "Stage - 6 mois - Analyste Quantitatif - Stress Tests F/H\nPartager cette offre : \nStage\n22528\nParis\n\nDescription de l’entreprise\n\nInstitution financière internationale de premier plan, Natixis Corporate & Investment Banking met à disposition des entreprises, institutions financières, fonds d’investissement, agences souverains et supranationaux une palette de services en conseil, investment banking, financements, banque commerciale et sur les marchés de capitaux.\n\nSes équipes d’experts, présentes dans environ 30 pays, conseillent les clients sur leur développement stratégique en les accompagnant dans le développement et la transformation de leurs activités tout en maximisant leur impact positif.  Natixis CIB s’engage sur un alignement de son portefeuille de financements sur une trajectoire de neutralité carbone d’ici 2050 tout en aidant ses clients à réduire l’impact environnemental de leur activité.\n\nNatixis CIB fait partie du Groupe BPCE, deuxième groupe bancaire en France à travers les réseaux Banque Populaire et Caisse d’Epargne. Elle bénéficie de la puissance financière et des solides notations du Groupe (Standard & Poor's : A+, Moody's : A2, Fitch Ratings: A+, R&I : A+).\n\n\nPoste et missions\n\nPOSTE ET MISSIONS\n\nVous rejoignez notre équipe Market Stress Tests, qui recherche un Analyste Quantitatif - Stress Tests, pour un stage de 6 mois à partir de Janvier 2027. \n\nEn collaboration avec votre tuteur, vos missions principales seront : \n\nEffectuer une veille technologique relative aux différents types de Stress Tests (Spécifiques, Globaux, Concentration, Reverse, ...)\nEtudier les  modèles de pricing des produits dérivés composant le portefeuille pour lequel on applique les scénarios de stress tests\nDévelopper des outils IA permettant d'automatiser les process de calibration de chocs et et d'améliorer les analyses\nEffectuer un état de l’art sur les différents algorithmes de machine learning.\n \n\n#FinanceTransformative\nVous évoluez dans un environnement international et inclusif, favorisant le collaboratif avec des missions concrètes et un impact réel. Nous vous accompagnerons tout au long de votre expérience chez nous pour que vous puissiez apprendre et développer vos compétences en travaillant aux côtés de professionnels expérimentés.\nVous avez également la possibilité de vous engager en faveur de la société et de causes qui vous tiennent à cœur via notre fondation d’entreprise.  \n\nEn plus d’une indemnité de stage attractive calculée en fonction de votre formation et de votre niveau d’études, vous bénéficiez du remboursement de votre titre de transport à hauteur de 60 %, d’un jour d’absence autorisé payé pour chaque mois travaillé et de l’accès au restaurant de l’entreprise. \nVous pourrez également avoir accès au comité d’entreprise.\n\n\nProfil et compétences requises\n\nÉtudiant de niveau BAC+4/5, vous préparez un diplôme universitaire, d'école de commerce ou d'école d'ingénieur avec une spécialisation en Finance/Informatique.\n\nVous maîtrisez les langages Python, SQL et VBA/Excel.\n\nVous avez des connaissances des produits financiers de base.\n\nVous possédez des compétences en IA et en data science.\n\nVous avez une bonne connaissance de la culture générale dans le domaine de la mesure et de la gestion des risques de marché.\n\nVous êtes force de proposition dans la gestion de projet et faites preuve d’autonomie dans la gestion des missions confiées.\n\nAnd last but not least, you are perfectly fluent in English.\n\nVous serez contacté par l’un de nos recruteurs avant de rencontrer nos experts métier.\n\nCe sera un moment d’échange idéal pour mettre en avant votre personnalité ainsi que votre projet.",
+    "geminiOriginal": {
+      "headlineFill": "Quantitative Stress Tests Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Quantitative Stress Tests Analyst",
+        "team": "your Market Stress Tests team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating calibration processes",
+          "studying derivatives pricing models"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the Market Stress Tests team leverages quantitative models to manage market risk",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "Janvier 2027",
+        "blockers": [
+          "Maîtrise de SQL exigée"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the development of AI-powered tools for stress testing and derivatives pricing models",
+      "letterNotes": [
+        "Accroche retirée (« the development of AI-powered tools for stress testing and derivatives pricing models ») : elle répétait « studying derivatives pricing models ». Tu peux la réécrire dans le champ offerHook."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795078022854",
+    "dateAdded": "2026-11-19"
+  },
+  {
     "company": "BNP Paribas Asset Management",
     "jobTitle": "ASSISTANT TRADER MONEY MARKET",
     "location": "Paris",
