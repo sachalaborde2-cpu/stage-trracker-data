@@ -1,5 +1,102 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Assistant Analyste CCR Opérations de Marché",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Market Operations Risk Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Market Operations Risk Analyst",
+        "team": "your Market Operations Counterparty Risk team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the Market and Counterparty Risk department validates and reports risk exposures across market operations",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/02/2027",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the analytical and automation challenges involved in daily reporting of counterparty risk indicators for market operations",
+      "letterNotes": [
+        "Accroche retirée (« the analytical and automation challenges involved in daily reporting of counterparty risk indicators for market operations ») : elle disait la même chose que la conclusion (market, counterparty, risk, report, operation).",
+        "Réalisation citée sans mission de l'offre (Backtest Golden Cross, Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Assistant Analyste CCR – Opérations de Marché H/F\nDescription du poste\nType de métier\nTypes de métiers Crédit Agricole S.A. - Financement et Investissement\n\nTypes de métier complémentaires\nTypes de métiers Crédit Agricole S.A. - Analyse financière et économique\n\nTypes de métiers Crédit Agricole S.A. - Risques / Contrôles permanents\n\nIntitulé du poste\nAssistant Analyste CCR – Opérations de Marché H/F\n\nType de contrat\nStage\n\nDurée (en mois)\n6 mois\n\nDate prévue de prise de fonction\n01/02/2027\n\nPoste avec management\nNon\n\nCadre / Non Cadre\nNon cadre\n\nMissions\nVous recherchez un stage en gestion des risques et vous avez un intérêt pour les opérations de marché ? Alors cette offre est faite pour vous ! \n\n \n\nAu sein du département Market and Counterparty Risk et plus particulièrement de l’équipe en charge des calculs de Risque de Contrepartie sur Opérations de Marché, vous serez accueilli dans l’équipe en charge des paramétrages et de la qualité des runs CCR mensuels ainsi que des analyses, des validations et des reportings des montants d’expositions internes et réglementaires.\n\n \n\nLe stagiaire sera en relation avec différentes équipes du Département des Risques en charge d’intervenir sur le Risque de contrepartie mais aussi certains acteurs IT du projet CCC (Projet, quants et IT).\n\n \n\n \n\nConcrètement vos missions seront les suivantes :\n\n \n\n• Optimisation et automatisation d’outils pour la production des rapports d’analyse et de reportings portant :\n\n- Sur les variations des indicateurs de risque de contrepartie (Net Credit Risk, Amount at risk, EAD, (Exposure At Default …) d’un mois sur l’autre, entre 2 runs de calcul ;\n\n- Sur certains paramètres qui jouent sur le mode de calcul d’indicateurs de risque dont : « Mark-to-market shift » correspondant à l’écart de valorisation entre le Moteur Monte Carlo et le pricing du Front Office ou Back office calculé pour chaque opération de marché en stock ou encore « ZC shift » correspondant à différentiel entre le pricing d'un bond par le Moteur Monte Carlo et le pricing officiel calculé pour chaque bond en stock.\n\n• Analyse de certains indicateurs de risque ;\n\n• Participation à certaines tâches de production de l’équipe.\n\n \n\n \n\nRejoindre Crédit Agricole CIB, c’est profiter d’une communauté importante de jeunes, évoluer sur un campus moderne offrant de nombreux services (boulangerie, salle de sport, etc.), bénéficier d’un suivi RH (matinée d’accueil, suivi régulier, etc.) et d’opportunités en alternance, VIE, CDD et CDI.\n\n \n\n \n\n\n\nLocalisation du poste\nZone géographique\nEurope, France, Ile-de-France, 92 - Hauts-De-Seine\n\nVille\nMontrouge\nCritères candidat\nNiveau d'études minimum\nBac + 5 / M2 et plus\n\nFormation / Spécialisation\nEt si c'était vous ? \n\n \n\nFormation : Université, Ecole de commerce, Ecole d'ingénieur.\n\nSpécialisation : Mathématiques financières, Informatique, Data Science, Finance, Finance quantitative, Risk Management, Data & Analytics, Mathématiques appliqués, Ingénierie financière.\n\n \n\nNiveau d'expérience minimum\n0 - 2 ans\n\nCompétences recherchées\nHard Skills : \n\nPython ;\nSQL ;\nVBA ;\nMaitrise du Pack Office ;\nCompétences techniques en traitement de données ;\nFrançais & Anglais courants.\n \n\nSoft Skills : \n\nIntérêt pour le monde économique et financier ;\nConnaissances théoriques des produits de marché et de certains indicateurs de risque ;\nForce de proposition ;\nCapacité d'analyse ;\nTravail en équipe ;\nRigueur.\n \n\n \n\nCrédit Agricole CIB s’engage en faveur de l’insertion des personnes en situation de handicap, ainsi ce poste est ouvert à toutes et à tous. \n\nCe poste est éligible au télétravail dans les conditions prévues par notre accord reposant sur le double volontariat (collaborateur & manager) et après une période d’intégration réussie.\n\n \n \nInformations générales\nEntité\nCrédit Agricole CIB (logo)\nRejoignez les équipes de Crédit Agricole CIB, la banque de financement et d'investissement du groupe Crédit Agricole, 10e groupe bancaire mondial en taille de bilan*.\n\nNous accompagnons les grandes entreprises et institutions financières dans leur développement et le financement de leurs projets. Pionniers dans la finance responsable, l'engagement social et environnemental sont au cœur de nos activités.\n\nIntégrer nos équipes c'est contribuer au développement d'une économie durable.\n\nVous évoluerez dans un environnement multiculturel, à la fois dynamique et stimulant, dans lequel vous serez encouragé à innover et partager vos idées.\n\nNous sommes une entreprise qui accompagne ses collaborateurs tout au long de leur parcours. Vous pourrez y développer vos compétences et accéder aux larges opportunités de carrière qu'offrent la diversité de nos métiers et nos 30 implantations internationales.\n\nNotre culture repose sur la force du collectif et l'esprit d'ouverture, où chacun est responsabilisé et valorisé.\n\nEn agissant chaque jour dans l'intérêt de la société, Crédit Agricole CIB s'inscrit dans les valeurs du groupe qui est engagé en faveur des diversités et de l'inclusion et qui place l'humain au cœur de toutes ses transformations. Tous nos postes sont ouverts aux personnes en situation de handicap.\n\nVous souhaitez prendre part à notre mission ? Rejoignez nos équipes !\n\n*The Banker, Juillet 2025  \nRéférence\n2026-117568  \nDate de mise à jour\n\n",
+    "geminiOriginal": {
+      "headlineFill": "Market Operations Risk Analyst",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Market Operations Risk Analyst",
+        "team": "your Market Operations Counterparty Risk team",
+        "offerHook": "",
+        "proofPoints": [
+          "backtest",
+          "automation"
+        ],
+        "proofTasks": [
+          "",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the Market and Counterparty Risk department validates and reports risk exposures across market operations",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "01/02/2027",
+        "blockers": [
+          "Exige un M2 ou un stage de fin d'études"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "removedHook": "the analytical and automation challenges involved in daily reporting of counterparty risk indicators for market operations",
+      "letterNotes": [
+        "Accroche retirée (« the analytical and automation challenges involved in daily reporting of counterparty risk indicators for market operations ») : elle disait la même chose que la conclusion (market, counterparty, risk, report, operation).",
+        "Réalisation citée sans mission de l'offre (Backtest Golden Cross, Automatisation de processus (API Claude, FactSet)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795078293278",
+    "dateAdded": "2026-11-19"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Analyste Quantitatif",
     "location": "Paris",
