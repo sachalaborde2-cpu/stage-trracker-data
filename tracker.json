@@ -1,5 +1,106 @@
 [
   {
+    "company": "BNP Paribas Asset Management",
+    "jobTitle": "ASSISTANT TRADER MONEY MARKET",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Money Market Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BNP Paribas Asset Management",
+        "jobTitle": "Money Market Trading Assistant",
+        "team": "your team",
+        "offerHook": "the dynamic environment of a money market trading desk and its daily operations, from execution support to client reporting",
+        "proofPoints": [
+          "simulation",
+          "automation"
+        ],
+        "proofTasks": [
+          "",
+          "developing decision-making tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "work alongside traders to understand money market flows and central bank policies",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional market finance players on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l’offre\n\n[OFFRE DE STAGE : ASSISTANT TRADER MONEY MARKET H/F]\nPosté par Paulin Bru (Trading Assistant Intern, BNPP AM x Amundi)\n\nLe Desk Money Market recherche son/sa prochain(e) stagiaire à partir du 4 janvier 2027 pour une durée de 6 mois.\n\nSi vous êtes intéressés, merci d’envoyer votre CV par mail à paulin.bru@bnpparibas.com avec comme objet : « Candidature Stage - Money Market ».\n\nBNP Paribas Asset Management\nBNPP Asset Management est la branche d’activités spécialisée en gestion d’actifs du groupe BNP Paribas. Nous offrons un éventail complet de services de gestion d’actifs aux investisseurs tant institutionnels que privés du monde entier. Présent dans plus de 30 pays, BNPP-PAM compte plus de 3 000 collaborateurs, dont près de 700 professionnels de l’investissement dans 24 pays. Son encours total est de 560 milliards d’euros.\n\nNous recherchons à Puteaux (92), au sein de la structure BNP Paribas Global Trading Function, un(e) stagiaire (idéalement en année de césure) pour une durée de 6 mois à partir du 4 janvier 2027.\n\nAssistant(e) Trader Money Market, H/F\nL’équipe Money Market Trading est à la recherche de sa/son futur(e) stagiaire pour assister les négociateurs au quotidien. Vous aurez comme principales tâches :\n\nAider la table monétaire au travers de recherche d’information, de saisie d’opérations et de calcul pré et post exécution\nAssurer le suivi des opérations du desk (tombées TCN, reverse-repos, IRS, etc.) et une veille marchés au quotidien\nRéaliser, à partir de diverses sources, des documents à destination des clients (gérants BNPP ou externes) sur l’évolution des prix du marché\nCompiler les données pour préparer les rapports mensuels et créer de nouveaux indicateurs et visuels de l’activité monétaire\nSuivre les ordres dans les différents OMS (Order Management System) et être capable d’investiguer en cas de problèmes\nInteragir au besoin avec les différents acteurs de la finance de marché (middle/back office, service IT, gérants, équipe reporting...)\n\nApports du poste\n\nExpérience en salle des marchés de la GTF\nConnaissance approfondie du marché monétaire, de la politique des Banques Centrales ainsi que des outils de trading\n\nVotre profil\nFormation : Bac+4/5, école de commerce, d’ingénieurs ou équivalent universitaire avec une spécialisation en finance de marché.\n\nCompétences techniques :\n\nAnglais avancé\nPack Office (Excel et VBA avancé)\nConnaissance de Bloomberg, Tableau/Power BI ou Python un vrai plus\nForce de proposition pour améliorer et développer les outils d’aide à la décision\n\nCompétences comportementales : rigueur, curiosité, autonomie, adaptabilité\n\nDurée et disponibilité : la page 2 n’est pas visible sur ta capture.",
+    "geminiOriginal": {
+      "headlineFill": "Money Market Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BNP Paribas Asset Management",
+        "jobTitle": "Money Market Trading Assistant",
+        "team": "your team",
+        "offerHook": "the dynamic environment of a money market trading desk and its daily operations, from execution support to client reporting",
+        "proofPoints": [
+          "simulation",
+          "automation"
+        ],
+        "proofTasks": [
+          "",
+          "developing decision-making tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "work alongside traders to understand money market flows and central bank policies",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "4 janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional market finance players on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795077789566",
+    "dateAdded": "2026-11-19"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "EMTN Assistant Trader",
     "location": "Paris",
