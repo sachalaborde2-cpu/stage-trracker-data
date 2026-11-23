@@ -1,5 +1,118 @@
 [
   {
+    "company": "BBVA CIB",
+    "jobTitle": "Assistant Sales Investment Solutions et Corporate",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BBVA CIB",
+        "jobTitle": "Investment Solutions and Corporate Sales Assistant",
+        "team": "your Investment Solutions and Corporate Sales teams",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "automating reporting"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how your sales teams develop and distribute structured products to institutional clients",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": true
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional \u0007extbf{buy-side and sell-side professionals} on FactSet's cross-asset portfolio analytics and \u0007extbf{workflow tools}, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and reporting tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        },
+        {
+          "old": "\u0007extbf{Engineered} an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (\u0007extbf{Engineered} → Developed)"
+        }
+      ],
+      "removedHook": "the cross-asset sales environment covering both structured products and corporate clients",
+      "letterNotes": [
+        "Accroche retirée (« the cross-asset sales environment covering both structured products and corporate clients ») : elle disait la même chose que la conclusion (sal, structur, product, client)."
+      ]
+    },
+    "offerText": "OFFRE DE STAGE : Assistant Sales Investment Solutions et Corporate – BBVA – Stage de 6 mois – début janvier 2027 – Paris\nPosté par Prasit Suryadhay (BBVA CIB)\n\nLes desks Investment Solutions et Corporate sont à la recherche d'un nouveau stagiaire pour une mission Cross-Asset de 6 mois à pourvoir début janvier 2027 (convention de stage obligatoire).\n\nMerci de nous écrire à l'adresse suivante avec un CV en indiquant vos disponibilités : candidatures.stage@bbva.com\n\nAssistant Sales Investment Solutions et Corporate – Stage de 6 mois (début janvier)\n\nBBVA est un groupe financier mondial, fondé en 1857, qui offre à ses clients particuliers et entreprises une gamme complète de produits et de services financiers et non financiers. BBVA est un des leaders sur le marché espagnol et est présent en Europe, en Amérique Latine, aux États-Unis et en Asie. La division Corporate & Investment Banking couvre les activités de banque d'investissement, de financement et de flux pour ses clients globaux, à la fois investisseurs institutionnels et grandes entreprises internationales. BBVA emploie 115 000 salariés dans plus de 30 pays, sert près de 89 millions de clients dans le monde et sa capitalisation boursière dépasse 40 milliards d'euros.\n\nLes équipes Investment Solutions et Corporate sont à la recherche d'un nouveau stagiaire pour une mission Cross-Asset de 6 mois à pourvoir début janvier. (Convention de stage obligatoire)\n\nMissions\nAu sein de la salle de marché de BBVA à Paris, vous rejoindrez l'équipe de vente de produits structurés et dérivés pour clientèle Broker/Asset Manager/Banque/Assureur, ainsi que l'équipe Corporate couvrant une clientèle large cap. Vos principales missions seront les suivantes :\n\nÉquipe Investment Solutions :\n\nPricing de produits structurés sur nos plateformes\nAide à la création du matériel support à la vente\nPréparation des documents réglementaires\nSuivi post-trade des opérations traitées\nDéveloppement d'outils informatiques\n\nÉquipe Corporate :\n\nPréparation et automatisation d'un reporting « end of month » sur l'activité\nMonitoring de l'activité des clients en plateforme : volume, nombre d'opérations, produits, etc.\nSuivi des trades, booking des opérations\nAide à la création de documents commerciaux\n\nProfil recherché\n\nÉtudiant bac+4/+5, en césure, ou stage de fin d'études\nBon niveau de français et d'anglais pour communiquer avec les équipes à Paris, Madrid et Londres\nAutonomie, rigueur, sens de l'initiative et travail en équipe\nBonne culture générale des marchés financiers\nUne connaissance des produits structurés/dérivés est un plus\n\nProcédure de recrutement\nMerci de nous écrire aux adresses suivantes avec un CV en indiquant vos disponibilités : candidatures.stage@bbva.com",
+    "geminiOriginal": {
+      "headlineFill": "Cross-Asset Sales Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "BBVA CIB",
+        "jobTitle": "Investment Solutions and Corporate Sales Assistant",
+        "team": "your Investment Solutions and Corporate Sales teams",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          "automating reporting"
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "see how your sales teams develop and distribute structured products to institutional clients",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": true
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional \u0007extbf{buy-side and sell-side professionals} on FactSet's cross-asset portfolio analytics and \u0007extbf{workflow tools}, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and reporting tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        },
+        {
+          "old": "\u0007extbf{Engineered} an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Developed an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "verbe d'ouverture changé (\u0007extbf{Engineered} → Developed)"
+        }
+      ],
+      "removedHook": "the cross-asset sales environment covering both structured products and corporate clients",
+      "letterNotes": [
+        "Accroche retirée (« the cross-asset sales environment covering both structured products and corporate clients ») : elle disait la même chose que la conclusion (sal, structur, product, client)."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795433986967",
+    "dateAdded": "2026-11-23"
+  },
+  {
     "company": "Natixis CIB ",
     "jobTitle": "Quants XVA Développement d'outils quantitatifs et d'assistants intelligents",
     "location": "Paris",
