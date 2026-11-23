@@ -1,5 +1,108 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Front Office Business Analyst ",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Front Office Business Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Front Office Business Analyst",
+        "team": "your Structured Products trading floor team",
+        "offerHook": "the role acting as a liaison between IT, Sales, and Traders on the Structured Products desk, focusing on sales and trading tools and process automation",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating processes",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how IT and business teams collaborate to develop and enhance structured products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and sales & trading tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l'offre\n\nPosté par Mathieu Philippot (Financial Markets & Sports)\n\nNatixis CIB is looking for 2 interns for the position of Front Office Business Analyst within the Structured Products trading floor, starting from January 2027, for 6 months.\n\nActing as a liaison between IT teams, Sales and Traders on the desk, your daily responsibilities will include:\n\nProviding support on sales & trading tools and products lifecycle management\nAnalyzing business needs and drafting functional specifications\nAutomating processes\nMonitoring project development and ensuring testing\n\nProfile required\n\nStudent in top engineering school and/or financial program\nGood knowledge about financial products is mandatory\nProficiency in SQL, Excel, Power BI is a plus\nBasic project management skills\nAI driven\nDynamic, proactive and motivated\nEnd-of-studies internship is a plus\nFluent in English\n\nHow to apply\nIf you are interested, please send your resume to both mathieu.philippot@natixis.com, noa.ducaroix--lasseur-ext@natixis.com with the subject \"[Stage] - First Name Last Name\"",
+    "geminiOriginal": {
+      "headlineFill": "Front Office Business Analysis",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Front Office Business Analyst",
+        "team": "your Structured Products trading floor team",
+        "offerHook": "the role acting as a liaison between IT, Sales, and Traders on the Structured Products desk, focusing on sales and trading tools and process automation",
+        "proofPoints": [
+          "automation",
+          "pricing"
+        ],
+        "proofTasks": [
+          "automating processes",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how IT and business teams collaborate to develop and enhance structured products",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and sales & trading tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (workflow tools)"
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Pricing d'options + market making) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795447663204",
+    "dateAdded": "2026-11-23"
+  },
+  {
     "company": "Kepler Cheuvreux",
     "jobTitle": "Assistant Sales & Marketing Produits Structurés",
     "location": "Paris",
