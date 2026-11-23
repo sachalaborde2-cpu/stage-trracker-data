@@ -1,5 +1,108 @@
 [
   {
+    "company": "Kepler Cheuvreux",
+    "jobTitle": "Assistant Sales & Marketing Produits Structurés",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Structured Products Sales & Marketing",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Kepler Cheuvreux",
+        "jobTitle": "Structured Products Sales & Marketing Assistant",
+        "team": "your Structured Products team",
+        "offerHook": "the client-facing role of designing sales materials and promoting structured products across asset classes for institutional clients",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating desk operations",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how sales teams collaborate with financial engineering and research for product offerings",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week portfolio management scenario analysis across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "terme précis supprimé (simulated, challenge)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : mot creux retiré automatiquement (« the client-facing role of designing sales materials and promoting structured products across various asset classes for institutional clients » → « the client-facing role of designing sales materials and promoting structured products across asset classes for institutional clients »).",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Details\n\nRôle: Assistant Sales & Marketing Produits Structurés\n\nDurée: 6 mois \n\nDate de début: janvier 2027\n\nLieu: Paris, France\n\nGratification: Selon grille Kepler Cheuvreux\n\nÀ propos de Kepler Cheuvreux\n\nKepler Cheuvreux est une société de services financiers européenne indépendante de premier plan, présente en Europe, aux États-Unis et au Moyen-Orient.\n\nLe groupe est organisé autour de trois pôles produits : Intermédiation, Solutions d’Investissement, et Corporate Finance, soutenus par deux pôles transverses : une plateforme de recherche cross-asset et une force de vente multi-locale. Cette organisation s’appuie sur un dispositif mutualisé de fonctions de support et de contrôle.\n\nLes chiffres clés du groupe :\n\n1er courtier européen indépendant en actions\n\n1ère couverture Recherche actions d’Europe continentale\n\n1er courtier et recherche par pays en Europe (Extel 2026)\n\n“World’s Best Agency Broker” (Euromoney Markets Awards 2026)\n\n15 centres financiers majeurs en Europe, aux États-Unis et au Moyen-Orient\n\n700 employés\n\n1 600 clients institutionnels\n\nVos responsabilités\n\nAu cœur de la salle des marchés, vous faites partie de l’équipe en charge des produits structurés sur toutes les classes d’actifs : actions, taux d’intérêt, crédit, matières premières et taux de change.\n\nDans ce contexte, vous serez amené à:\n\nConcevoir les supports de vente (pitchs produits, appels d’offres, etc) adaptés aux différents types de clients (entreprises, distributeurs et institutionnels)\n- Objectifs, détail du mécanisme, avantages/inconvénients\n- Étude de scénarios\n- Analyse et contexte de marché de l’actif sous-jacent\n\n\nPréparer l’offre produits en relation avec l’ingénierie financière et la recherche stratégique\n- Mise en avant des meilleurs produits pour chaque classe d’actifs\n- Approfondissement de chaque sous-jacent avec les analyses macroéconomiques (top-down) et par entreprises (bottom-up)\n\n\nParticiper au « push produits » sur les offres suivantes\n- Thématiques Recherche en lien avec notre stratégiste cross asset\n- Indices Quantitatifs en lien avec notre responsable indice\n\n\nVous aurez également l’occasion de travailler sur des projets transversaux long terme : amélioration du fonctionnement du desk (ex: développement de campagnes d’emailings, automatisation, support sur des projets commerciaux spécifiques (ex : détermination d’une allocation d’actifs dédiée), etc.\n\n \n\nVotre Profil et Compétences\n\nDiplômé d’une grande école ou d’une université de premier rang, vous avez un attrait pour la finance de marchés. Vous parlez couramment l’anglais et avez une bonne maitrise de Powerpoint, Excel, Word et des outils IA. Vous êtes dynamique et rigoureux, vous bénéficiez d’une bonne aisance relationnelle et vous souhaitez intégrer un environnement exigeant et formateur.\n\nVous devez impérativement disposer d'une convention de stage école couvrant toute la durée de la mission.\n\n \n\nProcessus de recrutement\n\nEntre 2 à 3 entretiens, selon le profil.\n\nPour évoluer dans notre environnement international et pour appréhender la diversité de nos clients et métiers, votre capacité d’adaptation et votre créativité seront un véritable atout. Si ces qualités vous ressemblent et si vous partagez l’esprit de conquête de Kepler Cheuvreux, alors rejoignez-nous !\n\nSensibilisation à la Règlementation et à la Conformité\n\nLes candidats doivent disposer d'une compréhension appropriée du cadre réglementaire applicable à leur poste ainsi qu'au secteur des services financiers. Ils doivent faire preuve d'une solide connaissance des exigences en matière de conduite, de conformité et de gestion des risques, être en mesure d'identifier et de remonter les incidents potentiels, et collaborer de manière constructive avec la Conformité et les autres fonctions de contrôle.\n\nIl est attendu qu'ils maintiennent et développent leurs connaissances réglementaires en participant aux formations dispensées par le Groupe. Ils sont également encouragés à solliciter des formations complémentaires si nécessaire.\n\nVeuillez noter que le générique est rédigé au masculin afin d’alléger le texte. Nous encourageons la diversité et invitons toutes les personnes ayant les compétences mentionnées dans l’offre d’emploi à soumettre leur candidature.",
+    "geminiOriginal": {
+      "headlineFill": "Structured Products Sales & Marketing",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Kepler Cheuvreux",
+        "jobTitle": "Structured Products Sales & Marketing Assistant",
+        "team": "your Structured Products team",
+        "offerHook": "the client-facing role of designing sales materials and promoting structured products across asset classes for institutional clients",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating desk operations",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how sales teams collaborate with financial engineering and research for product offerings",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Ranked \\textbf{1st out of 12 participants} in a 10-week simulated portfolio management challenge across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a \\textbf{+6\\% return} under strict trading constraints.",
+          "new": "Ranked 1st out of 12 participants in a 10-week portfolio management scenario analysis across FactSet's Paris, London, Stockholm, and Frankfurt offices (€1M budget, Stoxx Europe 600 benchmark), delivering a +6% return under strict trading constraints.",
+          "reason": "terme précis supprimé (simulated, challenge)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : mot creux retiré automatiquement (« the client-facing role of designing sales materials and promoting structured products across various asset classes for institutional clients » → « the client-facing role of designing sales materials and promoting structured products across asset classes for institutional clients »).",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795434410953",
+    "dateAdded": "2026-11-23"
+  },
+  {
     "company": "BBVA CIB",
     "jobTitle": "Assistant Sales Investment Solutions et Corporate",
     "location": "Paris",
