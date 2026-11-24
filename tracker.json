@@ -1,5 +1,108 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Assistant Trader Convertible Bonds",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Convertible Bonds Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Convertible Bonds Assistant Trader",
+        "team": "your Convertible Bonds trading desk",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing convertible bonds",
+          "automating internal tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how traders manage their positions and execute hedging strategies for convertible bonds",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, performing quantitative analyses (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "trop de mots modifiés (7), réécriture au lieu d'un échange de vocabulaire"
+        }
+      ],
+      "removedHook": "the concrete daily tasks of monitoring P&L, hedging, and conducting quantitative arbitrage analyses on convertible bonds",
+      "letterNotes": [
+        "Accroche retirée (« the concrete daily tasks of monitoring P&L, hedging, and conducting quantitative arbitrage analyses on convertible bonds ») : elle disait la même chose que la conclusion (hedg, convertible, bond)."
+      ]
+    },
+    "offerText": "Transcription de l'offre\n\n[Offre de stage] Stage Assistant(e) Trader Convertible Bonds – NATIXIS\nPosté par Maxime Bensoussan (Trader Convertible Bond chez Natixis CIB)\n\nLe desk de trading d'obligations convertibles de Natixis recherche son/sa futur(e) stagiaire.\n\nMissions\n\nAssister les traders dans leurs tâches quotidiennes : suivi du P&L, hedging, gestion des positions et analyse de marché\nParticiper au pricing des obligations convertibles\nAutomatiser des tâches et améliorer les outils internes\nRéaliser des analyses quantitatives sur de nouvelles opportunités d'arbitrage\nCollaborer avec les sales et les différentes équipes du desk\n\nFormation\nBac+5 en école de commerce, d'ingénieurs ou équivalent universitaire, avec une spécialisation en finance de marché. Stage également ouvert aux étudiants en année de césure.\n\nCompétences techniques\n\nBonnes connaissances en Equity Derivatives et Fixed Income\nAnglais courant\nMaîtrise de Python\nPack Office, notamment Excel et VBA\nNotions de Machine Learning et d'économétrie\nConnaissances en Bloomberg BQL appréciées\n\nSoft skills\nRigueur, curiosité, autonomie, adaptabilité\n\nDurée et disponibilité\nDébut en janvier, pour une durée de 6 mois.\n\nSi cette opportunité vous intéresse, envoyez votre CV à : maxime.bensoussan@natixis.com",
+    "geminiOriginal": {
+      "headlineFill": "Convertible Bonds Trading",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Convertible Bonds Assistant Trader",
+        "team": "your Convertible Bonds trading desk",
+        "offerHook": "",
+        "proofPoints": [
+          "pricing",
+          "automation"
+        ],
+        "proofTasks": [
+          "pricing convertible bonds",
+          "automating internal tools"
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": true,
+        "closingGain": "see how traders manage their positions and execute hedging strategies for convertible bonds",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "January",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, performing quantitative analyses (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "trop de mots modifiés (7), réécriture au lieu d'un échange de vocabulaire"
+        }
+      ],
+      "removedHook": "the concrete daily tasks of monitoring P&L, hedging, and conducting quantitative arbitrage analyses on convertible bonds",
+      "letterNotes": [
+        "Accroche retirée (« the concrete daily tasks of monitoring P&L, hedging, and conducting quantitative arbitrage analyses on convertible bonds ») : elle disait la même chose que la conclusion (hedg, convertible, bond)."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795534149195",
+    "dateAdded": "2026-11-24"
+  },
+  {
     "company": "Amundi",
     "jobTitle": "Ingénierie Financière",
     "location": "Paris",
