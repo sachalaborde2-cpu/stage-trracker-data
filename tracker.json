@@ -1,5 +1,110 @@
 [
   {
+    "company": "Amundi",
+    "jobTitle": "Ingénierie Financière",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Financial Engineering",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Financial Engineering Intern",
+        "team": "your Financial Engineering team within Convexity And Systematic Quant Equity",
+        "offerHook": "the analysis of global insurance regulations, their optimization, and derivatives-based asset management topics",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "implementing investment strategies",
+          ""
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how your Financial Engineering team optimizes investment strategies in a global regulatory environment",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "19/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross investment strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic regulatory exposure analysis."
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Backtest Golden Cross) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Stage Ingénierie Financière H/F\nModifiée le 23/11/2026\n\nLieu :Ile-de-France - France\nSecteur :Gestion d'Actifs\nDescription du poste\nService d'accueil: \n\nAmundi est le premier gestionnaire d’actifs en Europe et l’un des leaders mondiaux de la gestion d’investissements. Au sein des gestions « Convexity And Systematic Quant Equity », l’équipe d’Ingénierie financière joue un rôle central dans la mise en œuvre et l’implémentation des stratégies d’investissement.\n\nVos missions: \n\nDans ce contexte, le/la stagiaire sera pleinement intégré(e) à l’équipe d’ingénierie financière : son rôle portera majoritairement sur l’analyse des réglementions assurantielles mondiales et les manières de les optimiser.\n\n \n\nApport du stage: \n\nCe stage offre l’opportunité de travailler à la fois sur des problématiques assurantielles/réglementaires et sur des sujets de gestion utilisant des dérivés.\n\nComplément\nL’entreprise versera une gratification au stagiaire si la durée du stage est supérieure à deux mois consécutifs.\n\n\nCritères de candidature\nDate de prise de fonction\n19/01/2027\nDurée\n6\nNiveau d'étude minimum\nBac + 4 / M1\nFormation / Spécialisation\nSpécialisation: Finance, assurance\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nCompréhension des réglementationsQualités de rigueur\nAutonomie\nOutils informatiques\nPack office\nLangues\nAnglais (C1, C2)\n\nEntreprise Amundi\nPremier gérant d'actifs européen parmi les 10 premiers acteurs mondiaux (1), Amundi propose à ses 100 millions de clients - particuliers, institutionnels et entreprises - une gamme complète de solutions d'épargne et d'investissement en gestion active et passive, en actifs traditionnels ou réels. Cette offre est enrichie de services et d'outils technologiques qui permettent de couvrir toute la chaîne de valeur de l'épargne. Filiale du groupe Crédit Agricole, Amundi est cotée en Bourse et gère aujourd'hui près de 2 300 milliards d'euros d'encours (2). Ses six plateformes de gestion internationales (3), sa capacité de recherche financière et extra-financière, ainsi que son engagement de longue date dans l'investissement responsable en font un acteur de référence dans le paysage de la gestion d'actifs.\nLes clients d'Amundi bénéficient de l'expertise et des conseils de 5 500 professionnels dans 35 pays.\nAmundi, un partenaire de confiance qui agit chaque jour dans l'intérêt de ses clients et de la société.\n\n(1) Source : IPE « Top 500 Asset Managers » publié en juin 2025 sur la base des encours sous gestion au 31/12/2024\n(2) Données Amundi au 30/06/2025\n(3) Paris, Londres, Dublin, Milan, Tokyo et San Antonio (via notre partenariat stratégique avec Victory Capital)",
+    "geminiOriginal": {
+      "headlineFill": "Financial Engineering",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Financial Engineering Intern",
+        "team": "your Financial Engineering team within Convexity And Systematic Quant Equity",
+        "offerHook": "the analysis of global insurance regulations, their optimization, and derivatives-based asset management topics",
+        "proofPoints": [
+          "simulation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "implementing investment strategies",
+          ""
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how your Financial Engineering team optimizes investment strategies in a global regulatory environment",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "19/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross investment strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic regulatory exposure analysis."
+        }
+      ],
+      "letterNotes": [
+        "Réalisation citée sans mission de l'offre (Backtest Golden Cross) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795509983341",
+    "dateAdded": "2026-11-24"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Assistant Trader",
     "location": "Paris",
