@@ -1,5 +1,112 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Assistant Trader",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Non Linear Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Assistant Trader",
+        "team": "your Non Linear Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating trading risk analyses",
+          ""
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Non Linear desk navigates global interest rate and cross-asset markets 24/5",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "04/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit data visualization interface in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the direct exposure to non-linear financial instruments, and automating trading risk analyses with LLM and data pipelines.",
+      "letterNotes": [
+        "Accroche retirée (« the direct exposure to non-linear financial instruments, and automating trading risk analyses with LLM and data pipelines. ») : elle répétait « automating trading risk analyses ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Type de métier\nTypes de métiers Crédit Agricole S.A. - Financement et Investissement\n\nTypes de métier complémentaires\nTypes de métiers Crédit Agricole S.A. - Analyse financière et économique\n\nTypes de métiers Crédit Agricole S.A. - Finances / Comptabilité / Contrôle de gestion\n\nIntitulé du poste\nAssistant Trader H/F\n\nType de contrat\nStage\n\nDurée (en mois)\n6\n\nDate prévue de prise de fonction\n04/01/2027\n\nPoste avec management\nNon\n\nCadre / Non Cadre\nNon cadre\n\nMissions\nVous recherchez un stage en finance de marché et vous avez un intérêt pour le trading ? Alors postulez !\n\n \n\nLe stage proposé est au cœur de la ligne de produits Non Linear. Basé dans la salle des marchés à Paris, le stagiaire travaillera au sein de l'activité Non Linear qui fonctionne 24 heures sur 24, 5 jours par semaine, dans des fuseaux horaires allant de Hong Kong à New York. L'exposition aux instruments financiers offerts par le GMD sera étendue car Basis et Non Linear couvrent d'autres lignes de produits à partir de ses activités de couverture. En outre, ce stage permettra d'acquérir une vision précieuse et approfondie du fonctionnement des marchés des taux d'intérêt et des actifs croisés.\n\n \n\n \n\n \n\nGlobalement vos missions seront les suivantes : \n\n \n\nAnalyser et comprendre les bases de données actuelle disponibles\nEffectuer des analyses statistiques sur celle-ci et contribuer au développement de nouveaux modèles\nContribuer au développement d'interface de visualisation de données en production\nAppliquer le résultat pour développer de nouvelles stratégies\nAssister les Traders sur les tâches quotidiennes et la prise de décision\nAutomatisation d'analyses synthétisant les données de risques de trading et l'actualité de marché, en exploitant des modèles de langage (LLM), des pipelines de données (ETL/streaming) et des techniques de traitement du langage naturel (NLP).\n \n\nMerci de bien vouloir indiquer vos dates de disponibilités sur votre cv lors du dépôt de votre candidature.\n\n \n\nRejoindre Crédit Agricole CIB, c’est profiter d’une communauté importante de jeunes, évoluer sur un campus moderne offrant de nombreux services (boulangerie, salle de sport, etc.), bénéficier d’un suivi RH (matinée d’accueil, suivi régulier, etc.) et d’opportunités en alternance, VIE, CDD et CDI.\n\n \n\nLocalisation du poste\nZone géographique\nEurope, France, Ile-de-France, 92 - Hauts-De-Seine\n\nVille\nMontrouge\nCritères candidat\nNiveau d'études minimum\nBac + 4 / M1\n\nFormation / Spécialisation\nEt si c'était vous ? \n\nFormation : Université, Ecoles de commerce ou d'ingénieur \n\nSpécialisation : Mathématique et finance de marché\n\nNiveau d'expérience minimum\n0 - 2 ans\n\nExpérience\nUne première expérience en finance ou salle des marchés est un plus.\n\nCompétences recherchées\nHard Skills :\n\n \n\n- Bonnes connaissances en finance et sensibilité aux problématiques de marché;\n\n \n\n- Excellente maîtrise des outils informatiques (Excel,PowerPoint, Word);\n\n- Maitrise de VBA/SQL;\n\n- Python et Traitement de données (pipelines de données, model de langage LLM / NLP;\n\n- Français & Anglais courants.\n\n \n\n \n\nSoft Skills : \n\n \n\n- Intérêt marqué pour la finance ;\n\n- Rigueur ;\n\n- Organisation ;\n\n- Curiosité intellectuelle ;\n\n- Réactivité ;\n\n- Capacité d'adaptation ;\n\n- Capacités d'analyse et de synthèse ;\n\n- Esprit d'équipe, grande disponibilité ;\n\n ",
+    "geminiOriginal": {
+      "headlineFill": "Non Linear Trading Assistant",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Assistant Trader",
+        "team": "your Non Linear Trading team",
+        "offerHook": "",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating trading risk analyses",
+          ""
+        ],
+        "ambition": "Trading",
+        "frontOffice": true,
+        "closingGain": "see how the Non Linear desk navigates global interest rate and cross-asset markets 24/5",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python",
+          "SQL"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "04/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit data visualization interface in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "removedHook": "the direct exposure to non-linear financial instruments, and automating trading risk analyses with LLM and data pipelines.",
+      "letterNotes": [
+        "Accroche retirée (« the direct exposure to non-linear financial instruments, and automating trading risk analyses with LLM and data pipelines. ») : elle répétait « automating trading risk analyses ». Tu peux la réécrire dans le champ offerHook.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795509820294",
+    "dateAdded": "2026-11-24"
+  },
+  {
     "company": "Natixis CIB",
     "jobTitle": "Front Office Business Analyst ",
     "location": "Paris",
