@@ -161,7 +161,7 @@ const { useState, useEffect, useCallback, useRef } = React;
 // Horodatage de build — affiché dans l'app pour verifier en un coup d'oeil
 // si la version chargee est bien la derniere (utile en cas de doute sur un
 // cache navigateur ou GitHub Pages qui n'aurait pas propage a temps).
-const BUILD_VERSION = "2026-11-17 09:55 UTC";
+const BUILD_VERSION = "2026-11-25 09:23 UTC";
 
 const LocalStore = {
   get(key) {
@@ -530,7 +530,16 @@ const CONTRACT_TYPES = {
 function fixLatexEscapes(text) {
   return text.replace(/\\u001[bB]\[[0-9;]*m/g, "").replace(/\x1b\[[0-9;]*m/g, "").replace(/(^|[^\\])\\(?=(?:textbf|textit|texttt|textsc|textbackslash|noindent|newline|newcommand|renewcommand|begin|bf|bullet|frac|rule|raggedright)\b)/g, "$1\\\\");
 }
-function parseAiJson(text) {
+// Gemini renvoie parfois "\textbf" avec un caractere de controle (TAB, BEL) a la place du "\t" :
+// la reecriture ne retrouvait plus la puce d'origine (audit 25/11 : \x07extbf dans la fiche BBVA).
+function fixControlChars(o) {
+  if (typeof o === "string") return o.replace(/[\x07\x08\x0b\x0c](?=extbf|extit|exttt|extsc)/g, "\\t");
+  if (Array.isArray(o)) return o.map(fixControlChars);
+  if (o && typeof o === "object") { const r = {}; for (const k of Object.keys(o)) r[k] = fixControlChars(o[k]); return r; }
+  return o;
+}
+function parseAiJson(text) { return fixControlChars(parseAiJsonRaw(text)); }
+function parseAiJsonRaw(text) {
   if (!text) throw new Error("Réponse Gemini vide ou inattendue.");
   text = fixLatexEscapes(text);
   try {
@@ -775,21 +784,42 @@ function applyPdfGeometry(tex, docType, level) {
   return out;
 }
 
+// Le service public (latex.ytotech.com, "open beta" sans garantie de disponibilite) coupe parfois
+// la connexion ou repond 429/5xx sans en-tetes CORS : le navigateur affiche alors "Failed to fetch".
+// On reessaie 3 fois avec une pause, et on garde en memoire les PDF deja compiles
+// (un second clic ne rappelle donc pas le service).
+const PDF_CACHE = new Map();
 async function compileViaApi(tex) {
-  const res = await fetch("https://latex.ytotech.com/builds/sync", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ compiler: "pdflatex", resources: [{ main: true, content: tex }] }),
-  });
-  if (!res.ok) {
+  if (PDF_CACHE.has(tex)) return PDF_CACHE.get(tex).slice(0);
+  const pauses = [0, 2500, 6000];
+  let lastErr = null;
+  for (let attempt = 0; attempt < pauses.length; attempt++) {
+    if (pauses[attempt]) await new Promise(r => setTimeout(r, pauses[attempt]));
+    let res;
+    try {
+      res = await fetch("https://latex.ytotech.com/builds/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ compiler: "pdflatex", resources: [{ main: true, content: tex }] }),
+      });
+    } catch (e) {
+      lastErr = new Error("Service de compilation injoignable (" + e.message + ") apres " + (attempt + 1) + " essai(s)");
+      continue; // reseau coupe, surcharge ou limite de debit : on reessaie
+    }
+    if (res.ok) {
+      const buf = await res.arrayBuffer();
+      PDF_CACHE.set(tex, buf.slice(0));
+      return buf;
+    }
     let msg = "Erreur de compilation (HTTP " + res.status + ")";
     try {
       const errJson = await res.json();
       if (errJson && errJson.logs) msg += " : " + String(errJson.logs).slice(-400);
     } catch (e) {}
-    throw new Error(msg);
+    lastErr = new Error(msg);
+    if (![429, 502, 503, 504].includes(res.status)) throw lastErr; // erreur LaTeX : inutile de reessayer
   }
-  return await res.arrayBuffer();
+  throw lastErr || new Error("Service de compilation injoignable");
 }
 
 async function countPdfPagesFromBuffer(arrayBuffer) {
@@ -1206,7 +1236,12 @@ RÈGLES STRICTES :
     const FILLER = /\b(?:a\s+)?wide\s+range\s+of\s+|\b(?:various|diverse|innovative|tailor-made|tailored|bespoke|cutting-edge)\s+/gi;
     ["offerHook", "closingGain"].forEach(k => {
       const before = lf[k] || "";
-      const after = before.replace(FILLER, "").replace(/\s{2,}/g, " ").trim();
+      let after = before.replace(FILLER, "")
+        .replace(/\b(?:dynamic|stimulating|fast-paced|exciting)\s+(?=environment|team|atmosphere|desk|culture)/gi, "")
+        .replace(/\bleverages\b/gi, "uses").replace(/\bleveraging\b/gi, "using").replace(/\bto leverage\b/gi, "to use");
+      // "What draws me to this role is the role acting as..." : le gabarit dit deja "this role" (audit 25/11 : Natixis FO BA, Kepler)
+      if (k === "offerHook") after = after.replace(/^the\s+(?:[\w-]+\s+)?role\s+(?:of\s+|in\s+)?(?=\w)/i, "");
+      after = after.replace(/\s{2,}/g, " ").trim();
       if (before && after !== before) {
         lf[k] = after;
         parsed.letterNotes = [...(parsed.letterNotes || []), (k === "offerHook" ? "Accroche" : "Conclusion") + " : mot creux retiré automatiquement (« " + before + " » → « " + after + " »)."];
