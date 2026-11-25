@@ -1,5 +1,112 @@
 [
   {
+    "company": "CACIB",
+    "jobTitle": "Assistant Middle Office Collateral Reconciliation",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Middle Office Collateral Operations",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Middle Office Collateral Reconciliation Assistant",
+        "team": "your Middle Office Collateral team",
+        "offerHook": "the detailed reconciliation of OTC derivative portfolios and the coordination of corrective actions to manage operational risk",
+        "proofPoints": [
+          "automation",
+          "business"
+        ],
+        "proofTasks": [
+          "automating operational processes",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the Middle Office coordinates investigations with internal departments",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "04/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily counterparty requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced valuation metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : mot creux retiré automatiquement (« understand how the Middle Office coordinates investigations with various internal departments » → « understand how the Middle Office coordinates investigations with internal departments »).",
+        "Réalisation citée sans mission de l'offre (Entreprise d'arbitrage (1 200+ transactions)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Assistant Middle Office Collateral Reconciliation H/F\nDescription du poste\nType de métier\nTypes de métiers Crédit Agricole S.A. - Financement et Investissement\n\nTypes de métier complémentaires\nTypes de métiers Crédit Agricole S.A. - Finances / Comptabilité / Contrôle de gestion\n\nIntitulé du poste\nAssistant Middle Office Collateral Reconciliation H/F\n\nType de contrat\nStage\n\nDurée (en mois)\n6 mois\n\nDate prévue de prise de fonction\n04/01/2027\n\nMissions\nVous recherchez un stage en Middle Office et vous avez un intérêt pour les opérations de marchés financiers ? Alors postulez !\n\n \n\nLa Direction Operations, Premises  Country COOs (OPC) a la responsabilité mondiale de la gestion des opérations dédiées aux activités de Banque de Financement et d’Investissement de la Banque et assure la tutelle hiérarchique des COO Pays du réseau international.\n\nAu titre de la gestion des opérations, OPC a pour missions :\n\nd’assurer le traitement des opérations de la Banque, de leur initialisation par les Front Offices jusqu'à leur comptabilisation dans ses livres ;\n\nde contribuer à la chaîne de contrôle de ces opérations, en assurant le respect des réglementations et la maîtrise des risques opérationnels ;\n\nde gérer et d’harmoniser les référentiels opérationnels ;\n\nd’accompagner les métiers dans leurs différents projets de développement, en mettant en œuvre l’organisation et les modes opératoires permettant de répondre à leurs besoins ;\n\nd’assurer des prestations de sous-traitance Opérations pour les unités du Groupe Crédit Agricole.\n\nL’organisation générale d’OPC s’articule autour d'un pôle Opérations comprenant 4 secteurs opérationnels (Capital Markets Operations (CMO), Financing  Trade Operations (FTO), Global Referential Management (GRM) et Operations Asia Middle East), et d'un pôle transverse (Organisation and Projects management (OPM) : un pôle dédié à la gestion de l’Immobilier (PCS), le pôle International COO (ICO) et un Secrétariat Général (GSE)).\n\nAu sein de ce poste (OPC/CMO/CMT/MCO), vous rejoindrez l'équipe Middle-Office Collatéral en charge d'investiguer pour résoudre les écarts de valorisation ou de stock, sur l’ensemble des produits dérivés OTC, comme exigé par le régulateur, et de gérer le risque face à nos contreparties sur les produits dérivés.\n\n \n\nConcrètement vos missions seront les suivantes :\n\nla réconciliation des portefeuilles sur la base de rapprochements TriOptima ou Excel\nla détection, analyse et suivi des écarts relevés sur les rapprochement\nle reporting des écarts aux différents interlocuteurs internes (FO, BO, MO, MAM, Risques…)\nla coordination des actions correctrices et d’investigation avec les différents services (BO, MO, MAM, DRM, FO, Legal…)\nla prise en charge des demandes des contreparties\n \n\nRejoindre Crédit Agricole CIB, c’est profiter d’une communauté importante de jeunes, évoluer sur un campus moderne offrant de nombreux services (boulangerie, salle de sport, etc.), bénéficier d’un suivi RH (matinée d’accueil, suivi régulier, etc.) et d’opportunités en alternance, VIE, CDD et CDI.\n\n \n\nLocalisation du poste\nZone géographique\nEurope, France, Ile-de-France, 78 - Yvelines\n\nVille\nSaint-Quentin en Yvelines\nCritères candidat\nNiveau d'études minimum\nBac + 4 / M1\n\nFormation / Spécialisation\nEt si c'était vous ?\n\n \n\nFormation : Ecole de commerce, Ecole d'ingénieur/Informatique, Université\n\nSpécialisation : Finance, Finance de marché\n\nNiveau d'expérience minimum\n0 - 2 ans\n\nExpérience\nUne première expérience en Finance de marché est souhaitable.\n\nCompétences recherchées\nHard Skills :\n\nNotions sur les produits de marché\nNotions sur la gestion du collatéral\nBases en VBA\nMaîtrise du Pack Microsoft Office\nAnglais professionnel\n \n\nSoft Skills : \n\nBon relationnel\nSens des priorités\nRigoureux\nCurieux\nAdaptable\nGestion du stress",
+    "geminiOriginal": {
+      "headlineFill": "Middle Office Collateral Operations",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "CACIB",
+        "jobTitle": "Middle Office Collateral Reconciliation Assistant",
+        "team": "your Middle Office Collateral team",
+        "offerHook": "the detailed reconciliation of OTC derivative portfolios and the coordination of corrective actions to manage operational risk",
+        "proofPoints": [
+          "automation",
+          "business"
+        ],
+        "proofTasks": [
+          "automating operational processes",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "understand how the Middle Office coordinates investigations with internal departments",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "04/01/2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily counterparty requests across the Paris and London desks under tight deadlines."
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced valuation metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis."
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : mot creux retiré automatiquement (« understand how the Middle Office coordinates investigations with various internal departments » → « understand how the Middle Office coordinates investigations with internal departments »).",
+        "Réalisation citée sans mission de l'offre (Entreprise d'arbitrage (1 200+ transactions)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-17 09:55 UTC",
+    "id": "1795598205764",
+    "dateAdded": "2026-11-25"
+  },
+  {
     "company": "Euronext",
     "jobTitle": "Equity Index Structuring intern",
     "location": "Paris",
