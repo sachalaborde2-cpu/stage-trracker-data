@@ -1,5 +1,108 @@
 [
   {
+    "company": "Crédit Agricole CIB",
+    "jobTitle": "Trading Business Manager Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Trading Business Management",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Trading Business Manager Assistant",
+        "team": "your Global Markets Business Management team",
+        "offerHook": "the analytical follow-up of trading desk performance and the development of automation tools",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating recurring tasks",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "work alongside the Business Manager coordinating support functions",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "fin janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : mot creux retiré automatiquement (« work alongside the Business Manager coordinating various support functions » → « work alongside the Business Manager coordinating support functions »).",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l'offre\n\n[Offre de Stage – Trading Business Manager Assistant – Crédit Agricole CIB]\nPosté par Evan Glidic (Rates Trading BM, CACIB)\n\nL'équipe Business Management EGB/SSA/Infla recherche son/sa prochain(e) stagiaire, disponible à partir de fin janvier 2027 pour une durée de 6 mois.\n\nLe pôle Global Markets Division couvre l'ensemble des activités de trading et de vente de produits de marché à destination des entreprises, institutions financières et grands émetteurs. Il couvre également les activités d'origination, structuration et titrisation. Doté de salles de marchés déployées à travers le monde, Crédit Agricole CIB fournit à ses clients un accès à la liquidité dans les principaux centres financiers et leur offre une gamme complète de produits adaptés à leurs problématiques.\n\nAu sein de Global Markets Trading, le stage est proposé au cœur de la salle des marchés de Paris en charge des activités de Repo and Secured Funding. Un Business Manager est dédié à ce pôle pour aider son responsable et son équipe managériale à piloter ce dispositif, à gérer les relations avec les différentes fonctions de support (risque, informatique, back-office, etc.) et à mener des projets de développement business ou réglementaires.\n\nVous aurez pour principale mission d'assister le Business Manager dans le suivi de l'activité et notamment à :\n\nL'évaluation de la performance des desks dont il a la charge :\nParticiper à la consolidation des commentaires de l'activité des 3 desks\nRépondre aux sollicitations du Trading et Sales sur ces indicateurs\nDévelopper les outils permettant d'automatiser certaines tâches récurrentes\nRéaliser des analyses ad hoc en préparation de comité de suivi et ComEx\nProposer et mettre en place avec le Business Manager et les chefs de desks des dashboards sur les activités (NBI, consommation en risques, utilisation de BalanceSheet, etc.)\nPremière ligne de défense en effectuant des contrôles quotidiens\nMaintenir un outil interne au BM EGB SSA Infla : maîtrise du Python / VBA\n\nProfil\n\nBac+4/Bac+5 en université, école de commerce ou école d'ingénieurs, avec une spécialisation en finance de marché ou en mathématiques financières\nFrançais et anglais courants\nMaîtrise du Pack Microsoft Office et de VBA\nLa connaissance de Business Objects, Python et Power BI est un plus\nBonne gestion des priorités, autonomie, esprit de synthèse et bonnes compétences rédactionnelles\n\nCandidature\nSi l'offre vous intéresse, merci d'envoyer votre CV et LM à : evan.glidic@ca-cib.com\nAvec pour objet : \"Candidature Stage - Prénom Nom\"",
+    "geminiOriginal": {
+      "headlineFill": "Trading Business Management",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Crédit Agricole CIB",
+        "jobTitle": "Trading Business Manager Assistant",
+        "team": "your Global Markets Business Management team",
+        "offerHook": "the analytical follow-up of trading desk performance and the development of automation tools",
+        "proofPoints": [
+          "automation",
+          "simulation"
+        ],
+        "proofTasks": [
+          "automating recurring tasks",
+          ""
+        ],
+        "ambition": "Sales and Trading",
+        "frontOffice": false,
+        "closingGain": "work alongside the Business Manager coordinating support functions",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "fin janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ],
+      "letterNotes": [
+        "Conclusion : mot creux retiré automatiquement (« work alongside the Business Manager coordinating various support functions » → « work alongside the Business Manager coordinating support functions »).",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-25 09:23 UTC",
+    "id": "1795697419859",
+    "dateAdded": "2026-11-26"
+  },
+  {
     "company": "CACIB",
     "jobTitle": "Assistant Middle Office Collateral Reconciliation",
     "location": "Paris",
