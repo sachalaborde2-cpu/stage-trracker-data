@@ -1,5 +1,114 @@
 [
   {
+    "company": "Amundi",
+    "jobTitle": "Ingénierie quantitative produit structurés cross assets",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Quantitative Structured Products Engineering",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Quantitative Structured Products Engineering Intern",
+        "team": "your Quantitative Engineering team",
+        "offerHook": "the development and valuation of cross-asset structured products, alongside quantitative strategies and internal pricing tools",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "automating internal processes",
+          "backtesting investment strategies"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the Quantitative Engineering team challenges counterparties' valuations and communicates with risk teams",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "06/04/2026",
+        "blockers": [
+          "Début en avril 2026, Sacha n'est disponible qu'à partir de décembre 2026"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ]
+    },
+    "offerText": "Stage - Ingénierie quantitative - produit structurés cross assets H/F\nModifiée le 25/11/2026\n\nLieu :Paris - France\nSecteur :Gestion d'Actifs\nDescription du poste\nService d'accueil :\n\nLa ligne métier Structurés d'Amundi est spécialisée dans le développement et la conception de produits d’épargne sous forme de produits structurés, ainsi que dans l’élaboration de stratégies d’investissement quantitatives et systématiques.\n\nPour ce stage vous intégrez l’équipe d’ingénierie quantitative, constituée de 3 collaborateurs dont les missions principales sont :\n\n-         La contre-valorisation quotidienne des fonds tenus par les gérants et l’analyse détaillée des écarts avec les contreparties,\n\n-         La réalisation d’études quantitatives ponctuelles (stress tests, backtesting de stratégie, étude adhoc sur nouveaux produits/sous-jacents, …) en coordination avec l’équipe de structuration, la gestion et Amundi finance,\n\n- Le maintien et l’amélioration de la librairie de valorisation interne.\n\nMissions :\n\nDans ce cadre, vous avez pour rôle de :\n\n-         Participer au processus quotidien de contre-valorisation des fonds avec pour objectif sous-jacent d’y apporter des éléments d’optimisation, notamment sur le plan :\n\no        Du sourcing et contrôle des données de marché. A ce titre vous utiliserez des outils tels que Bloomberg et Reuters, et autres services internes.\n\no        De l’optimisation du code (VBA, Python) et l’automatisation de taches\n\no        Du contrôle post valorisation\n\n-         Participer à la mise en place de nouveaux pricers et outils d’analyse de valorisations afin de mieux challenger les contreparties en cas d’écarts et communiquer avec les risques.\n\n-         Faire de la veille sur les dernières innovations en termes d’application IA dans un environnement de finance quantitative.\n\nApports du stage :\n\nGrâce à cette expérience, vous aurez une bonne connaissance de l’environnement de gestion de produits structurés au sein d’un Asset Manager de renom. De plus, l’équipe d’ingénierie étant de petite taille, vous serez amené à travailler sur une grande diversité de sujets (données de marchés, modèles de pricing, méthodes numériques, code) en continu. Enfin, l’environnement est cross asset, ce qui permet de voir la quasi-totalité des classes d’actifs.\n\n\nCritères de candidature\nDate de prise de fonction\n06/04/2026\nDurée\n6\nNiveau d'étude minimum\nBac + 4 / M1\nFormation / Spécialisation\nFormation : Universités, Ecoles de commerce, IngénieursSpécialisation : Formation ingénierie financière, master finance quantitative\nNiveau d'expérience minimum\n0 - 2 ans\nCompétences recherchées\nProfil Master 1 ou Master 2, idéalement étudiant en césureBonne connaissance des modèles de valorisation et méthodes numériques en finance quantitativeBonnes compétences en analyse de données\nHumilité, adaptabilité et force de proposition\nOutils informatiques\nForte aisance en code de manière généralePython (requis)VBA (fortement souhaité).\nDes connaissances en C++ et/ou autres langages seront appréciés\nLangues\nFrançais courant, Anglais courant\n\nEntreprise Amundi\nPremier gérant d'actifs européen parmi les 10 premiers acteurs mondiaux (1), Amundi propose à ses 100 millions de clients - particuliers, institutionnels et entreprises - une gamme complète de solutions d'épargne et d'investissement en gestion active et passive, en actifs traditionnels ou réels. Cette offre est enrichie de services et d'outils technologiques qui permettent de couvrir toute la chaîne de valeur de l'épargne. Filiale du groupe Crédit Agricole, Amundi est cotée en Bourse et gère aujourd'hui près de 2 300 milliards d'euros d'encours (2). Ses six plateformes de gestion internationales (3), sa capacité de recherche financière et extra-financière, ainsi que son engagement de longue date dans l'investissement responsable en font un acteur de référence dans le paysage de la gestion d'actifs.\nLes clients d'Amundi bénéficient de l'expertise et des conseils de 5 500 professionnels dans 35 pays.\nAmundi, un partenaire de confiance qui agit chaque jour dans l'intérêt de ses clients et de la société.\n\n(1) Source : IPE « Top 500 Asset Managers » publié en juin 2025 sur la base des encours sous gestion au 31/12/2024\n(2) Données Amundi au 30/06/2025\n(3) Paris, Londres, Dublin, Milan, Tokyo et San Antonio (via notre partenariat stratégique avec Victory Capital)",
+    "geminiOriginal": {
+      "headlineFill": "Quantitative Structured Products Engineering",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Amundi",
+        "jobTitle": "Quantitative Structured Products Engineering Intern",
+        "team": "your Quantitative Engineering team",
+        "offerHook": "the development and valuation of cross-asset structured products, alongside quantitative strategies and internal pricing tools",
+        "proofPoints": [
+          "automation",
+          "backtest"
+        ],
+        "proofTasks": [
+          "automating internal processes",
+          "backtesting investment strategies"
+        ],
+        "ambition": "Structuring",
+        "frontOffice": false,
+        "closingGain": "understand how the Quantitative Engineering team challenges counterparties' valuations and communicates with risk teams",
+        "bmcLine": true,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "06/04/2026",
+        "blockers": [
+          "Début en avril 2026, Sacha n'est disponible qu'à partir de décembre 2026"
+        ]
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal strategy-testing tools, analyzing risk-adjusted performance by region.",
+          "new": "Backtested a Golden Cross strategy over a 10-year horizon across three geographies (Europe, U.S., Emerging Asia) using FactSet's internal backtesting tools, analyzing risk-adjusted performance by region.",
+          "reason": "terme précis supprimé (strategy-testing)"
+        },
+        {
+          "old": "Engineered an interactive Streamlit web application in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "new": "Engineered an interactive Streamlit tool in Python to dynamically manage a personal investment portfolio, computing advanced financial metrics (IRR, Alpha, volatility) and sector/geographic exposure analysis.",
+          "reason": "terme précis supprimé (application)"
+        }
+      ]
+    },
+    "engineBuild": "2026-11-25 09:23 UTC",
+    "id": "1795697593020",
+    "dateAdded": "2026-11-26"
+  },
+  {
     "company": "Crédit Agricole CIB",
     "jobTitle": "Trading Business Manager Assistant",
     "location": "Paris",
