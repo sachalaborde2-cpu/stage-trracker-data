@@ -1,5 +1,108 @@
 [
   {
+    "company": "Natixis CIB",
+    "jobTitle": "Cross-Asset Solutions Sales Assistant",
+    "location": "Paris",
+    "jobUrl": "",
+    "contractType": "stage",
+    "programType": "p2",
+    "programYear": "2027",
+    "durationMonths": "6",
+    "status": "a_preparer",
+    "adaptation": {
+      "headlineFill": "Cross-Asset Solutions Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Cross-Asset Solutions Sales Assistant",
+        "team": "your Cross-Asset Solutions team",
+        "offerHook": "the direct involvement in the structuring, pricing, and marketing of cross-asset structured solutions for institutional clients",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how sales, traders, and financial engineers collaborate on new product development",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : formule creuse « solutions » (« the direct involvement in the structuring, pricing, and marketing of cross-asset structured solutions for institutional clients »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "offerText": "Transcription de l'offre\n\nOffre de stage – Cross-Asset Solutions Sales Assistant\nNatixis CIB, posté par Julien Blake (Assistant sales structured products chez Natixis CIB)\n\nDescriptif de l'entreprise\nNatixis est la banque de financement, de gestion, d'assurance et de services financiers du Groupe BPCE, deuxième acteur bancaire en France. Avec plus de 16 000 collaborateurs présents dans 38 pays, Natixis a trois métiers cœurs : la banque de grande clientèle, l'épargne & l'assurance (gestion d'actifs, banque privée, assurance) et les services financiers spécialisés.\n\nIntitulé du poste\nCross-Asset Solutions Sales Assistant\n\nDescriptif complet de la mission\nDate de commencement : janvier 2027\nDurée du stage : 6 mois\n\nLe stage se déroulera au sein de la salle de marchés de Natixis à Paris au contact des sales, traders et ingénieurs financiers.\n\nL'assistant aura l'occasion d'intervenir sur l'ensemble du processus d'émission et de suivi d'une solution d'investissement structurée. L'assistant aura notamment les responsabilités suivantes :\n\nParticipation au développement de nouveaux produits destinés à une clientèle institutionnelle, de l'origination, en passant par la structuration et jusqu'à l'exécution\nRéalisation de pricing de produits structurés actions et indices\nMise à jour des matrices de prix destinées aux clients\nPréparation des présentations marketing (plaquettes produits, back-testing, simulations) et élaboration des pitchs clients\nRéalisation des reportings mensuels et analyses quantitatives nécessaire pour l'argumentaire de vente, et analyse du profil de risque des solutions\nSuivi des opérations traitées\n\nEn tant qu'assistant de l'équipe Cross-Assets, le stagiaire aura une vision complète et transverse des équipes de ventes. A fortiori, il devra être autonome, dynamique, et force de proposition.\n\nProfil recherché\n\nBac+4 minimum, année de césure, fin d'études\nDisposer d'une culture générale des marchés financiers\nAvoir une bonne connaissance des produits dérivés (pricing, stratégies...)\nÊtre disponible, rapide, rigoureux et impliqué\nSavoir travailler en équipe tout en étant autonome\nAvoir des capacités de communication à l'oral et à l'écrit, en français comme en anglais\nMaîtriser Excel (VBA) et PowerPoint. Python fortement apprécié\n\nProcédure de recrutement\nTransmettre votre CV à julien.blake-ext@natixis.com avec comme objet « Candidature Assistant Sales – Prénom NOM »",
+    "geminiOriginal": {
+      "headlineFill": "Cross-Asset Solutions Sales",
+      "keywordChanges": [],
+      "letterFields": {
+        "company": "Natixis CIB",
+        "jobTitle": "Cross-Asset Solutions Sales Assistant",
+        "team": "your Cross-Asset Solutions team",
+        "offerHook": "the direct involvement in the structuring, pricing, and marketing of cross-asset structured solutions for institutional clients",
+        "proofPoints": [
+          "pricing",
+          "simulation"
+        ],
+        "proofTasks": [
+          "pricing structured products",
+          ""
+        ],
+        "ambition": "Sales and Structuring",
+        "frontOffice": true,
+        "closingGain": "understand how sales, traders, and financial engineers collaborate on new product development",
+        "bmcLine": false,
+        "tools": [
+          "Excel",
+          "VBA",
+          "Python"
+        ],
+        "spanish": false
+      },
+      "fit": {
+        "start": "janvier 2027",
+        "blockers": []
+      },
+      "proposedKeywordChanges": [],
+      "guardrailRejected": [
+        {
+          "old": "Advise institutional buy-side and sell-side professionals on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "new": "Advise institutional clients on FactSet's cross-asset portfolio analytics and workflow tools, managing a high volume of daily client requests across the Paris and London desks under tight deadlines.",
+          "reason": "terme précis supprimé (buy-side, sell-side)"
+        }
+      ],
+      "letterNotes": [
+        "Accroche : formule creuse « solutions » (« the direct involvement in the structuring, pricing, and marketing of cross-asset structured solutions for institutional clients »). À reformuler avec un élément précis des missions.",
+        "Réalisation citée sans mission de l'offre (Simulation FactSet (1er/12, +6%)) : elle apparaît en phrase seule. Tu peux écrire la mission dans le champ correspondant si le lien est évident."
+      ]
+    },
+    "engineBuild": "2026-11-25 09:23 UTC",
+    "id": "1795793076129",
+    "dateAdded": "2026-11-27"
+  },
+  {
     "company": "Amundi",
     "jobTitle": "Ingénierie quantitative produit structurés cross assets",
     "location": "Paris",
